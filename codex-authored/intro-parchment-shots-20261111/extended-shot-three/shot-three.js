@@ -1,11 +1,11 @@
 'use strict';
 
-function makeMortalMap(image, groundImage, wideGround, smoke, feather, fallen, { context, width, height, matte, layer, random, lerp, smooth, bloom, pageFinish }) {
+function makeMortalMap(image, groundImage, wideGround, smoke, feather, fallen, { context, width, height, matte, layer, random, lerp, smooth, bloom, pageFinish, featherFx }) {
   const { thirdDuration, revealAt, revealEnd, starsAt, thirdFogAt, thirdBeamAt, thirdHopeAt,
     thirdDiveAt, thirdGroundAt, thirdFadeAt } = OPENING_SHOT_TIMING;
   const rand = random(103671);
   const descent = makeDesertDescent(groundImage, wideGround, smoke, fallen, { width, height, layer, random, lerp, smooth, bloom });
-  const finale = makeFeatherFinale(feather, { width, height, random, lerp, smooth, bloom });
+  const finale = makeFeatherFinale(feather, { width, height, lerp, smooth, bloom, featherFx });
   const { wideAt, chestAt } = OPENING_SHOT_TIMING;
   // Map-space location of the marked desert, west of the buried skeleton.
   const desert = { u: 0.554, v: 0.780 };

@@ -17,7 +17,7 @@ const { thirdDuration: duration } = require('./shot-timing.js');
 const fps = 30;
 const ffmpeg = process.env.PARCHMENT_FFMPEG || 'ffmpeg';
 const mime = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
-  '.png': 'image/png', '.wav': 'audio/wav', '.woff2': 'font/woff2' };
+  '.json': 'application/json', '.png': 'image/png', '.wav': 'audio/wav', '.woff2': 'font/woff2' };
 const server = http.createServer((req, res) => {
   const url = new URL(req.url, 'http://localhost');
   const file = path.resolve(archive, '.' + url.pathname);
@@ -88,7 +88,7 @@ async function main() {
     }
     if (process.argv.includes('--stills')) {
       fs.mkdirSync(path.join(review, 'stills'), { recursive: true });
-      for (const t of [0, 1.60, 2.45, 4.25, 8.2, 12.36, 16.97, 17.48, 18.14, 19.20, 20.45, 22.47, 23.20, 23.43, 23.72, 24.43, 25.48, 26.57, 27.30, 27.40, 28.55, 29.45, 29.70, 30.55, 31.20, 31.97]) {
+      for (const t of [0, 1.60, 2.45, 4.25, 8.2, 12.36, 16.97, 17.48, 18.14, 19.20, 20.45, 22.47, 23.20, 23.43, 23.72, 24.43, 25.48, 26.57, 27.30, 27.35, 27.40, 28.55, 29.45, 29.50, 29.57, 29.70, 29.85, 30.55, 31.20, 32.48, 33.00, 33.47]) {
         fs.writeFileSync(path.join(review, 'stills', 'frame-' + t.toFixed(2) + '.jpg'), await frame(t));
       }
     } else {

@@ -1,0 +1,623 @@
+{
+  "schemaVersion": 1,
+  "id": "intro-feather-radiance",
+  "duration": 6.15,
+  "loop": false,
+  "layers": [
+    {
+      "id": "flight-gold-rays",
+      "type": "sprite",
+      "assetId": "new_materials/flare/flare_16.png",
+      "zIndex": 10,
+      "rotation": -0.2269,
+      "scale": {
+        "x": 0.371,
+        "y": 0.23
+      },
+      "alpha": 0.49,
+      "tint": "#ffffff",
+      "blendMode": "add",
+      "duration": 2.31,
+      "alphaOverLife": [
+        [
+          0,
+          0.91
+        ],
+        [
+          0.26,
+          0.71
+        ],
+        [
+          0.56,
+          0.88
+        ],
+        [
+          0.86,
+          0.74
+        ],
+        [
+          0.93,
+          0.88
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "scaleOverLife": [
+        [
+          0,
+          1
+        ],
+        [
+          0.25,
+          0.84
+        ],
+        [
+          0.54,
+          0.98
+        ],
+        [
+          0.82,
+          0.91
+        ],
+        [
+          1,
+          0.78
+        ]
+      ]
+    },
+    {
+      "id": "flight-white-point",
+      "type": "sprite",
+      "assetId": "particle-pack/png-black-background/star_04.png",
+      "zIndex": 30,
+      "rotation": 0.4014,
+      "scale": {
+        "x": 0.1445,
+        "y": 0.127
+      },
+      "alpha": 0.69,
+      "tint": "#ffffff",
+      "blendMode": "add",
+      "duration": 2.29,
+      "alphaOverLife": [
+        [
+          0,
+          0.89
+        ],
+        [
+          0.25,
+          0.74
+        ],
+        [
+          0.48,
+          0.91
+        ],
+        [
+          0.85,
+          0.84
+        ],
+        [
+          0.94,
+          0.94
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "flight-gold-motes",
+      "type": "particle",
+      "assetId": "particle-pack/png-black-background/star_04.png",
+      "zIndex": 20,
+      "alpha": 0.78,
+      "tint": "#ffffff",
+      "blendMode": "add",
+      "duration": 2.15,
+      "emission": {
+        "mode": "rate",
+        "rate": 18
+      },
+      "maxParticles": 20,
+      "lifetime": [
+        0.31,
+        0.86
+      ],
+      "spawn": {
+        "height": 27,
+        "shape": "box",
+        "width": 57
+      },
+      "speed": [
+        12,
+        40
+      ],
+      "direction": 0,
+      "spread": 360,
+      "gravity": {
+        "x": -12,
+        "y": -22
+      },
+      "drag": 0.36,
+      "startScale": [
+        0.0254,
+        0.0566
+      ],
+      "rotationStart": [
+        -0.4,
+        1.2
+      ],
+      "rotationSpeed": [
+        -0.45,
+        0.45
+      ],
+      "alphaOverLife": [
+        [
+          0,
+          0.07
+        ],
+        [
+          0.16,
+          0.83
+        ],
+        [
+          0.52,
+          1
+        ],
+        [
+          0.83,
+          0.71
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "land-spreading-gold-rays",
+      "type": "sprite",
+      "assetId": "new_materials/flare/flare_16.png",
+      "zIndex": 11,
+      "rotation": -0.2618,
+      "scale": {
+        "x": 2.4609,
+        "y": 1.5625
+      },
+      "alpha": 0.66,
+      "tint": "#ffb83e",
+      "blendMode": "add",
+      "delay": 2.15,
+      "duration": 4,
+      "alphaOverLife": [
+        [
+          0,
+          0.58
+        ],
+        [
+          0.18,
+          0.82
+        ],
+        [
+          0.5,
+          0.91
+        ],
+        [
+          0.75,
+          0.9
+        ],
+        [
+          1,
+          0.5
+        ]
+      ],
+      "scaleOverLife": [
+        [
+          0,
+          0.125
+        ],
+        [
+          0.09,
+          0.195
+        ],
+        [
+          0.24,
+          0.37
+        ],
+        [
+          0.48,
+          0.69
+        ],
+        [
+          0.75,
+          1
+        ],
+        [
+          1,
+          1.12
+        ]
+      ],
+      "rotationOverLife": [
+        [
+          0,
+          0
+        ],
+        [
+          0.6,
+          0.06
+        ],
+        [
+          1,
+          0.088
+        ]
+      ]
+    },
+    {
+      "id": "land-crossing-gold-rays",
+      "type": "sprite",
+      "assetId": "new_materials/flare/flare_16.png",
+      "zIndex": 12,
+      "rotation": 0.4712,
+      "scale": {
+        "x": 1.7969,
+        "y": 1.6211
+      },
+      "alpha": 0.29,
+      "tint": "#ffd174",
+      "blendMode": "add",
+      "delay": 2.15,
+      "duration": 4,
+      "alphaOverLife": [
+        [
+          0,
+          0
+        ],
+        [
+          0.18,
+          0.52
+        ],
+        [
+          0.53,
+          0.91
+        ],
+        [
+          0.75,
+          0.9
+        ],
+        [
+          1,
+          0.5
+        ]
+      ],
+      "scaleOverLife": [
+        [
+          0,
+          0.125
+        ],
+        [
+          0.09,
+          0.195
+        ],
+        [
+          0.24,
+          0.37
+        ],
+        [
+          0.48,
+          0.69
+        ],
+        [
+          0.75,
+          1
+        ],
+        [
+          1,
+          1.12
+        ]
+      ],
+      "rotationOverLife": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -0.13
+        ]
+      ]
+    },
+    {
+      "id": "land-white-core",
+      "type": "sprite",
+      "assetId": "particle-pack/png-black-background/star_04.png",
+      "zIndex": 34,
+      "rotation": 0.3142,
+      "scale": {
+        "x": 0.365,
+        "y": 0.277
+      },
+      "alpha": 0.98,
+      "tint": "#fff9dd",
+      "blendMode": "add",
+      "delay": 2.15,
+      "duration": 4,
+      "alphaOverLife": [
+        [
+          0,
+          0.45
+        ],
+        [
+          0.09,
+          0.85
+        ],
+        [
+          0.35,
+          0.97
+        ],
+        [
+          0.75,
+          1
+        ],
+        [
+          1,
+          0.61
+        ]
+      ],
+      "scaleOverLife": [
+        [
+          0,
+          0.37
+        ],
+        [
+          0.25,
+          0.58
+        ],
+        [
+          0.56,
+          0.82
+        ],
+        [
+          0.75,
+          1
+        ],
+        [
+          1,
+          1.08
+        ]
+      ]
+    },
+    {
+      "id": "land-traveling-sparks",
+      "type": "particle",
+      "assetId": "particle-pack/png-black-background/star_04.png",
+      "zIndex": 23,
+      "alpha": 0.91,
+      "tint": "#ffe583",
+      "blendMode": "add",
+      "delay": 2.1999999999999997,
+      "duration": 0.08,
+      "emission": {
+        "count": 63,
+        "mode": "burst"
+      },
+      "maxParticles": 63,
+      "lifetime": [
+        2.25,
+        3.75
+      ],
+      "spawn": {
+        "radius": 22,
+        "shape": "circle"
+      },
+      "speed": [
+        39,
+        188
+      ],
+      "direction": 0,
+      "spread": 360,
+      "gravity": {
+        "x": 1,
+        "y": -12
+      },
+      "drag": 0.11,
+      "startScale": [
+        0.0313,
+        0.0801
+      ],
+      "rotationStart": [
+        -0.64,
+        1.32
+      ],
+      "rotationSpeed": [
+        -0.4,
+        0.4
+      ],
+      "alphaOverLife": [
+        [
+          0,
+          0.07
+        ],
+        [
+          0.16,
+          0.83
+        ],
+        [
+          0.52,
+          1
+        ],
+        [
+          0.83,
+          0.71
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "scaleOverLife": [
+        [
+          0,
+          0.52
+        ],
+        [
+          0.34,
+          1
+        ],
+        [
+          0.63,
+          0.85
+        ],
+        [
+          1,
+          0.48
+        ]
+      ],
+      "projection": {
+        "upright": true,
+        "x": 1,
+        "y": 0.65
+      }
+    },
+    {
+      "id": "land-ray-particles",
+      "type": "particle",
+      "assetId": "particle-pack/png-black-background/trace_02.png",
+      "zIndex": 22,
+      "scale": {
+        "x": 0.36,
+        "y": 1.12
+      },
+      "alpha": 0.58,
+      "tint": "#ffdc73",
+      "blendMode": "add",
+      "delay": 2.27,
+      "duration": 0.08,
+      "emission": {
+        "count": 27,
+        "mode": "burst"
+      },
+      "maxParticles": 27,
+      "lifetime": [
+        2.5,
+        3.8
+      ],
+      "spawn": {
+        "radius": 16,
+        "shape": "circle"
+      },
+      "speed": [
+        55,
+        163
+      ],
+      "direction": 0,
+      "spread": 360,
+      "drag": 0.14,
+      "startScale": [
+        0.0723,
+        0.1484
+      ],
+      "alignToVelocity": true,
+      "velocityRotationOffset": -1.5707963267948966,
+      "alphaOverLife": [
+        [
+          0,
+          0
+        ],
+        [
+          0.28,
+          0.75
+        ],
+        [
+          0.61,
+          0.76
+        ],
+        [
+          0.85,
+          0.48
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "projection": {
+        "upright": true,
+        "x": 1,
+        "y": 0.72
+      }
+    },
+    {
+      "id": "land-lingering-gold-dust",
+      "type": "particle",
+      "assetId": "particle-pack/png-black-background/star_04.png",
+      "zIndex": 27,
+      "alpha": 0.83,
+      "tint": "#fff1b5",
+      "blendMode": "add",
+      "delay": 2.37,
+      "duration": 2.8,
+      "emission": {
+        "mode": "rate",
+        "rate": 22
+      },
+      "maxParticles": 45,
+      "lifetime": [
+        0.74,
+        1.96
+      ],
+      "spawn": {
+        "radius": 16,
+        "shape": "circle"
+      },
+      "speed": [
+        25,
+        100
+      ],
+      "direction": 0,
+      "spread": 360,
+      "gravity": {
+        "x": -4,
+        "y": -15
+      },
+      "drag": 0.18,
+      "startScale": [
+        0.0215,
+        0.0625
+      ],
+      "rotationStart": [
+        -0.5,
+        1.2
+      ],
+      "alphaOverLife": [
+        [
+          0,
+          0.07
+        ],
+        [
+          0.16,
+          0.83
+        ],
+        [
+          0.52,
+          1
+        ],
+        [
+          0.83,
+          0.71
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "projection": {
+        "upright": true,
+        "x": 1,
+        "y": 0.63
+      }
+    }
+  ]
+}

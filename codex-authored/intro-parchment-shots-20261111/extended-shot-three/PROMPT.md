@@ -48,3 +48,9 @@ On image 1, fully remove the incorrect thumb that points to upper left across th
 內建 ImageGen 生成空景，角色沿用原分件。
 
 Make a NEW BACKGROUND PLATE of the same desert pictured in Image 1, viewed from a very high camera looking down at approximately 60 degrees BELOW the horizontal, NOT overhead. Show an extensive dune basin from very far away; the camera looks downward into the empty sandy hollow. Sand and dunes fill the entire image to every edge. Sky, skyline and distant mountain peaks are completely outside the top of frame. Retain the same dead tree on the upper right, now considerably smaller due to camera distance, its roots near (73%, 43%). Keep the same muted ochre and dark purple-brown shading, finely engraved painted texture, sand crests leading into a wide shallow depression. At x=51%, y=56%, leave an open subtle patch of flat sand for a small separately composited figure. Camera looks diagonally down so the dunes have some perspective, with nearby sand ripples stretched gently and background details narrower. A handful of naturally spaced small black rocks and buried ribs far to the right; sun direction upper left. Cinematic painterly engraving, fine grain, broad quiet shadows, matching prior scene color and atmosphere. Absolutely no character, armor, figure, feathers, footprints, glowing spot, labels, text, buildings, visible sky, or black letterbox bars. Wide 16:9 landscape.
+
+## 33.5 秒核准版的合成與羽毛特效
+
+- 手部依使用者圈選修整，以薄沙掩住手掌與腕部，保留露出沙面的指端。用核准分件與荒漠地表取樣，讓沙紋和色澤接續。
+- VFX 編輯器使用 `intro-feather-radiance` 的放射光、白色核心、星屑和細長光粒。下落階段是白色；觸甲約三秒擴到上半身再隨畫面淡出。合成器把兩段特效的原點對齊同一個羽軸中心點，並隨羽毛位置與鏡頭縮放。
+- 參考圖用來比對放射方向與發光位置。貼圖沿用專案既有素材，原 assetId 及檔名見 `assets/feather-vfx/textures.json`。分組設定為同資料夾的 `intro-feather-radiance.layout.json`。

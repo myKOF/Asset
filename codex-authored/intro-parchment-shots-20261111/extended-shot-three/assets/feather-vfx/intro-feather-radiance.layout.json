@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "presetId": "intro-feather-radiance",
+  "groups": [
+    {
+      "id": "intro-feather-radiance",
+      "name": "intro-feather-radiance",
+      "layerIds": [
+        "flight-gold-rays",
+        "flight-white-point",
+        "flight-gold-motes",
+        "land-spreading-gold-rays",
+        "land-crossing-gold-rays",
+        "land-white-core",
+        "land-traveling-sparks",
+        "land-ray-particles",
+        "land-lingering-gold-dust"
+      ]
+    }
+  ],
+  "order": [
+    "group:intro-feather-radiance"
+  ]
+}

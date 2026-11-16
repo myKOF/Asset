@@ -1,13 +1,11 @@
 'use strict';
 
-function makeFeatherFinale(feather, { width, height, lerp, smooth, bloom, random }) {
+function makeFeatherFinale(feather, { width, height, lerp, smooth, bloom, featherFx }) {
   const { wideFeatherAt, chestAt, featherLandAt, thirdFadeAt } = OPENING_SHOT_TIMING;
   const tau = Math.PI * 2;
   const chest = { u: 0.689, v: 0.404 };
-  const rand = random(837114);
-  const motes = Array.from({ length: 30 }, () => ({
-    angle: rand() * tau, speed: 7 + rand() * 31, delay: rand() * 0.55, size: 0.55 + rand() * 1.8
-  }));
+  const featherPivot = { u: 0.47, v: 0.51 };
+  const shaftCenter = { u: 0.50, v: 0.42 };
   function drawFeather(ctx, x, y, span, angle, pitch, opacity, blur = 0) {
     const tall = span * feather.height / feather.width;
     ctx.save();
@@ -16,7 +14,7 @@ function makeFeatherFinale(feather, { width, height, lerp, smooth, bloom, random
     ctx.rotate(angle);
     ctx.scale(1, pitch);
     ctx.filter = 'brightness(0.93) saturate(0.79) blur(' + blur.toFixed(2) + 'px)';
-    ctx.drawImage(feather, -span * 0.47, -tall * 0.51, span, tall);
+    ctx.drawImage(feather, -span * featherPivot.u, -tall * featherPivot.v, span, tall);
     ctx.restore();
   }
 
@@ -45,12 +43,17 @@ function makeFeatherFinale(feather, { width, height, lerp, smooth, bloom, random
   }
 
   function drawChest(ctx, t, body) {
-    const zoom = lerp(1.94, 2.11, smooth(chestAt, thirdFadeAt, t));
+    const age = Math.max(0, t - featherLandAt);
+    const hold = thirdFadeAt - featherLandAt;
+    const push = smooth(0.08, hold, age);
+    const approachZoom = lerp(1.94, 2.01, smooth(chestAt, featherLandAt, t));
+    const zoom = approachZoom * lerp(1, 1.39, push);
+    const relativeZoom = zoom / approachZoom;
     const target = {
       x: body.x + body.span * chest.u,
       y: body.y + body.tall * chest.v
     };
-    const contact = { x: width * 0.49, y: height * 0.57 };
+    const contact = { x: width * lerp(0.49, 0.50, push), y: height * lerp(0.57, 0.53, push) };
     ctx.save();
     ctx.translate(contact.x, contact.y);
     ctx.scale(zoom, zoom);
@@ -58,44 +61,23 @@ function makeFeatherFinale(feather, { width, height, lerp, smooth, bloom, random
     body.draw(ctx);
     ctx.restore();
 
-    const s = Math.max(0, Math.min(1, (t - chestAt) / (featherLandAt - chestAt)));
-    const drift = (1 - s) ** 1.35;
-    const rest = Math.max(0, t - featherLandAt);
-    const rise = smooth(0, 0.46, rest);
-    const pulse = 0.90 + 0.10 * Math.cos(rest * 3.9);
-    const shine = rise * pulse;
-    const px = contact.x - 244 * drift + Math.sin(s * tau * 1.35) * 58 * drift;
-    const py = contact.y - 313 * drift + Math.sin(s * tau * 1.6) * 21 * drift;
-    const span = lerp(169, 131, s);
-    const tilt = lerp(0.73, 0.15, s) + Math.sin(s * tau * 1.24) * 0.42 * drift;
-    const pitch = lerp(0.71, 0.78, s) + Math.sin(s * tau * 1.60) * 0.28 * drift;
+    const phase = Math.max(0, Math.min(1, (t - chestAt) / (featherLandAt - chestAt)));
+    const drift = (1 - phase) ** 1.35;
+    const px = contact.x - 244 * drift + Math.sin(phase * tau * 1.35) * 58 * drift;
+    const py = contact.y - 313 * drift + Math.sin(phase * tau * 1.60) * 21 * drift;
+    const span = lerp(169, 131, phase) * relativeZoom;
+    const tilt = lerp(0.73, 0.15, phase) + Math.sin(phase * tau * 1.24) * 0.42 * drift;
+    const pitch = lerp(0.71, 0.78, phase) + Math.sin(phase * tau * 1.60) * 0.28 * drift;
+    const heightRatio = feather.height / feather.width * pitch;
+    const centerAcross = span * (shaftCenter.u - featherPivot.u);
+    const centerDown = span * heightRatio * (shaftCenter.v - featherPivot.v);
+    const centerX = px + centerAcross * Math.cos(tilt) - centerDown * Math.sin(tilt);
+    const centerY = py + centerAcross * Math.sin(tilt) + centerDown * Math.cos(tilt);
 
     bloom(ctx, px + 7, contact.y + 7, span * 0.60, 13 + drift * 29, '39,24,17',
-      smooth(0.27, 1, s) * 0.70);
-    ctx.save();
-    ctx.globalCompositeOperation = 'screen';
-    bloom(ctx, contact.x + 4, contact.y + 4, 195, 102, '224,143,60', shine * 0.65);
-    bloom(ctx, contact.x + 4, contact.y + 4, 98, 52, '255,210,130', shine * 0.78);
-    ctx.restore();
+      smooth(0.27, 1, phase) * 0.70);
     drawFeather(ctx, px, py, span, tilt, pitch, 1, 0.80 * drift);
-
-    ctx.save();
-    ctx.globalCompositeOperation = 'screen';
-    const tipX = contact.x + 50;
-    const tipY = contact.y - 16;
-    bloom(ctx, tipX, tipY, 70, 47, '255,213,123', shine * 0.81);
-    bloom(ctx, tipX, tipY, 22, 20, '255,246,204', shine);
-    bloom(ctx, tipX, tipY, 7, 6, '255,255,237', shine * 0.91);
-    ctx.fillStyle = '#ffe7b1';
-    for (const mote of motes) {
-      const age = Math.max(0, rest - mote.delay);
-      const travel = age * mote.speed;
-      const opacity = smooth(0.04, 0.22, age) * (1 - smooth(0.37, 1.58, age));
-      ctx.globalAlpha = opacity * 0.65;
-      ctx.fillRect(tipX + Math.cos(mote.angle) * travel,
-        tipY + Math.sin(mote.angle) * travel * 0.45 - age * 13, mote.size, mote.size);
-    }
-    ctx.restore();
+    featherFx(ctx, t - chestAt, centerX, centerY, relativeZoom);
   }
 
   return { drawWide, drawChest };

@@ -2,7 +2,7 @@
 
 function makeDesertDescent(image, wideGround, smoke, fallen, { width, height, layer, random, lerp, smooth, bloom }) {
   const { thirdDiveAt, thirdGroundAt, groundLightOut, revealBodyAt,
-    revealBodyEnd, pushInStart, pushInEnd, thirdFadeAt } = OPENING_SHOT_TIMING;
+    revealBodyEnd, pushInStart, pushInEnd, groundDriftEnd } = OPENING_SHOT_TIMING;
   const light = { u: 0.523, v: 0.622 };
   const dust = layer(720, 350, { alpha: true });
   dust.filter = 'grayscale(1) brightness(1.03) blur(2.2px)';
@@ -118,7 +118,7 @@ function makeDesertDescent(image, wideGround, smoke, fallen, { width, height, la
   function projectSurface(t) {
     const entry = smooth(thirdDiveAt + 0.77, thirdGroundAt + 0.92, t);
     const follow = smooth(pushInStart, pushInEnd, t);
-    const linger = smooth(pushInEnd, thirdFadeAt, t);
+    const linger = smooth(pushInEnd, groundDriftEnd, t);
     const cover = Math.max(width / image.width, height / image.height);
     const zoom = 1.12 + 0.12 * entry + 2.02 * follow + 0.20 * linger;
     const w = image.width * cover * zoom;
@@ -133,15 +133,17 @@ function makeDesertDescent(image, wideGround, smoke, fallen, { width, height, la
   }
 
   function projectWide(progress) {
-    // The high desert plate has its own projection. Keep the original character cel.
+    const distanceRatio = 1.5;
+    const descentSpeedRatio = 3.3;
     const cover = Math.max(width / wideGround.width, height / wideGround.height);
-    const zoom = cover * lerp(1.035, 1.078, progress);
+    const zoom = cover * (1.035 + 0.043 * descentSpeedRatio * progress);
     const w = wideGround.width * zoom;
     const h = wideGround.height * zoom;
     const x = (width - w) * 0.5 - 13 * progress;
-    const y = (height - h) * 0.5 + 4 * progress;
-    return { x, y, w, h, glowX: x + w * 0.522, glowY: y + h * 0.565,
-      bodySpan: w * 0.135, background: wideGround };
+    // Lower the camera toward the valley, moving the projected ground upward.
+    const y = (height - h) * 0.5 - 62 * progress;
+    return { x, y, w, h, glowX: x + w * 0.508, glowY: y + h * 0.559,
+      bodySpan: w * 0.135 / distanceRatio, background: wideGround };
   }
 
   function bodyBounds({ w, glowX, glowY, bodySpan = w * 0.173 }) {
@@ -194,6 +196,20 @@ function makeDesertDescent(image, wideGround, smoke, fallen, { width, height, la
       ctx.stroke();
     }
     ctx.restore();
+  }
+
+  function drawValleyDust(ctx, body, reveal, t) {
+    const opacity = 1 - smooth(0.12, 0.88, reveal);
+    if (opacity <= 0) return;
+    const { x, y, span, tall } = body;
+    const age = t - thirdGroundAt;
+    const wind = Math.max(0, reveal) * 0.78;
+    bank(ctx, x + span * (0.39 + wind), y + tall * 0.38,
+      span * 2.50, tall * 1.58, -0.11, opacity * 0.52, 1);
+    bank(ctx, x + span * (0.52 + wind + 0.09 * Math.sin(age * 1.4)), y + tall * 0.79,
+      span * 2.89, tall * 1.02, 0.04, opacity * 0.51, -1);
+    bank(ctx, x + span * (0.35 + wind), y + tall * 0.15,
+      span * 1.72, tall * 1.05, -0.17, opacity * 0.33, 1);
   }
 
   function drawRevealCloud(ctx, body, reveal, t) {
@@ -289,6 +305,7 @@ function makeDesertDescent(image, wideGround, smoke, fallen, { width, height, la
         angle * 0.14, alpha * (0.50 + 0.32 * smooth(0, 1.6, elapsed)), wind > 0 ? 1 : -1);
     }
 
+    drawValleyDust(ctx, body, reveal, t);
     drawRevealCloud(ctx, body, reveal, t);
     drawSand(ctx, elapsed, smooth(0.5, 2.7, elapsed));
     ctx.globalCompositeOperation = 'screen';
