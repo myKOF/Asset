@@ -48,9 +48,9 @@
       "sha256": "40237e5355d778c5a10bae6a03ae3a1a6850f2f9b2b26c49df0e329320c02c05"
     },
     {
-      "source": "exports/boss2.glb",
+      "source": "exports/boss1_lv2.glb",
       "sha256": "aadf8f4d14eecbd3bd90b3d92732a5bb3c85a2d377c93aee7214777cc3202ca9",
-      "project": "images/models/npc3d/boss2.glb"
+      "project": "images/models/npc3d/boss1_lv2.glb"
     },
     {
       "source": "exports/boss_skeleton_king_lv2.png",

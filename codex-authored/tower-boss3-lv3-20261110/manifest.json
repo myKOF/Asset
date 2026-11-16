@@ -12,9 +12,9 @@
       "sha256": "47330ede8adcd84eed9aaad38f6f6b156913bba0fd840da569db40ab540f7b4e"
     },
     {
-      "source": "exports/boss3_character_lv3.glb",
-      "sha256": "4185787cccb0ae44740ebcde2e5df019088aad8981be038a13e53629f74dfd4f",
-      "project": "images/models/npc3d/boss3_character_lv3.glb"
+      "source": "exports/boss3_lv3.glb",
+      "sha256": "dae6fc0398c18b6cc35e9a062a50e4de995b7f9b95a7d0c087099ed45be3452c",
+      "project": "images/models/npc3d/boss3_lv3.glb"
     },
     {
       "source": "exports/boss3_character_lv3.png",

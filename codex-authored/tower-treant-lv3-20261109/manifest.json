@@ -16,9 +16,9 @@
       "sha256": "f4de6ce8b9aee60e36031c58c3799441372eb0252f0d657ecc5b0dc1fb008e6c"
     },
     {
-      "source": "exports/treant_lv3.glb",
-      "sha256": "d8a555c99ecd356049dd90c02ebe6ba397e7e0e35a6034e2c50e8d28575fa263",
-      "project": "images/models/npc3d/treant_lv3.glb"
+      "source": "exports/boss2_lv3.glb",
+      "sha256": "ca0b1b957900d424ccf8ea8002abe3c778a224453b2da455ba704918c62d70ea",
+      "project": "images/models/npc3d/boss2_lv3.glb"
     },
     {
       "source": "exports/boss_treant_lv3.png",
