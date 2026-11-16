@@ -9,9 +9,9 @@
 
 | 檔案 | SHA-256 |
 | --- | --- |
-| boss6.blend | `b193c2e94be436ed372ea7672b732beb2a040cb90a789d68a435728abfb71468` |
-| boss6_approved.glb | `192d23f35e1f329f6eb0717b879647dc25a2167396e4862eff9111b96d1649a6` |
-| boss6.glb | `5036268ce33b0f053826196f952f838e0fcb384adfcfe1c8d85c5391ab14d002` |
+| boss6.blend | `7a6ac8f16020a2773647375e9060a1162142597a4b58a6a8fa0e4eb91d3c4aaf` |
+| boss6_approved.glb | `dbe28cf44d17b1ee4e2f3e15d39bad7a23c82b6e96dfb733198496dcf2af7f4a` |
+| boss6.glb | `c6c2d84bac55bddf152b5a7b62dc07bdea1377df85cf8260a016b2f963771f19` |
 | boss6_abyss.png | `5038ccd8b871677e45a8d38e81e0bf82164b41351d18e2a758a9ad61504449e7` |
 
 原始五份使用者提供的 GLB 已收在素材庫 `claude-authored/boss6-dark-knight-20261116/`。以下五個原始檔逐一與使用者提交的檔案核對雜湊。角色、武器及動畫的後續調整以此資料夾的 Blender 檔為準。
@@ -23,3 +23,7 @@
 | BOSS6_Attack2_source_user.glb | `2b8be65d7a06e7a227afd09f4c28b247ea5b3b7ead3ae0e3b140a8422e10a5bf` |
 | BOSS6_Attack3_source_user.glb | `b20abe169fa1b8ce82cb912385a9e046cd5e63a1abe69c97094f9c569bcae5bc` |
 | BOSS6_Die_source_user.glb | `51b37a86b5197cda69d1f057e8cbb5b020e189bd85a706fcc853e17641076b08` |
+
+## 攻擊 3 刀面角度
+
+2026-11-16，將攻擊 3 約 1.14 秒處的刀面轉至與地面平行。平順調整前後的右前臂、手腕及獨立劍骨關鍵影格，三款共用同一套修正。

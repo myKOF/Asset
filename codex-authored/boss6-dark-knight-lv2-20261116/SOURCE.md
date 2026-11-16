@@ -11,6 +11,10 @@
 | --- | --- |
 | BOSS6_2_source_user.glb | `413bb8f1c67007fd705752c0b772bce989257c360db9187c05ec5f592187d0a2` |
 | boss6_abyss_lv2.png | `4a7a9b62f74f22c7148dc215bc32e8ef2fea4252f639dfaf837776e41aa57ccf` |
-| boss6_lv2_approved.glb | `3badb5e2f014ddd8be6e1d432747a67675e0ee7dbd4cc103400ecdfccf0aa6df` |
-| boss6_lv2.blend | `1b4badd9da3e6acfe199710eb0e3783d738257993f767271e3544340d237626f` |
-| boss6_lv2.glb | `9dfbb0b814ea292c2e34254a5d6b7ce77d743161e60a4df4be592d8f59800a0b` |
+| boss6_lv2_approved.glb | `4891a4e94e0a6e3aa9dfabfa4c7642292982f62ae64081223c6e3d026d726711` |
+| boss6_lv2.blend | `390d2f360472d4c8a0a2eafa144b0f7500dbf5b6882ebc836bf04bb8a03cf836` |
+| boss6_lv2.glb | `c467d30c26ac56839c4f05bb82695e80f0fd320d2583f79b3cb79d8c9a79a060` |
+
+## 攻擊 3 刀面角度
+
+2026-11-16，將攻擊 3 約 1.14 秒處的刀面轉至與地面平行。平順調整前後的右前臂、手腕及獨立劍骨關鍵影格，三款共用同一套修正。
