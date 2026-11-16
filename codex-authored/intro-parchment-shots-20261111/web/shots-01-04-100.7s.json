@@ -1,0 +1,11 @@
+{
+  "file": "shots-01-04-100.7s.mp4",
+  "seconds": 100.7,
+  "frames": 3021,
+  "bytes": 144040252,
+  "sha256": "0d691e31042db0a4d70fcfd9c054ab12b6594200a7b8d7961b2afc28bf992566",
+  "parts": [
+    "shots-01-04-100.7s.mp4.part01",
+    "shots-01-04-100.7s.mp4.part02"
+  ]
+}
