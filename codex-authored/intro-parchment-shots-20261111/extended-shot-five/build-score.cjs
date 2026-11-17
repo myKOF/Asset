@@ -3,7 +3,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { execFileSync } = require('node:child_process');
-const {duration, replayCutAt}=require('./finale-timing.js');
+const {duration, replayCutAt, fadeAt, fadeEnd}=require('./finale-timing.js');
 const rate=48000, frames=duration*rate;
 const wave=Buffer.alloc(44+frames*4);
 wave.write('RIFF',0);wave.writeUInt32LE(wave.length-8,4);wave.write('WAVEfmt ',8);
@@ -30,7 +30,7 @@ for(let i=0;i<frames;i++){
   const pulse2=Math.exp(-((t-4.70)**2)/.79);
   const pulse3=Math.exp(-((t-7.0)**2)/.64);
   const gust=.35+.54*pulse1+.55*pulse2+.48*pulse3;
-  const grade=smooth(0,.055,t)*(1-smooth(duration-1.09,duration,t));
+  const grade=smooth(0,.055,t)*(1-smooth(fadeAt,fadeEnd,t));
   const air=(deep*.89+(low-deep)*.27+(grit-low)*.14)*gust;
   const sand=(a-grit)*.033*gust*(.38+.62*Math.sin(t*27.8+low*9)**4);
   const flaps=(grit-low)*(.06+.12*gust)*Math.sin(t*8.1+deep*4)**6;

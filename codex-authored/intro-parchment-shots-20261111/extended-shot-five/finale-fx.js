@@ -154,15 +154,15 @@ function makeFinaleFx(images, sword, { w, h, canvas, rnd, smooth, mix }) {
     }))
   }));
 
-  function swordGlow(ctx, t, near, sceneFade) {
-    const { glowAt, glowPeakAt, duration } = FINALE_TIMING;
+  function swordGlow(ctx, t, near) {
+    const { glowAt, glowPeakAt, glowSpreadEnd } = FINALE_TIMING;
     const ignite = smooth(glowAt, glowAt + .70, t);
     if (ignite <= 0) return;
     const elapsed = t - glowAt;
     const rotation = elapsed * tau / 60;
-    const spread = smooth(glowAt, duration, t);
+    const spread = smooth(glowAt, glowSpreadEnd, t);
     const charge = smooth(glowAt + .1, glowPeakAt, t);
-    const power = ignite * mix(.24, 1, charge) * (1 - .14 * smooth(glowPeakAt, duration, t));
+    const power = ignite * mix(.24, 1, charge) * (1 - .14 * smooth(glowPeakAt, glowSpreadEnd, t));
 
     ctx.save();
     ctx.translate(near, 0);
@@ -194,8 +194,7 @@ function makeFinaleFx(images, sword, { w, h, canvas, rnd, smooth, mix }) {
     ctx.globalAlpha = power * .32;
     ctx.drawImage(swordCore.canvas, swordLightBounds.x, swordLightBounds.y);
     ctx.globalAlpha = 1;
-    bloom(ctx, 1090, 797, mix(70, 210, spread), mix(17, 45, spread), '247,237,217',
-      (1 - sceneFade) * power ** 2 * .29);
+    bloom(ctx, 1090, 797, mix(70, 210, spread), mix(17, 45, spread), '247,237,217', power ** 2 * .29);
     ctx.restore();
   }
 

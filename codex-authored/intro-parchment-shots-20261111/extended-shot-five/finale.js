@@ -1,7 +1,7 @@
 'use strict';
 
 (() => {
-  const {duration: DURATION, fadeAt, fadeEnd}=FINALE_TIMING;
+  const {duration: DURATION, orbitEnd, fadeAt, fadeEnd}=FINALE_TIMING;
   const w=1672, h=941;
   const ctx=document.querySelector('canvas').getContext('2d',{alpha:false});
   const displayW=ctx.canvas.width, displayH=ctx.canvas.height;
@@ -31,7 +31,7 @@
     return c.canvas;
   }
   function phaseFrame(t) {
-    const u=clamp(t/(DURATION-.30));
+    const u=clamp(t/orbitEnd);
     const turn=u*(1.57-.57*u);
     return Object.freeze({sky:-34*turn,gate:-72*turn,middle:0,near:70*turn});
   }
@@ -57,14 +57,6 @@
     matte.globalCompositeOperation='destination-out';
     for (const gap of gaps) matte.fill(gap);
     const figure=masked(images.original,m=>m.drawImage(matte.canvas,0,0));
-    const litGauntlet = masked(figure, mask => {
-      const falloff = mask.createRadialGradient(891,480,9,891,480,80);
-      falloff.addColorStop(0, '#fff');
-      falloff.addColorStop(.48, 'rgba(255,255,255,.44)');
-      falloff.addColorStop(1, 'rgba(255,255,255,0)');
-      mask.fillStyle = falloff;
-      mask.fillRect(811,400,160,160);
-    });
     const cloth=[
       {image:masked(images.original,m=>{m.filter='blur(.50px)';m.fill(shape.shoulder,'evenodd');}),
         low:489, high:717, anchor:635, y:309, force:38, flutter:25, phase:1.32},
@@ -138,27 +130,17 @@
       vignette.addColorStop(1,'rgba(9,5,7,.39)');
       ctx.fillStyle=vignette;ctx.fillRect(0,0,displayW,displayH);
       ctx.restore();
+      ctx.save();
+      ctx.beginPath();ctx.rect(0,90,displayW,900);ctx.clip();
+      alignToArtwork(ctx);
+      fx.swordGlow(ctx,t,p.near);
+      ctx.restore();
+
       const fade=smooth(fadeAt,fadeEnd,t);
       if(fade>0) {
         ctx.fillStyle='rgba(0,0,0,'+fade+')';
         ctx.fillRect(0,0,displayW,displayH);
       }
-
-      ctx.save();
-      ctx.beginPath();ctx.rect(0,90,displayW,900);ctx.clip();
-      alignToArtwork(ctx);
-      if (fade > 0) {
-        ctx.save();
-        ctx.translate(p.near,0);
-        ctx.globalAlpha=fade*.30;
-        ctx.drawImage(litGauntlet,0,0,w,h);
-        ctx.clip(shape.swordLight);
-        ctx.globalAlpha=fade*.25;
-        ctx.drawImage(figure,0,0,w,h);
-        ctx.restore();
-      }
-      fx.swordGlow(ctx,t,p.near,fade);
-      ctx.restore();
     }
     state.render=render;
     state.army={ground:fx.groundCount,air:fx.airCount,wingFrames:fx.wingFrames};

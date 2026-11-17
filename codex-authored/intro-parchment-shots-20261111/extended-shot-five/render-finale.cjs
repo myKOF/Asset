@@ -13,7 +13,7 @@ const root = __dirname;
 const archive = path.dirname(root);
 const review = path.resolve(process.env.PARCHMENT_REVIEW_DIR || path.join(os.tmpdir(), 'idle-rpg-shot-five'));
 fs.mkdirSync(review, { recursive: true });
-const { duration } = require('./finale-timing.js');
+const { duration, fadeAt, fadeEnd } = require('./finale-timing.js');
 const fps = 30;
 const ffmpeg = process.env.PARCHMENT_FFMPEG || 'ffmpeg';
 const mime = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
@@ -86,8 +86,6 @@ async function main() {
     if (layers.army.ground + layers.army.air < 30 || layers.army.air < 6 || layers.army.wingFrames < 4 || !(layers.motion.gate < layers.motion.sky && layers.motion.sky < 0 && layers.motion.middle === 0 && layers.motion.near > 0)) throw Error(JSON.stringify(layers));
     console.log('Finale layers and counts: ' + JSON.stringify(layers));
     const ending = await evaluate(`(() => {
-      const t = openingShot.duration - 1 / ${fps};
-      const { near } = openingShot.parallaxAt(t);
       const ctx = document.querySelector('canvas').getContext('2d');
       const peakAt = (x, y, radius = 5) => {
         const rgb = ctx.getImageData(x - radius, y - radius, radius * 2, radius * 2).data;
@@ -95,23 +93,30 @@ async function main() {
         for (let i = 0; i < rgb.length; i += 4) peak = Math.max(peak, Math.min(rgb[i], rgb[i + 1], rgb[i + 2]));
         return peak;
       };
-      const swordAt = (x, y) => peakAt(Math.round((x + near) * 1.015 * 1920 / 1672 - 1.25),
-        Math.round(y * 1.015 * 1080 / 941 - 28.19));
-      openingShot.render(t);
-      return { background: peakAt(480, 420), grip: swordAt(850, 445), blade: swordAt(1040, 662),
-        rays: peakAt(1412, 570, 92) };
+      return [${fadeAt - .1}, ${(fadeAt + fadeEnd) / 2}, ${duration - 1 / fps}].map(t => {
+        const { near } = openingShot.parallaxAt(t);
+        const swordAt = (x, y) => peakAt(Math.round((x + near) * 1.015 * 1920 / 1672 - 1.25),
+          Math.round(y * 1.015 * 1080 / 941 - 28.19));
+        openingShot.render(t);
+        return { background: peakAt(480, 420), grip: swordAt(850, 445), blade: swordAt(1040, 662),
+          rays: peakAt(1412, 570, 92) };
+      });
     })()`);
-    if (ending.background !== 0 || ending.grip < 135 || ending.blade < 135 || ending.rays < 25) {
-      throw Error('Finale should fade the scene while the sword and its outer rays stay lit: ' + JSON.stringify(ending));
+    const [beforeFade, duringFade, finalFrame] = ending;
+    if (beforeFade.background < 30 || beforeFade.grip < 135 || beforeFade.blade < 125 ||
+        Object.keys(beforeFade).some(region =>
+          duringFade[region] < .2 * beforeFade[region] ||
+          duringFade[region] > .8 * beforeFade[region] || finalFrame[region] !== 0)) {
+      throw Error('Finale should hold and then fade the scene and sword together: ' + JSON.stringify(ending));
     }
-    console.log('Final frame light and fade: ' + JSON.stringify(ending));
+    console.log('Scene and sword light at the ending: ' + JSON.stringify(ending));
     async function frame(time) {
       const src = await evaluate('openingShot.render(' + time + '); document.querySelector("canvas").toDataURL("image/jpeg",0.98).split(",")[1]');
       return Buffer.from(src, 'base64');
     }
     if (process.argv.includes('--stills')) {
       fs.mkdirSync(path.join(review, 'stills'), { recursive: true });
-      for (const t of [0, 2.85, 3.55, 5.25, 7.70, 9.50, 10.45, 11.3, 12.4, 12.9666667]) {
+      for (const t of [0, 3.55, 10.45, 12.97, fadeAt - .1, (fadeAt + fadeEnd) / 2, duration - 1 / fps]) {
         fs.writeFileSync(path.join(review, 'stills', 'frame-' + t.toFixed(2) + '.jpg'), await frame(t));
       }
     } else {
