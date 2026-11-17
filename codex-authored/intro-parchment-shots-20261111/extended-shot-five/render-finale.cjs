@@ -5,7 +5,7 @@ const { mkdtemp, rm } = require('node:fs/promises');
 const os = require('node:os');
 const path = require('node:path');
 const http = require('node:http');
-const { spawn } = require('node:child_process');
+const { spawn, execFileSync } = require('node:child_process');
 const { once } = require('node:events');
 const { setTimeout: delay } = require('node:timers/promises');
 
@@ -13,7 +13,7 @@ const root = __dirname;
 const archive = path.dirname(root);
 const review = path.resolve(process.env.PARCHMENT_REVIEW_DIR || path.join(os.tmpdir(), 'idle-rpg-shot-five'));
 fs.mkdirSync(review, { recursive: true });
-const duration = 9;
+const { duration } = require('./finale-timing.js');
 const fps = 30;
 const ffmpeg = process.env.PARCHMENT_FFMPEG || 'ffmpeg';
 const mime = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
@@ -93,7 +93,7 @@ async function main() {
     }
     if (process.argv.includes('--stills')) {
       fs.mkdirSync(path.join(review, 'stills'), { recursive: true });
-      for (const t of [0,.0333333333,.27,.51,.76,1.08,2.05,4.7,6.86,7.6,8.6,8.98]) {
+      for (const t of [0, 2.85, 3.55, 5.25, 7.70, 9.50, 10.45, 11.3, 12.4, 12.9666667]) {
         fs.writeFileSync(path.join(review, 'stills', 'frame-' + t.toFixed(2) + '.jpg'), await frame(t));
       }
     } else {
@@ -101,7 +101,7 @@ async function main() {
       encoder = spawn(ffmpeg, ['-hide_banner','-loglevel','error','-y',
         '-f','image2pipe','-framerate',String(fps),'-vcodec','mjpeg','-i','pipe:0',
         '-i',path.join(root,'assets/finale-audio.wav'),'-map','0:v:0','-map','1:a:0','-c:a','aac','-b:a','192k','-vf','scale=in_range=full:out_range=limited,format=yuv420p',
-        '-c:v','libx264','-preset','medium','-crf','17','-g','60','-color_range','tv',
+        '-c:v','libx264','-preset','medium','-crf','17','-maxrate','9000k','-bufsize','10000k','-g','60','-color_range','tv',
         '-color_primaries','bt709','-color_trc','bt709','-colorspace','bt709',
         '-movflags','+faststart','-t',String(duration),out
       ], { windowsHide:true, stdio:['pipe','inherit','inherit'] });
@@ -115,6 +115,7 @@ async function main() {
       encoder.stdin.end();
       const [code] = await done;
       if (code !== 0) throw Error('FFmpeg exited ' + code);
+      execFileSync(process.execPath, [path.join(root, 'align-mp4-presentation.cjs'), out, String(duration)], { windowsHide: true });
       console.log(out);
     }
     if (errors.length) throw Error(JSON.stringify(errors));

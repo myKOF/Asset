@@ -1,6 +1,6 @@
 'use strict';
 
-function makeFinaleFx(images, { w, h, canvas, rnd, smooth, mix }) {
+function makeFinaleFx(images, blade, { w, h, canvas, rnd, smooth, mix }) {
   const rand = rnd(51037);
   const tau = Math.PI * 2;
   function wind(t) {
@@ -106,6 +106,53 @@ function makeFinaleFx(images, { w, h, canvas, rnd, smooth, mix }) {
     ctx.restore();
   }
 
+  const swordBounds = { x: 850, y: 440, width: 355, height: 415 };
+  // These light layers share the blade matte and move with the near character.
+  const swordBands = [
+    { blur: 18, width: 23, color: '#dceaff', opacity: .85, power: 1.36 },
+    { blur: 7, width: 12, color: '#eaf4ff', opacity: .89, power: 1.11 },
+    { blur: 2.7, width: 6.2, color: '#fff9ef', opacity: .96, power: .92 },
+    { blur: .35, width: 2.35, color: '#fffefa', opacity: .95, power: .71 }
+  ].map(({ blur, width, color, opacity, power }) => {
+    const band = canvas(swordBounds.width, swordBounds.height);
+    band.translate(-swordBounds.x, -swordBounds.y);
+    band.filter = 'blur(' + blur + 'px)';
+    band.strokeStyle = color;
+    band.lineJoin = 'round';
+    band.lineWidth = width;
+    band.stroke(blade);
+    return { image: band.canvas, opacity, power };
+  });
+
+  function swordGlow(ctx, t, near) {
+    const { glowAt, glowPeakAt, glowEnd } = FINALE_TIMING;
+    const ignite = smooth(glowAt, glowAt + .58, t);
+    const swell = .19 + .81 * smooth(glowAt + .3, glowPeakAt, t);
+    const release = 1 - smooth(glowPeakAt, glowEnd, t);
+    const power = ignite * swell * release;
+    if (power <= 0) return;
+
+    ctx.save();
+    ctx.translate(near, 0);
+    ctx.globalCompositeOperation = 'screen';
+    for (const band of swordBands) {
+      ctx.globalAlpha = band.opacity * power ** band.power;
+      ctx.drawImage(band.image, swordBounds.x, swordBounds.y);
+    }
+    ctx.globalAlpha = 1;
+
+    const crest = smooth(glowAt + .38, glowPeakAt, t);
+    const x = mix(950, 1081, crest);
+    const y = mix(551, 715, crest);
+    bloom(ctx, x, y, mix(10, 52, power), mix(13, 57, power), '240,246,255',
+      power ** 1.45 * .67);
+    bloom(ctx, x, y, 13 + power * 15, 12 + power * 16, '255,255,251', power ** 1.1 * .58);
+
+    // Keep the brightest halo on the blade and cast a softer reflection below it.
+    bloom(ctx, 1096, 795, 115, 25, '235,229,210', power ** 2 * .24);
+    ctx.restore();
+  }
+
   function sunset(ctx,t,shift) {
     const strength=.81+.19*smooth(0,2.5,t);
     const x=1294+shift;
@@ -194,7 +241,8 @@ function makeFinaleFx(images, { w, h, canvas, rnd, smooth, mix }) {
     for (const [index,entry] of streaks.entries()) {
       if ((index>=3)!==front) continue;
       const [y,start,width,height,speed,alpha,flip]=entry;
-      const x=((start-clock*speed+4800)%2460)-430;
+      const wave=(start-clock*speed+4800)%2460;
+      const x=(wave+2460)%2460-430;
       bank(ctx,index%2?smoke:warmSmoke,x,y+8*Math.sin(t*.97+index),width,height,
         alpha*(.88+swell*.95),flip,-.035+index*.009);
     }
@@ -236,5 +284,5 @@ function makeFinaleFx(images, { w, h, canvas, rnd, smooth, mix }) {
     ctx.restore();
   }
 
-  return { wind, sunset, army, distantDust, gale, groundCount:soldiers.length, airCount:flight.length, wingFrames };
+  return { wind, sunset, army, distantDust, gale, swordGlow, groundCount:soldiers.length, airCount:flight.length, wingFrames };
 }

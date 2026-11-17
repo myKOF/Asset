@@ -3,7 +3,8 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { execFileSync } = require('node:child_process');
-const rate=48000, duration=9, frames=duration*rate;
+const {duration, replayCutAt}=require('./finale-timing.js');
+const rate=48000, frames=duration*rate;
 const wave=Buffer.alloc(44+frames*4);
 wave.write('RIFF',0);wave.writeUInt32LE(wave.length-8,4);wave.write('WAVEfmt ',8);
 wave.writeUInt32LE(16,16);wave.writeUInt16LE(1,20);wave.writeUInt16LE(2,22);
@@ -29,7 +30,7 @@ for(let i=0;i<frames;i++){
   const pulse2=Math.exp(-((t-4.70)**2)/.79);
   const pulse3=Math.exp(-((t-7.0)**2)/.64);
   const gust=.35+.54*pulse1+.55*pulse2+.48*pulse3;
-  const grade=smooth(0,.055,t)*(1-smooth(7.91,9,t));
+  const grade=smooth(0,.055,t)*(1-smooth(duration-1.09,duration,t));
   const air=(deep*.89+(low-deep)*.27+(grit-low)*.14)*gust;
   const sand=(a-grit)*.033*gust*(.38+.62*Math.sin(t*27.8+low*9)**4);
   const flaps=(grit-low)*(.06+.12*gust)*Math.sin(t*8.1+deep*4)**6;
@@ -43,6 +44,7 @@ const out=path.join(__dirname,'assets');
 const fx=path.join(out,'finale-effects.wav');
 fs.writeFileSync(fx,wave);
 execFileSync(process.env.PARCHMENT_FFMPEG||'ffmpeg',['-hide_banner','-loglevel','error','-y',
-  '-i',fx,'-ss','100.7','-i',path.resolve(__dirname,'../../../third-party/user-supplied/desert-ascendant/desert-ascendant.mp3'),
-  '-filter_complex','[1:a]atrim=duration=9,asetpts=PTS-STARTPTS,aresample=48000,volume=.53[m];[0:a][m]amix=inputs=2:duration=first:normalize=0,alimiter=limit=.93:level=false,afade=t=out:st=7.91:d=1.09[out]',
+  '-i',fx,'-ss',String(replayCutAt),'-i',path.resolve(__dirname,'../../../third-party/user-supplied/desert-ascendant/desert-ascendant.mp3'),
+  '-filter_complex','[1:a]aresample=48000,atrim=duration='+duration+',asetpts=PTS-STARTPTS,volume=.53[m];' +
+  '[0:a][m]amix=inputs=2:duration=first:dropout_transition=0,volume=2[out]',
   '-map','[out]','-c:a','pcm_s16le',path.join(out,'finale-audio.wav')],{windowsHide:true,stdio:'inherit'});

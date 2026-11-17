@@ -35,9 +35,10 @@ const firstEffects = path.join(scratch, 'first.wav');
 const concatFile = path.join(scratch, 'video.ffconcat');
 try {
   if (fiveShots) {
+    const { replayCutAt, duration } = require('../extended-shot-five/finale-timing.js');
     const clips = [
-      ['web/shots-01-04-replay.mp4', 100.7],
-      ['web/shot-05-desert-finale-orbit.mp4', 9]
+      ['web/shots-01-04-replay.mp4', replayCutAt],
+      ['web/shot-05-desert-finale-orbit.mp4', duration]
     ];
     const segments = clips.map(([file, duration]) => {
       const url = ('file:' + path.join(archive, file).replaceAll('\\', '/')).replaceAll("'", "'\\''");

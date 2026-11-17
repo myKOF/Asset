@@ -1,7 +1,8 @@
 'use strict';
 
 (() => {
-  const DURATION=9, w=1672, h=941;
+  const {duration: DURATION, fadeAt, fadeEnd}=FINALE_TIMING;
+  const w=1672, h=941;
   const ctx=document.querySelector('canvas').getContext('2d',{alpha:false});
   const displayW=ctx.canvas.width, displayH=ctx.canvas.height;
   const clamp=t=>Math.min(1,Math.max(0,t));
@@ -30,7 +31,7 @@
     return c.canvas;
   }
   function phaseFrame(t) {
-    const u=clamp(t/8.70);
+    const u=clamp(t/(DURATION-.30));
     const turn=u*(1.57-.57*u);
     return Object.freeze({sky:-34*turn,gate:-72*turn,middle:0,near:70*turn});
   }
@@ -45,7 +46,7 @@
     const gateShape=new Path2D('M777 375 L851 309 L928 286 L961 227 L1015 196 L1045 145 L1070 88 L1124 62 L1170 30 L1310 33 L1469 41 L1514 109 L1546 175 L1607 214 L1672 156 L1672 490 L1477 479 L1264 472 L1007 485 L795 477 Z');
     const shape=Object.fromEntries(Object.entries(FINALE_CUTOUTS).filter(([name])=>name!=='gaps').map(([name,value])=>[name,new Path2D(value)]));
     const gaps=FINALE_CUTOUTS.gaps.map(path=>new Path2D(path));
-    const fx=makeFinaleFx(images,{w,h,canvas,rnd,smooth,mix});
+    const fx=makeFinaleFx(images,shape.bladeGlow,{w,h,canvas,rnd,smooth,mix});
 
     const drawBackdrop=makeFinaleBackdrop(images.plate,gateShape,{w,h,canvas});
 
@@ -114,6 +115,7 @@
       shadow(p.near);
       ctx.drawImage(figure,p.near,0,w,h);
       moveCloth(ctx,t,p.near);
+      fx.swordGlow(ctx,t,p.near);
       fx.gale(ctx,t,true);
       ctx.restore();
 
@@ -125,7 +127,7 @@
       vignette.addColorStop(1,'rgba(9,5,7,.39)');
       ctx.fillStyle=vignette;ctx.fillRect(0,0,displayW,displayH);
       ctx.restore();
-      const fade=smooth(7.90,8.98,t);
+      const fade=smooth(fadeAt,fadeEnd,t);
       if(fade>0) {
         ctx.fillStyle='rgba(0,0,0,'+fade+')';
         ctx.fillRect(0,0,displayW,displayH);
