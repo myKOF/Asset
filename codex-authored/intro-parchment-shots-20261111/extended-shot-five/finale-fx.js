@@ -159,6 +159,7 @@ function makeFinaleFx(images, sword, { w, h, canvas, rnd, smooth, mix }) {
     const ignite = smooth(glowAt, glowAt + .70, t);
     if (ignite <= 0) return;
     const elapsed = t - glowAt;
+    const rotation = elapsed * tau / 60;
     const spread = smooth(glowAt, duration, t);
     const charge = smooth(glowAt + .1, glowPeakAt, t);
     const power = ignite * mix(.24, 1, charge) * (1 - .14 * smooth(glowPeakAt, duration, t));
@@ -184,7 +185,7 @@ function makeFinaleFx(images, sword, { w, h, canvas, rnd, smooth, mix }) {
         const length = reach * ray.length * (1 + flicker * .035);
         ctx.save();
         ctx.translate(x, y);
-        ctx.rotate(ray.angle + flicker * .027);
+        ctx.rotate(ray.angle + rotation + flicker * .027);
         ctx.globalAlpha = power * energy * ray.strength * (.84 + .16 * flicker);
         ctx.drawImage(beam.canvas, 0, -thickness / 2, length, thickness);
         ctx.restore();

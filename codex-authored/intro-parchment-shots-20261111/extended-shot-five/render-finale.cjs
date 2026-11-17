@@ -86,7 +86,7 @@ async function main() {
     if (layers.army.ground + layers.army.air < 30 || layers.army.air < 6 || layers.army.wingFrames < 4 || !(layers.motion.gate < layers.motion.sky && layers.motion.sky < 0 && layers.motion.middle === 0 && layers.motion.near > 0)) throw Error(JSON.stringify(layers));
     console.log('Finale layers and counts: ' + JSON.stringify(layers));
     const ending = await evaluate(`(() => {
-      const t = openingShot.duration;
+      const t = openingShot.duration - 1 / ${fps};
       const { near } = openingShot.parallaxAt(t);
       const ctx = document.querySelector('canvas').getContext('2d');
       const peakAt = (x, y, radius = 5) => {
@@ -99,7 +99,7 @@ async function main() {
         Math.round(y * 1.015 * 1080 / 941 - 28.19));
       openingShot.render(t);
       return { background: peakAt(480, 420), grip: swordAt(850, 445), blade: swordAt(1040, 662),
-        rays: peakAt(1390, 586, 24) };
+        rays: peakAt(1412, 570, 92) };
     })()`);
     if (ending.background !== 0 || ending.grip < 135 || ending.blade < 135 || ending.rays < 25) {
       throw Error('Finale should fade the scene while the sword and its outer rays stay lit: ' + JSON.stringify(ending));
