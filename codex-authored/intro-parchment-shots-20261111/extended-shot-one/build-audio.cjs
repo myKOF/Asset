@@ -3,6 +3,8 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const replayEffects = process.argv[2] === '--replay-effects';
+if (replayEffects && !process.argv[3]) throw Error('使用方式：node build-audio.cjs --replay-effects <輸出 WAV>');
 const rate = 48000, duration = 16, frames = rate * duration;
 const wave = Buffer.alloc(44 + frames * 4);
 wave.write('RIFF',0); wave.writeUInt32LE(wave.length-8,4);
@@ -56,14 +58,21 @@ for (let i=0;i<frames;i++) {
   const brittle = (grit-band)*(.43*castle+.19*passing) +
     (r-grit)*.27*smooth(11.72,11.738,t)*(1-smooth(11.77,11.98,t));
   const flutter = (band-lows)*.28*wingBeat + lows*.22*wingBeat;
-  const signal = .24*bell(t-1.67)+.064*bell(t-1.94)+.048*bell(t-2.21);
+  // 重播保留敲擊提示，鐘鳴在 3 秒前收乾淨。
+  const bellGain = replayEffects ? 1-smooth(2.34,2.96,t) : 1;
+  const signal = bellGain*(.24*bell(t-1.67)+.064*bell(t-1.94)+.048*bell(t-2.21));
   const edge = smooth(0,.28,t)*(1-smooth(15.91,16,t));
   const middle = (air+impact+brittle+flutter+signal)*edge;
-  const perspective = (.16*bell(t-1.78)-.13*bell(t-1.83)+(.30+shock*.58)*(airL-airR)*.19+
+  const perspective = (bellGain*(.16*bell(t-1.78)-.13*bell(t-1.83))+(.30+shock*.58)*(airL-airR)*.19+
     (brittle+flutter)*(.22-.47*smooth(10.85,12.25,t)))*edge;
   wave.writeInt16LE(Math.round(32700*Math.tanh(middle+perspective)),44+i*4);
   wave.writeInt16LE(Math.round(32700*Math.tanh(middle-perspective)),46+i*4);
 }
+if (replayEffects) {
+  fs.writeFileSync(process.argv[3], wave, { flag: 'wx' });
+  return;
+}
+
 const assets = path.join(__dirname, 'assets');
 const effects = path.join(assets,'shot-one-effects.wav');
 fs.writeFileSync(effects,wave);
