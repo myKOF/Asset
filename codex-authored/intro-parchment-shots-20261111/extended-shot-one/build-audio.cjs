@@ -4,6 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 const replayEffects = process.argv[2] === '--replay-effects';
+const ambientGain = replayEffects ? 0.5 : 1;
 if (replayEffects && !process.argv[3]) throw Error('使用方式：node build-audio.cjs --replay-effects <輸出 WAV>');
 const rate = 48000, duration = 16, frames = rate * duration;
 const wave = Buffer.alloc(44 + frames * 4);
@@ -51,8 +52,9 @@ for (let i=0;i<frames;i++) {
   const passing = smooth(10.92,11.42,t)*(1-smooth(11.47,11.71,t));
   const shock = smooth(12.75,13.57,t)*(1-.51*smooth(14.93,16,t));
   const castle = smooth(11.72,11.77,t)*(1-smooth(12.03,12.88,t));
-  const air = lows*(.37+.29*close+.19*incoming+.47*shock) +
-    (band-lows)*(.14+.17*close+.27*passing+.31*shock) + (r-grit)*(.015+.035*castle);
+  const air = lows*(ambientGain*(.37+.29*close)+.19*incoming+.47*shock) +
+    (band-lows)*(ambientGain*(.14+.17*close)+.27*passing+.31*shock) +
+    (r-grit)*(.015*ambientGain+.035*castle);
   const impact = rumble(t,11.72,41,.57)+rumble(t,11.89,29,.30)+rumble(t,12.44,49,.24)+
     rumble(t,12.79,53,.15)+rumble(t,13.60,27,.16);
   const brittle = (grit-band)*(.43*castle+.19*passing) +
@@ -63,7 +65,7 @@ for (let i=0;i<frames;i++) {
   const signal = bellGain*(.24*bell(t-1.67)+.064*bell(t-1.94)+.048*bell(t-2.21));
   const edge = smooth(0,.28,t)*(1-smooth(15.91,16,t));
   const middle = (air+impact+brittle+flutter+signal)*edge;
-  const perspective = (bellGain*(.16*bell(t-1.78)-.13*bell(t-1.83))+(.30+shock*.58)*(airL-airR)*.19+
+  const perspective = (bellGain*(.16*bell(t-1.78)-.13*bell(t-1.83))+(ambientGain*.30+shock*.58)*(airL-airR)*.19+
     (brittle+flutter)*(.22-.47*smooth(10.85,12.25,t)))*edge;
   wave.writeInt16LE(Math.round(32700*Math.tanh(middle+perspective)),44+i*4);
   wave.writeInt16LE(Math.round(32700*Math.tanh(middle-perspective)),46+i*4);
