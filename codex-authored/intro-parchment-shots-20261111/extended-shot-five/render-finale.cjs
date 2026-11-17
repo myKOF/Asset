@@ -89,8 +89,8 @@ async function main() {
       const t = openingShot.duration;
       const { near } = openingShot.parallaxAt(t);
       const ctx = document.querySelector('canvas').getContext('2d');
-      const peakAt = (x, y) => {
-        const rgb = ctx.getImageData(x - 5, y - 5, 10, 10).data;
+      const peakAt = (x, y, radius = 5) => {
+        const rgb = ctx.getImageData(x - radius, y - radius, radius * 2, radius * 2).data;
         let peak = 0;
         for (let i = 0; i < rgb.length; i += 4) peak = Math.max(peak, Math.min(rgb[i], rgb[i + 1], rgb[i + 2]));
         return peak;
@@ -98,10 +98,11 @@ async function main() {
       const swordAt = (x, y) => peakAt(Math.round((x + near) * 1.015 * 1920 / 1672 - 1.25),
         Math.round(y * 1.015 * 1080 / 941 - 28.19));
       openingShot.render(t);
-      return { background: peakAt(480, 420), grip: swordAt(850, 445), blade: swordAt(1040, 662) };
+      return { background: peakAt(480, 420), grip: swordAt(850, 445), blade: swordAt(1040, 662),
+        rays: peakAt(1390, 586, 24) };
     })()`);
-    if (ending.background !== 0 || ending.grip < 135 || ending.blade < 135) {
-      throw Error('Finale should fade the scene with its sword still lit: ' + JSON.stringify(ending));
+    if (ending.background !== 0 || ending.grip < 135 || ending.blade < 135 || ending.rays < 25) {
+      throw Error('Finale should fade the scene while the sword and its outer rays stay lit: ' + JSON.stringify(ending));
     }
     console.log('Final frame light and fade: ' + JSON.stringify(ending));
     async function frame(time) {
