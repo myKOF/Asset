@@ -46,7 +46,7 @@
     const gateShape=new Path2D('M777 375 L851 309 L928 286 L961 227 L1015 196 L1045 145 L1070 88 L1124 62 L1170 30 L1310 33 L1469 41 L1514 109 L1546 175 L1607 214 L1672 156 L1672 490 L1477 479 L1264 472 L1007 485 L795 477 Z');
     const shape=Object.fromEntries(Object.entries(FINALE_CUTOUTS).filter(([name])=>name!=='gaps').map(([name,value])=>[name,new Path2D(value)]));
     const gaps=FINALE_CUTOUTS.gaps.map(path=>new Path2D(path));
-    const fx=makeFinaleFx(images,shape.bladeGlow,{w,h,canvas,rnd,smooth,mix});
+    const fx=makeFinaleFx(images,shape.swordLight,{w,h,canvas,rnd,smooth,mix});
 
     const drawBackdrop=makeFinaleBackdrop(images.plate,gateShape,{w,h,canvas});
 
@@ -57,6 +57,14 @@
     matte.globalCompositeOperation='destination-out';
     for (const gap of gaps) matte.fill(gap);
     const figure=masked(images.original,m=>m.drawImage(matte.canvas,0,0));
+    const litGauntlet = masked(figure, mask => {
+      const falloff = mask.createRadialGradient(891,480,9,891,480,80);
+      falloff.addColorStop(0, '#fff');
+      falloff.addColorStop(.48, 'rgba(255,255,255,.44)');
+      falloff.addColorStop(1, 'rgba(255,255,255,0)');
+      mask.fillStyle = falloff;
+      mask.fillRect(811,400,160,160);
+    });
     const cloth=[
       {image:masked(images.original,m=>{m.filter='blur(.50px)';m.fill(shape.shoulder,'evenodd');}),
         low:489, high:717, anchor:635, y:309, force:38, flutter:25, phase:1.32},
@@ -97,6 +105,12 @@
       g.addColorStop(1,'rgba(48,28,19,0)');
       ctx.fillStyle=g;ctx.fillRect(-1,-1,2,2);ctx.restore();
     }
+    function alignToArtwork(ctx) {
+      const zoom=1.015;
+      ctx.translate(displayW*(.51*(1-zoom)+.007),displayH*(.54*(1-zoom)-.018));
+      ctx.scale(zoom*displayW/w,zoom*displayH/h);
+    }
+
     function render(t) {
       t=Math.max(0,Math.min(t,DURATION));
       const p=phaseFrame(t);
@@ -104,9 +118,7 @@
       ctx.save();
       ctx.beginPath();ctx.rect(0,90,displayW,900);ctx.clip();
       ctx.imageSmoothingQuality='high';
-      const zoom=1.015;
-      ctx.translate(displayW*(.51*(1-zoom)+.007),displayH*(.54*(1-zoom)-.018));
-      ctx.scale(zoom*displayW/w,zoom*displayH/h);
+      alignToArtwork(ctx);
       drawBackdrop(ctx,p);
       fx.sunset(ctx,t,p.gate);
       fx.army(ctx,t,p.gate,p.sky);
@@ -115,7 +127,6 @@
       shadow(p.near);
       ctx.drawImage(figure,p.near,0,w,h);
       moveCloth(ctx,t,p.near);
-      fx.swordGlow(ctx,t,p.near);
       fx.gale(ctx,t,true);
       ctx.restore();
 
@@ -132,6 +143,22 @@
         ctx.fillStyle='rgba(0,0,0,'+fade+')';
         ctx.fillRect(0,0,displayW,displayH);
       }
+
+      ctx.save();
+      ctx.beginPath();ctx.rect(0,90,displayW,900);ctx.clip();
+      alignToArtwork(ctx);
+      if (fade > 0) {
+        ctx.save();
+        ctx.translate(p.near,0);
+        ctx.globalAlpha=fade*.30;
+        ctx.drawImage(litGauntlet,0,0,w,h);
+        ctx.clip(shape.swordLight);
+        ctx.globalAlpha=fade*.25;
+        ctx.drawImage(figure,0,0,w,h);
+        ctx.restore();
+      }
+      fx.swordGlow(ctx,t,p.near,fade);
+      ctx.restore();
     }
     state.render=render;
     state.army={ground:fx.groundCount,air:fx.airCount,wingFrames:fx.wingFrames};

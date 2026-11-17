@@ -1,6 +1,6 @@
 'use strict';
 
-function makeFinaleFx(images, blade, { w, h, canvas, rnd, smooth, mix }) {
+function makeFinaleFx(images, sword, { w, h, canvas, rnd, smooth, mix }) {
   const rand = rnd(51037);
   const tau = Math.PI * 2;
   function wind(t) {
@@ -106,50 +106,112 @@ function makeFinaleFx(images, blade, { w, h, canvas, rnd, smooth, mix }) {
     ctx.restore();
   }
 
-  const swordBounds = { x: 850, y: 440, width: 355, height: 415 };
-  // These light layers share the blade matte and move with the near character.
-  const swordBands = [
-    { blur: 18, width: 23, color: '#dceaff', opacity: .85, power: 1.36 },
-    { blur: 7, width: 12, color: '#eaf4ff', opacity: .89, power: 1.11 },
-    { blur: 2.7, width: 6.2, color: '#fff9ef', opacity: .96, power: .92 },
-    { blur: .35, width: 2.35, color: '#fffefa', opacity: .95, power: .71 }
-  ].map(({ blur, width, color, opacity, power }) => {
-    const band = canvas(swordBounds.width, swordBounds.height);
-    band.translate(-swordBounds.x, -swordBounds.y);
+  const swordLightBounds = { x: 758, y: 349, width: 488, height: 527 };
+  const swordLightBands = [
+    { blur: 26, edge: 25, color: '#e7efff', strength: .62, exponent: 1.27 },
+    { blur: 8, edge: 11, color: '#eaf4ff', strength: .51, exponent: 1.0 },
+    { blur: 1.25, edge: 1.5, color: '#fffdf7', strength: .19, exponent: .83 }
+  ].map(({ blur, edge, color, strength, exponent }) => {
+    const band = canvas(swordLightBounds.width, swordLightBounds.height);
+    band.translate(-swordLightBounds.x, -swordLightBounds.y);
     band.filter = 'blur(' + blur + 'px)';
-    band.strokeStyle = color;
+    band.fillStyle = band.strokeStyle = color;
     band.lineJoin = 'round';
-    band.lineWidth = width;
-    band.stroke(blade);
-    return { image: band.canvas, opacity, power };
+    band.lineWidth = edge;
+    band.fill(sword);
+    band.stroke(sword);
+    return { image: band.canvas, strength, exponent };
   });
 
-  function swordGlow(ctx, t, near) {
-    const { glowAt, glowPeakAt, glowEnd } = FINALE_TIMING;
-    const ignite = smooth(glowAt, glowAt + .58, t);
-    const swell = .19 + .81 * smooth(glowAt + .3, glowPeakAt, t);
-    const release = 1 - smooth(glowPeakAt, glowEnd, t);
-    const power = ignite * swell * release;
+  const origin = { x: 850, y: 445 };
+  const tip = { x: 1149, y: 791 };
+  const dx = tip.x - origin.x, dy = tip.y - origin.y;
+  const flowRandom = rnd(41257);
+  const wisps = Array.from({ length: 36 }, () => ({
+    phase: flowRandom(),
+    along: flowRandom(),
+    side: flowRandom() < .55 ? -1 : 1,
+    reach: 17 + flowRandom() * 45,
+    length: 8 + flowRandom() * 33,
+    period: .63 + flowRandom() * 1.33,
+    width: .55 + flowRandom() ** 2 * 1.65
+  }));
+
+  function swordFlow(ctx, t, power) {
+    ctx.save();
+    ctx.clip(sword);
+    ctx.fillStyle = 'rgba(247,250,255,' + power * .20 + ')';
+    ctx.fillRect(swordLightBounds.x, swordLightBounds.y, swordLightBounds.width, swordLightBounds.height);
+    for (const [speed, length, offset, brightness] of [
+      [.67, .19, .08, .82], [.36, .31, .57, .56], [.91, .07, .78, .44]
+    ]) {
+      const crest = ((t * speed + offset) % 1) * (1 + length * 2) - length;
+      const wave = ctx.createLinearGradient(origin.x + dx * (crest - length), origin.y + dy * (crest - length),
+        origin.x + dx * (crest + length), origin.y + dy * (crest + length));
+      wave.addColorStop(0, 'rgba(224,238,255,0)');
+      wave.addColorStop(.43, 'rgba(232,242,255,' + power * brightness * .38 + ')');
+      wave.addColorStop(.63, 'rgba(255,255,252,' + power * brightness + ')');
+      wave.addColorStop(1, 'rgba(255,255,252,0)');
+      ctx.fillStyle = wave;
+      ctx.fillRect(swordLightBounds.x, swordLightBounds.y, swordLightBounds.width, swordLightBounds.height);
+    }
+    ctx.restore();
+  }
+
+  function swordWisps(ctx, t, power) {
+    ctx.lineCap = 'round';
+    for (const { phase, along, side, reach, length, period, width } of wisps) {
+      const age = (t / period + phase) % 1;
+      const u = along + age * .11;
+      const spread = (7 + age * reach) * (0.55 + power * .45) * side;
+      const x = origin.x + dx * u + spread - age * 13;
+      const y = origin.y + dy * u - spread * .65 - age * 7;
+      const tailX = x - length * .64;
+      const tailY = y - length * .79;
+      const opacity = Math.sin(age * Math.PI) ** 1.8 * power;
+      const sheen = ctx.createLinearGradient(tailX, tailY, x, y);
+      sheen.addColorStop(0, 'rgba(222,237,255,0)');
+      sheen.addColorStop(.60, 'rgba(240,247,255,' + opacity * .26 + ')');
+      sheen.addColorStop(.83, 'rgba(255,255,250,' + opacity * .83 + ')');
+      sheen.addColorStop(1, 'rgba(246,251,255,0)');
+      ctx.strokeStyle = sheen;
+      ctx.lineWidth = width;
+      ctx.beginPath();
+      ctx.moveTo(tailX, tailY);
+      ctx.quadraticCurveTo(x - length * .2 + side * length * .35, y - length * .6, x, y);
+      ctx.stroke();
+    }
+  }
+
+  function swordGlow(ctx, t, near, sceneFade) {
+    const { glowAt, glowPeakAt, duration } = FINALE_TIMING;
+    const elapsed = Math.max(0, t - glowAt);
+    const ignite = smooth(glowAt, glowAt + .7, t);
+    const swell = .28 + .72 * smooth(glowAt + .28, glowPeakAt, t);
+    const hold = 1 - .25 * smooth(glowPeakAt, duration, t);
+    const pulse = .96 + .04 * Math.cos(elapsed * 2.2);
+    const power = ignite * swell * hold * pulse;
     if (power <= 0) return;
 
     ctx.save();
     ctx.translate(near, 0);
     ctx.globalCompositeOperation = 'screen';
-    for (const band of swordBands) {
-      ctx.globalAlpha = band.opacity * power ** band.power;
-      ctx.drawImage(band.image, swordBounds.x, swordBounds.y);
+    for (const band of swordLightBands) {
+      ctx.globalAlpha = band.strength * power ** band.exponent;
+      ctx.drawImage(band.image, swordLightBounds.x, swordLightBounds.y);
     }
     ctx.globalAlpha = 1;
+    const pommelPulse = .77 + .23 * Math.sin(elapsed * 3.6 + .8);
+    bloom(ctx, origin.x, origin.y, 25 + power * 19, 24 + power * 21, '244,249,255', power * pommelPulse * .73);
+    bloom(ctx, 926, 529, 38 + power * 34, 32 + power * 39, '233,244,255', power ** 1.3 * .66);
 
-    const crest = smooth(glowAt + .38, glowPeakAt, t);
-    const x = mix(950, 1081, crest);
-    const y = mix(551, 715, crest);
-    bloom(ctx, x, y, mix(10, 52, power), mix(13, 57, power), '240,246,255',
-      power ** 1.45 * .67);
-    bloom(ctx, x, y, 13 + power * 15, 12 + power * 16, '255,255,251', power ** 1.1 * .58);
-
-    // Keep the brightest halo on the blade and cast a softer reflection below it.
-    bloom(ctx, 1096, 795, 115, 25, '235,229,210', power ** 2 * .24);
+    swordFlow(ctx, elapsed, power);
+    swordWisps(ctx, elapsed, power);
+    const crest = (elapsed * .51) % 1;
+    const plume = Math.sin(crest * Math.PI) ** .7 * power;
+    bloom(ctx, mix(918, 1129, crest), mix(523, 771, crest), 31 + power * 38, 26 + power * 27,
+      '241,247,255', plume * .66);
+    bloom(ctx, 1096, 795, 115, 25, '235,229,210', (1 - sceneFade) * power ** 2 * .24);
     ctx.restore();
   }
 

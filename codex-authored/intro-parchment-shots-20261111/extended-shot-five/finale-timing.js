@@ -5,7 +5,6 @@ const FINALE_TIMING = Object.freeze({
   duration: 13,
   glowAt: 3,
   glowPeakAt: 10.45,
-  glowEnd: 12.82,
   fadeAt: 11.9,
   fadeEnd: 12.98
 });
