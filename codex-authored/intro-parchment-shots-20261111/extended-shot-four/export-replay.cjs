@@ -41,8 +41,9 @@ const bakedPicture = path.join(scratch, 'historical-picture.mp4');
 const cleanPicture = path.join(scratch, 'clean-picture.mp4');
 const revisedShotTwo = path.join(scratch, 'revised-shot-two.mp4');
 const revisedDust = path.join(scratch, 'revised-dust.mp4');
-const revisedHand = path.join(scratch, 'revised-hand.mp4');
+const revisedFallen = path.join(scratch, 'revised-fallen.mp4');
 const fourthStartAt = 68.5;
+const { braceAt } = require('./shot-timing.js');
 const { replayCutAt, duration: finaleDuration } = require('../extended-shot-five/finale-timing.js');
 try {
   if (fiveShots) {
@@ -65,10 +66,10 @@ try {
     const { offset } = require('../extended-shot-three-35.5s/shot-timing.js');
     replaceShotTwo.replaceReplayRange(revisedShotTwo, path.join(archive, 'web/shot-03-valley-dust.mp4'),
       revisedDust, offset * 30 + 486, offset * 30 + 692);
-    replaceShotTwo.replaceReplayRange(revisedDust, path.join(archive, 'web/shot-03-flat-left-hand.mp4'),
-      revisedHand, offset * 30 + 573, offset * 30 + 1035);
     const fourthStartFrame = fourthStartAt * 30;
-    replaceShotTwo.replaceReplayRange(revisedHand, path.join(archive, 'web/shot-04-rise-radiance.mp4'),
+    replaceShotTwo.replaceReplayRange(revisedDust, path.join(archive, 'web/shot-03-fallen-wind-handoff.mp4'),
+      revisedFallen, offset * 30 + 573, fourthStartFrame + Math.round(braceAt * 30));
+    replaceShotTwo.replaceReplayRange(revisedFallen, path.join(archive, 'web/shot-04-rise-radiance.mp4'),
       path.join(output, replay + '.mp4'), fourthStartFrame + 530, fourthStartFrame + 777);
   }
 
@@ -102,7 +103,7 @@ try {
   fs.rmSync(cleanPicture, { force: true });
   fs.rmSync(revisedShotTwo, { force: true });
   fs.rmSync(revisedDust, { force: true });
-  fs.rmSync(revisedHand, { force: true });
+  fs.rmSync(revisedFallen, { force: true });
   fs.rmSync(firstEffects, { force: true });
   fs.rmdirSync(scratch);
 }

@@ -101,6 +101,61 @@ function makeFallenCloth(cel, leftPad, scale, layer, patches) {
   })));
 }
 
+function alignFallenCloth(cel, leftPad, scale, layer) {
+  const { width, height } = cel.canvas;
+  const source = layer(width, height, { alpha: true });
+  source.drawImage(cel.canvas, 0, 0);
+  const piece = layer(width, height, { alpha: true });
+  const pad = leftPad / scale;
+  const ribbons = [
+    {
+      outline: 'M644 59 Q667 58 686 76 Q714 87 723 117 L726 143 Q722 153 710 149 Q690 135 680 109 Q666 88 644 77 Z',
+      clear: 'M642 55 Q673 56 691 74 Q722 85 731 118 L750 144 Q735 157 716 149 Q692 139 673 108 L645 83 Z',
+      root: [719, 144], anchor: [720, 138], angle: -0.30, stretch: [1.18, 0.88]
+    },
+    {
+      outline: 'M807 241 Q832 237 854 239 Q871 236 890 244 L889 260 Q866 270 844 266 Q823 265 802 256 Z',
+      clear: 'M816 233 Q841 233 859 230 Q885 233 897 243 L894 263 Q865 274 843 267 L812 260 805 253 Z',
+      root: [815, 251], anchor: [817, 259], angle: -0.09, stretch: [-0.92, 0.82]
+    }
+  ];
+  // Clear the suspended wing-like fragments from above the boot, knee, and right arm.
+  const fragments = new Path2D('M27 140 Q82 136 103 111 Q134 96 159 85 L175 70 Q207 88 240 95 ' +
+    'Q295 89 339 72 L355 46 Q389 46 420 66 Q443 75 463 88 L504 89 ' +
+    'Q519 78 534 85 L551 100 556 120 Q522 119 489 121 Q455 118 425 127 Q413 131 401 141 ' +
+    'Q382 140 362 135 Q349 121 333 120 Q306 126 289 139 L269 152 ' +
+    'Q209 160 164 163 Q102 183 42 170 Z');
+
+  cel.save();
+  cel.filter = 'blur(4px)';
+  cel.translate(leftPad, 0);
+  cel.scale(scale, scale);
+  cel.globalCompositeOperation = 'destination-out';
+  cel.fill(fragments);
+  for (const { clear } of ribbons) cel.fill(new Path2D(clear));
+  cel.globalCompositeOperation = 'source-over';
+  cel.filter = 'none';
+
+  for (const { outline, root, anchor, angle, stretch } of ribbons) {
+    piece.clearRect(0, 0, width, height);
+    piece.drawImage(source.canvas, 0, 0);
+    piece.save();
+    piece.translate(leftPad, 0);
+    piece.scale(scale, scale);
+    piece.globalCompositeOperation = 'destination-in';
+    piece.filter = 'blur(3px)';
+    piece.fill(new Path2D(outline));
+    piece.restore();
+    cel.save();
+    cel.translate(...anchor);
+    cel.rotate(angle);
+    cel.scale(...stretch);
+    cel.drawImage(piece.canvas, -root[0] - pad, -root[1], width / scale, height / scale);
+    cel.restore();
+  }
+  cel.restore();
+}
+
 function makeDesertDescent(image, wideGround, smoke, fallen, { width, height, layer, random, lerp, smooth, bloom }) {
   const { thirdDiveAt, thirdGroundAt, groundLightOut, revealBodyAt,
     revealBodyEnd, pushInStart, pushInEnd, groundDriftEnd } = ORIGINAL_OPENING_SHOT_TIMING;
@@ -150,31 +205,33 @@ function makeDesertDescent(image, wideGround, smoke, fallen, { width, height, la
   ashSmoke.fillStyle = 'rgba(105,83,70,0.38)';
   ashSmoke.fillRect(0, 0, 512, 256);
   const fittedBody = fitFallenProportions(fallen, layer);
+  const clothScale = fallen.width / 900;
   const bodyCel = layer(fittedBody.canvas.width, fittedBody.canvas.height,
     { alpha: true, willReadFrequently: true });
   bodyCel.filter = 'brightness(0.97) saturate(0.91)';
   bodyCel.drawImage(fittedBody.canvas, 0, 0);
+  alignFallenCloth(bodyCel, fittedBody.pad, clothScale, layer);
   // Coordinates follow the 900px-wide character reference, before the left padding.
   const leftRags = {
     outline: 'M244 260 Q302 246 340 242 Q375 240 411 218 L456 201 465 220 Q433 233 405 248 Q370 262 350 284 L307 300 255 298 233 282 Z',
     x: 328, y: 263, rx: 117, ry: 32, angle: -0.30, strength: 9.5, phase: 0.9, root: 439
   };
   const shoulderTear = {
-    outline: 'M641 66 Q652 60 676 62 Q708 77 725 105 L743 146 714 152 Q687 127 675 104 Q658 87 641 78 Z',
-    x: 686, y: 102, rx: 55, ry: 28, angle: 0.89, strength: 8.1, phase: 2.6
+    outline: 'M602 76 Q621 78 644 90 Q668 101 690 118 Q714 124 732 136 L729 153 703 153 Q673 141 641 132 Q612 119 601 100 Z',
+    x: 654, y: 111, rx: 74, ry: 25, angle: 0.41, strength: 8.1, phase: 2.6, root: 717
   };
-  const clothScale = fallen.width / 900;
-  const wideCloth = makeFallenCloth(bodyCel, fittedBody.pad, clothScale, layer, [leftRags, shoulderTear]);
+  const hoodHem = {
+    outline: 'M735 249 Q762 250 787 247 Q800 248 819 254 L823 272 Q804 283 782 278 Q756 278 735 270 L725 258 Z',
+    x: 770, y: 261, rx: 57, ry: 18, angle: 0.12, strength: 5.5, phase: 3.8, root: 821
+  };
+  const wideCloth = makeFallenCloth(bodyCel, fittedBody.pad, clothScale, layer, [leftRags, shoulderTear, hoodHem]);
   const chestCloth = makeFallenCloth(bodyCel, fittedBody.pad, clothScale, layer, [
     { ...shoulderTear, strength: 4.8 },
     {
       outline: 'M374 213 Q397 195 419 181 Q441 163 469 153 L507 151 518 165 Q502 188 494 214 L461 230 Q424 232 380 235 Z',
       x: 441, y: 197, rx: 77, ry: 32, angle: -0.41, strength: 5.2, phase: 1.4, root: 519
     },
-    {
-      outline: 'M805 238 Q832 240 855 233 L887 234 894 253 Q865 266 839 271 L809 263 793 252 Z',
-      x: 851, y: 250, rx: 50, ry: 20, angle: -0.09, strength: 5.5, phase: 3.8
-    },
+    hoodHem,
     {
       outline: 'M727 160 Q754 144 777 147 Q804 153 820 169 L817 184 802 190 Q776 170 744 179 L721 179 Z',
       x: 777, y: 166, rx: 44, ry: 15, angle: 0.13, strength: 3.1, phase: 4.7
