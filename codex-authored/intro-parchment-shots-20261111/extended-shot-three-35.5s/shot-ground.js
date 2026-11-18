@@ -198,27 +198,13 @@ function makeDesertDescent(image, wideGround, smoke, fallen, { width, height, la
     ctx.restore();
   }
 
-  function drawValleyDust(ctx, body, reveal, t) {
-    const opacity = 1 - smooth(0.12, 0.88, reveal);
-    if (opacity <= 0) return;
-    const { x, y, span, tall } = body;
-    const age = t - thirdGroundAt;
-    const wind = Math.max(0, reveal) * 0.78;
-    bank(ctx, x + span * (0.39 + wind), y + tall * 0.38,
-      span * 2.50, tall * 1.58, -0.11, opacity * 0.52, 1);
-    bank(ctx, x + span * (0.52 + wind + 0.09 * Math.sin(age * 1.4)), y + tall * 0.79,
-      span * 2.89, tall * 1.02, 0.04, opacity * 0.51, -1);
-    bank(ctx, x + span * (0.35 + wind), y + tall * 0.15,
-      span * 1.72, tall * 1.05, -0.17, opacity * 0.33, 1);
-  }
-
   function drawRevealCloud(ctx, body, reveal, t) {
     if (reveal >= 1) return;
     const { x, y, span, tall } = body;
     const { width: cols, height: rows } = dustCloud.canvas;
     const { data } = cloudPixels;
     const age = t - thirdGroundAt;
-    const wind = reveal * 0.28;
+    const wind = 0.025 * age + reveal * 0.25;
     const edge = lerp(-0.45, 1.78, reveal);
     const strength = 1 - smooth(0.62, 1, reveal);
     for (let row = 0; row < rows; row++) {
@@ -226,11 +212,19 @@ function makeDesertDescent(image, wideGround, smoke, fallen, { width, height, la
       for (let col = 0; col < cols; col++) {
         const u = -0.60 + col / (cols - 1) * 2.52;
         const i = (row * cols + col) * 4;
-        const fold = sampleCloud(u * 0.36 - age * 0.042, v * 0.58 + 0.26);
-        const wisps = sampleCloud(u * 0.88 - age * 0.091, v * 0.93 + u * 0.17);
+        // Broad, overlapping curls move with one prevailing wind along the valley floor.
+        const fold = sampleCloud(u * 0.32 - age * 0.041, v * 0.47 + 0.26);
+        const eddy = sampleCloud(u * 0.37 - age * 0.035 + 0.43, v * 0.61 + 0.07);
+        const wisps = sampleCloud(u * 0.79 - age * 0.093, v * 1.19 + (eddy - 0.5) * 0.21);
         const turbulence = (fold - 0.5) * 0.63 + (wisps - 0.5) * 0.26;
-        const radius = Math.hypot((u - 0.50 - wind) / 0.94, (v - 0.51) / 0.85);
-        const volume = 1 - smooth(0.66, 1.14, radius + turbulence * 0.64);
+        const driftX = u - wind;
+        const centreY = 0.50 + 0.11 * (eddy - 0.5);
+        const radius = Math.hypot((driftX - 0.46) / 0.96, (v - centreY) / 0.74);
+        const core = 1 - smooth(0.67, 1.13, radius + turbulence * 0.74);
+        const groundY = 0.91 - 0.13 * smooth(-0.3, 1.55, driftX) + 0.17 * (eddy - 0.5);
+        const wakeRadius = Math.hypot((driftX - 0.68) / 1.09, (v - groundY) / 0.43);
+        const wake = (1 - smooth(0.31, 1.05, wakeRadius + turbulence * 0.52)) * (0.25 + 0.28 * fold);
+        const volume = core + (1 - core) * wake;
         // Wind strips the upstream edge first. The centre is opaque until the front reaches it.
         const front = smooth(edge - 0.20, edge + 0.14, u + turbulence);
         const warmCore = 1 - smooth(0, 0.73, Math.hypot((u - 0.53 - wind * 0.38) / 0.82, (v - 0.48) / 1.10));
@@ -247,12 +241,6 @@ function makeDesertDescent(image, wideGround, smoke, fallen, { width, height, la
     ctx.filter = 'blur(' + Math.max(3.5, span * 0.008).toFixed(2) + 'px)';
     ctx.drawImage(dustCloud.canvas, x - span * 0.60, y - tall * 0.52, span * 2.52, tall * 2.02);
     ctx.restore();
-
-    const strand = (1 - reveal) * 0.41;
-    bank(ctx, x + span * (0.44 + 0.70 * reveal), y + tall * 0.66,
-      span * 1.87, tall * 0.67, -0.09, strand, 1);
-    bank(ctx, x + span * (0.58 + 0.83 * reveal), y + tall * 0.33,
-      span * 1.57, tall * 0.69, 0.11, strand * 0.83, -1);
 
     const glow = 1 - smooth(thirdGroundAt, groundLightOut, t);
     ctx.save();
@@ -298,14 +286,14 @@ function makeDesertDescent(image, wideGround, smoke, fallen, { width, height, la
     const body = bodyBounds(projection);
     drawFallen(ctx, body);
     drawBodyDust(ctx, t, body, reveal);
+    const distantClarity = lerp(0.38, 1, smooth(0.10, 0.91, reveal));
     for (const [baseX, baseY, angle, bw, bh, alpha, wind] of dustStreams) {
       const span = width + bw;
       const position = (((baseX + bw / 2 + elapsed * wind) % span) + span) % span - bw / 2;
       bank(ctx, position, baseY + Math.sin(elapsed * 1.02 + baseX) * 12, bw, bh,
-        angle * 0.14, alpha * (0.50 + 0.32 * smooth(0, 1.6, elapsed)), wind > 0 ? 1 : -1);
+        angle * 0.14, alpha * distantClarity * (0.50 + 0.32 * smooth(0, 1.6, elapsed)), wind > 0 ? 1 : -1);
     }
 
-    drawValleyDust(ctx, body, reveal, t);
     drawRevealCloud(ctx, body, reveal, t);
     drawSand(ctx, elapsed, smooth(0.5, 2.7, elapsed));
     ctx.globalCompositeOperation = 'screen';

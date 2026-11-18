@@ -37,6 +37,7 @@ const firstEffects = path.join(scratch, 'first.wav');
 const concatFile = path.join(scratch, 'video.ffconcat');
 const bakedPicture = path.join(scratch, 'historical-picture.mp4');
 const cleanPicture = path.join(scratch, 'clean-picture.mp4');
+const revisedShotTwo = path.join(scratch, 'revised-shot-two.mp4');
 try {
   if (fiveShots) {
     const { replayCutAt, duration } = require('../extended-shot-five/finale-timing.js');
@@ -52,7 +53,10 @@ try {
     ff(['-f', 'concat', '-safe', '0', '-i', concatFile, '-map', '0:v:0', '-c:v', 'copy',
       '-movflags', '+faststart', bakedPicture]);
     exportCleanReplay(bakedPicture, cleanPicture);
-    replaceShotTwo(cleanPicture, path.join(archive, 'web/shot-02-effects-18s.mp4'), path.join(output, replay + '.mp4'));
+    replaceShotTwo(cleanPicture, path.join(archive, 'web/shot-02-effects-18s.mp4'), revisedShotTwo);
+    const { offset } = require('../extended-shot-three-35.5s/shot-timing.js');
+    replaceShotTwo.replaceReplayRange(revisedShotTwo, path.join(archive, 'web/shot-03-valley-dust.mp4'),
+      path.join(output, replay + '.mp4'), offset * 30 + 486, offset * 30 + 692);
   }
 
   execFileSync(process.execPath, [path.join(archive, 'extended-shot-one/build-audio.cjs'), '--replay-effects', firstEffects], {
@@ -74,6 +78,7 @@ try {
   fs.rmSync(concatFile, { force: true });
   fs.rmSync(bakedPicture, { force: true });
   fs.rmSync(cleanPicture, { force: true });
+  fs.rmSync(revisedShotTwo, { force: true });
   fs.rmSync(firstEffects, { force: true });
   fs.rmdirSync(scratch);
 }
