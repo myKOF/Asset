@@ -1,5 +1,91 @@
 'use strict';
 
+function fitFallenProportions(cel, layer) {
+  // These masks use the 900px-wide reference of the approved character cel.
+  const scale = cel.width / 900;
+  const pad = Math.ceil(56 * scale);
+  const width = cel.width + pad;
+  const height = cel.height;
+  const mask = (outline, blur) => {
+    const shaped = layer(width, height, { alpha: true });
+    shaped.filter = 'blur(' + blur * scale + 'px)';
+    shaped.translate(pad, 0);
+    shaped.scale(scale, scale);
+    shaped.fill(new Path2D(outline));
+    return shaped.getImageData(0, 0, width, height).data;
+  };
+  // Far leg, near leg, waist, and left arm each stretch along their own axis.
+  const areas = [
+    {
+      origin: [466, 178], direction: [-.999, .04], amount: .10,
+      alpha: mask('M-67 175 Q65 167 128 164 Q206 164 247 158 Q297 135 340 136 L435 150 L479 171 L463 207 Q397 211 330 216 Q254 222 194 229 Q83 232 -60 233 Z', 4)
+    },
+    {
+      origin: [468, 187], direction: [-.965, .263], amount: .10,
+      alpha: mask('M-35 276 Q61 230 123 230 Q163 217 205 199 Q245 184 264 155 Q296 126 340 129 Q397 132 468 155 L485 186 Q426 213 380 220 Q322 236 267 255 Q212 263 161 282 L104 303 Q39 323 -35 327 Z', 5)
+    },
+    {
+      origin: [507, 190], direction: [-.14, .990], amount: .13,
+      alpha: mask('M416 162 Q464 153 528 151 Q549 155 568 171 L570 211 Q534 234 478 229 L437 218 Z', 11)
+    },
+    {
+      origin: [600, 272], direction: [.625, .781], amount: .13,
+      alpha: mask('M665 206 Q691 212 689 246 Q660 274 625 290 Q587 321 554 333 L525 318 Q536 291 567 271 Q609 244 632 225 Z', 8)
+    }
+  ];
+
+  const output = layer(width, height, { alpha: true });
+  output.drawImage(cel, pad, 0);
+  const source = output.getImageData(0, 0, width, height);
+  const plate = output.getImageData(0, 0, width, height);
+  const src = source.data;
+  const dst = plate.data;
+  for (let y = 1; y < height - 1; y++) {
+    const yy = y / scale;
+    for (let x = 0; x < width; x++) {
+      const i = (y * width + x) * 4;
+      const xx = (x - pad) / scale;
+      let dx = 0, dy = 0, legWeight = 0;
+      for (let k = 0; k < areas.length; k++) {
+        const { alpha, origin, direction, amount } = areas[k];
+        let weight = alpha[i + 3] / 255;
+        if (weight < .006) continue;
+        if (k < 2) {
+          if (k === 1) {
+            dx *= 1 - weight;
+            dy *= 1 - weight;
+          }
+          legWeight = Math.max(legWeight, weight);
+        } else if (k === 2) {
+          weight *= 1 - .72 * legWeight;
+        }
+        const [ux, uy] = direction;
+        const distance = (xx - origin[0]) * ux + (yy - origin[1]) * uy;
+        const offset = -distance * amount / (1 + amount) * weight * scale;
+        dx += ux * offset; dy += uy * offset;
+      }
+      if (Math.abs(dx) + Math.abs(dy) < .02) continue;
+      const px = x + dx, py = y + dy;
+      if (px < 0 || py < 0 || px >= width - 1 || py >= height - 1) continue;
+      const u = Math.floor(px), v = Math.floor(py), a = px - u, b = py - v;
+      // Sample premultiplied alpha so the reshaped edges blend into the sand.
+      const base = (v * width + u) * 4, below = base + width * 4;
+      const aa = src[base + 3] * (1 - a) * (1 - b);
+      const ab = src[base + 7] * a * (1 - b);
+      const ba = src[below + 3] * (1 - a) * b;
+      const bb = src[below + 7] * a * b;
+      const opacity = aa + ab + ba + bb;
+      dst[i + 3] = opacity;
+      if (opacity > 0) for (let channel = 0; channel < 3; channel++) {
+        dst[i + channel] = (src[base + channel] * aa + src[base + 4 + channel] * ab +
+          src[below + channel] * ba + src[below + 4 + channel] * bb) / opacity;
+      }
+    }
+  }
+  output.putImageData(plate, 0, 0);
+  return { canvas: output.canvas, pad };
+}
+
 function makeDesertDescent(image, wideGround, smoke, fallen, { width, height, layer, random, lerp, smooth, bloom }) {
   const { thirdDiveAt, thirdGroundAt, groundLightOut, revealBodyAt,
     revealBodyEnd, pushInStart, pushInEnd, groundDriftEnd } = ORIGINAL_OPENING_SHOT_TIMING;
@@ -48,9 +134,10 @@ function makeDesertDescent(image, wideGround, smoke, fallen, { width, height, la
   ashSmoke.globalCompositeOperation = 'source-atop';
   ashSmoke.fillStyle = 'rgba(105,83,70,0.38)';
   ashSmoke.fillRect(0, 0, 512, 256);
-  const bodyCel = layer(fallen.width, fallen.height, { alpha: true });
+  const fittedBody = fitFallenProportions(fallen, layer);
+  const bodyCel = layer(fittedBody.canvas.width, fittedBody.canvas.height, { alpha: true });
   bodyCel.filter = 'brightness(0.97) saturate(0.91)';
-  bodyCel.drawImage(fallen, 0, 0);
+  bodyCel.drawImage(fittedBody.canvas, 0, 0);
 
   const dustCloud = layer(272, 144, { alpha: true });
   const cloudPixels = dustCloud.createImageData(dustCloud.canvas.width, dustCloud.canvas.height);
@@ -155,7 +242,8 @@ function makeDesertDescent(image, wideGround, smoke, fallen, { width, height, la
   function drawFallen(ctx, body) {
     const { x, y, span, tall } = body;
     bloom(ctx, x + span * 0.53, y + tall * 0.67, span * 0.51, tall * 0.24, '41,25,21', 0.55);
-    ctx.drawImage(bodyCel.canvas, x, y, span, tall);
+    const overhang = fittedBody.pad * span / fallen.width;
+    ctx.drawImage(bodyCel.canvas, x - overhang, y, span + overhang, tall);
   }
 
   function drawBodyDust(ctx, t, body, reveal) {
