@@ -45,6 +45,7 @@ const fx=path.join(out,'finale-effects.wav');
 fs.writeFileSync(fx,wave);
 execFileSync(process.env.PARCHMENT_FFMPEG||'ffmpeg',['-hide_banner','-loglevel','error','-y',
   '-i',fx,'-ss',String(replayCutAt),'-i',path.resolve(__dirname,'../../../third-party/user-supplied/desert-ascendant/desert-ascendant.mp3'),
-  '-filter_complex','[1:a]aresample=48000,atrim=duration='+duration+',asetpts=PTS-STARTPTS,volume=.53[m];' +
+  '-filter_complex','[1:a]aresample=48000,atrim=duration='+duration+',asetpts=PTS-STARTPTS,volume=.53,' +
+  'afade=t=out:st='+fadeAt+':d='+(fadeEnd-fadeAt).toFixed(2)+':curve=hsin[m];' +
   '[0:a][m]amix=inputs=2:duration=first:dropout_transition=0,volume=2[out]',
   '-map','[out]','-c:a','pcm_s16le',path.join(out,'finale-audio.wav')],{windowsHide:true,stdio:'inherit'});

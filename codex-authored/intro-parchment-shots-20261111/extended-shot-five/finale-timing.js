@@ -2,13 +2,13 @@
 
 const FINALE_TIMING = Object.freeze({
   replayCutAt: 94.4,
-  duration: 16,
+  duration: 20,
   orbitEnd: 12.7,
   glowAt: 3,
   glowPeakAt: 10.45,
   glowSpreadEnd: 13,
   fadeAt: 14.9,
-  fadeEnd: 15.95
+  fadeEnd: 19.95
 });
 
 if (typeof module !== 'undefined') module.exports = FINALE_TIMING;
