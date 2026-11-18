@@ -1,0 +1,9 @@
+{
+  "name": "任務導引直刃匕首",
+  "source": "OpenAI ImageGen 生成原稿。以使用者提供的圖 2 直刃輪廓為參考，經使用者核准遊戲接入。",
+  "export": "透明邊界裁切，等比縮至 260×120 透明畫布，遊戲以 65×30 顯示。",
+  "files": {
+    "originals/quest-guide-dagger.png": "af55e25b7f58acd336a6255753aa59b90a43baaf8dae6517d098c1a38dbdb492",
+    "exports/quest-guide-dagger.png": "ea755377d1fad3cc23a1d8944a0515fae1dcfeaa05ed642360d8241b3d4b6c57"
+  }
+}
