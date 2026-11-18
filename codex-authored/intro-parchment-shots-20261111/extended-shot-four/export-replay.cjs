@@ -35,20 +35,26 @@ if (!audioOnly && !fiveShots) {
 const scratch = fs.mkdtempSync(path.join(os.tmpdir(), 'parchment-replay-'));
 const firstEffects = path.join(scratch, 'first.wav');
 const concatFile = path.join(scratch, 'video.ffconcat');
+const historicalLead = path.join(scratch, 'historical-0.mp4');
+const historicalVista = path.join(scratch, 'historical-1.mp4');
 const bakedPicture = path.join(scratch, 'historical-picture.mp4');
 const cleanPicture = path.join(scratch, 'clean-picture.mp4');
 const revisedShotTwo = path.join(scratch, 'revised-shot-two.mp4');
 const revisedDust = path.join(scratch, 'revised-dust.mp4');
 const revisedHand = path.join(scratch, 'revised-hand.mp4');
+const fourthStartAt = 68.5;
+const { replayCutAt, duration: finaleDuration } = require('../extended-shot-five/finale-timing.js');
 try {
   if (fiveShots) {
-    const { replayCutAt, duration } = require('../extended-shot-five/finale-timing.js');
+    ff(['-i', path.join(archive, 'web/shots-01-04-replay.mp4'), '-map', '0:v:0', '-c:v', 'copy',
+      '-f', 'segment', '-segment_times', String(replayCutAt), '-segment_time_delta', '0.01',
+      '-reset_timestamps', '1', path.join(scratch, 'historical-%d.mp4')]);
     const clips = [
-      ['web/shots-01-04-replay.mp4', replayCutAt],
-      ['web/shot-05-desert-finale-orbit.mp4', duration]
+      [historicalLead, replayCutAt],
+      [path.join(archive, 'web/shot-05-desert-finale-orbit.mp4'), finaleDuration]
     ];
     const segments = clips.map(([file, duration]) => {
-      const url = ('file:' + path.join(archive, file).replaceAll('\\', '/')).replaceAll("'", "'\\''");
+      const url = ('file:' + file.replaceAll('\\', '/')).replaceAll("'", "'\\''");
       return "file '" + url + "'\nduration " + duration;
     });
     fs.writeFileSync(concatFile, ['ffconcat version 1.0', ...segments, ''].join('\n'));
@@ -61,7 +67,7 @@ try {
       revisedDust, offset * 30 + 486, offset * 30 + 692);
     replaceShotTwo.replaceReplayRange(revisedDust, path.join(archive, 'web/shot-03-flat-left-hand.mp4'),
       revisedHand, offset * 30 + 573, offset * 30 + 1035);
-    const fourthStartFrame = offset * 30 + 1035;
+    const fourthStartFrame = fourthStartAt * 30;
     replaceShotTwo.replaceReplayRange(revisedHand, path.join(archive, 'web/shot-04-rise-radiance.mp4'),
       path.join(output, replay + '.mp4'), fourthStartFrame + 530, fourthStartFrame + 777);
   }
@@ -77,12 +83,21 @@ try {
   if (fiveShots) remainingEffects.push('extended-shot-five/assets/finale-effects.wav');
   const inputs = [firstEffects, ...remainingEffects.map(file => path.join(archive, file))].flatMap(file => ['-i', file]);
   // The approved cut reaches shot four at 68.5s, 34.5s into the third shot.
-  const tracks = '[2:a]atrim=duration=34.5,asetpts=PTS-STARTPTS,afade=t=out:st=34.46:d=0.04[third];' +
-    '[0:a][1:a][third][3:a]' + (fiveShots ? '[4:a]concat=n=5' : 'concat=n=4') + ':v=0:a=1[out]';
+  let tracks = '[2:a]atrim=duration=34.5,asetpts=PTS-STARTPTS,afade=t=out:st=34.46:d=0.04[third];';
+  if (fiveShots) {
+    const fourthDuration = (replayCutAt - fourthStartAt).toFixed(2);
+    const fourthFadeAt = (Number(fourthDuration) - 0.04).toFixed(2);
+    tracks += '[3:a]atrim=duration=' + fourthDuration + ',asetpts=PTS-STARTPTS,afade=t=out:st=' +
+      fourthFadeAt + ':d=0.04[fourth];[0:a][1:a][third][fourth][4:a]concat=n=5:v=0:a=1[out]';
+  } else {
+    tracks += '[0:a][1:a][third][3:a]concat=n=4:v=0:a=1[out]';
+  }
   ff([...inputs, '-filter_complex', tracks, '-map', '[out]',
     '-c:a', 'libmp3lame', '-b:a', '192k', path.join(output, replay + '-sfx.mp3')]);
 } finally {
   fs.rmSync(concatFile, { force: true });
+  fs.rmSync(historicalLead, { force: true });
+  fs.rmSync(historicalVista, { force: true });
   fs.rmSync(bakedPicture, { force: true });
   fs.rmSync(cleanPicture, { force: true });
   fs.rmSync(revisedShotTwo, { force: true });

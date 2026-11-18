@@ -54,6 +54,49 @@
     ctx.fillRect(-width, -height, width * 2, height * 2);
     ctx.restore();
   }
+  function fitHandToWrist(glove, image) {
+    const wrist = { x: 290, y: 55 };
+    const angle = Math.atan2(0.56, -0.83);
+    const resolution = 3;
+    const pivot = { x: 72 * resolution, y: 126 * resolution };
+    const source = layer(350 * resolution, 252 * resolution, { alpha: true });
+    const fitted = layer(source.canvas.width, source.canvas.height, { alpha: true });
+    source.imageSmoothingQuality = 'high';
+    source.translate(pivot.x, pivot.y);
+    source.scale(resolution, resolution);
+    source.rotate(-angle);
+    source.translate(-wrist.x, -wrist.y);
+    source.drawImage(image, 13, 11, image.width * 0.230, image.height * 0.185);
+
+    const palmStart = 12;
+    const fingerStart = 112;
+    const palmScale = 0.9;
+    const fingerScale = 0.9;
+    const fittedX = x => {
+      const position = (x - pivot.x) / resolution;
+      const palmLength = Math.max(0, position - palmStart);
+      const fingerLength = Math.max(0, position - fingerStart);
+      return Math.round(x - resolution * ((1 - palmScale) * palmLength +
+        palmScale * (1 - fingerScale) * fingerLength));
+    };
+    fitted.imageSmoothingQuality = 'high';
+    const stripWidth = 2 * resolution;
+    for (let x = 0; x < source.canvas.width; x += stripWidth) {
+      const start = fittedX(x);
+      const length = fittedX(x + stripWidth) - start;
+      const position = (x + stripWidth / 2 - pivot.x) / resolution;
+      const widthScale = lerp(1, palmScale, smooth(palmStart, 65, position));
+      const top = Math.round(pivot.y * (1 - widthScale));
+      fitted.drawImage(source.canvas, x, 0, stripWidth, source.canvas.height,
+        start, top, length, source.canvas.height - 2 * top);
+    }
+    glove.save();
+    glove.translate(wrist.x, wrist.y);
+    glove.rotate(angle);
+    glove.scale(1 / resolution, 1 / resolution);
+    glove.drawImage(fitted.canvas, -pivot.x, -pivot.y);
+    glove.restore();
+  }
   function compositeFlatHand(base, image) {
     const cel = layer(base.width, base.height, { alpha: true });
     cel.drawImage(base, 0, 0);
@@ -74,7 +117,7 @@
     const glove = layer(395, 250, { alpha: true });
     const origin = { x: 840, y: 588 };
     glove.imageSmoothingQuality = 'high';
-    glove.drawImage(image, 13, 11, image.width * 0.230, image.height * 0.185);
+    fitHandToWrist(glove, image);
     const cuffFade = glove.createLinearGradient(279, 64, 325, 39);
     cuffFade.addColorStop(0, '#000');
     cuffFade.addColorStop(1, 'transparent');

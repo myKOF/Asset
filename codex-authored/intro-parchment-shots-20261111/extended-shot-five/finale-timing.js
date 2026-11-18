@@ -1,7 +1,7 @@
 'use strict';
 
 const FINALE_TIMING = Object.freeze({
-  replayCutAt: 100.7,
+  replayCutAt: 94.4,
   duration: 16,
   orbitEnd: 12.7,
   glowAt: 3,

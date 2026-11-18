@@ -155,6 +155,7 @@ function makeFinaleFx(images, sword, { w, h, canvas, rnd, smooth, mix }) {
   }));
 
   function swordGlow(ctx, t, near) {
+    const spreadScale = .70;
     const { glowAt, glowPeakAt, glowSpreadEnd } = FINALE_TIMING;
     const ignite = smooth(glowAt, glowAt + .70, t);
     if (ignite <= 0) return;
@@ -170,18 +171,20 @@ function makeFinaleFx(images, sword, { w, h, canvas, rnd, smooth, mix }) {
     ctx.save();
     ctx.translate(993, 613);
     ctx.rotate(.855);
-    bloom(ctx, 0, 0, mix(152, 321, spread), mix(16, 128, spread), '243,249,255', power * .31);
+    bloom(ctx, 0, 0, mix(152, 321, spread) * spreadScale, mix(16, 128, spread) * spreadScale,
+      '243,249,255', power * .31);
     ctx.restore();
 
     for (const { x, y, radius, energy, rays } of emitters) {
-      const halo = mix(21, 189, spread) * radius;
-      const reach = mix(39, 335, spread) * radius;
+      const scale = radius * spreadScale;
+      const halo = mix(21, 189, spread) * scale;
+      const reach = mix(39, 335, spread) * scale;
       bloom(ctx, x, y, halo, halo * .84, '235,244,255', power * energy * .64);
       bloom(ctx, x, y, halo * .44, halo * .39, '251,253,255', power * energy * .68);
 
       for (const ray of rays) {
         const flicker = Math.sin(elapsed * ray.speed + ray.phase);
-        const thickness = mix(10, 57, spread) * ray.width * radius;
+        const thickness = mix(10, 57, spread) * ray.width * scale;
         const length = reach * ray.length * (1 + flicker * .035);
         ctx.save();
         ctx.translate(x, y);
@@ -194,7 +197,8 @@ function makeFinaleFx(images, sword, { w, h, canvas, rnd, smooth, mix }) {
     ctx.globalAlpha = power * .32;
     ctx.drawImage(swordCore.canvas, swordLightBounds.x, swordLightBounds.y);
     ctx.globalAlpha = 1;
-    bloom(ctx, 1090, 797, mix(70, 210, spread), mix(17, 45, spread), '247,237,217', power ** 2 * .29);
+    bloom(ctx, 1090, 797, mix(70, 210, spread) * spreadScale, mix(17, 45, spread) * spreadScale,
+      '247,237,217', power ** 2 * .29);
     ctx.restore();
   }
 
