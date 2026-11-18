@@ -50,9 +50,9 @@ function makeFabricLayer(subject,w,h,sx,sy,makeLayer,paintHems,fabricZones) {
     normalizer:1/Math.max(1,point.weight),
   }));
 
-  function moveFabric(time,wind=0) {
+  function moveFabric(time,wind=0,amplitude=1) {
     const input=clothInput.data, out=clothOutput.data;
-    const easeIn=ease(0,.45,time);
+    const easeIn=ease(0,.45,time)*amplitude;
     for(const {x,y,index,normalizer,waves} of movingPixels) {
       let dx=0,dy=0;
       for(const {strength,phase} of waves) {

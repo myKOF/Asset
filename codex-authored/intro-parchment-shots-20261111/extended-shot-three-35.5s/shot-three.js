@@ -411,13 +411,13 @@ function makeMortalMap(image, groundImage, wideGround, smoke, feather, fallen, {
     if (t >= chestAt) {
       const body = descent.bodyBounds(surface);
       featherglow = finale.drawChest(ctx, t,
-        { ...body, draw: target => descent.drawSurface(target, t, 1, surface) }, continuation);
+        { ...body, draw: target => descent.drawSurface(target, t, 1, surface, seconds, true) }, continuation);
     } else if (t >= wideAt) {
       const wide = descent.projectWide(smooth(wideAt, chestAt, t));
-      descent.drawSurface(ctx, t, 1, wide);
+      descent.drawSurface(ctx, t, 1, wide, seconds);
       finale.drawWide(ctx, t, descent.bodyBounds(wide));
     } else {
-      descent.drawSurface(ctx, t, groundOpacity, surface);
+      descent.drawSurface(ctx, t, groundOpacity, surface, seconds);
       descent.drawPassage(ctx, t, focus);
     }
     pageFinish(ctx);

@@ -86,6 +86,21 @@ function fitFallenProportions(cel, layer) {
   return { canvas: output.canvas, pad };
 }
 
+function makeFallenCloth(cel, leftPad, scale, layer, patches) {
+  const { width, height } = cel.canvas;
+  const pad = leftPad / scale;
+  const makeLayer = () => {
+    const ink = layer(width, height, { alpha: true, willReadFrequently: true });
+    return { ink, surface: ink.canvas };
+  };
+  return makeFabricLayer({ ink: cel }, width, height, scale, scale, makeLayer, ink => {
+    ink.translate(pad, 0);
+    for (const { outline } of patches) ink.fill(new Path2D(outline));
+  }, patches.map(({ outline, x, root, ...zone }) => ({
+    ...zone, x: x + pad, root: root === undefined ? undefined : root + pad
+  })));
+}
+
 function makeDesertDescent(image, wideGround, smoke, fallen, { width, height, layer, random, lerp, smooth, bloom }) {
   const { thirdDiveAt, thirdGroundAt, groundLightOut, revealBodyAt,
     revealBodyEnd, pushInStart, pushInEnd, groundDriftEnd } = ORIGINAL_OPENING_SHOT_TIMING;
@@ -135,9 +150,36 @@ function makeDesertDescent(image, wideGround, smoke, fallen, { width, height, la
   ashSmoke.fillStyle = 'rgba(105,83,70,0.38)';
   ashSmoke.fillRect(0, 0, 512, 256);
   const fittedBody = fitFallenProportions(fallen, layer);
-  const bodyCel = layer(fittedBody.canvas.width, fittedBody.canvas.height, { alpha: true });
+  const bodyCel = layer(fittedBody.canvas.width, fittedBody.canvas.height,
+    { alpha: true, willReadFrequently: true });
   bodyCel.filter = 'brightness(0.97) saturate(0.91)';
   bodyCel.drawImage(fittedBody.canvas, 0, 0);
+  // Coordinates follow the 900px-wide character reference, before the left padding.
+  const leftRags = {
+    outline: 'M244 260 Q302 246 340 242 Q375 240 411 218 L456 201 465 220 Q433 233 405 248 Q370 262 350 284 L307 300 255 298 233 282 Z',
+    x: 328, y: 263, rx: 117, ry: 32, angle: -0.30, strength: 9.5, phase: 0.9, root: 439
+  };
+  const shoulderTear = {
+    outline: 'M641 66 Q652 60 676 62 Q708 77 725 105 L743 146 714 152 Q687 127 675 104 Q658 87 641 78 Z',
+    x: 686, y: 102, rx: 55, ry: 28, angle: 0.89, strength: 8.1, phase: 2.6
+  };
+  const clothScale = fallen.width / 900;
+  const wideCloth = makeFallenCloth(bodyCel, fittedBody.pad, clothScale, layer, [leftRags, shoulderTear]);
+  const chestCloth = makeFallenCloth(bodyCel, fittedBody.pad, clothScale, layer, [
+    { ...shoulderTear, strength: 4.8 },
+    {
+      outline: 'M374 213 Q397 195 419 181 Q441 163 469 153 L507 151 518 165 Q502 188 494 214 L461 230 Q424 232 380 235 Z',
+      x: 441, y: 197, rx: 77, ry: 32, angle: -0.41, strength: 5.2, phase: 1.4, root: 519
+    },
+    {
+      outline: 'M805 238 Q832 240 855 233 L887 234 894 253 Q865 266 839 271 L809 263 793 252 Z',
+      x: 851, y: 250, rx: 50, ry: 20, angle: -0.09, strength: 5.5, phase: 3.8
+    },
+    {
+      outline: 'M727 160 Q754 144 777 147 Q804 153 820 169 L817 184 802 190 Q776 170 744 179 L721 179 Z',
+      x: 777, y: 166, rx: 44, ry: 15, angle: 0.13, strength: 3.1, phase: 4.7
+    }
+  ]);
 
   const dustCloud = layer(272, 144, { alpha: true });
   const cloudPixels = dustCloud.createImageData(dustCloud.canvas.width, dustCloud.canvas.height);
@@ -239,11 +281,21 @@ function makeDesertDescent(image, wideGround, smoke, fallen, { width, height, la
     return { x: glowX - span * 0.53, y: glowY - tall * 0.48, span, tall };
   }
 
-  function drawFallen(ctx, body) {
+  function drawFallen(ctx, body, time, closeUp) {
     const { x, y, span, tall } = body;
     bloom(ctx, x + span * 0.53, y + tall * 0.67, span * 0.51, tall * 0.24, '41,25,21', 0.55);
     const overhang = fittedBody.pad * span / fallen.width;
-    ctx.drawImage(bodyCel.canvas, x - overhang, y, span + overhang, tall);
+    const fadeAt = OPENING_SHOT_TIMING.thirdFadeAt;
+    const movement = smooth(revealBodyAt, revealBodyAt + 0.78, time) * (1 - smooth(fadeAt - 0.85, fadeAt, time));
+    let sprite = bodyCel.canvas;
+    if (movement > 0) {
+      const cloth = closeUp ? chestCloth : wideCloth;
+      const elapsed = time - revealBodyAt;
+      const gust = 0.18 + 0.47 * smooth(-0.35, 0.82, Math.sin(1.43 * elapsed + 0.64));
+      cloth.draw(elapsed, gust, movement);
+      sprite = cloth.surface;
+    }
+    ctx.drawImage(sprite, x - overhang, y, span + overhang, tall);
   }
 
   function drawBodyDust(ctx, t, body, reveal) {
@@ -359,7 +411,7 @@ function makeDesertDescent(image, wideGround, smoke, fallen, { width, height, la
     ctx.restore();
   }
 
-  function drawSurface(ctx, t, opacity, projection) {
+  function drawSurface(ctx, t, opacity, projection, fabricTime, closeUp = false) {
     if (opacity <= 0) return;
     const { x, y, w, h, glowX, glowY, background = image } = projection;
     const elapsed = t - thirdGroundAt;
@@ -372,7 +424,7 @@ function makeDesertDescent(image, wideGround, smoke, fallen, { width, height, la
     ctx.drawImage(background, x, y, w, h);
     ctx.filter = 'none';
     const body = bodyBounds(projection);
-    drawFallen(ctx, body);
+    drawFallen(ctx, body, fabricTime, closeUp);
     drawBodyDust(ctx, t, body, reveal);
     const distantClarity = lerp(0.38, 1, smooth(0.10, 0.91, reveal));
     for (const [baseX, baseY, angle, bw, bh, alpha, wind] of dustStreams) {
