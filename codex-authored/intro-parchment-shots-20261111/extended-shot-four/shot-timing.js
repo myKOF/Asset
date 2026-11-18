@@ -12,6 +12,7 @@ const SHOT_FOUR_TIMING = (() => {
     braceDissolveDuration: 1.5,
     kneelAt: (start + brace) / 100,
     riseAt: (start + brace + kneel) / 100,
+    riseDissolveDuration: 0.5,
     vistaAt: (start + brace + kneel + rise) / 100,
     duration: (start + brace + kneel + rise + vista) / 100,
   });

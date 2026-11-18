@@ -60,6 +60,8 @@ function makeRiseScene(ctx,images,width,height) {
     {x:522,y:150,rx:120,ry:41,angle:-.33,strength:7.9,phase:.36,root:647},
     {x:628,y:99,rx:83,ry:32,angle:-.27,strength:5.0,phase:.61,root:713},
     {x:338,y:328,rx:212,ry:66,angle:-.30,strength:11.4,phase:1.55,root:554},
+    {x:228,y:390,rx:116,ry:41,angle:-.54,strength:20.0,phase:1.38,root:350},
+    {x:305,y:347,rx:100,ry:28,angle:-.37,strength:10.8,phase:1.69,root:415},
     {x:296,y:500,rx:145,ry:103,angle:-.47,strength:12.3,phase:2.39,root:463},
     {x:361,y:567,rx:104,ry:72,angle:-.24,strength:9.4,phase:2.99,root:479},
     {x:529,y:386,rx:99,ry:32,angle:-.53,strength:6.1,phase:1.9,root:624},
@@ -96,6 +98,12 @@ function makeRiseScene(ctx,images,width,height) {
   covered.ink.lineJoin='round';
   covered.ink.fill(repaint);
   covered.ink.stroke(repaint);
+  // Clear the painted ribbon under the moving cel, including the finest trailing threads.
+  const tailClearance=new Path2D('M137 446 Q156 411 181 392 Q204 374 231 361 ' +
+    'Q244 333 267 306 Q288 278 308 281 Q333 271 368 290 ' +
+    'L365 344 Q332 374 304 401 Q278 421 228 436 L171 468 Z');
+  covered.ink.fill(tailClearance);
+  covered.ink.stroke(tailClearance);
   original.ink.filter='blur(14px)';
   original.ink.globalCompositeOperation='destination-out';
   original.ink.drawImage(covered.surface,0,0);
@@ -254,6 +262,24 @@ function makeRiseScene(ctx,images,width,height) {
     ctx.restore();
   }
 
+  function drawRadiance(time) {
+    const build=smooth(.08,1.6,time);
+    const energy=build*(.90+.07*Math.sin(time*1.7)+.03*Math.sin(time*3.4));
+    if(energy<=0)return;
+    ctx.save();
+    ctx.globalCompositeOperation='screen';
+    ctx.filter='brightness(0) invert(1) blur(24px)';
+    ctx.globalAlpha=energy*.24;
+    ctx.drawImage(cloth.surface,0,0,tw,th);
+    ctx.filter='brightness(0) invert(1) blur(8px)';
+    ctx.globalAlpha=energy*.36;
+    ctx.drawImage(cloth.surface,0,0,tw,th);
+    ctx.filter='none';
+    ctx.globalAlpha=energy*.09;
+    ctx.drawImage(cloth.surface,0,0,tw,th);
+    ctx.restore();
+  }
+
   function draw(time) {
     const progress=smooth(0,duration,time);
     const zoom=.913;
@@ -279,6 +305,7 @@ function makeRiseScene(ctx,images,width,height) {
     contact(590,644,210,25,.29);
     contact(1082,665,42,10,.32);
     ctx.drawImage(cloth.surface,0,0,tw,th);
+    drawRadiance(time);
     ctx.restore();
 
     grains(time,14*progress);

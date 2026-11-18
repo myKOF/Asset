@@ -39,6 +39,7 @@ const bakedPicture = path.join(scratch, 'historical-picture.mp4');
 const cleanPicture = path.join(scratch, 'clean-picture.mp4');
 const revisedShotTwo = path.join(scratch, 'revised-shot-two.mp4');
 const revisedDust = path.join(scratch, 'revised-dust.mp4');
+const revisedHand = path.join(scratch, 'revised-hand.mp4');
 try {
   if (fiveShots) {
     const { replayCutAt, duration } = require('../extended-shot-five/finale-timing.js');
@@ -59,7 +60,10 @@ try {
     replaceShotTwo.replaceReplayRange(revisedShotTwo, path.join(archive, 'web/shot-03-valley-dust.mp4'),
       revisedDust, offset * 30 + 486, offset * 30 + 692);
     replaceShotTwo.replaceReplayRange(revisedDust, path.join(archive, 'web/shot-03-flat-left-hand.mp4'),
-      path.join(output, replay + '.mp4'), offset * 30 + 573, offset * 30 + 1035);
+      revisedHand, offset * 30 + 573, offset * 30 + 1035);
+    const fourthStartFrame = offset * 30 + 1035;
+    replaceShotTwo.replaceReplayRange(revisedHand, path.join(archive, 'web/shot-04-rise-radiance.mp4'),
+      path.join(output, replay + '.mp4'), fourthStartFrame + 530, fourthStartFrame + 777);
   }
 
   execFileSync(process.execPath, [path.join(archive, 'extended-shot-one/build-audio.cjs'), '--replay-effects', firstEffects], {
@@ -83,6 +87,7 @@ try {
   fs.rmSync(cleanPicture, { force: true });
   fs.rmSync(revisedShotTwo, { force: true });
   fs.rmSync(revisedDust, { force: true });
+  fs.rmSync(revisedHand, { force: true });
   fs.rmSync(firstEffects, { force: true });
   fs.rmdirSync(scratch);
 }

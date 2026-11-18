@@ -15,6 +15,8 @@ const review = path.resolve(process.env.PARCHMENT_REVIEW_DIR || path.join(os.tmp
 fs.mkdirSync(review, { recursive: true });
 const { duration } = require("./shot-timing.js");
 const fps = 30;
+const { frameRange, readDevToolsPort } = require('../render-preview.cjs');
+const { from, to, partial } = frameRange(Math.round(duration * fps));
 const ffmpeg = process.env.PARCHMENT_FFMPEG || 'ffmpeg';
 const mime = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
   '.jpg': 'image/jpeg', '.json': 'application/json', '.png': 'image/png', '.wav': 'audio/wav', '.woff2': 'font/woff2' };
@@ -45,8 +47,7 @@ async function main() {
       '--disable-background-networking','--mute-audio','--remote-debugging-port=0',
       '--user-data-dir=' + profile, 'about:blank'], { windowsHide:true, stdio:'ignore' });
     const activePort = path.join(profile, 'DevToolsActivePort');
-    for (let i = 0; i < 120 && !fs.existsSync(activePort); i++) await delay(100);
-    const port = Number(fs.readFileSync(activePort, 'utf8').split(/\r?\n/)[0]);
+    const port = await readDevToolsPort(activePort);
     const pages = await fetch('http://127.0.0.1:' + port + '/json/list').then(r => r.json());
     ws = new WebSocket(pages.find(t => t.type === 'page').webSocketDebuggerUrl);
     await once(ws, 'open');
@@ -88,24 +89,23 @@ async function main() {
     }
     if (process.argv.includes('--stills')) {
       fs.mkdirSync(path.join(review, 'stills'), { recursive: true });
-      for (const t of [0, .0333333333, .10, .26, .55, .85, 1.12, 1.50, 1.78, 2.10, 2.1666667, 2.20, 2.30, 4.20, 8.60, 9.60, 10.60, 10.70, 11.05, 11.45, 11.85, 12.17, 12.20, 12.30, 16.30, 17.60, 17.66, 20.55, 22.37, 25.86, 25.95, 32.13]) {
+      for (const t of [0, .0333333333, .10, .26, .55, .85, 1.12, 1.50, 1.78, 2.10, 2.1666667, 2.20, 2.30, 4.20, 8.60, 9.60, 10.60, 10.70, 11.05, 11.45, 11.85, 12.17, 12.20, 12.30, 16.30, 17.60, 17.66, 17.83, 18.10, 18.45, 19.10, 20.55, 22.37, 25.86, 25.95, 32.13]) {
         fs.writeFileSync(path.join(review, 'stills', 'frame-' + t.toFixed(2) + '.jpg'), await frame(t));
       }
     } else {
-      const out = path.join(review, 'shot-04-visual.mp4');
+      const out = path.join(review, partial ? 'picture-range.mp4' : 'shot-04-visual.mp4');
       encoder = spawn(ffmpeg, ['-hide_banner','-loglevel','error','-y',
         '-f','image2pipe','-framerate',String(fps),'-vcodec','mjpeg','-i','pipe:0',
         '-map','0:v:0','-an','-vf','scale=in_range=full:out_range=limited,format=yuv420p',
         '-c:v','libx264','-preset','medium','-crf','16','-g','60','-color_range','tv',
         '-color_primaries','bt709','-color_trc','bt709','-colorspace','bt709',
-        '-movflags','+faststart','-t',String(duration),out
+        '-movflags','+faststart','-t',String((to - from) / fps),out
       ], { windowsHide:true, stdio:['pipe','inherit','inherit'] });
       const done = once(encoder, 'exit');
-      const frameCount = Math.round(duration * fps);
-      for (let i = 0; i < frameCount; i++) {
+      for (let i = from; i < to; i++) {
         const bytes = await frame(i / fps);
         if (!encoder.stdin.write(bytes)) await once(encoder.stdin, 'drain');
-        if ((i + 1) % 120 === 0) console.log('Rendered ' + (i + 1) + '/' + frameCount + ' frames');
+        if ((i - from + 1) % 120 === 0) console.log('Rendered ' + (i - from + 1) + '/' + (to - from) + ' frames');
       }
       encoder.stdin.end();
       const [code] = await done;

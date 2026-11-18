@@ -122,19 +122,19 @@
     "extended-shot-three-35.5s/assets/opening-69.5s-preview.wav": "60cce2fa9b4a3f707893c58f413ab97ec4961b76c8893bdcc0cce6bfacf730a5",
     "extended-shot-four/SOURCE.md": "20cec06c87b95b6a5265ff4d986791a02c8c68b70426d39c520b1cdbd51cdd30",
     "extended-shot-four/index.html": "35188f1f184eaeb6f9d5f875c5439beacf82d5b1dca9c4fa6f8d98edb6c2c99b",
-    "extended-shot-four/shot-timing.js": "bee4dd293091ee7055447113a9c7935a58e422cac9e03637c42f992b5d3e19a2",
-    "extended-shot-four/shot.js": "eb1d94b0faf71775e23a3e6cb96e65dd916e28532269feb437540a70bcd96d3a",
+    "extended-shot-four/shot-timing.js": "a8a601f6fe0d2e9bca94560b0183fe7976b1336bf3e7289a869d60dd80c8b618",
+    "extended-shot-four/shot.js": "807cc8b4973857fd19164d37fb9cb85b6241e9bdc76f50c59b4736468b7f4386",
     "extended-shot-four/shot-cinematics.js": "7719532197d8c59cc5c610ff2c31dcb5996911aa243937d448018f4aeb45b8af",
     "extended-shot-four/brace-effects.js": "234681e7873b2f78028f4b0427d584f7c6f53f43c27c0f3ee283dd6ded560b2d",
     "extended-shot-four/cloth-motion.js": "af9aef8cbd1ddf7be10ff90486446a8fa2f06b943ff0a463ef36bdb6925bb350",
     "extended-shot-four/kneel-orbit.js": "767dbed31c2cf67d3fdbaa42a80e07226689b46b26af5c2c0bf25c96a2064811",
     "extended-shot-four/rise-gust.js": "6731d485cf533f7dc2d676cfffaed0e8277dac85706299e9779be385eaada6e9",
     "extended-shot-four/rise-matte.js": "e353c3fb371943089b2b000c9569dab2c808284754ea1a010f20b596e17e2f09",
-    "extended-shot-four/rise-scene.js": "a25d538cd09441c656e99eac080d50743e06c0efba943f0b2ee4705e880be301",
+    "extended-shot-four/rise-scene.js": "1283b59cfc64fa911f6e1397e20909eb0c135db5a1f6e5ba827911dc0fcb445d",
     "extended-shot-four/build-audio.cjs": "29098ec2324482aeeabbb4fb243505aca824c03823609293f053a3f88a387156",
-    "extended-shot-four/render-shot-four.cjs": "618acd694035b5253128dd79147869ed09c02cbff6fe80d42b3ce78b151480b7",
+    "extended-shot-four/render-shot-four.cjs": "2fd5f2150c00e7483e54a3a8dae8ba2f53c48a05f852ee7fac824cb8285161f0",
     "extended-shot-four/restore-master.cjs": "55de235767ed338132197bcebf4c7d2c6e952d575f35a7c1321322cdd7733841",
-    "extended-shot-four/export-replay.cjs": "5bcb97c4774f27ff1649fbfea0dab89c14836d73238740914827cb4f25be3f3d",
+    "extended-shot-four/export-replay.cjs": "29fdf87df1c8ab9539fcdd167352dd59cc99ea9af08e82d9653c3fbb9fa24acc",
     "extended-shot-four/export-clean-replay.cjs": "c0a1340beb288b65e95839cbfc85cb1a1bcf6105ee1bd5be03d8c73db6c94cb5",
     "extended-shot-four/replace-replay-shot-two.cjs": "189dd6b773bed9a981182fa89553f2e11460e36c506dedc9b902325ba397f261",
     "extended-shot-four/assets/brace.png": "56d93875d3fa12f75859babb807347d943e4154084aff267f018ce9240324b6e",
@@ -166,6 +166,7 @@
     "web/shot-02-effects-18s.mp4": "46677aa0d43e1a37eee87944e7f64ca6bbe03cc6cc73dcb153d92842735a0632",
     "web/shot-03-valley-dust.mp4": "985e15482b3020a2eff0acf3ec99a4a5ee057f0538f67a950a39c1ef9cf657e3",
     "web/shot-03-flat-left-hand.mp4": "c6aff8d1b312f30aeb221d6bc748b1c2fdceec6d0029ae66411391baaf175c49",
+    "web/shot-04-rise-radiance.mp4": "1124177b83c2e3570e74710a54f4a4971cecd0e333de28275127c373e8d82f01",
     "web/shot-03-extended-32s.mp4": "cb3631b2a5b074913316f0cf88b866a361d51afe356f984207a3b5051a028bb1",
     "web/shot-03-extended-33.5s.mp4": "cdc42057988e800b5bdf62d8906df6c4d5b77574880e016f8e1305df86bd5f8c",
     "web/shots-01-04-100.7s.json": "0404be6a6496a0244e5a28806ff649d63a108fc276e13c2809474452af673644",
@@ -219,7 +220,7 @@
     },
     "shots-01-05-replay.mp4": {
       "source": "web/shots-01-05-replay.mp4",
-      "sha256": "f9ffdbba01a6f90f6d9b575fdde2ac7997095e59a596454ee30e8c8a6584852b"
+      "sha256": "6f4e164f8ecb3152481213f3cfac99704de84711b576ef25d65b527f45b29400"
     },
     "shots-01-05-replay-sfx.mp3": {
       "source": "web/shots-01-05-replay-sfx.mp3",
@@ -227,7 +228,7 @@
     },
     "SOURCE.md": {
       "source": "SOURCE.md",
-      "sha256": "e892519a8e806ae8dc09060b7e77179a371ce99e9c6798fa7d2fcda10d9959aa"
+      "sha256": "88286f702aea405167d6024c34adad17939e3d4284a504dc544dbd38d2a2975c"
     }
   }
 }

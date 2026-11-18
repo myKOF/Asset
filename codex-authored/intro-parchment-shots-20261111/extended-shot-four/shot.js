@@ -2,7 +2,7 @@
 
 (() => {
   const width=1920, height=1080, matte=90;
-  const {braceAt,braceDissolveDuration,kneelAt,riseAt,vistaAt,duration}=SHOT_FOUR_TIMING;
+  const {braceAt,braceDissolveDuration,kneelAt,riseAt,riseDissolveDuration,vistaAt,duration}=SHOT_FOUR_TIMING;
   const fadeAt=kneelAt-braceDissolveDuration;
   const dissolveFrame=document.createElement('canvas');
   dissolveFrame.width=width;
@@ -80,7 +80,21 @@
           ctx.globalAlpha=1;
         }
       } else if(t<vistaAt) {
+        const blending=t<riseAt+riseDissolveDuration;
+        if(blending) {
+          const kneelMotionTime=(t-fadeAt)*(riseAt-kneelAt)/(riseAt-fadeAt);
+          scene.restScene('kneel',kneelMotionTime);
+          dissolveCtx.drawImage(ctx.canvas,0,0);
+        }
         scene.restScene('rise',t-riseAt);
+        if(blending) {
+          const progress=(t-riseAt)/riseDissolveDuration;
+          ctx.save();
+          ctx.filter='blur('+(Math.sin(Math.PI*progress)*3.1)+'px)';
+          ctx.globalAlpha=1-progress*progress*(3-2*progress);
+          ctx.drawImage(dissolveFrame,0,0);
+          ctx.restore();
+        }
       } else {
         scene.restScene('vista',t-vistaAt);
       }
