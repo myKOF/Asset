@@ -86,14 +86,29 @@ function fitFallenProportions(cel, layer) {
   return { canvas: output.canvas, pad };
 }
 
-function makeFallenCloth(cel, leftPad, scale, layer, patches) {
+function makeFallenCloth(cel, ribbons, leftPad, scale, layer, folds, ribbonPatches) {
   const { width, height } = cel.canvas;
   const pad = leftPad / scale;
   const makeLayer = () => {
     const ink = layer(width, height, { alpha: true, willReadFrequently: true });
     return { ink, surface: ink.canvas };
   };
-  return makeFabricLayer({ ink: cel }, width, height, scale, scale, makeLayer, ink => {
+  // Only the fabric is sampled by the warp. The armor is drawn from the original cel.
+  const isolated = makeLayer();
+  isolated.ink.drawImage(cel.canvas, 0, 0);
+  isolated.ink.save();
+  isolated.ink.translate(leftPad, 0);
+  isolated.ink.scale(scale, scale);
+  isolated.ink.globalCompositeOperation = 'destination-in';
+  isolated.ink.filter = 'blur(3px)';
+  const fabric = new Path2D();
+  for (const { outline } of folds) fabric.addPath(new Path2D(outline));
+  isolated.ink.fill(fabric);
+  isolated.ink.restore();
+  isolated.ink.drawImage(ribbons, 0, 0);
+
+  const patches = [...folds, ...ribbonPatches];
+  return makeFabricLayer(isolated, width, height, scale, scale, makeLayer, ink => {
     ink.translate(pad, 0);
     for (const { outline } of patches) ink.fill(new Path2D(outline));
   }, patches.map(({ outline, x, root, ...zone }) => ({
@@ -106,6 +121,9 @@ function alignFallenCloth(cel, leftPad, scale, layer) {
   const source = layer(width, height, { alpha: true });
   source.drawImage(cel.canvas, 0, 0);
   const piece = layer(width, height, { alpha: true });
+  const isolated = layer(width, height, { alpha: true });
+  isolated.translate(leftPad, 0);
+  isolated.scale(scale, scale);
   const pad = leftPad / scale;
   const ribbons = [
     {
@@ -133,8 +151,7 @@ function alignFallenCloth(cel, leftPad, scale, layer) {
   cel.globalCompositeOperation = 'destination-out';
   cel.fill(fragments);
   for (const { clear } of ribbons) cel.fill(new Path2D(clear));
-  cel.globalCompositeOperation = 'source-over';
-  cel.filter = 'none';
+  cel.restore();
 
   for (const { outline, root, anchor, angle, stretch } of ribbons) {
     piece.clearRect(0, 0, width, height);
@@ -146,14 +163,14 @@ function alignFallenCloth(cel, leftPad, scale, layer) {
     piece.filter = 'blur(3px)';
     piece.fill(new Path2D(outline));
     piece.restore();
-    cel.save();
-    cel.translate(...anchor);
-    cel.rotate(angle);
-    cel.scale(...stretch);
-    cel.drawImage(piece.canvas, -root[0] - pad, -root[1], width / scale, height / scale);
-    cel.restore();
+    isolated.save();
+    isolated.translate(...anchor);
+    isolated.rotate(angle);
+    isolated.scale(...stretch);
+    isolated.drawImage(piece.canvas, -root[0] - pad, -root[1], width / scale, height / scale);
+    isolated.restore();
   }
-  cel.restore();
+  return isolated.canvas;
 }
 
 function makeDesertDescent(image, wideGround, smoke, fallen, { width, height, layer, random, lerp, smooth, bloom }) {
@@ -210,10 +227,10 @@ function makeDesertDescent(image, wideGround, smoke, fallen, { width, height, la
     { alpha: true, willReadFrequently: true });
   bodyCel.filter = 'brightness(0.97) saturate(0.91)';
   bodyCel.drawImage(fittedBody.canvas, 0, 0);
-  alignFallenCloth(bodyCel, fittedBody.pad, clothScale, layer);
+  const looseCloth = alignFallenCloth(bodyCel, fittedBody.pad, clothScale, layer);
   // Coordinates follow the 900px-wide character reference, before the left padding.
   const leftRags = {
-    outline: 'M244 260 Q302 246 340 242 Q375 240 411 218 L456 201 465 220 Q433 233 405 248 Q370 262 350 284 L307 300 255 298 233 282 Z',
+    outline: 'M248 264 Q299 252 340 246 Q375 243 410 221 L445 208 453 222 Q424 238 399 250 Q370 262 348 284 L307 292 256 291 241 279 Z',
     x: 328, y: 263, rx: 117, ry: 32, angle: -0.30, strength: 9.5, phase: 0.9, root: 439
   };
   const shoulderTear = {
@@ -224,19 +241,20 @@ function makeDesertDescent(image, wideGround, smoke, fallen, { width, height, la
     outline: 'M735 249 Q762 250 787 247 Q800 248 819 254 L823 272 Q804 283 782 278 Q756 278 735 270 L725 258 Z',
     x: 770, y: 261, rx: 57, ry: 18, angle: 0.12, strength: 5.5, phase: 3.8, root: 821
   };
-  const wideCloth = makeFallenCloth(bodyCel, fittedBody.pad, clothScale, layer, [leftRags, shoulderTear, hoodHem]);
-  const chestCloth = makeFallenCloth(bodyCel, fittedBody.pad, clothScale, layer, [
-    { ...shoulderTear, strength: 4.8 },
+  const wideCloth = makeFallenCloth(bodyCel, looseCloth, fittedBody.pad, clothScale, layer,
+    [leftRags], [shoulderTear, hoodHem]);
+  const chestFolds = [
     {
-      outline: 'M374 213 Q397 195 419 181 Q441 163 469 153 L507 151 518 165 Q502 188 494 214 L461 230 Q424 232 380 235 Z',
-      x: 441, y: 197, rx: 77, ry: 32, angle: -0.41, strength: 5.2, phase: 1.4, root: 519
+      outline: 'M378 211 Q402 194 421 181 Q448 162 472 153 L494 155 501 170 Q491 193 484 213 L461 223 Q424 229 381 230 Z',
+      x: 441, y: 197, rx: 77, ry: 32, angle: -0.41, strength: 5.2, phase: 1.4, root: 501
     },
-    hoodHem,
     {
-      outline: 'M727 160 Q754 144 777 147 Q804 153 820 169 L817 184 802 190 Q776 170 744 179 L721 179 Z',
+      outline: 'M739 162 Q756 149 777 151 Q803 156 816 169 L814 182 802 187 Q777 169 745 176 L735 176 Z',
       x: 777, y: 166, rx: 44, ry: 15, angle: 0.13, strength: 3.1, phase: 4.7
     }
-  ]);
+  ];
+  const chestCloth = makeFallenCloth(bodyCel, looseCloth, fittedBody.pad, clothScale, layer,
+    chestFolds, [{ ...shoulderTear, strength: 4.8 }, hoodHem]);
 
   const dustCloud = layer(272, 144, { alpha: true });
   const cloudPixels = dustCloud.createImageData(dustCloud.canvas.width, dustCloud.canvas.height);
@@ -344,12 +362,13 @@ function makeDesertDescent(image, wideGround, smoke, fallen, { width, height, la
     const overhang = fittedBody.pad * span / fallen.width;
     const fadeAt = OPENING_SHOT_TIMING.thirdFadeAt;
     const movement = smooth(revealBodyAt, revealBodyAt + 0.78, time) * (1 - smooth(fadeAt - 0.85, fadeAt, time));
-    let sprite = bodyCel.canvas;
+    ctx.drawImage(bodyCel.canvas, x - overhang, y, span + overhang, tall);
+    let sprite = looseCloth;
     if (movement > 0) {
       const cloth = closeUp ? chestCloth : wideCloth;
       const elapsed = time - revealBodyAt;
       const gust = 0.18 + 0.47 * smooth(-0.35, 0.82, Math.sin(1.43 * elapsed + 0.64));
-      cloth.draw(elapsed, gust, movement);
+      cloth.draw(elapsed, gust, movement * 0.5);
       sprite = cloth.surface;
     }
     ctx.drawImage(sprite, x - overhang, y, span + overhang, tall);
