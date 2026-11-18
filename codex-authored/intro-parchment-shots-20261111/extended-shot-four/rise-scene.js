@@ -129,8 +129,10 @@ function makeRiseScene(ctx,images,width,height) {
   foreground.ink.globalCompositeOperation='source-over';
 
   const blowingSand=makeRiseGust(ctx);
+  const orbitSpeed=2;
+  const distantTravel=33*orbitSpeed;
   const pivotX=635,pivotY=650;
-  const rotation=time=>.0101*smooth(0,duration,time);
+  const rotation=time=>.0101*orbitSpeed*smooth(0,duration,time);
   function groundPoint(t,x,y) {
     const u=x-pivotX,v=y-pivotY;
     const angle=rotation(t),c=Math.cos(angle),s=Math.sin(angle);
@@ -182,7 +184,12 @@ function makeRiseScene(ctx,images,width,height) {
     };
   });
   const lightOpacity=.35;
-  const lightMoteCount=132;
+  const lightMoteStart=.16;
+  const lightMoteRamp=4-lightMoteStart;
+  const lightMoteSpan=duration-.6;
+  const lightMoteRate=132/lightMoteSpan;
+  const lightMotesDuringRamp=1.5*lightMoteRate*lightMoteRamp;
+  const lightMoteCount=Math.floor(lightMotesDuringRamp+2*lightMoteRate*(lightMoteSpan-lightMoteRamp));
   const lightMotePasses=3;
   // Seed the motes along the shoulder, cuirass, forearm, and greaves.
   const lightOrigins=[
@@ -194,9 +201,14 @@ function makeRiseScene(ctx,images,width,height) {
     const [x,y,rx,ry]=lightOrigins[i%lightOrigins.length];
     const angle=rand()*tau;
     const distance=Math.sqrt(rand());
+    // Invert the cumulative emission rate so each mote starts on the armor.
+    const emission=i+rand();
+    const elapsed=emission<lightMotesDuringRamp
+      ? lightMoteRamp*(Math.sqrt(1+2*emission/(lightMoteRate*lightMoteRamp))-1)
+      : lightMoteRamp+(emission-lightMotesDuringRamp)/(2*lightMoteRate);
     return {
       x:x+Math.cos(angle)*rx*distance, y:y+Math.sin(angle)*ry*distance,
-      born:.16+(i+rand())/lightMoteCount*(duration-.6),
+      born:lightMoteStart+elapsed,
       life:1.55+1.3*rand(), rise:27+22*rand(), drift:4+9*rand(),
       radius:.65+rand()**1.7*1.47, opacity:.34+.46*rand(), phase:rand()*tau
     };
@@ -294,8 +306,7 @@ function makeRiseScene(ctx,images,width,height) {
   }
 
   function drawRadiance(time) {
-    const build=smooth(.08,1.6,time);
-    const energy=build*(.90+.07*Math.sin(time*1.7)+.03*Math.sin(time*3.4));
+    const energy=smooth(0,6,time);
     if(energy<=0)return;
     ctx.save();
     ctx.globalCompositeOperation='screen';
@@ -336,8 +347,8 @@ function makeRiseScene(ctx,images,width,height) {
     const zoom=.913;
     const left=width*.049,top=height*.058;
     const wide=width*zoom,tall=height*zoom;
-    const distantLeft=-13,distantWidth=width+59;
-    ctx.drawImage(stage.surface,distantLeft-33*progress,top,distantWidth,tall);
+    const distantLeft=-13,distantWidth=width+26+distantTravel;
+    ctx.drawImage(stage.surface,distantLeft-distantTravel*progress,top,distantWidth,tall);
 
     ctx.save();
     ctx.translate(left,top);
@@ -360,7 +371,7 @@ function makeRiseScene(ctx,images,width,height) {
     drawLightMotes(time);
     ctx.restore();
 
-    grains(time,14*progress);
+    grains(time,14*orbitSpeed*progress);
     blowingSand.draw(time);
     ctx.restore();
   }
