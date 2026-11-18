@@ -181,7 +181,8 @@ function makeRiseScene(ctx,images,width,height) {
       radius:.33+rand()*1.25,alpha:.22+rand()*.42,
     };
   });
-  const lightOpacity=.20;
+  const lightOpacity=.35;
+  const lightMoteCount=132;
   const lightMotePasses=3;
   // Seed the motes along the shoulder, cuirass, forearm, and greaves.
   const lightOrigins=[
@@ -189,13 +190,13 @@ function makeRiseScene(ctx,images,width,height) {
     [789,330,23,37], [566,433,37,33], [521,552,23,38],
     [743,562,23,36]
   ];
-  const lightMotes=Array.from({length:66},(_,i)=>{
+  const lightMotes=Array.from({length:lightMoteCount},(_,i)=>{
     const [x,y,rx,ry]=lightOrigins[i%lightOrigins.length];
     const angle=rand()*tau;
     const distance=Math.sqrt(rand());
     return {
       x:x+Math.cos(angle)*rx*distance, y:y+Math.sin(angle)*ry*distance,
-      born:.16+(i+rand())/66*(duration-.6),
+      born:.16+(i+rand())/lightMoteCount*(duration-.6),
       life:1.55+1.3*rand(), rise:27+22*rand(), drift:4+9*rand(),
       radius:.65+rand()**1.7*1.47, opacity:.34+.46*rand(), phase:rand()*tau
     };
