@@ -181,6 +181,35 @@ function makeRiseScene(ctx,images,width,height) {
       radius:.33+rand()*1.25,alpha:.22+rand()*.42,
     };
   });
+  const lightOpacity=.10;
+  // Seed the motes along the shoulder, cuirass, forearm, and greaves.
+  const lightOrigins=[
+    [725,142,34,26], [686,225,32,36], [637,310,42,34],
+    [789,330,23,37], [566,433,37,33], [521,552,23,38],
+    [743,562,23,36]
+  ];
+  const lightMotes=Array.from({length:66},(_,i)=>{
+    const [x,y,rx,ry]=lightOrigins[i%lightOrigins.length];
+    const angle=rand()*tau;
+    const distance=Math.sqrt(rand());
+    return {
+      x:x+Math.cos(angle)*rx*distance, y:y+Math.sin(angle)*ry*distance,
+      born:.16+(i+rand())/66*(duration-.6),
+      life:1.55+1.3*rand(), rise:27+22*rand(), drift:4+9*rand(),
+      radius:.65+rand()**1.7*1.47, opacity:.34+.46*rand(), phase:rand()*tau
+    };
+  });
+  const lightSprite=document.createElement('canvas');
+  lightSprite.width=48;
+  lightSprite.height=48;
+  const lightInk=lightSprite.getContext('2d');
+  const lightGradient=lightInk.createRadialGradient(24,24,0,24,24,24);
+  lightGradient.addColorStop(0,'#fffef9');
+  lightGradient.addColorStop(.21,'rgba(255,255,250,.84)');
+  lightGradient.addColorStop(.43,'rgba(250,250,255,.32)');
+  lightGradient.addColorStop(1,'rgba(250,250,255,0)');
+  lightInk.fillStyle=lightGradient;
+  lightInk.fillRect(0,0,48,48);
 
   function contact(x,y,rx,ry,opacity) {
     ctx.save();
@@ -269,14 +298,32 @@ function makeRiseScene(ctx,images,width,height) {
     ctx.save();
     ctx.globalCompositeOperation='screen';
     ctx.filter='brightness(0) invert(1) blur(24px)';
-    ctx.globalAlpha=energy*.24;
+    ctx.globalAlpha=energy*lightOpacity*.24;
     ctx.drawImage(cloth.surface,0,0,tw,th);
     ctx.filter='brightness(0) invert(1) blur(8px)';
-    ctx.globalAlpha=energy*.36;
+    ctx.globalAlpha=energy*lightOpacity*.60;
     ctx.drawImage(cloth.surface,0,0,tw,th);
     ctx.filter='none';
-    ctx.globalAlpha=energy*.09;
+    ctx.globalAlpha=energy*lightOpacity*.16;
     ctx.drawImage(cloth.surface,0,0,tw,th);
+    ctx.restore();
+  }
+
+  function drawLightMotes(time) {
+    ctx.save();
+    ctx.globalCompositeOperation='screen';
+    const finish=1-smooth(duration-.6,duration,time);
+    for(const mote of lightMotes) {
+      const age=time-mote.born;
+      if(age<=0||age>=mote.life)continue;
+      const progress=age/mote.life;
+      const sway=3.5*(Math.sin(age*1.45+mote.phase)-Math.sin(mote.phase));
+      const x=mote.x-mote.drift*age+sway*smooth(0,.55,age);
+      const y=mote.y-mote.rise*age-5*progress*progress;
+      const radius=mote.radius*2.3*(1+.28*progress);
+      ctx.globalAlpha=mote.opacity*finish*smooth(0,.22,progress)*(1-smooth(.5,1,progress));
+      ctx.drawImage(lightSprite,x-radius,y-radius,radius*2,radius*2);
+    }
     ctx.restore();
   }
 
@@ -306,6 +353,7 @@ function makeRiseScene(ctx,images,width,height) {
     contact(1082,665,42,10,.32);
     ctx.drawImage(cloth.surface,0,0,tw,th);
     drawRadiance(time);
+    drawLightMotes(time);
     ctx.restore();
 
     grains(time,14*progress);

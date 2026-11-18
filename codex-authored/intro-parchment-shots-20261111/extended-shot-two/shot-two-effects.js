@@ -6,6 +6,26 @@ function makeExtendedFall(assets, helpers) {
   const incoming = layer(width, height + matte * 2, { alpha: false });
   const sky = assets['heaven-sky'];
   const abyss = assets['cloud-abyss'];
+  const abyssBanks = [
+    { x: 0.04, y: 0.62, rx: 0.44, ry: 0.77, vx: 8, vy: -10, phase: 0.7 },
+    { x: 0.96, y: 0.71, rx: 0.38, ry: 0.69, vx: -7, vy: -13, phase: 2.1 },
+    { x: 0.56, y: 0.02, rx: 0.55, ry: 0.35, vx: -11, vy: 2, phase: 3.4 }
+  ].map(bank => {
+    const plate = layer(width, height, { alpha: true });
+    plate.drawImage(abyss, 0, 0, width, height);
+    plate.globalCompositeOperation = 'destination-in';
+    plate.translate(bank.x * width, bank.y * height);
+    plate.scale(bank.rx * width, bank.ry * height);
+    const edge = plate.createRadialGradient(0, 0, 0, 0, 0, 1);
+    edge.addColorStop(0, '#000');
+    edge.addColorStop(0.47, '#000');
+    edge.addColorStop(0.78, 'rgba(0,0,0,0.42)');
+    edge.addColorStop(1, 'transparent');
+    plate.fillStyle = edge;
+    plate.fillRect(-1, -1, 2, 2);
+    return { ...bank, plate: plate.canvas };
+  });
+  const abyssFrame = layer(width, height, { alpha: false });
   const commander = makeReferenceCommander(assets.commanderReference, assets.commanderChin, assets.commanderChinEdge, layer);
   const troops = assets['angels-fall-faces'];
   const smoke = assets['collapse-smoke'];
@@ -116,6 +136,25 @@ function makeExtendedFall(assets, helpers) {
     opacity: lerp(0.1, 0.68, streamRandom())
   }));
 
+  function drawAbyssClouds(ctx, t, pull) {
+    const travel = t - 3.8;
+    const overscan = 1.065;
+    const distanceX = width * (overscan - 1);
+    const distanceY = height * (overscan - 1);
+    abyssFrame.drawImage(abyss, -distanceX * 0.36 - 2.8 * travel, -distanceY * 0.54 + 1.35 * travel,
+      width * overscan, height * overscan);
+    for (const { vx, vy, phase, plate } of abyssBanks) {
+      const swell = 1.04 + 0.027 * Math.sin(travel * 0.58 + phase);
+      const dx = vx * travel + 11 * (Math.sin(travel * 0.67 + phase) - Math.sin(phase));
+      const dy = vy * travel + 9 * (Math.cos(travel * 0.73 + phase) - Math.cos(phase));
+      const bankW = width * swell + 2 * Math.abs(dx);
+      const bankH = height * swell + 2 * Math.abs(dy);
+      abyssFrame.drawImage(plate, dx + (width - bankW) / 2, dy + (height - bankH) / 2, bankW, bankH);
+    }
+    const zoom = lerp(1.48, 1.012, pull) + 0.038 * smooth(13.2, timing.duration, t);
+    ctx.drawImage(abyssFrame.canvas, landing.x * (1 - zoom), landing.y * (1 - zoom), width * zoom, height * zoom);
+  }
+
   function drawAtmosphere(ctx, t, pull) {
     const depth = smooth(3.8, 10.0, t);
     const close = 1 - smooth(0.83, 6.7, t);
@@ -130,8 +169,7 @@ function makeExtendedFall(assets, helpers) {
     if (depth > 0) {
       ctx.save();
       ctx.globalAlpha = depth;
-      const zoom = lerp(1.48, 1.012, pull) + 0.038 * smooth(13.2, timing.duration, t);
-      ctx.drawImage(abyss, landing.x * (1 - zoom), landing.y * (1 - zoom), width * zoom, height * zoom);
+      drawAbyssClouds(ctx, t, pull);
       ctx.restore();
     }
     const dim = smooth(10.9, 15.6, t);
@@ -184,14 +222,17 @@ function makeExtendedFall(assets, helpers) {
   function drawCameraCloud(ctx, t, foreground) {
     const depth = smooth(foreground ? 7.15 : 4.95, foreground ? 15.55 : 14.75, t);
     if (depth <= 0) return;
-    const scale = foreground ? 1.06 + 0.68 * depth : 1.04 + 0.35 * depth;
+    const scale = foreground ? 1.12 + 0.68 * depth : 1.09 + 0.35 * depth;
     const originX = width * 0.54;
     const originY = height * 0.49;
     ctx.save();
     ctx.globalAlpha = depth * (foreground ? 0.93 : 0.65);
     ctx.filter = foreground ? 'blur(18px)' : 'blur(6px)';
+    const wind = Math.max(0, t - (foreground ? 7.15 : 4.95));
+    const driftX = foreground ? -17 * wind : 8 * wind;
+    const driftY = foreground ? -23 * wind : -8 * wind;
     ctx.drawImage(foreground ? closeVapour : cloudVapour,
-      originX * (1 - scale), originY * (1 - scale), width * scale, height * scale);
+      originX * (1 - scale) + driftX, originY * (1 - scale) + driftY, width * scale, height * scale);
     ctx.restore();
     if (foreground) {
       const haze = ctx.createRadialGradient(originX, originY, height * 0.12, originX, originY, width * 0.57);
