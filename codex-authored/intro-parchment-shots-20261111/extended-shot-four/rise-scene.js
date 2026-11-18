@@ -129,7 +129,7 @@ function makeRiseScene(ctx,images,width,height) {
   foreground.ink.globalCompositeOperation='source-over';
 
   const blowingSand=makeRiseGust(ctx);
-  const orbitSpeed=2;
+  const orbitSpeed=4;
   const distantTravel=33*orbitSpeed;
   const pivotX=635,pivotY=650;
   const rotation=time=>.0101*orbitSpeed*smooth(0,duration,time);
