@@ -92,11 +92,8 @@
   assets.commanderChinEdge = 'assets/archangel-hood-edge-left.png';
   assets.feather = 'assets/charred-feather.png';
   assets.tail = 'assets/shot-one-tail.png';
-  const ready = Promise.all([
-    ...Object.entries(assets).map(async ([name, url]) => [name, await loadImage(url)]),
-    document.fonts.load('700 49px OpeningSerif', '天門失守連大天使長也墜入了深淵')
-  ]).then(entries => {
-    const images = Object.fromEntries(entries.slice(0, -1));
+  const ready = Promise.all(Object.entries(assets).map(async ([name, url]) => [name, await loadImage(url)])).then(entries => {
+    const images = Object.fromEntries(entries);
     images.wing = softenWingBoundary(images.wing);
     window.openingShot.render = makeExtendedFall(images, { context, width, height, matte, layer,
       random, lerp, smooth, bloom, pageFinish });

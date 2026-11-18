@@ -364,36 +364,6 @@ function makeMortalMap(image, groundImage, wideGround, smoke, feather, fallen, {
   }
 
 
-  function subtitles(ctx, t) {
-    const first = smooth(6.68, 7.08, t) * (1 - smooth(10.72, 11.24, t));
-    const second = smooth(thirdHopeAt + 0.34, thirdHopeAt + 0.79, t) *
-      (1 - smooth(thirdDiveAt - 0.72, thirdDiveAt - 0.17, t));
-    const opacity = Math.max(first, second);
-    if (opacity <= 0) return;
-    ctx.save();
-    ctx.globalAlpha = opacity * 0.54;
-    const shade = ctx.createLinearGradient(0, 731, 0, height);
-    shade.addColorStop(0, 'rgba(18,9,16,0)');
-    shade.addColorStop(1, 'rgba(18,9,16,0.85)');
-    ctx.fillStyle = shade;
-    ctx.fillRect(0, 731, width, height - 731);
-    ctx.font = '700 47px "Noto Serif TC", "Microsoft JhengHei", MingLiU, serif';
-    ctx.letterSpacing = '0.18em';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.strokeStyle = 'rgba(22,11,8,0.90)';
-    ctx.fillStyle = '#f7e5be';
-    ctx.lineJoin = 'round';
-    ctx.lineWidth = 3.8;
-    ctx.shadowColor = 'rgba(16,9,7,0.87)';
-    ctx.shadowBlur = 18;
-    const line = first > second ? '黑暗蔓延至薩爾維恩。' : '荒漠深處，仍有一點光。';
-    ctx.globalAlpha = opacity;
-    ctx.strokeText(line, width * 0.5, 810);
-    ctx.fillText(line, width * 0.5, 810);
-    ctx.restore();
-  }
-
   return function renderMortalMap(seconds, continuation) {
     const t = thirdPictureTime(Math.max(0, seconds));
     const ctx = context;
@@ -451,7 +421,6 @@ function makeMortalMap(image, groundImage, wideGround, smoke, feather, fallen, {
       descent.drawPassage(ctx, t, focus);
     }
     pageFinish(ctx);
-    subtitles(ctx, t);
     ctx.restore();
 
     if (continuation !== undefined) return featherglow;

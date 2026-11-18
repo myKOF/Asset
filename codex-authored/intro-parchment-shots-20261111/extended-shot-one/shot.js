@@ -7,7 +7,6 @@
   const { duration, firstDuration, pullStart, pullEnd } = OPENING_SHOT_TIMING;
   const canvas = document.querySelector('canvas');
   const context = canvas.getContext('2d', { alpha: false });
-  const caption = '我們曾以為，天界的光永遠不會熄滅。';
   const hero = { x: 480, y: 787, height: 370, anchorX: 0.355, anchorY: 0.94 };
   const clamp = x => Math.max(0, Math.min(1, x));
   const lerp = (a, b, t) => a + (b - a) * t;
@@ -582,25 +581,6 @@
     ctx.fillRect(0, 0, width, height);
   }
 
-  function drawCaption(ctx, t) {
-    ctx.save();
-    ctx.globalAlpha = smooth(4.28, 4.86, t) * (1 - smooth(8.88, 9.56, t));
-    ctx.font = '700 41px OpeningSerif, "Microsoft JhengHei", MingLiU, serif';
-    ctx.letterSpacing = '0.07em';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.strokeStyle = 'rgba(22,11,8,0.84)';
-    ctx.lineJoin = 'round';
-    ctx.lineWidth = 3.8;
-    ctx.shadowColor = 'rgba(19,10,6,0.89)';
-    ctx.shadowBlur = 19;
-    ctx.strokeText(caption, width * 0.5, 816);
-    ctx.fillStyle = '#f7e5be';
-    ctx.fillText(caption, width * 0.5, 816);
-    ctx.restore();
-  }
-
-
   function cleanValleyPlate(valley, clean) {
     const { width, height } = valley;
     const plate = layer(width, height);
@@ -1013,7 +993,6 @@
       drawDust(ctx, t, wind);
       assets.assault.foreground(ctx, t);
       pageFinish(ctx);
-      drawCaption(ctx, t);
 
       const ink = 1 - smooth(0, 0.55, t);
       if (ink > 0) {
@@ -1070,11 +1049,9 @@
       smoke.fillStyle = feather;
       smoke.fillRect(-1, -1, 2, 2);
       assets.assault = makeTempleAssault({ random, smooth, lerp, bloom, haze: darkFog, smoke: smoke.canvas });
-      return document.fonts.load('700 41px OpeningSerif', caption).then(() => {
-        const render = makeScene(assets);
-        window.openingShot.render = render;
-        render(1.35);
-      });
+      const render = makeScene(assets);
+      window.openingShot.render = render;
+      render(1.35);
     })
   };
 })();

@@ -317,7 +317,7 @@
   window.openingShot = shot;
   shot.ready = Promise.all([
     loadImage('assets/mortal-map.png'), loadImage('assets/desert-surface.png'), loadImage('assets/collapse-smoke.png'), loadImage('assets/desert-wide-extended.png'),
-    loadImage('assets/charred-feather.png'), loadImage('assets/archangel-fallen-ivory.png'), loadImage('assets/archangel-left-thumb-reference-edit.png'), loadImage('assets/hand-buried-approved.png'), loadImage('assets/wrist-sand-relief.png'), makeIntroFeatherParticles(), document.fonts.load('700 48px "Noto Serif TC"')
+    loadImage('assets/charred-feather.png'), loadImage('assets/archangel-fallen-ivory.png'), loadImage('assets/archangel-left-thumb-reference-edit.png'), loadImage('assets/hand-buried-approved.png'), loadImage('assets/wrist-sand-relief.png'), makeIntroFeatherParticles()
   ]).then(([map, desert, smoke, wideDesert, feather, fallen, thumb, buriedHand, wristSand, featherFx]) => {
     const render = makeMortalMap(map, desert, wideDesert, smoke, feather, buryWrist(applyBuriedHand(compositeHand(fallen, thumb), buriedHand), wristSand), {
       context, width, height, matte, layer, random, lerp, smooth, bloom, pageFinish, featherFx

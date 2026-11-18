@@ -15,6 +15,8 @@ const review = path.resolve(process.env.PARCHMENT_REVIEW_DIR || path.join(os.tmp
 fs.mkdirSync(review, { recursive: true });
 const { duration } = require('./shot-timing.js');
 const fps = 30;
+const { frameRange, readDevToolsPort } = require('../render-preview.cjs');
+const { from, to, partial } = frameRange(duration * fps);
 const ffmpeg = process.env.PARCHMENT_FFMPEG || 'ffmpeg';
 const mime = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
   '.png': 'image/png', '.wav': 'audio/wav', '.woff2': 'font/woff2' };
@@ -45,8 +47,7 @@ async function main() {
       '--disable-background-networking','--mute-audio','--remote-debugging-port=0',
       '--user-data-dir=' + profile, 'about:blank'], { windowsHide:true, stdio:'ignore' });
     const activePort = path.join(profile, 'DevToolsActivePort');
-    for (let i = 0; i < 120 && !fs.existsSync(activePort); i++) await delay(100);
-    const port = Number(fs.readFileSync(activePort, 'utf8').split(/\r?\n/)[0]);
+    const port = await readDevToolsPort(activePort);
     const pages = await fetch('http://127.0.0.1:' + port + '/json/list').then(r => r.json());
     ws = new WebSocket(pages.find(t => t.type === 'page').webSocketDebuggerUrl);
     await once(ws, 'open');
@@ -92,19 +93,19 @@ async function main() {
         fs.writeFileSync(path.join(review, 'stills', 'frame-' + t.toFixed(2) + '.jpg'), await frame(t));
       }
     } else {
-      const out = path.join(review, 'shot-02-visual.mp4');
+      const out = path.join(review, partial ? 'picture-range.mp4' : 'shot-02-visual.mp4');
       encoder = spawn(ffmpeg, ['-hide_banner','-loglevel','error','-y',
         '-f','image2pipe','-framerate',String(fps),'-vcodec','mjpeg','-i','pipe:0',
         '-map','0:v:0','-an','-vf','scale=in_range=full:out_range=limited,format=yuv420p',
         '-c:v','libx264','-preset','medium','-crf','16','-g','60','-color_range','tv',
         '-color_primaries','bt709','-color_trc','bt709','-colorspace','bt709',
-        '-movflags','+faststart','-t',String(duration),out
+        '-movflags','+faststart','-t',String((to - from) / fps),out
       ], { windowsHide:true, stdio:['pipe','inherit','inherit'] });
       const done = once(encoder, 'exit');
-      for (let i = 0; i < duration * fps; i++) {
+      for (let i = from; i < to; i++) {
         const bytes = await frame(i / fps);
         if (!encoder.stdin.write(bytes)) await once(encoder.stdin, 'drain');
-        if ((i + 1) % 120 === 0) console.log('Rendered ' + (i + 1) + '/' + duration * fps + ' frames');
+        if ((i - from + 1) % 120 === 0) console.log('Rendered ' + (i - from + 1) + '/' + (to - from) + ' frames');
       }
       encoder.stdin.end();
       const [code] = await done;

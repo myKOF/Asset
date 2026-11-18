@@ -770,25 +770,6 @@ function makeExtendedFall(assets, helpers) {
     ctx.restore();
   }
 
-  function subtitle(ctx, line, opacity) {
-    if (opacity <= 0) return;
-    ctx.save();
-    ctx.globalAlpha = opacity;
-    ctx.font = '700 49px OpeningSerif, "Microsoft JhengHei", MingLiU, serif';
-    ctx.letterSpacing = '0.14em';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.strokeStyle = 'rgba(22,11,8,0.89)';
-    ctx.lineJoin = 'round';
-    ctx.lineWidth = 3.8;
-    ctx.shadowColor = 'rgba(16,9,7,0.87)';
-    ctx.shadowBlur = 20;
-    ctx.strokeText(line, width * 0.5, 816);
-    ctx.fillStyle = '#f7e5be';
-    ctx.fillText(line, width * 0.5, 816);
-    ctx.restore();
-  }
-
   function drawAbyssTransition(ctx, t) {
     if (t < timing.whiteLightAt) return;
     const elapsed = t - timing.whiteLightAt;
@@ -848,8 +829,6 @@ function makeExtendedFall(assets, helpers) {
     drawCharredFeather(ctx, t);
     pageFinish(ctx);
 
-    subtitle(ctx, '天門失守。', smooth(1.18, 1.74, t) * (1 - smooth(3.98, 4.47, t)));
-    subtitle(ctx, '連大天使長，也墜入了深淵。', smooth(6.12, 6.71, t) * (1 - smooth(10.17, 10.77, t)));
     ctx.restore();
     drawAbyssTransition(ctx, t);
   }
