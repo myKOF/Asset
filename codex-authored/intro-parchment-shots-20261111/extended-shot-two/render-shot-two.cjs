@@ -17,6 +17,7 @@ const { duration } = require('./shot-timing.js');
 const fps = 30;
 const { frameRange, readDevToolsPort } = require('../render-preview.cjs');
 const { from, to, partial } = frameRange(duration * fps);
+const effectsVersion = process.argv.includes('--effects');
 const ffmpeg = process.env.PARCHMENT_FFMPEG || 'ffmpeg';
 const mime = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
   '.png': 'image/png', '.wav': 'audio/wav', '.woff2': 'font/woff2' };
@@ -76,7 +77,8 @@ async function main() {
     }
     await send('Runtime.enable');
     await send('Page.enable');
-    await send('Page.navigate', { url: 'http://127.0.0.1:' + server.address().port + '/extended-shot-two/index.html?capture=1' });
+    const previewPage = effectsVersion ? 'index-effects.html' : 'index.html';
+    await send('Page.navigate', { url: 'http://127.0.0.1:' + server.address().port + '/extended-shot-two/' + previewPage + '?capture=1' });
     let loaded = false;
     for (let i = 0; i < 120 && !loaded; i++) {
       loaded = await evaluate('typeof window.openingShot?.render === "function"');
@@ -93,7 +95,8 @@ async function main() {
         fs.writeFileSync(path.join(review, 'stills', 'frame-' + t.toFixed(2) + '.jpg'), await frame(t));
       }
     } else {
-      const out = path.join(review, partial ? 'picture-range.mp4' : 'shot-02-visual.mp4');
+      const pictureName = effectsVersion ? 'shot-02-effects-18s.mp4' : 'shot-02-visual.mp4';
+      const out = path.join(review, partial ? 'picture-range.mp4' : pictureName);
       encoder = spawn(ffmpeg, ['-hide_banner','-loglevel','error','-y',
         '-f','image2pipe','-framerate',String(fps),'-vcodec','mjpeg','-i','pipe:0',
         '-map','0:v:0','-an','-vf','scale=in_range=full:out_range=limited,format=yuv420p',

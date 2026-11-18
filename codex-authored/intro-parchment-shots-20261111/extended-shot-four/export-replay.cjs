@@ -6,6 +6,7 @@ const os = require('node:os');
 const { execFileSync } = require('node:child_process');
 const { createHash } = require('node:crypto');
 const exportCleanReplay = require('./export-clean-replay.cjs');
+const replaceShotTwo = require('./replace-replay-shot-two.cjs');
 
 const [master, output] = process.argv.slice(2);
 const audioOnly = master === '--audio-only';
@@ -35,6 +36,7 @@ const scratch = fs.mkdtempSync(path.join(os.tmpdir(), 'parchment-replay-'));
 const firstEffects = path.join(scratch, 'first.wav');
 const concatFile = path.join(scratch, 'video.ffconcat');
 const bakedPicture = path.join(scratch, 'historical-picture.mp4');
+const cleanPicture = path.join(scratch, 'clean-picture.mp4');
 try {
   if (fiveShots) {
     const { replayCutAt, duration } = require('../extended-shot-five/finale-timing.js');
@@ -49,7 +51,8 @@ try {
     fs.writeFileSync(concatFile, ['ffconcat version 1.0', ...segments, ''].join('\n'));
     ff(['-f', 'concat', '-safe', '0', '-i', concatFile, '-map', '0:v:0', '-c:v', 'copy',
       '-movflags', '+faststart', bakedPicture]);
-    exportCleanReplay(bakedPicture, path.join(output, replay + '.mp4'));
+    exportCleanReplay(bakedPicture, cleanPicture);
+    replaceShotTwo(cleanPicture, path.join(archive, 'web/shot-02-effects-18s.mp4'), path.join(output, replay + '.mp4'));
   }
 
   execFileSync(process.execPath, [path.join(archive, 'extended-shot-one/build-audio.cjs'), '--replay-effects', firstEffects], {
@@ -70,6 +73,7 @@ try {
 } finally {
   fs.rmSync(concatFile, { force: true });
   fs.rmSync(bakedPicture, { force: true });
+  fs.rmSync(cleanPicture, { force: true });
   fs.rmSync(firstEffects, { force: true });
   fs.rmdirSync(scratch);
 }
