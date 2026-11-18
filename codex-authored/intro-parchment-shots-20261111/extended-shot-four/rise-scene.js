@@ -183,7 +183,7 @@ function makeRiseScene(ctx,images,width,height) {
       radius:.33+rand()*1.25,alpha:.22+rand()*.42,
     };
   });
-  const lightOpacity=.35;
+  const lightOpacity=.28;
   const lightMoteStart=.16;
   const lightMoteRamp=4-lightMoteStart;
   const lightMoteSpan=duration-.6;

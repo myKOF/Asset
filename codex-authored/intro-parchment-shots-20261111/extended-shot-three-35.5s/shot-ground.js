@@ -500,7 +500,14 @@ function makeDesertDescent(image, wideGround, smoke, fallen, { width, height, la
     ctx.drawImage(background, x, y, w, h);
     ctx.filter = 'none';
     const body = bodyBounds(projection);
-    drawFallen(ctx, body, fabricTime, closeUp);
+    // Keep the character hidden through the map dissolve, when the dust is also translucent.
+    const bodyOpacity = smooth(0, 0.22, reveal);
+    if (bodyOpacity > 0) {
+      ctx.save();
+      ctx.globalAlpha *= bodyOpacity;
+      drawFallen(ctx, body, fabricTime, closeUp);
+      ctx.restore();
+    }
     drawBodyDust(ctx, t, body, reveal);
     const distantClarity = lerp(0.38, 1, smooth(0.10, 0.91, reveal));
     for (const [baseX, baseY, angle, bw, bh, alpha, wind] of dustStreams) {

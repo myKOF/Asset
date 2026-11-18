@@ -65,7 +65,7 @@ try {
     replaceShotTwo(cleanPicture, path.join(archive, 'web/shot-02-effects-18s.mp4'), revisedShotTwo);
     const { offset } = require('../extended-shot-three-35.5s/shot-timing.js');
     replaceShotTwo.replaceReplayRange(revisedShotTwo, path.join(archive, 'web/shot-03-valley-dust.mp4'),
-      revisedDust, offset * 30 + 486, offset * 30 + 692);
+      revisedDust, offset * 30 + 486, offset * 30 + 573);
     const fourthStartFrame = fourthStartAt * 30;
     replaceShotTwo.replaceReplayRange(revisedDust, path.join(archive, 'web/shot-03-fallen-wind-handoff.mp4'),
       revisedFallen, offset * 30 + 573, fourthStartFrame + Math.round(braceAt * 30));
