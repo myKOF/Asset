@@ -1,0 +1,71 @@
+{
+  "floor": 18,
+  "model": {
+    "file": "images/models/npc3d/boss8_lv2.glb",
+    "clips": [
+      "Attack1",
+      "Attack2",
+      "Attack3",
+      "Die",
+      "Walk"
+    ],
+    "durations": {
+      "Walk": 1.600000023841858,
+      "Attack1": 1.7333333492279053,
+      "Attack2": 2.0799999237060547,
+      "Attack3": 2.4000000953674316,
+      "Die": 3.7666666507720947
+    },
+    "attackCycle": [
+      "Attack1",
+      "Attack2",
+      "Attack3"
+    ]
+  },
+  "portraits": [
+    {
+      "className": "twx-fl-ico",
+      "width": 21.333328247070312,
+      "height": 21.33331298828125,
+      "parentWidth": 22.666671752929688,
+      "parentHeight": 22.66668701171875,
+      "visible": true
+    },
+    {
+      "className": "twx-boss-img",
+      "width": 92,
+      "height": 92.00000762939453,
+      "parentWidth": 93.33334350585938,
+      "parentHeight": 93.33332824707031,
+      "visible": true
+    }
+  ],
+  "liveEntity": {
+    "id": "tb-float",
+    "x": 395,
+    "y": -233,
+    "state": "idle",
+    "lunge": 0,
+    "magic": true,
+    "npc": "tower_boss_18",
+    "sheet": "",
+    "anim": "idle",
+    "npc3d": true,
+    "clip": "Walk"
+  },
+  "liveAttack": {
+    "id": "tb-float",
+    "x": 297,
+    "y": -258,
+    "state": "idle",
+    "lunge": 0,
+    "magic": true,
+    "npc": "tower_boss_18",
+    "sheet": "",
+    "anim": "cast",
+    "npc3d": true,
+    "clip": "Attack1"
+  },
+  "exceptions": [],
+  "cinematicSkippedForTest": true
+}
