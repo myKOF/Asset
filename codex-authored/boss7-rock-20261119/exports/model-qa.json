@@ -1,0 +1,57 @@
+{
+  "blender": "4.5.10 LTS",
+  "sources": [
+    {
+      "file": "BOSS7_Walk.glb",
+      "sha256": "1dd295b90695296cf87a66b1b6de8099cf51f01a315e8cf5487979d8a32788a3",
+      "originalClip": "run_fast_10_inplace",
+      "clip": "Walk",
+      "seconds": 0.8
+    },
+    {
+      "file": "BOSS7_Attack1.glb",
+      "sha256": "dbcf8d90649270ab41153fe0201e6d8b84cebbbaffdb861bede00cbceac14d88",
+      "originalClip": "Axe_Spin_Attack",
+      "clip": "Attack1",
+      "seconds": 2.5
+    },
+    {
+      "file": "BOSS7_Attack2.glb",
+      "sha256": "89aa114ec82dc6c1e84a7c9e3e71baa475479a8e48096b6c264a9f6c80ae29ab",
+      "originalClip": "Attack",
+      "clip": "Attack2",
+      "seconds": 2.8
+    },
+    {
+      "file": "BOSS7_Attack3.glb",
+      "sha256": "175f3e7a9cbe505c0417fcb796bc41bdb4eaec57992bd0c8e8b6ed9219ddee78",
+      "originalClip": "Spartan_Kick",
+      "clip": "Attack3",
+      "seconds": 1.4
+    },
+    {
+      "file": "BOSS7_Die.glb",
+      "sha256": "33ef7d8f39d56c52bb6099c749187277c5d24cdf5b992254e38a0f70ee6d3d9a",
+      "originalClip": "Shot_and_Fall_Forward",
+      "clip": "Die",
+      "seconds": 2.1666666666666665
+    }
+  ],
+  "bounds": [
+    [
+      -0.5951914191246033,
+      -0.6136676669120789,
+      -0.002216888824477792
+    ],
+    [
+      0.45111361145973206,
+      0.6690202951431274,
+      1.754920244216919
+    ]
+  ],
+  "bones": 58,
+  "portrait": [
+    1080,
+    1080
+  ]
+}

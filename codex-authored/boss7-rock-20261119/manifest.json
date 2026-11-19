@@ -1,0 +1,51 @@
+{
+  "asset": "boss7-rock-material-1",
+  "files": [
+    {
+      "source": "sources/BOSS7_Attack1.glb",
+      "sha256": "dbcf8d90649270ab41153fe0201e6d8b84cebbbaffdb861bede00cbceac14d88"
+    },
+    {
+      "source": "sources/BOSS7_Attack2.glb",
+      "sha256": "89aa114ec82dc6c1e84a7c9e3e71baa475479a8e48096b6c264a9f6c80ae29ab"
+    },
+    {
+      "source": "sources/BOSS7_Attack3.glb",
+      "sha256": "175f3e7a9cbe505c0417fcb796bc41bdb4eaec57992bd0c8e8b6ed9219ddee78"
+    },
+    {
+      "source": "sources/BOSS7_Die.glb",
+      "sha256": "33ef7d8f39d56c52bb6099c749187277c5d24cdf5b992254e38a0f70ee6d3d9a"
+    },
+    {
+      "source": "sources/BOSS7_Walk.glb",
+      "sha256": "1dd295b90695296cf87a66b1b6de8099cf51f01a315e8cf5487979d8a32788a3"
+    },
+    {
+      "source": "exports/boss7.blend",
+      "sha256": "4acc037495fa8da94c17151bc4354d172321b75b79e462940d25dcd56a92e97f"
+    },
+    {
+      "source": "exports/boss7.glb",
+      "project": "images/models/npc3d/boss7.glb",
+      "sha256": "a596db8a5ae0f65c85639258028ff3e69779ec0b182babaa041334c76447942e"
+    },
+    {
+      "source": "exports/boss7_rock.png",
+      "project": "images/sprites/boss/boss7_rock.png",
+      "sha256": "45f0d92535f97a8d52e8803212daa1c59b36394dd6ab82bebc72a961dfed0aa8"
+    },
+    {
+      "source": "exports/model-qa.json",
+      "sha256": "7607232145658a3262d9f32f743c3c847b1a1a9f1f393525c6035b90937d8a0f"
+    },
+    {
+      "source": "prepare.py",
+      "sha256": "29e196e323fa476f7be9a3e1ec29b5ca8a2b09d5fd75f54dbd8899e836c91236"
+    },
+    {
+      "source": "SOURCE.md",
+      "sha256": "2f172c342e36fa308f09d9ec2ce4518a57d90903be2bacf71e0fd7ade3589271"
+    }
+  ]
+}
