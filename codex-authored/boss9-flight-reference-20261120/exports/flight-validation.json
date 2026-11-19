@@ -1,0 +1,41 @@
+{
+  "samples": 241,
+  "durationSeconds": 2,
+  "bones": 70,
+  "newWingSupports": 6,
+  "vertices": 4800,
+  "faces": 9333,
+  "wingEdgesOver5mm": 4483,
+  "wingStrainFromNewOpenedRest": {
+    "maximum": 1.9330267425577468,
+    "maximum95thPercentile": 1.2941380975417065,
+    "maximum99thPercentile": 1.4986526345089501,
+    "minimum": 0.14861731609056292
+  },
+  "loopVertexErrorSourceUnits": 4.76837158203125e-07,
+  "loopBoneMatrixError": 4.76837158203125e-07,
+  "maxBoneLengthErrorSourceUnits": 2.8728941914302197e-07,
+  "scaleError": 1.1920928955078125e-07,
+  "tailFinConstantScale": 0.65,
+  "images": {
+    "Image_0": "00e899696fa430d3dd99143ae054f42aa0649d92260c771158192318867ba361",
+    "Image_1": "05cab7c354b88717cdfc26f606838f0cc4d94bb75e672e5f9e5a42667935271e",
+    "Image_2": "0fbd1277dd9949adf6443f612a9565fd9b1f5e53571868ed488dc5af88828365"
+  },
+  "unchangedNonWingVertices": 2954,
+  "sourceV2SHA256": "c412c1704d6f9f9b9315b5b2fc48163833fff83c8e88ee98a6268f74f6f40e70",
+  "originalFourActionsInUnmodifiedV2": {
+    "Attack1": "f07a5e1fcd362a011968f3eb1eeafefd900909691bd30295d469be64bb45b30e",
+    "Attack2": "c6ab656fd1dbc9a209866db68a9b699e5062972cf830d1a7f1a5f88f7658aaf0",
+    "Attack3": "b274fd6ec92c804da4980f69f8fd87b01778d058499fbac72974c390faaa1d61",
+    "Die": "5de1685d7a96ca886c3dd8d9ba8696f43fc490f328c7a11acea465c567304d25"
+  },
+  "glb": {
+    "sha256": "2cfffdafc1d9697267b6f011b869fd4beeedd849d971fb9f21df5df0af7dde0d",
+    "clips": [
+      "Walk"
+    ],
+    "loopChannelError": 3.5762786865234375e-07,
+    "originalTextureBytesPreserved": true
+  }
+}

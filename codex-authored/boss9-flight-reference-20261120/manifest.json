@@ -1,0 +1,100 @@
+{
+  "id": "boss9-flight-reference-20261120",
+  "status": "Flight review; other actions await user approval",
+  "dependency": {
+    "source": "codex-authored/boss9-dragon-v2-20261120/exports/boss9.blend",
+    "sha256": "c412c1704d6f9f9b9315b5b2fc48163833fff83c8e88ee98a6268f74f6f40e70"
+  },
+  "reference": {
+    "sha256": "cb716c7487b1b955ae44be89cd2fb4e2cefb2ca30c024a12c56ca3dcc0e1f066",
+    "usage": "Motion analysis only. No reference pixels included. Labelled comparison is a separate private review artifact."
+  },
+  "files": [
+    {
+      "source": "exports/boss9_flight.blend",
+      "sha256": "3d6a58fea5b337b146a6ed653ef9d2a4109c8fd793c6e99768be30395de16604"
+    },
+    {
+      "source": "exports/boss9_flight.glb",
+      "sha256": "2cfffdafc1d9697267b6f011b869fd4beeedd849d971fb9f21df5df0af7dde0d"
+    },
+    {
+      "source": "exports/flight-build.json",
+      "sha256": "666cafe8c06286db6e13a4b4fd1ae61f78bc9adb0e4422116e09ae7ef63de02e"
+    },
+    {
+      "source": "exports/flight-validation.json",
+      "sha256": "12171da82939f7160d883600a64fcbde38c26a9e0dbb4a33d532aed504c1ccfb"
+    },
+    {
+      "source": "preview/Walk.gif",
+      "sha256": "f404f4cb1590d035362272129bc9dae7e67c02c6ae6bb5cd272eb960ac41695a"
+    },
+    {
+      "source": "qa/build.log",
+      "sha256": "359e8e79d76e41da4e049037ae27a78cab439fe76a72fcff8f3897d5b6d3c998"
+    },
+    {
+      "source": "qa/encoding.json",
+      "sha256": "237f58537bbd7628c925e8c9aba2e18e38ac1739e4bb9a36f79745e4b8e6f965"
+    },
+    {
+      "source": "qa/full-capture.json",
+      "sha256": "dfad047c25c1f2b13ea98415f19aa0df327b4a2bf09613c6b8f11595c9afe743"
+    },
+    {
+      "source": "qa/reference-view-capture.json",
+      "sha256": "2523f1f0b3b3ddcf11ce9ab1fa743630de034ae0825fd91d49c1ab3e59166eb9"
+    },
+    {
+      "source": "source/BOSS9_FLIGHT_REFERENCE.md",
+      "project": "docs/assets/BOSS9_FLIGHT_REFERENCE.md",
+      "sha256": "1945a8d5d967b67242a46a328f6298a0617e62222219e98741c8d74993b8c915"
+    },
+    {
+      "source": "source/flight_capture.cjs",
+      "project": "tools/boss9/flight_capture.cjs",
+      "sha256": "2a95df79d8e32806b2f857199a01c616f76d795a4e083f2d723d6c0a2c4ddfa9"
+    },
+    {
+      "source": "source/flight_encode.py",
+      "project": "tools/boss9/flight_encode.py",
+      "sha256": "a45c4878f0550b490ad80cd6c0d7f3b343d2189ae63a429e11ce15d8fdaa5588"
+    },
+    {
+      "source": "source/flight_export.cjs",
+      "project": "tools/boss9/flight_export.cjs",
+      "sha256": "6e6e929879c3ff1bbe4b2d2f072dec58a0cf30d2f5380293a1dfd5887e64cb80"
+    },
+    {
+      "source": "source/flight_preview.html",
+      "project": "tools/boss9/flight_preview.html",
+      "sha256": "543d7007a70b5a4d316c37c5556a028e8b19a7b82ef10227b447d46ef021de99"
+    },
+    {
+      "source": "source/flight_profile.json",
+      "project": "tools/boss9/flight_profile.json",
+      "sha256": "631a21a6d70388a3641998f099b119bb568b6d11cc8aa665b178b38d2473b240"
+    },
+    {
+      "source": "source/flight_reference.py",
+      "project": "tools/boss9/flight_reference.py",
+      "sha256": "e7e1a6e90db4639eef70e4b5c0af68f2d47d904df09bf2e5038dc406614c38a6"
+    },
+    {
+      "source": "source/flight_rig.py",
+      "project": "tools/boss9/flight_rig.py",
+      "sha256": "af64b9b5ef96059032041200fcbedd3b2d0c4bfa4cc64c37668a2420acfec71b"
+    },
+    {
+      "source": "source/flight_verify.py",
+      "project": "tools/boss9/flight_verify.py",
+      "sha256": "f441c4a4a622dcd1f02b5fd3caba587e1e97a37420174bf6bc3b4938a2303cd1"
+    },
+    {
+      "source": "source/flight_viewer.js",
+      "project": "tools/boss9/flight_viewer.js",
+      "sha256": "d4642f94e686c929f93bca63ac93c8bf8f0395742366e1a0b2885ddc2ff0b218"
+    }
+  ]
+}

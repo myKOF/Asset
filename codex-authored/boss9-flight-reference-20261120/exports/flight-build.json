@@ -1,0 +1,20 @@
+{
+  "reference": {
+    "file": "\u98db\u9f8dGIF.gif",
+    "sha256": "cb716c7487b1b955ae44be89cd2fb4e2cefb2ca30c024a12c56ca3dcc0e1f066",
+    "frames": 30,
+    "durationSeconds": 3,
+    "observedCycleSeconds": 2,
+    "use": "Motion reference only; no reference pixels in the authored asset."
+  },
+  "period": 2,
+  "originalActionHashes": {
+    "Attack1": "f07a5e1fcd362a011968f3eb1eeafefd900909691bd30295d469be64bb45b30e",
+    "Attack2": "c6ab656fd1dbc9a209866db68a9b699e5062972cf830d1a7f1a5f88f7658aaf0",
+    "Attack3": "b274fd6ec92c804da4980f69f8fd87b01778d058499fbac72974c390faaa1d61",
+    "Die": "5de1685d7a96ca886c3dd8d9ba8696f43fc490f328c7a11acea465c567304d25"
+  },
+  "sourceBlendSHA256": "c412c1704d6f9f9b9315b5b2fc48163833fff83c8e88ee98a6268f74f6f40e70",
+  "source": "Flight-only review package. Source v2 and its four other actions remain untouched. Six wing supports added and wing skinning replaced.",
+  "reweightedVertices": 1846
+}
