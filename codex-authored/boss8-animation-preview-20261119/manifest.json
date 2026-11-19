@@ -1,0 +1,124 @@
+{
+  "asset": "boss8-flying-imp-animation-preview",
+  "status": "unapproved",
+  "files": [
+    {
+      "source": "sources/BOSS8.glb",
+      "sha256": "5ee1c5adb166901ffa885b62be1d4b7d215b3d478e596bd4bbf3557dcb6c2fbb"
+    },
+    {
+      "source": "exports/Attack1_45.png",
+      "sha256": "3a7042eb5abacc82d8f12e008783bff21fd42d64baad379186d3bc5bb6cc0794"
+    },
+    {
+      "source": "exports/Attack2_30.png",
+      "sha256": "942f7b9fdd0721e4f0681056dca9b6bd438450e60c344dec5b380449fe5023f4"
+    },
+    {
+      "source": "exports/Attack2_48.png",
+      "sha256": "5a1f2ef037795ef7ccfb8e5295f16a2a5731c03aa09bff95906ef93406f219de"
+    },
+    {
+      "source": "exports/Attack3_50.png",
+      "sha256": "0ef8aa0f2127d4c44fb24fd5ff29f7c686bfd465dd18c01923829f31c797899b"
+    },
+    {
+      "source": "exports/boss8_preview.blend",
+      "sha256": "ffb4a1c50aff09b7c6cf14884b0dee9aa3ffdf81867cc8f279b3773b485bea49"
+    },
+    {
+      "source": "exports/boss8_preview.glb",
+      "project": "docs/assets/previews/boss8/boss8_preview.glb",
+      "sha256": "0f4900b6ef580c11c4628b04881dfcd0d4125c0eacfdc8cf6cc792a1429ce498"
+    },
+    {
+      "source": "exports/Die_98.png",
+      "sha256": "5d2bf7471ab865877315adfeb204258dd7ac974ff22087e423f0bb931eba925e"
+    },
+    {
+      "source": "exports/glb-qa.json",
+      "sha256": "086eb53322af2d177f2bee2b0da8b9e0e7d65d9121be4b91b491cb7f0c6cc12b"
+    },
+    {
+      "source": "exports/motion-qa.json",
+      "sha256": "fdcd5e291d254c7b47024a8b0636cee339618ddda0a3f30582636a0d2613bf6a"
+    },
+    {
+      "source": "exports/validation.json",
+      "sha256": "110d6875791ff53ccb9f36aa74ade58993f7b4954fb8dbce9df77312079f66e2"
+    },
+    {
+      "source": "exports/Walk_0.png",
+      "sha256": "608f3aca51e3c88460d259de809d90bcb3cc373ab907babdaa0a61e1d5f1483e"
+    },
+    {
+      "source": "exports/Walk_25.png",
+      "sha256": "2b71dbfe3ff802da6d7ceff2b79076ddb371181bad62a1dbc131574a3adc1b20"
+    },
+    {
+      "source": "previews/Attack1.gif",
+      "project": "docs/assets/previews/boss8/Attack1.gif",
+      "sha256": "36396855911bbf13a89f1c39b760672f6fe3b89b838a176ed9fca2dbb7a228a0"
+    },
+    {
+      "source": "previews/Attack2.gif",
+      "project": "docs/assets/previews/boss8/Attack2.gif",
+      "sha256": "46daeb66ee77c60564d87bae6508412c340dd1b39d32f6d655027c4d65a3343b"
+    },
+    {
+      "source": "previews/Attack3.gif",
+      "project": "docs/assets/previews/boss8/Attack3.gif",
+      "sha256": "8a2c75bcb001124f15b7a83bcf6f0bbe42fa4f960c3bfb58e671dcd5cb72f7a3"
+    },
+    {
+      "source": "previews/Die.gif",
+      "project": "docs/assets/previews/boss8/Die.gif",
+      "sha256": "8cf9aea60b19168a98711ad54a41af85fcc80c907d5e057f0c8ba62c269e9800"
+    },
+    {
+      "source": "previews/gif-decoded-qa.json",
+      "sha256": "a4486f677b07c801f2ac5ae458b8d469c3c1df403fa205c39a7a2bdd79d31a4f"
+    },
+    {
+      "source": "previews/gif-qa.json",
+      "sha256": "ec92518e4e8a38245094f732122f57cd28d086680cf1ad1fb50ffe4fc8e483f7"
+    },
+    {
+      "source": "previews/Walk.gif",
+      "project": "docs/assets/previews/boss8/Walk.gif",
+      "sha256": "0a1e90d9144ef21f52cf7221491fea84b80c35d5f4c4c6e3e836ec85fde2e2dc"
+    },
+    {
+      "source": "tools/animate.py",
+      "sha256": "e0b9fb94e4ed9f46db9af366ca5b7565a1b612151ef2e1514a9856c22620b21b"
+    },
+    {
+      "source": "tools/export.cjs",
+      "sha256": "761d6df303f936613d466ad02f7c95773e0d512f21e09e55669e80c4313be0c5"
+    },
+    {
+      "source": "tools/make_gifs.py",
+      "sha256": "16d99610918b7b85c6d7748538e1414549407bc7b6e34baa72d3d8d7028ac55e"
+    },
+    {
+      "source": "tools/preview.py",
+      "sha256": "5d62308e01bdf246dc130f8d0f0054ac8e5eae19dce8bc09f349c9f722012d0c"
+    },
+    {
+      "source": "tools/verify.py",
+      "sha256": "366d8d48213545b5a9c7372d38e1bf41361b82fff3abc56c4f81d9b86a80c09a"
+    },
+    {
+      "source": "tools/verify_glb.cjs",
+      "sha256": "b650aecb7e5fcaf1435b226100eb2494df2b3fabc8fd01a97184d4b6621ac716"
+    },
+    {
+      "source": "README.md",
+      "sha256": "80d899d5b403173630c4e1349f5c58ebdf0d9a941ffd521ba4a5c85351b37a06"
+    },
+    {
+      "source": "SOURCE.md",
+      "sha256": "689b9da6f89034f8ff6804610137653603ca6030664322f56a972c3d4a780892"
+    }
+  ]
+}

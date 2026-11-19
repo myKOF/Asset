@@ -1,0 +1,27 @@
+{
+  "Walk": {
+    "frames": 24,
+    "durationMs": 1600,
+    "bytes": 3032636
+  },
+  "Attack1": {
+    "frames": 24,
+    "durationMs": 1600,
+    "bytes": 3103100
+  },
+  "Attack2": {
+    "frames": 30,
+    "durationMs": 2000,
+    "bytes": 3863543
+  },
+  "Attack3": {
+    "frames": 36,
+    "durationMs": 2400,
+    "bytes": 4656632
+  },
+  "Die": {
+    "frames": 49,
+    "durationMs": 4200,
+    "bytes": 6290749
+  }
+}

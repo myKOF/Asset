@@ -1,0 +1,42 @@
+{
+  "clips": {
+    "Walk": {
+      "seconds": 1.6,
+      "lowestSurface": 0.2538728713989258,
+      "largestDisplacement": 0.9382425943459225
+    },
+    "Attack1": {
+      "seconds": 1.6,
+      "lowestSurface": 0.24606965482234955,
+      "largestDisplacement": 0.9522294836519435
+    },
+    "Attack2": {
+      "seconds": 2.0,
+      "lowestSurface": 0.1757379174232483,
+      "largestDisplacement": 1.3726323180189088
+    },
+    "Attack3": {
+      "seconds": 2.4,
+      "lowestSurface": 0.11863458156585693,
+      "largestDisplacement": 0.99178877621693
+    },
+    "Die": {
+      "seconds": 3.2,
+      "lowestSurface": 0.02499985694885254,
+      "largestDisplacement": 2.0199521525863027
+    }
+  },
+  "loopMaxError": 2.9950963321688443e-07,
+  "attackReturnError": {
+    "Attack1": 3.0538293021796936e-07,
+    "Attack2": 3.674277068954096e-07,
+    "Attack3": 3.2098083538618706e-07
+  },
+  "cameraRange": [
+    0.21871159970760345,
+    0.8216589689254761,
+    0.15535782277584076,
+    0.8500050902366638
+  ],
+  "deathFinalMotion": 5.840038639982171e-07
+}

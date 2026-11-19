@@ -1,0 +1,27 @@
+{
+  "Attack1": {
+    "duration": 1.600000023841858,
+    "channels": 210,
+    "largestQuaternionError": 9.462629035894565e-8
+  },
+  "Attack2": {
+    "duration": 2,
+    "channels": 210,
+    "largestQuaternionError": 1.1095935192884099e-7
+  },
+  "Attack3": {
+    "duration": 2.4000000953674316,
+    "channels": 210,
+    "largestQuaternionError": 1.0844719988689633e-7
+  },
+  "Die": {
+    "duration": 3.200000047683716,
+    "channels": 210,
+    "largestQuaternionError": 1.0279717033156999e-7
+  },
+  "Walk": {
+    "duration": 1.600000023841858,
+    "channels": 210,
+    "largestQuaternionError": 9.72433948920326e-8
+  }
+}

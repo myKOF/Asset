@@ -1,0 +1,42 @@
+{
+  "Walk": {
+    "decodedFrames": 24,
+    "durationMs": 1600,
+    "size": [
+      576,
+      634
+    ]
+  },
+  "Attack1": {
+    "decodedFrames": 24,
+    "durationMs": 1600,
+    "size": [
+      576,
+      634
+    ]
+  },
+  "Attack2": {
+    "decodedFrames": 30,
+    "durationMs": 2000,
+    "size": [
+      576,
+      634
+    ]
+  },
+  "Attack3": {
+    "decodedFrames": 36,
+    "durationMs": 2400,
+    "size": [
+      576,
+      634
+    ]
+  },
+  "Die": {
+    "decodedFrames": 49,
+    "durationMs": 4200,
+    "size": [
+      576,
+      634
+    ]
+  }
+}
