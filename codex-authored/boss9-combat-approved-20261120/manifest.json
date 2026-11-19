@@ -1,0 +1,134 @@
+{
+  "id": "boss9-combat-approved-20261120",
+  "status": "Four combat GIFs for user review; approved Walk preserved; no game integration",
+  "dependency": {
+    "source": "codex-authored/boss9-flight-limbs-20261120/exports/boss9_flight.blend",
+    "sha256": "c37fa124c488285508099f4634abe49b2fbf2102aaad9c797383ed264f19674c"
+  },
+  "referencePolicy": "User model retained. Original GIF/still are motion references only; no reference pixels copied. New actions, rendering and particle preview are authored locally.",
+  "files": [
+    {
+      "source": "exports/boss9.blend",
+      "sha256": "b98c828af6e4d1d99ca2d07968145ba008e3c6e31e1fe989ece65f2e2be8ef23"
+    },
+    {
+      "source": "exports/boss9.glb",
+      "sha256": "3f2e39792434359833e97ea96859ff84a4fec7e07061fcc4c339784191f9b15f"
+    },
+    {
+      "source": "exports/combat-build.json",
+      "sha256": "67143c66ed3e9d1331b98daa100efbdc749de0dd4712a106c81564e8ae877e63"
+    },
+    {
+      "source": "exports/combat-validation.json",
+      "sha256": "bcf90765326556b3908448bedb3a5d99b22350165aab6d3a3e08390cce6f494f"
+    },
+    {
+      "source": "preview/Attack1.gif",
+      "sha256": "ce14263b24fa69953946d4f23d90783a43b5a92bded606048f170721ea22aceb"
+    },
+    {
+      "source": "preview/Attack2.gif",
+      "sha256": "f87e594fce3c0252e2ae14784c78788b93e0ce2a2d3b2a89d4d2f2e4fc4599c1"
+    },
+    {
+      "source": "preview/Attack3.gif",
+      "sha256": "a52cad90f96a26788cc53a7780c8906c810c7b987e64afe3dbd37aeb0909651e"
+    },
+    {
+      "source": "preview/Die.gif",
+      "sha256": "a7737d66f3cbf76b969605c6509adbfe28880bfb5e2927972e2c3bf2470466e4"
+    },
+    {
+      "source": "preview/Walk-approved.gif",
+      "sha256": "e97c3d17b6a1671f27d0f20c181867298b7af95911fdbec2b4bfb292135e4ebd"
+    },
+    {
+      "source": "qa/Attack1-contact.jpg",
+      "sha256": "2eb97ff4b437c2fd43be5053dcde0bc1150bf2fe185ae4dfd642dc337fce2099"
+    },
+    {
+      "source": "qa/Attack2-contact.jpg",
+      "sha256": "8020fd9722d5d94de92f3cf3cc19745fb5135ef3300911531755b9ede3187635"
+    },
+    {
+      "source": "qa/Attack3-contact.jpg",
+      "sha256": "6d2a86a6d4128f21e933b5bd4cd39d354291d4d8f704336b9d32dba54e8258b7"
+    },
+    {
+      "source": "qa/build.log",
+      "sha256": "3a4e38f79225ea035aebcd6008392f9ae6fc699d3d56a24b69af38ac9037a9ba"
+    },
+    {
+      "source": "qa/capture.json",
+      "sha256": "374cf868cc71795e52db05898d31124a10cc3ff640857f7c41bab33ddf794810"
+    },
+    {
+      "source": "qa/Die-contact.jpg",
+      "sha256": "d07e836c3f5be5314935a758b33403ad83db761fe8a360134bd3cd4a1a04f386"
+    },
+    {
+      "source": "qa/encoding.json",
+      "sha256": "a4e7e208f1464ebdf50eaa64393936eef405ebe16fa56e92d17e0e3040eacf70"
+    },
+    {
+      "source": "qa/verify.log",
+      "sha256": "92a8ad736e426b84cdac715b416297a758f8786f4e1dd88100eb7ebbb3c276b7"
+    },
+    {
+      "source": "source/BOSS9_COMBAT.md",
+      "project": "docs/assets/BOSS9_COMBAT.md",
+      "sha256": "385d8de65613f1124beeddf81b582e1115909eed76311d898995ffebc093ebcd"
+    },
+    {
+      "source": "source/combat.json",
+      "project": "tools/boss9/combat.json",
+      "sha256": "e1fddb662773dc12f045e318c516b950fdfe0356b74d29aa0f9010caf1904902"
+    },
+    {
+      "source": "source/combat_author.py",
+      "project": "tools/boss9/combat_author.py",
+      "sha256": "0969ae057538d00d70c34cfa20491f3e34ccaafaa23d8a97e7a42e8dc6f7c280"
+    },
+    {
+      "source": "source/combat_capture.cjs",
+      "project": "tools/boss9/combat_capture.cjs",
+      "sha256": "5d8b4c7845418d5abf955cb96990d3cb640f7db35b8b84a814d908718f64dd12"
+    },
+    {
+      "source": "source/combat_encode.py",
+      "project": "tools/boss9/combat_encode.py",
+      "sha256": "6bbea8e80a7df378448a5d9ba64ebb02bd25093f221c762b7f0b6385d8887b30"
+    },
+    {
+      "source": "source/combat_export.cjs",
+      "project": "tools/boss9/combat_export.cjs",
+      "sha256": "7f4b3a0052942acb3109ec6649b804d3cd01587ff257841c82ba0da5d523fc7a"
+    },
+    {
+      "source": "source/combat_preview.html",
+      "project": "tools/boss9/combat_preview.html",
+      "sha256": "40f1e4dfbcc576acca06bc5b3432e4b6e1f34e771a1abe99809a217b1d0c576a"
+    },
+    {
+      "source": "source/combat_verify.py",
+      "project": "tools/boss9/combat_verify.py",
+      "sha256": "f5ea984d295270282cf074ae1f1990a77ee495a367c20f1d1518b2456740b2f0"
+    },
+    {
+      "source": "source/combat_viewer.js",
+      "project": "tools/boss9/combat_viewer.js",
+      "sha256": "f59b15ffc3260427b232920c33bd282ea1cff599e607278682f7e275dde8d483"
+    },
+    {
+      "source": "source/fire.js",
+      "project": "tools/boss9/fire.js",
+      "sha256": "5f6f62da31187ff287a7b8a6a943dc44f3d303fd51301121cba52d0a81082e1c"
+    },
+    {
+      "source": "source/fire.json",
+      "project": "tools/boss9/fire.json",
+      "sha256": "d057d8a281546331ee7159f09868b26ec3e05498b86a7a57be3cb20aaccf85e4"
+    }
+  ]
+}

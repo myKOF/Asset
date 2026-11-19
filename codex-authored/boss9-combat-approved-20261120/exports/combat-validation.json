@@ -1,0 +1,160 @@
+{
+  "sourceSHA256": "c37fa124c488285508099f4634abe49b2fbf2102aaad9c797383ed264f19674c",
+  "approvedModelSHA256": "009b2ca6ea76c454af385dc16af927047e22c40af3d32b5ee6e1feefe287434d",
+  "walkActionSHA256": "60be44c9068be69b2b8a74a8da2f34553506fdc067d04381ff791c0074f9fd82",
+  "bones": 70,
+  "tailLengthMeters": 4.083093523979187,
+  "clips": {
+    "Attack1": {
+      "duration": 1.5,
+      "samples": 181,
+      "startMatrixError": 4.172325134277344e-07,
+      "minimumWorldZ": 1.948157787322998,
+      "maxBoneLengthError": 3.367593712222394e-07,
+      "maximumForwardMeters": 4.995696008205414,
+      "rootYawDegrees": [
+        -0.5994521394755509,
+        0.5994520327538451
+      ],
+      "headPitchDegrees": [
+        -42.07213123911287,
+        19.844744783588837
+      ],
+      "jawMaximumDegrees": 48.9897503879699,
+      "returnMatrixError": 5.960464477539062e-07,
+      "distalTorsoHullInsideSamples": {
+        "handNear": 0,
+        "handFar": 0,
+        "footNear": 0,
+        "footFar": 0,
+        "calfNear": 0,
+        "calfFar": 0
+      },
+      "distalTriangleOverlaps": {
+        "hand-hand": 0,
+        "foot-foot": 0,
+        "hand-foot": 0,
+        "distal-wing": 0
+      }
+    },
+    "Attack2": {
+      "duration": 1.2,
+      "samples": 145,
+      "startMatrixError": 4.172325134277344e-07,
+      "minimumWorldZ": 2.476187229156494,
+      "maxBoneLengthError": 3.398073747939989e-07,
+      "maximumForwardMeters": 0.24000000953674316,
+      "rootYawDegrees": [
+        -90.00002982523485,
+        25.000005249147826
+      ],
+      "headPitchDegrees": [
+        1.997615600483394,
+        15.538126343133234
+      ],
+      "jawMaximumDegrees": 1.1000162665391282,
+      "returnMatrixError": 6.705522537231445e-07,
+      "distalTorsoHullInsideSamples": {
+        "handNear": 0,
+        "handFar": 0,
+        "footNear": 0,
+        "footFar": 0,
+        "calfNear": 0,
+        "calfFar": 0
+      },
+      "distalTriangleOverlaps": {
+        "hand-hand": 0,
+        "foot-foot": 0,
+        "hand-foot": 0,
+        "distal-wing": 0
+      },
+      "rightClawArcMeters": {
+        "windCentroid": [
+          -1.4637251308670751,
+          2.4568834371036954,
+          8.482509586546156
+        ],
+        "strikeCentroid": [
+          1.2972764273484547,
+          -2.4999210282608315,
+          4.66933974954817
+        ],
+        "leftward": 2.76100155821553,
+        "downward": 3.813169836997986,
+        "forward": 4.956804465364527
+      }
+    },
+    "Attack3": {
+      "duration": 3,
+      "samples": 361,
+      "startMatrixError": 4.172325134277344e-07,
+      "minimumWorldZ": 2.5000596046447754,
+      "maxBoneLengthError": 3.9564274717518444e-07,
+      "maximumForwardMeters": 0.8000001907348633,
+      "rootYawDegrees": [
+        -0.6000001554347386,
+        0.6000001554347386
+      ],
+      "headPitchDegrees": [
+        -57.095996312433044,
+        8.00337305470555
+      ],
+      "jawMaximumDegrees": 44.09986086680686,
+      "returnMatrixError": 4.76837158203125e-07,
+      "distalTorsoHullInsideSamples": {
+        "handNear": 0,
+        "handFar": 0,
+        "footNear": 0,
+        "footFar": 0,
+        "calfNear": 0,
+        "calfFar": 0
+      },
+      "distalTriangleOverlaps": {
+        "hand-hand": 0,
+        "foot-foot": 0,
+        "hand-foot": 0,
+        "distal-wing": 0
+      }
+    },
+    "Die": {
+      "duration": 2.5,
+      "samples": 301,
+      "startMatrixError": 7.152557373046875e-07,
+      "minimumWorldZ": 0.02492046356201172,
+      "maxBoneLengthError": 3.990947186061078e-07,
+      "maximumForwardMeters": 1.1920928955078125e-07,
+      "rootYawDegrees": [
+        -6.000002301399327,
+        16.012207131652236
+      ],
+      "headPitchDegrees": [
+        -69.94343069865141,
+        8.000001116685983
+      ],
+      "jawMaximumDegrees": 43.41305460991081,
+      "raisedWingHoldLocalMatrixError": 6.258487701416016e-07,
+      "finalTorsoZ": [
+        0.18969345092773438,
+        1.6150281429290771
+      ],
+      "finalHeadZ": [
+        0.27641725540161133,
+        1.4788367748260498
+      ],
+      "finalHoldVertexError": 1.9073486328125e-06
+    }
+  },
+  "glb": {
+    "sha256": "3f2e39792434359833e97ea96859ff84a4fec7e07061fcc4c339784191f9b15f",
+    "originalTextureBytesPreserved": true,
+    "materialsPreserved": true,
+    "walkExportChannelsPreserved": true,
+    "loopChannelErrors": {
+      "Attack1": 5.364418029785156e-07,
+      "Attack2": 5.364418029785156e-07,
+      "Attack3": 5.066394805908203e-07,
+      "Die": 1.68183171749115,
+      "Walk": 4.172325134277344e-07
+    }
+  }
+}
