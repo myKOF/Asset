@@ -1,0 +1,83 @@
+{
+  "blender": "4.5.9 LTS",
+  "bones": 65,
+  "clips": {
+    "Walk": {
+      "duration": 1.6,
+      "samples": 193,
+      "minimumWorldZ": 0.48302212357521057,
+      "maxBoneLengthError": 2.9920578586972724e-07,
+      "startEndMatrixDifference": 0.0
+    },
+    "Attack1": {
+      "duration": 1.5,
+      "samples": 181,
+      "minimumWorldZ": 0.2956910729408264,
+      "maxBoneLengthError": 3.436879057461262e-07,
+      "startEndMatrixDifference": 0.0
+    },
+    "Attack2": {
+      "duration": 1.2,
+      "samples": 145,
+      "minimumWorldZ": 0.3947085440158844,
+      "maxBoneLengthError": 3.270535913202366e-07,
+      "startEndMatrixDifference": 0.0
+    },
+    "Attack3": {
+      "duration": 3,
+      "samples": 361,
+      "minimumWorldZ": 0.3856643736362457,
+      "maxBoneLengthError": 2.978771817541137e-07,
+      "startEndMatrixDifference": 0.0
+    },
+    "Die": {
+      "duration": 2.5,
+      "samples": 301,
+      "minimumWorldZ": 0.024740219116210938,
+      "maxBoneLengthError": 2.9011275637369494e-07,
+      "startEndMatrixDifference": 1.7749399542808533,
+      "endHoldDifference": 0.0,
+      "contactRegions": {
+        "torso": [
+          0.31201136112213135,
+          1.207571029663086
+        ],
+        "head": [
+          0.12036848068237305,
+          1.70479154586792
+        ]
+      },
+      "rootUp": [
+        0.9360758662223816,
+        0.340844988822937,
+        0.0871024802327156
+      ]
+    }
+  },
+  "images": [
+    {
+      "name": "Image_0",
+      "size": [
+        2048,
+        2048
+      ],
+      "packed": true
+    },
+    {
+      "name": "Image_1",
+      "size": [
+        2048,
+        2048
+      ],
+      "packed": true
+    },
+    {
+      "name": "Image_2",
+      "size": [
+        2048,
+        2048
+      ],
+      "packed": true
+    }
+  ]
+}
