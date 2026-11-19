@@ -1,0 +1,26 @@
+{
+  "Attack1": {
+    "decodedFrames": 39,
+    "durationMs": 2600,
+    "size": [
+      576,
+      634
+    ]
+  },
+  "Attack2": {
+    "decodedFrames": 39,
+    "durationMs": 2600,
+    "size": [
+      576,
+      634
+    ]
+  },
+  "Die": {
+    "decodedFrames": 73,
+    "durationMs": 5800,
+    "size": [
+      576,
+      634
+    ]
+  }
+}

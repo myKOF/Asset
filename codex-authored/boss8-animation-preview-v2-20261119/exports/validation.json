@@ -1,0 +1,52 @@
+{
+  "clips": {
+    "Walk": {
+      "seconds": 1.6,
+      "lowestSurface": 0.2538728713989258,
+      "largestDisplacement": 0.9382425943459225
+    },
+    "Attack1": {
+      "seconds": 2.6,
+      "lowestSurface": 0.13768982887268066,
+      "largestDisplacement": 1.9934465207249983
+    },
+    "Attack2": {
+      "seconds": 2.6,
+      "lowestSurface": 0.17260399460792542,
+      "largestDisplacement": 1.3583064024110445
+    },
+    "Attack3": {
+      "seconds": 2.4,
+      "lowestSurface": 0.11863458156585693,
+      "largestDisplacement": 0.99178877621693
+    },
+    "Die": {
+      "seconds": 4.8,
+      "lowestSurface": 0.024999499320983887,
+      "largestDisplacement": 2.2696382050910313
+    }
+  },
+  "loopMaxError": 2.9950963321688443e-07,
+  "attackReturnError": {
+    "Attack1": 4.826228243321671e-07,
+    "Attack2": 4.807789863616728e-07,
+    "Attack3": 3.2098083538618706e-07
+  },
+  "cameraRange": [
+    0.18485334515571594,
+    0.808106541633606,
+    0.16873419284820557,
+    0.8531110882759094
+  ],
+  "deathFinalMotion": 3.4240261593687705e-07,
+  "sideLyingUpAxis": [
+    0.8987940549850464,
+    -0.4383710026741028,
+    -1.1217672124530509e-07
+  ],
+  "attack1FollowThroughDegrees": 179.20805140488253,
+  "deathMaxArmSpan": 1.15592622756958,
+  "deathHandVerticalTravel": 0.44652116298675537,
+  "attack2WholeBodyLift": 0.5072951316833496,
+  "attack2PitchTravelDegrees": 84.83152322744864
+}

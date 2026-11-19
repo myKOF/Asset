@@ -1,0 +1,15 @@
+{
+  "sourceSha256": "5ee1c5adb166901ffa885b62be1d4b7d215b3d478e596bd4bbf3557dcb6c2fbb",
+  "blender": "4.5.10 LTS",
+  "bones": 70,
+  "vertices": 18046,
+  "fps": 30,
+  "clips": {
+    "Walk": 1.6,
+    "Attack1": 2.6,
+    "Attack2": 2.6,
+    "Attack3": 2.4,
+    "Die": 4.8
+  },
+  "approval": "preview only; not integrated"
+}

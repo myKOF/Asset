@@ -1,0 +1,136 @@
+{
+  "asset": "boss8-flying-imp-animation-preview-v2",
+  "status": "unapproved",
+  "files": [
+    {
+      "source": "sources/BOSS8.glb",
+      "sha256": "5ee1c5adb166901ffa885b62be1d4b7d215b3d478e596bd4bbf3557dcb6c2fbb"
+    },
+    {
+      "source": "exports/Attack1_24.png",
+      "sha256": "d195f0bad6d4f35d39dd4d64ca2301395d9ce3c44dde1a2828ef33e276a79ba1"
+    },
+    {
+      "source": "exports/Attack1_44.png",
+      "sha256": "c02e834d92a761d98726aea9b1f1c14536364b774a6de763ab093cec04c7ca19"
+    },
+    {
+      "source": "exports/Attack1_64.png",
+      "sha256": "15319c67dd9570d189648d08b0fd9e20380cdd02e96fb48dca97cfe2026552cb"
+    },
+    {
+      "source": "exports/Attack2_14.png",
+      "sha256": "c40fc3458d7f5422ff9e91cd26cedf7701a3fabf392a91e2fdd91e2338480d9c"
+    },
+    {
+      "source": "exports/Attack2_34.png",
+      "sha256": "59eb43d2328b9ed375e463d2f8b35b3c196e690635852c55ed73640c656fdf13"
+    },
+    {
+      "source": "exports/Attack2_57.png",
+      "sha256": "9b5e45379906bcdbcf20046e5a89f5bd5b559fc7d24b01cadb697dd444870476"
+    },
+    {
+      "source": "exports/boss8_preview.blend",
+      "sha256": "d41350f3ba0d86c249bd9ca1ae9766f0d1fa79d4c7a98daae12a5bb10665b9b1"
+    },
+    {
+      "source": "exports/boss8_preview.glb",
+      "project": "docs/assets/previews/boss8/boss8_preview.glb",
+      "sha256": "476871006b7a59d02b3d30232e59638d19b44cbed539f556144565d01bdeb8c4"
+    },
+    {
+      "source": "exports/Die_20.png",
+      "sha256": "062bdb9d555e1f1f37a60489f70e9e58eef17ac0931609ea863e83b721aa15d4"
+    },
+    {
+      "source": "exports/Die_38.png",
+      "sha256": "56e5c355965148561788f9bc8fbc02e73cc97b481cacf84509d3b0b64e9cb979"
+    },
+    {
+      "source": "exports/Die_70.png",
+      "sha256": "321eed1141d12249ab9bd1a6d5a2006eda912085bfd6c8f7839109bc4f48d16f"
+    },
+    {
+      "source": "exports/Die_98.png",
+      "sha256": "71cf36e740e085d61d42ab4a64ba094079a069bc698c528385d29fb2ea6748ae"
+    },
+    {
+      "source": "exports/glb-qa.json",
+      "sha256": "88d515cd61232f63bd9f2d301d98af6d3fbc9788e4b3a270bf751e9b300ebddc"
+    },
+    {
+      "source": "exports/motion-qa.json",
+      "sha256": "05e09d86262f07ea2a4cff19715660714d3d7bcbb733199ac090278b341d6722"
+    },
+    {
+      "source": "exports/validation.json",
+      "sha256": "e3b7d03ea83aafa341db10634f1dbd0e0ed0c1e5982f160b8f411b2a07a23d3d"
+    },
+    {
+      "source": "previews/Attack1.gif",
+      "project": "docs/assets/previews/boss8/Attack1_v2.gif",
+      "sha256": "f8094c9507903bbb41d47446bc89dbbfb18e82ab657454492a4f14175c830c69"
+    },
+    {
+      "source": "previews/Attack2.gif",
+      "project": "docs/assets/previews/boss8/Attack2_v2.gif",
+      "sha256": "653da16331b8e02e4345daeca1833f8879ee643a2fd61d6de6477d6ce0134983"
+    },
+    {
+      "source": "previews/Attack3.gif",
+      "project": "docs/assets/previews/boss8/Attack3.gif",
+      "sha256": "8a2c75bcb001124f15b7a83bcf6f0bbe42fa4f960c3bfb58e671dcd5cb72f7a3"
+    },
+    {
+      "source": "previews/Die.gif",
+      "project": "docs/assets/previews/boss8/Die_v2.gif",
+      "sha256": "7ea6e59099e921cc643c423498e0a45d4f3165542fc806a0aa5c61d1c269e042"
+    },
+    {
+      "source": "previews/gif-decoded-qa.json",
+      "sha256": "d6940b8a09deedf289c5603f8ac1bcbb4c8bcc6734e51dddd5968113091d20d2"
+    },
+    {
+      "source": "previews/gif-qa.json",
+      "sha256": "301c62c879a24ba5c6021435f709b054bd307108b77e82230777b134ace7502c"
+    },
+    {
+      "source": "previews/Walk.gif",
+      "project": "docs/assets/previews/boss8/Walk.gif",
+      "sha256": "0a1e90d9144ef21f52cf7221491fea84b80c35d5f4c4c6e3e836ec85fde2e2dc"
+    },
+    {
+      "source": "tools/animate.py",
+      "sha256": "680c5b69843ebd72557da4bf072eea81d7046f811e86fb88ae39a3297146bd7a"
+    },
+    {
+      "source": "tools/export.cjs",
+      "sha256": "7bf7be2bed02c4d7a32389cf4fd3ed01c9305ce1613c88fcbe36875406f4aedd"
+    },
+    {
+      "source": "tools/make_gifs.py",
+      "sha256": "9ce04f4db26e42fac2c5c9cde39239bc6d1938a357a8c77da6ad8c21772b0e49"
+    },
+    {
+      "source": "tools/preview.py",
+      "sha256": "5d62308e01bdf246dc130f8d0f0054ac8e5eae19dce8bc09f349c9f722012d0c"
+    },
+    {
+      "source": "tools/verify.py",
+      "sha256": "d2425c50bea0db4469d31717b8a5c8e60daba84832a85e1c2c28cc7ef7578a01"
+    },
+    {
+      "source": "tools/verify_glb.cjs",
+      "sha256": "b11c02ec62774ed8f99f068a89480c49f56d0f25c395665366ec605deb997400"
+    },
+    {
+      "source": "README.md",
+      "sha256": "d4b34ec77094f6d10ab12784497745ac885a1eca2c6498914fae8bbec9887df3"
+    },
+    {
+      "source": "SOURCE.md",
+      "sha256": "ddf9643c309b81e85c079c0c41d839b506fe364298361da7c639053b9fe32331"
+    }
+  ]
+}
