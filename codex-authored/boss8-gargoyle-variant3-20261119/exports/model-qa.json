@@ -1,0 +1,378 @@
+{
+  "blender": "4.5.10 LTS",
+  "sourceSha256": "5982ebee9e75f866a53e4e16123a56e6b2fd2c141e1f40a0f97cefe40d47fb45",
+  "approvedBlendSha256": "524f8accc3551ec964e408930c160f45502d362d7a6426388881b232e22ed576",
+  "vertices": 18030,
+  "triangles": 10338,
+  "bones": 70,
+  "restDifferences": {
+    "Bone_000": {
+      "headShift": 0.006640672782271573,
+      "axisChangeDegrees": 4.439815913352341,
+      "length": 0.12893764674663544
+    },
+    "Bone_001": {
+      "headShift": 0.01328110670718181,
+      "axisChangeDegrees": 98.40310227807481,
+      "length": 0.09414713084697723
+    },
+    "Bone_004": {
+      "headShift": 0.00939139246025125,
+      "axisChangeDegrees": 1.1480624852036425,
+      "length": 0.16387689113616943
+    },
+    "Bone_003": {
+      "headShift": 0.014849228993802636,
+      "axisChangeDegrees": 6.073212964678578,
+      "length": 0.07996372878551483
+    },
+    "Bone_002": {
+      "headShift": 0.0066405813066099635,
+      "axisChangeDegrees": 89.8892304965189,
+      "length": 0.10707683116197586
+    },
+    "Bone_027": {
+      "headShift": 0.006641030233480282,
+      "axisChangeDegrees": 0.0,
+      "length": 0.14024151861667633
+    },
+    "Bone_026": {
+      "headShift": 0.006641089945221819,
+      "axisChangeDegrees": 4.636817778922549,
+      "length": 0.12617197632789612
+    },
+    "Bone_025": {
+      "headShift": 3.5117159894728275e-07,
+      "axisChangeDegrees": 0.0,
+      "length": 0.08759576082229614
+    },
+    "Bone_024": {
+      "headShift": 4.774806462609012e-07,
+      "axisChangeDegrees": 4.7471121005267385,
+      "length": 0.10728254914283752
+    },
+    "Bone_023": {
+      "headShift": 0.00939094077392415,
+      "axisChangeDegrees": 4.7471121005267385,
+      "length": 0.10728257149457932
+    },
+    "Bone_032": {
+      "headShift": 0.006640508717291592,
+      "axisChangeDegrees": 0.0,
+      "length": 0.10972116887569427
+    },
+    "Bone_031": {
+      "headShift": 0.00664061307253404,
+      "axisChangeDegrees": 3.879945733973219,
+      "length": 0.204246386885643
+    },
+    "Bone_030": {
+      "headShift": 0.009391223970075345,
+      "axisChangeDegrees": 2.1463924962052077,
+      "length": 0.21681416034698486
+    },
+    "Bone_029": {
+      "headShift": 0.0066411496554318284,
+      "axisChangeDegrees": 5.002944092965559,
+      "length": 0.10789735615253448
+    },
+    "Bone_028": {
+      "headShift": 0.006640553377925166,
+      "axisChangeDegrees": 0.0,
+      "length": 0.040935538709163666
+    },
+    "Bone_048": {
+      "headShift": 0.006640493950901998,
+      "axisChangeDegrees": 4.371401323530908,
+      "length": 0.05976570025086403
+    },
+    "Bone_047": {
+      "headShift": 6.440336342148277e-07,
+      "axisChangeDegrees": 4.179880257882812,
+      "length": 0.07885297387838364
+    },
+    "Bone_046": {
+      "headShift": 0.006639867968040622,
+      "axisChangeDegrees": 4.179880257882812,
+      "length": 0.07885298877954483
+    },
+    "Bone_051": {
+      "headShift": 0.00664049394347877,
+      "axisChangeDegrees": 7.480413787487856,
+      "length": 0.051007624715566635
+    },
+    "Bone_050": {
+      "headShift": 6.982907363092888e-07,
+      "axisChangeDegrees": 0.7284642743350425,
+      "length": 0.07334819436073303
+    },
+    "Bone_049": {
+      "headShift": 0.006640046858955754,
+      "axisChangeDegrees": 0.7284642743350425,
+      "length": 0.07334817945957184
+    },
+    "Bone_054": {
+      "headShift": 0.006640464090197025,
+      "axisChangeDegrees": 11.574596515628164,
+      "length": 0.06299848854541779
+    },
+    "Bone_053": {
+      "headShift": 7.220531368008684e-07,
+      "axisChangeDegrees": 1.7707304910289197,
+      "length": 0.08320674300193787
+    },
+    "Bone_052": {
+      "headShift": 0.006639897834636787,
+      "axisChangeDegrees": 1.7707304910289197,
+      "length": 0.08320675045251846
+    },
+    "Bone_057": {
+      "headShift": 6.828569911354541e-07,
+      "axisChangeDegrees": 4.408849970089618,
+      "length": 0.05976557359099388
+    },
+    "Bone_056": {
+      "headShift": 0.006640493940736856,
+      "axisChangeDegrees": 2.8413019187778286,
+      "length": 0.08426006883382797
+    },
+    "Bone_055": {
+      "headShift": 0.009390697293528013,
+      "axisChangeDegrees": 2.8407508078891732,
+      "length": 0.08426005393266678
+    },
+    "Bone_037": {
+      "headShift": 0.006640553370840561,
+      "axisChangeDegrees": 0.0,
+      "length": 0.10830526053905487
+    },
+    "Bone_036": {
+      "headShift": 0.006640523783117428,
+      "axisChangeDegrees": 3.5397980444383528,
+      "length": 0.19977137446403503
+    },
+    "Bone_035": {
+      "headShift": 0.009391445336803892,
+      "axisChangeDegrees": 2.4727615597500425,
+      "length": 0.2261715978384018
+    },
+    "Bone_034": {
+      "headShift": 0.009391245065701196,
+      "axisChangeDegrees": 1.2188291146987926,
+      "length": 0.11616354435682297
+    },
+    "Bone_033": {
+      "headShift": 4.2252084251516537e-07,
+      "axisChangeDegrees": 1.1308903224131726,
+      "length": 0.028173817321658134
+    },
+    "Bone_060": {
+      "headShift": 0.009391645414919263,
+      "axisChangeDegrees": 11.229712089903893,
+      "length": 0.06158263236284256
+    },
+    "Bone_059": {
+      "headShift": 0.009391666526195656,
+      "axisChangeDegrees": 7.980348630013293,
+      "length": 0.07304692268371582
+    },
+    "Bone_058": {
+      "headShift": 0.009391329321143031,
+      "axisChangeDegrees": 7.980250446043974,
+      "length": 0.07304693013429642
+    },
+    "Bone_063": {
+      "headShift": 0.006640762088275547,
+      "axisChangeDegrees": 2.6997541456355423,
+      "length": 0.05476007238030434
+    },
+    "Bone_062": {
+      "headShift": 5.724839184373184e-07,
+      "axisChangeDegrees": 4.647611185358462,
+      "length": 0.07213567942380905
+    },
+    "Bone_061": {
+      "headShift": 0.009390865817693795,
+      "axisChangeDegrees": 4.647779378766773,
+      "length": 0.07213567942380905
+    },
+    "Bone_066": {
+      "headShift": 3.1680303253932744e-07,
+      "axisChangeDegrees": 0.0,
+      "length": 0.060862403362989426
+    },
+    "Bone_065": {
+      "headShift": 4.814712530792806e-07,
+      "axisChangeDegrees": 5.860487149865354,
+      "length": 0.07600551843643188
+    },
+    "Bone_064": {
+      "headShift": 0.00939139246823977,
+      "axisChangeDegrees": 5.860754381016631,
+      "length": 0.07600554823875427
+    },
+    "Bone_069": {
+      "headShift": 3.998401124775034e-07,
+      "axisChangeDegrees": 4.398538945763838,
+      "length": 0.056347571313381195
+    },
+    "Bone_068": {
+      "headShift": 0.006640821803393928,
+      "axisChangeDegrees": 4.545072970443646,
+      "length": 0.08267517387866974
+    },
+    "Bone_067": {
+      "headShift": 0.009391350438095128,
+      "axisChangeDegrees": 4.545072970443646,
+      "length": 0.08267514407634735
+    },
+    "Bone_041": {
+      "headShift": 0.006640642934892977,
+      "axisChangeDegrees": 5.371242407164633,
+      "length": 0.2856241762638092
+    },
+    "Bone_040": {
+      "headShift": 0.02484676745723308,
+      "axisChangeDegrees": 6.737314818999856,
+      "length": 0.35170257091522217
+    },
+    "Bone_039": {
+      "headShift": 0.028174040572983797,
+      "axisChangeDegrees": 3.523839734329441,
+      "length": 0.40724965929985046
+    },
+    "Bone_038": {
+      "headShift": 0.009391403119829358,
+      "axisChangeDegrees": 3.523617539738004,
+      "length": 0.40724965929985046
+    },
+    "Bone_045": {
+      "headShift": 4.2252084251516537e-07,
+      "axisChangeDegrees": 6.843762890327682,
+      "length": 0.2697434723377228
+    },
+    "Bone_044": {
+      "headShift": 0.02737974321552771,
+      "axisChangeDegrees": 7.193143714959936,
+      "length": 0.3384113609790802
+    },
+    "Bone_043": {
+      "headShift": 0.024846898865769455,
+      "axisChangeDegrees": 4.894093075710359,
+      "length": 0.33762872219085693
+    },
+    "Bone_042": {
+      "headShift": 0.00939157181560293,
+      "axisChangeDegrees": 4.894252731382207,
+      "length": 0.33762872219085693
+    },
+    "Bone_009": {
+      "headShift": 0.006640613068497523,
+      "axisChangeDegrees": 2.5250714172822315,
+      "length": 0.3152023255825043
+    },
+    "Bone_008": {
+      "headShift": 0.0066405385625190215,
+      "axisChangeDegrees": 2.2029022797467195,
+      "length": 0.2479364573955536
+    },
+    "Bone_007": {
+      "headShift": 0.011501840481244589,
+      "axisChangeDegrees": 3.977975597149004,
+      "length": 0.22984625399112701
+    },
+    "Bone_006": {
+      "headShift": 0.00939124506445103,
+      "axisChangeDegrees": 9.329021561824732,
+      "length": 0.10520730912685394
+    },
+    "Bone_005": {
+      "headShift": 2.0485709734063626e-07,
+      "axisChangeDegrees": 9.328853368416421,
+      "length": 0.10520733147859573
+    },
+    "Bone_014": {
+      "headShift": 8.688795409866125e-08,
+      "axisChangeDegrees": 3.845900229168467,
+      "length": 0.29563838243484497
+    },
+    "Bone_013": {
+      "headShift": 0.009391276635542834,
+      "axisChangeDegrees": 3.5031192882651494,
+      "length": 0.25872892141342163
+    },
+    "Bone_012": {
+      "headShift": 0.020999302539306722,
+      "axisChangeDegrees": 5.114532735417465,
+      "length": 0.2136383056640625
+    },
+    "Bone_011": {
+      "headShift": 0.016265991704310846,
+      "axisChangeDegrees": 45.178566302805315,
+      "length": 0.10499754548072815
+    },
+    "Bone_010": {
+      "headShift": 0.0066407620823666705,
+      "axisChangeDegrees": 45.1782965103331,
+      "length": 0.10499753057956696
+    },
+    "Bone_022": {
+      "headShift": 0.014848895675101727,
+      "axisChangeDegrees": 1.2972217571239677,
+      "length": 0.22984622418880463
+    },
+    "Bone_021": {
+      "headShift": 0.05057331644862655,
+      "axisChangeDegrees": 6.704806106758357,
+      "length": 0.19360582530498505
+    },
+    "Bone_020": {
+      "headShift": 0.04252057744366993,
+      "axisChangeDegrees": 9.834423117007118,
+      "length": 0.15113797783851624
+    },
+    "Bone_019": {
+      "headShift": 0.027379892629022188,
+      "axisChangeDegrees": 6.485612102801132,
+      "length": 0.2821289002895355
+    },
+    "Bone_018": {
+      "headShift": 0.016266160898830564,
+      "axisChangeDegrees": 5.4156646768659265,
+      "length": 0.12081559747457504
+    },
+    "Bone_017": {
+      "headShift": 0.006640821794191626,
+      "axisChangeDegrees": 2.5429872169185863,
+      "length": 0.16075259447097778
+    },
+    "Bone_016": {
+      "headShift": 0.014849098657425779,
+      "axisChangeDegrees": 0.6243209116044202,
+      "length": 0.10415416210889816
+    },
+    "Bone_015": {
+      "headShift": 2.462639492904903e-07,
+      "axisChangeDegrees": 0.6218085225677662,
+      "length": 0.10415419191122055
+    }
+  },
+  "maxRetargetMatrixError": 1.8477439880371094e-06,
+  "deathFloorCorrectionRange": [
+    -0.02201322317123413,
+    0.02823086977005005
+  ],
+  "clips": {
+    "Walk": 1.6,
+    "Attack1": 1.7333333333333334,
+    "Attack2": 2.08,
+    "Attack3": 2.4,
+    "Die": 3.7666666666666666
+  },
+  "retarget": "World rest-space rotation deltas; final hierarchy, joint positions, mesh and weights retained",
+  "material": 3,
+  "portrait": [
+    1080,
+    1080
+  ]
+}

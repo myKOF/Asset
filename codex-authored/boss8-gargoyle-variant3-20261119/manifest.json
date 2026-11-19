@@ -1,0 +1,64 @@
+{
+  "asset": "boss8-gargoyle-material-3",
+  "approvedMotionPackage": "../boss8-animation-preview-v4-20261119",
+  "files": [
+    {
+      "source": "SOURCE.md",
+      "sha256": "9f88b47eb278a0ef70eccffb7569742801db053b9c7b4c1bbc2a9141df88f89b"
+    },
+    {
+      "source": "exports/boss8_gargoyle_lv3.png",
+      "project": "images/sprites/boss/boss8_gargoyle_lv3.png",
+      "sha256": "6fc7f0b6ea6902a0a9c1673c7e9c645720a865cfb62b2e48d1d3f403bd8c7e61"
+    },
+    {
+      "source": "exports/boss8_lv3.blend",
+      "sha256": "0c88c5df11a8498b82ced414e1c35dedc0be50c1857f3a5797963d360faa6b0b"
+    },
+    {
+      "source": "exports/boss8_lv3.glb",
+      "project": "images/models/npc3d/boss8_lv3.glb",
+      "sha256": "f7cd5bf7db88e6c9c796e905ba33865bd589f12a0461ff5587898fdd550e39b4"
+    },
+    {
+      "source": "exports/excel-format-qa.json",
+      "sha256": "b5872098599c259bbe12f38663d94c9eb2e42f3bddbdffd0364a3539e455d0df"
+    },
+    {
+      "source": "exports/game-qa.json",
+      "sha256": "c2a602a132dd1669e2ad7e71ad7a32040c328a3524060bafba0725650fa84a4f"
+    },
+    {
+      "source": "exports/material-qa.json",
+      "sha256": "1e7f7fb1f37f96f4cc1db47b533e4c9a0f9330ab26a91c5aa8cf49f3ac3c307d"
+    },
+    {
+      "source": "exports/model-qa.json",
+      "sha256": "1e7970eb3e90cf7f5d90455b26ab2eb2347f2429e7eb2b1952d1782d036264a8"
+    },
+    {
+      "source": "exports/validation.json",
+      "sha256": "3fbe4e394f23a9c0a2e135b2e30b174b61e79fd2bc408706972b9612ee1550c4"
+    },
+    {
+      "source": "sources/BOSS8_3.glb",
+      "sha256": "5982ebee9e75f866a53e4e16123a56e6b2fd2c141e1f40a0f97cefe40d47fb45"
+    },
+    {
+      "source": "tools/export.cjs",
+      "sha256": "1b27d03643c4f27da181df9ccc6d4b79c66c760b73cddaccbe0afd5c5358a1cb"
+    },
+    {
+      "source": "tools/prepare_game.py",
+      "sha256": "fc9e7b492cc2ed344df9aaebc7a25b793761743ec91160dc88a4e704fd34d981"
+    },
+    {
+      "source": "tools/verify_game.py",
+      "sha256": "5100746f157999737f5c6d6015728d8122f436d74b56a43f18f897235fcb7244"
+    },
+    {
+      "source": "tools/verify_ingame.cjs",
+      "sha256": "246ba044dd3913141ca269c9f883c2e7355ec66c67ee9c479d47efea287adf60"
+    }
+  ]
+}
