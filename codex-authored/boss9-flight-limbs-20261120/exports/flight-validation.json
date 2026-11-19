@@ -1,0 +1,57 @@
+{
+  "sourceSHA256": "3d6a58fea5b337b146a6ed653ef9d2a4109c8fd793c6e99768be30395de16604",
+  "samples": 241,
+  "bones": 70,
+  "clips": [
+    "Walk"
+  ],
+  "tailLengthRatio": 0.6000000721199423,
+  "tailLengthMetersBefore": 6.805155055319661,
+  "tailLengthMetersAfter": 4.083093523979187,
+  "tailRadialRatioRange": [
+    0.9987589575725994,
+    1.0008316077461823
+  ],
+  "tailVerticalTravelRelativeRootMeters": 1.0835533142089844,
+  "tailWingCorrelation": 0.9909580448013366,
+  "tailLagAfterWingSeconds": 0.20833333333333334,
+  "preservedWingTorsoHeadMatrixError": 2.384185791015625e-07,
+  "retainedCurvesSHA256": "278e3d48ae0366830246e4935fc50dff673d43213eed4f97de296e4f84480900",
+  "loopVertexError": 4.76837158203125e-07,
+  "maxBoneLengthError": 2.8728941914302197e-07,
+  "handsMinimumForwardOfShoulderMeters": 0.15200680494308472,
+  "handsMinimumDropFromShoulderMeters": 1.3280158042907715,
+  "distalLimbRegions": {
+    "handNear": 122,
+    "handFar": 122,
+    "footNear": 93,
+    "footFar": 100,
+    "calfNear": 24,
+    "calfFar": 30
+  },
+  "torsoConvexHullMinimumClearanceMeters": {
+    "handNear": 0.6784016489982605,
+    "handFar": 0.8022633194923401,
+    "footNear": 0.8952766060829163,
+    "footFar": 0.9181902408599854,
+    "calfNear": 0.4680612087249756,
+    "calfFar": 0.6170303225517273
+  },
+  "torsoConvexHullInsideVertexSamples": {
+    "handNear": 0,
+    "handFar": 0,
+    "footNear": 0,
+    "footFar": 0,
+    "calfNear": 0,
+    "calfFar": 0
+  },
+  "distalLimbTriangleOverlaps": {
+    "hand-hand": 0,
+    "foot-foot": 0,
+    "hand-foot": 0,
+    "distal-wing": 0
+  },
+  "glbChannelLoopError": 4.172325134277344e-07,
+  "glbSHA256": "471a6949a4d4fc5f7cb388faaf8388a20d9d01fb5fc39b28608addaea2b9f07c",
+  "originalTexturesPreserved": true
+}

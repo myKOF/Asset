@@ -1,0 +1,19 @@
+Info: Saved as "boss9_flight.blend"
+INFO Draco mesh compression is available, use library at C:\Users\alway\.cache\codex-knight3d-tools\blender-4.5.9-windows-x64\4.5\scripts\addons_core\io_scene_gltf2\extern_draco.dll
+03:07:49 | INFO: Starting glTF 2.0 export
+03:07:49 | INFO: Extracting primitive: Mesh_0
+03:07:50 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+03:07:50 | INFO: Primitives created: 1
+03:07:50 | INFO: Extracting primitive: Mandible_Interior
+03:07:50 | INFO: Primitives created: 1
+03:07:50 | INFO: Extracting primitive: Mouth_Roof
+03:07:50 | INFO: Primitives created: 1
+03:07:50 | INFO: Extracting primitive: Sphere
+03:07:50 | INFO: Primitives created: 1
+03:07:51 | INFO: Finished glTF 2.0 export in 1.8469698429107666 s
+
+FLIGHT_REFINE_AUTHORED {"sourceSHA256": "3d6a58fea5b337b146a6ed653ef9d2a4109c8fd793c6e99768be30395de16604", "retainedWingTorsoHeadCurvesSHA256": "278e3d48ae0366830246e4935fc50dff673d43213eed4f97de296e4f84480900", "tailLengthSourceUnitsBefore": 1.7012887638299152, "tailLengthSourceUnitsAfter": 1.0207733809947968, "tailLengthRatio": 0.6, "tailVerticesModified": 602, "limbVerticesReweighted": 1058, "configuration": {"package": "boss9-flight-limbs-20261120", "sourcePackage": "boss9-flight-reference-20261120", "period": 2, "tailLengthRatio": 0.6, "tailLiftDegrees": [18, 12, 6, 1, -5, -10, -14], "tailWaveDegrees": [4, 6, 8, 10, 12, 14, 16], "tailWaveLagPerJoint": 0.12, "tailYawDegrees": [-9, -14, -22, -26, -26, -22, -16], "foreWristForward": 0.05, "foreWristDrop": 0.35, "foreWristOutward": 0.015, "foreWristBob": 0.018, "hindAnkleLateral": 0.25, "hindAnkleBackward": 0.09, "hindAnkleDrop": 0.34, "hindAnkleBob": 0.025}, "clips": ["Walk"]}
+Blender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:33:45)
+Read blend: "D:\MyGame\Asset\codex-authored\boss9-flight-reference-20261120\exports\boss9_flight.blend"
+
+Blender quit
