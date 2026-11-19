@@ -1,0 +1,23 @@
+{
+  "baseColor": {
+    "size": [
+      2048,
+      2048
+    ],
+    "pixelSha256": "fae595c892c671bc9116c3e15bada1aab658e72dd3b026d844860e4c5393fbb3"
+  },
+  "normal": {
+    "size": [
+      2048,
+      2048
+    ],
+    "pixelSha256": "d7cecda885ecae6da4c3a5144b1f07d267d8164f4e5861ff7489dfc763880a18"
+  },
+  "metallicRoughness": {
+    "size": [
+      2048,
+      2048
+    ],
+    "pixelSha256": "267e582a625c469acc60912a1a9d38cc401c7823ff65c8de3d2ef9ec9a025b70"
+  }
+}

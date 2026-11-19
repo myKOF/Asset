@@ -1,0 +1,52 @@
+{
+  "clips": {
+    "Walk": {
+      "seconds": 1.6,
+      "samples": 49,
+      "lowestSurface": 0.25352299213409424,
+      "tailTipTravel": 0.1856894622843177,
+      "returnError": 4.805480091749757e-07
+    },
+    "Attack1": {
+      "seconds": 1.7333333333333334,
+      "samples": 53,
+      "lowestSurface": 0.13671167194843292,
+      "tailTipTravel": 0.890909289696503,
+      "returnError": 3.11145380404906e-07
+    },
+    "Attack2": {
+      "seconds": 2.08,
+      "samples": 64,
+      "lowestSurface": 0.24676252901554108,
+      "tailTipTravel": 0.7607919686040142,
+      "returnError": 3.6286698764222625e-07
+    },
+    "Attack3": {
+      "seconds": 2.4,
+      "samples": 73,
+      "lowestSurface": 0.13092389702796936,
+      "tailTipTravel": 0.7087383585611685,
+      "returnError": 3.504595433799883e-07
+    },
+    "Die": {
+      "seconds": 3.7666666666666666,
+      "samples": 341,
+      "lowestSurface": 0.01456153392791748,
+      "tailTipTravel": 0.5274165580079185,
+      "returnError": null
+    }
+  },
+  "tailNames": [
+    "Bone_022",
+    "Bone_021",
+    "Bone_020",
+    "Bone_019",
+    "Bone_018",
+    "Bone_017",
+    "Bone_016",
+    "Bone_015"
+  ],
+  "vertices": 18029,
+  "sourceMeshUVWeightsRetained": true,
+  "sourceRigMatrixError": 0.0
+}
