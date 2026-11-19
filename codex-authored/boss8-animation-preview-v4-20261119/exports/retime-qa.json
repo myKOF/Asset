@@ -1,0 +1,31 @@
+{
+  "sourceBlendSha256": "0fa54e299c0b1b2582dbbed32c3af2110f3a8bc8463e47c33e25781538cc63fb",
+  "sourceGlbSha256": "ea27f7523f348da9d11fb08dacd2b83fbd2ac143af2e266ea1122f4a05a9e864",
+  "clips": {
+    "Attack1": {
+      "speed": 1.5,
+      "beforeSeconds": 2.6,
+      "afterSeconds": 1.7333333333333334
+    },
+    "Attack2": {
+      "speed": 1.25,
+      "beforeSeconds": 2.6,
+      "afterSeconds": 2.08
+    },
+    "Attack3": {
+      "speed": 1,
+      "beforeSeconds": 2.4,
+      "afterSeconds": 2.4
+    },
+    "Die": {
+      "speed": 1,
+      "beforeSeconds": 3.7666666666666666,
+      "afterSeconds": 3.7666666666666666
+    },
+    "Walk": {
+      "speed": 1,
+      "beforeSeconds": 1.6,
+      "afterSeconds": 1.6
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "asset": "boss8-flying-imp-animation-preview-v4",
+  "status": "unapproved",
+  "upstream": "../boss8-animation-preview-v3-20261119",
+  "files": [
+    {
+      "source": "README.md",
+      "sha256": "6f650cd5a813632d119cb875c3ba923775e1bd2cf5beacb3f8371f0a0a33e2a7"
+    },
+    {
+      "source": "SOURCE.md",
+      "sha256": "fd8644176dc106ea8ebc1583cd9bdc0d98fb93fc7ebc76995818d63b921637ea"
+    },
+    {
+      "source": "exports/boss8_preview.blend",
+      "sha256": "524f8accc3551ec964e408930c160f45502d362d7a6426388881b232e22ed576"
+    },
+    {
+      "source": "exports/boss8_preview.glb",
+      "project": "docs/assets/previews/boss8/boss8_preview.glb",
+      "sha256": "a871e29955ac324d7cd6c555030cf0308a59d3f79efc800ec5328c3d28803dde"
+    },
+    {
+      "source": "exports/glb-qa.json",
+      "sha256": "27ece369ba9bb1deaffdd0eaa59082f4aebb1614d679089aec731c5f2311735c"
+    },
+    {
+      "source": "exports/retime-qa.json",
+      "sha256": "c97436077936cfe9a75b86e530d7b60c71bf807cd1bb9f9bf55e7c596151d4d4"
+    },
+    {
+      "source": "exports/validation.json",
+      "sha256": "2c4c72ed5e1988b6807f5283cc53904840f5ddeffebf60772ae67d065833ab30"
+    },
+    {
+      "source": "previews/Attack1.gif",
+      "project": "docs/assets/previews/boss8/Attack1_v4.gif",
+      "sha256": "65254a2974b51eb8d6cc5e0478f05790a0e7db7e85940fa0a369250c6f3e7632"
+    },
+    {
+      "source": "previews/Attack2.gif",
+      "project": "docs/assets/previews/boss8/Attack2_v4.gif",
+      "sha256": "c0857cb8d762824dabe2e947c1e4b002f1a8e0dd0a590936d15fbf356d0f6ed3"
+    },
+    {
+      "source": "previews/Attack3.gif",
+      "project": "docs/assets/previews/boss8/Attack3.gif",
+      "sha256": "8a2c75bcb001124f15b7a83bcf6f0bbe42fa4f960c3bfb58e671dcd5cb72f7a3"
+    },
+    {
+      "source": "previews/Die.gif",
+      "project": "docs/assets/previews/boss8/Die_v3.gif",
+      "sha256": "266a22b7ba2abd4d716d0104d662c3340fb912c67a4ddf5497e8d2dbd129d3c1"
+    },
+    {
+      "source": "previews/Walk.gif",
+      "project": "docs/assets/previews/boss8/Walk.gif",
+      "sha256": "0a1e90d9144ef21f52cf7221491fea84b80c35d5f4c4c6e3e836ec85fde2e2dc"
+    },
+    {
+      "source": "previews/gif-decoded-qa.json",
+      "sha256": "35f27aba7fc62e412b92c0f4c37763bb010080fd392cc14175f955537ccd9e72"
+    },
+    {
+      "source": "previews/gif-retime-qa.json",
+      "sha256": "1f9168cff74c497948dd8ec0b73c0c5fed46443ec0b29158a5e2de84fbbb45db"
+    },
+    {
+      "source": "sources/BOSS8.glb",
+      "sha256": "5ee1c5adb166901ffa885b62be1d4b7d215b3d478e596bd4bbf3557dcb6c2fbb"
+    },
+    {
+      "source": "tools/animate.py",
+      "sha256": "ea766a52fbcb4bb5d46f57d4ea87f4613ee77daac225ae5068f307ca12143362"
+    },
+    {
+      "source": "tools/export.cjs",
+      "sha256": "5a8cc968933a2b96d959da45675f1bc6dc2dfac720063f4ac53fa1f0cd09260b"
+    },
+    {
+      "source": "tools/make_gifs.py",
+      "sha256": "5130cc5992c31ef4cbb1d1bdf244094084bfad8256f3d4041e8f9602f05d89d0"
+    },
+    {
+      "source": "tools/preview.py",
+      "sha256": "2ffb4fc2ea112ec77c37b681a853ab2310b9fae0ae80a5bd52d094ff3924620e"
+    },
+    {
+      "source": "tools/retime.py",
+      "sha256": "93418aedcf4334d2fa0b17e0de308e1a405bc531205aec0f019f5bfef4d2da5c"
+    },
+    {
+      "source": "tools/retime_gifs.cjs",
+      "sha256": "eaecab4d3835ef633eee923e798003b05ce0a3587deca5c92a78f077e2739303"
+    },
+    {
+      "source": "tools/verify.py",
+      "sha256": "ed2012f5815a6c094191366f5fd634b45a6df9e629f995526afb66d8199515cc"
+    },
+    {
+      "source": "tools/verify_glb.cjs",
+      "sha256": "2c8d5999792770a64f4f3c04429542dc68862973eda6a0f57ee8e38a9cd06fd5"
+    },
+    {
+      "source": "tools/verify_retime.py",
+      "sha256": "12852353ae0df7ce6246086ee7ef1fd4e483d5b707419f5977fecc9197e395a7"
+    }
+  ]
+}

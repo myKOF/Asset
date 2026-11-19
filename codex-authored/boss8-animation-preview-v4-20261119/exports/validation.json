@@ -1,0 +1,37 @@
+{
+  "Walk": {
+    "speed": 1,
+    "seconds": 1.6,
+    "boneSamples": 49,
+    "maxBoneMatrixError": 0,
+    "maxSurfaceError": 3.579381748874281e-07
+  },
+  "Attack1": {
+    "speed": 1.5,
+    "seconds": 1.7333333333333334,
+    "boneSamples": 83,
+    "maxBoneMatrixError": 5.960464477539062e-07,
+    "maxSurfaceError": 7.996802249550068e-07
+  },
+  "Attack2": {
+    "speed": 1.25,
+    "seconds": 2.08,
+    "boneSamples": 83,
+    "maxBoneMatrixError": 0,
+    "maxSurfaceError": 0.0
+  },
+  "Attack3": {
+    "speed": 1,
+    "seconds": 2.4,
+    "boneSamples": 73,
+    "maxBoneMatrixError": 0,
+    "maxSurfaceError": 5.383012255486382e-07
+  },
+  "Die": {
+    "speed": 1,
+    "seconds": 3.7666666666666666,
+    "boneSamples": 118,
+    "maxBoneMatrixError": 3.8743019104003906e-07,
+    "maxSurfaceError": 3.769728732309794e-07
+  }
+}

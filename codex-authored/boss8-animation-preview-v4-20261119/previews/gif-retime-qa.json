@@ -1,0 +1,16 @@
+{
+  "Attack1": {
+    "speed": 1.5,
+    "frames": 39,
+    "beforeMs": 2600,
+    "afterMs": 1730,
+    "pixelsUnchanged": true
+  },
+  "Attack2": {
+    "speed": 1.25,
+    "frames": 39,
+    "beforeMs": 2600,
+    "afterMs": 2080,
+    "pixelsUnchanged": true
+  }
+}
