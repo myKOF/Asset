@@ -1,0 +1,23 @@
+{
+  "blender": "4.5.10 LTS",
+  "approvedSha256": "4acc037495fa8da94c17151bc4354d172321b75b79e462940d25dcd56a92e97f",
+  "variantSha256": "84cd40a1ec4bfc68b0a0f0955014791d0b1a5ce6be01862990b42f9ab398f4e5",
+  "material": 2,
+  "vertices": 13739,
+  "matchedTriangles": 9998,
+  "maxRestSurfaceError": 1.0994593349514434e-06,
+  "bones": 58,
+  "actions": {
+    "Attack3": 1.4,
+    "Die": 2.1666666666666665,
+    "Walk": 0.8,
+    "Attack1": 2.5,
+    "Attack2": 2.8
+  },
+  "geometryAndWeights": "approved, unchanged",
+  "materialAndUV": "supplied material; identical UV",
+  "portrait": [
+    1080,
+    1080
+  ]
+}
