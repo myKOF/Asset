@@ -1,0 +1,17 @@
+{
+  "Attack1": {
+    "frames": 39,
+    "durationMs": 2600,
+    "bytes": 4831328
+  },
+  "Attack2": {
+    "frames": 39,
+    "durationMs": 2600,
+    "bytes": 4840213
+  },
+  "Die": {
+    "frames": 58,
+    "durationMs": 4770,
+    "bytes": 7096590
+  }
+}

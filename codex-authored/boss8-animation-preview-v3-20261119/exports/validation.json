@@ -1,0 +1,65 @@
+{
+  "clips": {
+    "Walk": {
+      "seconds": 1.6,
+      "lowestSurface": 0.2538728713989258,
+      "largestDisplacement": 0.9382425943459225
+    },
+    "Attack1": {
+      "seconds": 2.6,
+      "lowestSurface": 0.13768982887268066,
+      "largestDisplacement": 1.9934465207249983
+    },
+    "Attack2": {
+      "seconds": 2.6,
+      "lowestSurface": 0.2520880103111267,
+      "largestDisplacement": 1.3584413144593601
+    },
+    "Attack3": {
+      "seconds": 2.4,
+      "lowestSurface": 0.11863458156585693,
+      "largestDisplacement": 0.99178877621693
+    },
+    "Die": {
+      "seconds": 3.7666666666666666,
+      "lowestSurface": 0.024999499320983887,
+      "largestDisplacement": 2.269660252944337
+    }
+  },
+  "loopMaxError": 2.9950963321688443e-07,
+  "attackReturnError": {
+    "Attack1": 4.826228243321671e-07,
+    "Attack2": 4.807789863616728e-07,
+    "Attack3": 3.2098083538618706e-07
+  },
+  "cameraRange": [
+    0.18485334515571594,
+    0.8073714971542358,
+    0.16873419284820557,
+    0.8531110882759094
+  ],
+  "deathFinalMotion": 4.6552715753952587e-07,
+  "sideLyingUpAxis": [
+    0.8987942934036255,
+    -0.43837103247642517,
+    -2.7057515694650647e-07
+  ],
+  "attack1FollowThroughDegrees": 179.20805140488253,
+  "deathMaxArmSpan": 1.1424070596694946,
+  "deathHandVerticalTravel": 0.22343415021896362,
+  "attack2WholeBodyLift": 0.5072951316833496,
+  "attack2PitchTravelDegrees": 84.83152322744864,
+  "attack1VerticalClawTravel": 0.7369516491889954,
+  "attack2AimRaisedDegrees": [
+    44.99997385264491,
+    45.000030087605815
+  ],
+  "deathRetainedFallMaxError": 6.258487701416016e-07,
+  "deathRevision": {
+    "jitterAmplitudeScale": 0.5,
+    "jitterSpeedScale": 1.5,
+    "struggleFramesBefore": 62,
+    "struggleFramesAfter": 31,
+    "fallTimeShiftFrames": 31
+  }
+}

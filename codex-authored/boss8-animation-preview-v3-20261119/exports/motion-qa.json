@@ -1,0 +1,23 @@
+{
+  "sourceSha256": "5ee1c5adb166901ffa885b62be1d4b7d215b3d478e596bd4bbf3557dcb6c2fbb",
+  "blender": "4.5.10 LTS",
+  "bones": 70,
+  "vertices": 18046,
+  "fps": 30,
+  "clips": {
+    "Walk": 1.6,
+    "Attack1": 2.6,
+    "Attack2": 2.6,
+    "Attack3": 2.4,
+    "Die": 3.7666666666666666
+  },
+  "deathRevision": {
+    "jitterAmplitudeScale": 0.5,
+    "jitterSpeedScale": 1.5,
+    "struggleFramesBefore": 62,
+    "struggleFramesAfter": 31,
+    "unchangedFallSourceFrame": 62,
+    "fallTimeShiftFrames": 31
+  },
+  "approval": "preview only; not integrated"
+}

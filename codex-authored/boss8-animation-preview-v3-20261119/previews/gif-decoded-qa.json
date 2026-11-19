@@ -1,0 +1,32 @@
+{
+  "Attack1": {
+    "decodedFrames": 39,
+    "durationMs": 2600,
+    "size": [
+      576,
+      634
+    ],
+    "allFramesDecoded": true,
+    "visibleMotion": true
+  },
+  "Attack2": {
+    "decodedFrames": 39,
+    "durationMs": 2600,
+    "size": [
+      576,
+      634
+    ],
+    "allFramesDecoded": true,
+    "visibleMotion": true
+  },
+  "Die": {
+    "decodedFrames": 58,
+    "durationMs": 4770,
+    "size": [
+      576,
+      634
+    ],
+    "allFramesDecoded": true,
+    "visibleMotion": true
+  }
+}

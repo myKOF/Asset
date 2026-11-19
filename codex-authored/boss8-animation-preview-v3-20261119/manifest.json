@@ -1,0 +1,136 @@
+{
+  "asset": "boss8-flying-imp-animation-preview-v3",
+  "status": "unapproved",
+  "files": [
+    {
+      "source": "README.md",
+      "sha256": "f63a24605c2bdfe0dba9acc891747bcf4b8272915e77db41290ad2422b33195f"
+    },
+    {
+      "source": "SOURCE.md",
+      "sha256": "683691675c4fffdf8a10f28617d5421ebc0533009f8edbdd2babb8e47c0964bc"
+    },
+    {
+      "source": "exports/Attack1_24.png",
+      "sha256": "cec6de07cdb6419d2bd52939900ed7b4ac126d93a367cc9735284e1edaf19b56"
+    },
+    {
+      "source": "exports/Attack1_44.png",
+      "sha256": "967e8cf188b621e6d7ff67c2b54dfd08a08e314d9e890596a6614e9e87ee35e0"
+    },
+    {
+      "source": "exports/Attack1_64.png",
+      "sha256": "d3fd43e7bda6c91dc873cbb644cdc0ffb3e384d2f9f4659aa0fc70ad024b826c"
+    },
+    {
+      "source": "exports/Attack2_14.png",
+      "sha256": "2c31d0253685b9957981a2349d2e163c896e7cd8e64102811dc0ffbd7d4427a6"
+    },
+    {
+      "source": "exports/Attack2_34.png",
+      "sha256": "4b8ecef65108dd43a47cd0170743233e1019bd451acf4a033077ccada1591974"
+    },
+    {
+      "source": "exports/Attack2_57.png",
+      "sha256": "780f9feff40f2219eb04360eeee83c9871e25c5fc835326b6b15109d1636e1b4"
+    },
+    {
+      "source": "exports/Die_12.png",
+      "sha256": "332c4841180a5d4d90e3a4992904ddbc20c3d2eef4074e08ed07064035c0cdf2"
+    },
+    {
+      "source": "exports/Die_24.png",
+      "sha256": "48965cfb31cf80456d4c0bd2682d70588445f4e57d32bdaf0d25f10b5dd5ac40"
+    },
+    {
+      "source": "exports/Die_60.png",
+      "sha256": "2bc96809ac2087fde801f6235586c21529103cfc95456e0541168c433a408d2b"
+    },
+    {
+      "source": "exports/Die_98.png",
+      "sha256": "23fdd5c236a1d765850f4ed09b5b012f96d7d4cad2c4c66fbf6bf3c55736619a"
+    },
+    {
+      "source": "exports/boss8_preview.blend",
+      "sha256": "0fa54e299c0b1b2582dbbed32c3af2110f3a8bc8463e47c33e25781538cc63fb"
+    },
+    {
+      "source": "exports/boss8_preview.glb",
+      "project": "docs/assets/previews/boss8/boss8_preview.glb",
+      "sha256": "ea27f7523f348da9d11fb08dacd2b83fbd2ac143af2e266ea1122f4a05a9e864"
+    },
+    {
+      "source": "exports/glb-qa.json",
+      "sha256": "15bf6427427ccbbd31210c20c2a55d27513ddabb3e5bde624a06bce9d8534e37"
+    },
+    {
+      "source": "exports/motion-qa.json",
+      "sha256": "abb1467480aea06ce86fc92a18f7668029d033ab26f2a494554721817b296a17"
+    },
+    {
+      "source": "exports/validation.json",
+      "sha256": "c62c80becefd4200388baff1cea8093c38fc9bbb0cd87b535e63e936cb9b0ffc"
+    },
+    {
+      "source": "previews/Attack1.gif",
+      "project": "docs/assets/previews/boss8/Attack1_v3.gif",
+      "sha256": "c4a2cf4122f6d4b6d3d91e84f6bf99313059fbdc73f26ead300f723e74ef0d87"
+    },
+    {
+      "source": "previews/Attack2.gif",
+      "project": "docs/assets/previews/boss8/Attack2_v3.gif",
+      "sha256": "c5296088326decc4eb42054a004d8ee66832a29eaf56a3ec3432d6a19ff91d58"
+    },
+    {
+      "source": "previews/Attack3.gif",
+      "project": "docs/assets/previews/boss8/Attack3.gif",
+      "sha256": "8a2c75bcb001124f15b7a83bcf6f0bbe42fa4f960c3bfb58e671dcd5cb72f7a3"
+    },
+    {
+      "source": "previews/Die.gif",
+      "project": "docs/assets/previews/boss8/Die_v3.gif",
+      "sha256": "266a22b7ba2abd4d716d0104d662c3340fb912c67a4ddf5497e8d2dbd129d3c1"
+    },
+    {
+      "source": "previews/Walk.gif",
+      "project": "docs/assets/previews/boss8/Walk.gif",
+      "sha256": "0a1e90d9144ef21f52cf7221491fea84b80c35d5f4c4c6e3e836ec85fde2e2dc"
+    },
+    {
+      "source": "previews/gif-decoded-qa.json",
+      "sha256": "cf2ea6effd9a031d631b64bd3e94b70d57a99c641a2aaf4c61a7c41e61555710"
+    },
+    {
+      "source": "previews/gif-qa.json",
+      "sha256": "28e1b604e565f0c9972923fc9d9ace147589ebc22114b18191563b4ee327590e"
+    },
+    {
+      "source": "sources/BOSS8.glb",
+      "sha256": "5ee1c5adb166901ffa885b62be1d4b7d215b3d478e596bd4bbf3557dcb6c2fbb"
+    },
+    {
+      "source": "tools/animate.py",
+      "sha256": "ea766a52fbcb4bb5d46f57d4ea87f4613ee77daac225ae5068f307ca12143362"
+    },
+    {
+      "source": "tools/export.cjs",
+      "sha256": "2f92edcf6abb60c99b9ba0d734a26877ea2a9e3a6e6eb20595f82d664b8c4a0e"
+    },
+    {
+      "source": "tools/make_gifs.py",
+      "sha256": "5130cc5992c31ef4cbb1d1bdf244094084bfad8256f3d4041e8f9602f05d89d0"
+    },
+    {
+      "source": "tools/preview.py",
+      "sha256": "2ffb4fc2ea112ec77c37b681a853ab2310b9fae0ae80a5bd52d094ff3924620e"
+    },
+    {
+      "source": "tools/verify.py",
+      "sha256": "ed2012f5815a6c094191366f5fd634b45a6df9e629f995526afb66d8199515cc"
+    },
+    {
+      "source": "tools/verify_glb.cjs",
+      "sha256": "b7efa4507b8244db801be7dfe324cd5bcc9da8172f30290cbfd88edf417f2f15"
+    }
+  ]
+}
