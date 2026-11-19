@@ -1,0 +1,25 @@
+{
+  "generator": "Codex built-in imagegen",
+  "license": "Original generated artwork for this project; user-approved natural broken-board revision. No external copyrighted image material.",
+  "approval": "2026-11-19 user: OK，就這個，接上吧",
+  "description": "Unframed organically broken wooden sign with two plain wooden support pegs; text and button remain dynamic UI overlays.",
+  "originalSize": [
+    1501,
+    1047
+  ],
+  "exportSize": [
+    768,
+    536
+  ],
+  "files": [
+    {
+      "source": "source.png",
+      "sha256": "65c792fad7e64864fcf5346e794349a561ee386fa71ad5297485581f874d0a7c"
+    },
+    {
+      "source": "mystery-merchant-sign.webp",
+      "sha256": "f43db598ceffb95c210b7dec3b14716cbea3fe7aa04edf18fa865a49762836f9"
+    }
+  ],
+  "gameExport": "images/ui/mystery-merchant-sign.webp"
+}
