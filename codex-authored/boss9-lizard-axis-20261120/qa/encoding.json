@@ -1,0 +1,69 @@
+{
+  "gifs": [
+    {
+      "file": "Run.gif",
+      "frames": 60,
+      "durationMs": 2000,
+      "size": [
+        900,
+        600
+      ],
+      "cycles": 3,
+      "bytes": 9493670,
+      "sha256": "f257d0a37886de8288b890a74c9262fee38d2debdd1a1a5464f733076f80c865"
+    },
+    {
+      "file": "Front.gif",
+      "frames": 60,
+      "durationMs": 2000,
+      "size": [
+        900,
+        600
+      ],
+      "cycles": 3,
+      "bytes": 7394403,
+      "sha256": "7a90a8b91867da3849207c1b7d0930a19d043f0925eba9dc975e3e9e14510535"
+    },
+    {
+      "file": "Top.gif",
+      "frames": 60,
+      "durationMs": 2000,
+      "size": [
+        900,
+        600
+      ],
+      "cycles": 3,
+      "bytes": 8812643,
+      "sha256": "de08f3102a23889686f3f22b4c8da00d4af052e100b190a58051622c0da3881e"
+    }
+  ],
+  "captures": {
+    "side": {
+      "glbSHA256": "072b1128da7ada9f2d89902945bf947a2e13211b52ae1cd79f6caf72ae5cce9b",
+      "bounds": {
+        "minX": 182.3325042761976,
+        "maxX": 717.6674957238012,
+        "minY": 62.52439388774599,
+        "maxY": 537.1402768941354
+      }
+    },
+    "front": {
+      "glbSHA256": "072b1128da7ada9f2d89902945bf947a2e13211b52ae1cd79f6caf72ae5cce9b",
+      "bounds": {
+        "minX": 305.4514587362839,
+        "maxX": 594.5485412637161,
+        "minY": 62.59048916805663,
+        "maxY": 537.1342192458313
+      }
+    },
+    "top": {
+      "glbSHA256": "072b1128da7ada9f2d89902945bf947a2e13211b52ae1cd79f6caf72ae5cce9b",
+      "bounds": {
+        "minX": 318.6345544259961,
+        "maxX": 581.3654455740038,
+        "minY": 61.957481574288565,
+        "maxY": 538.0952380952377
+      }
+    }
+  }
+}

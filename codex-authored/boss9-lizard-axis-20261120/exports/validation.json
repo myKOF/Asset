@@ -1,0 +1,92 @@
+{
+  "sourceSHA256": "1f3f5daad3100305fd51c5fd070cf53a2d5a6b3c59394be3db94500ce68ffa0d",
+  "glbSHA256": "072b1128da7ada9f2d89902945bf947a2e13211b52ae1cd79f6caf72ae5cce9b",
+  "bones": 73,
+  "duration": 0.6666666865348816,
+  "unchangedAnimationChannels": 147,
+  "glbLoopChannelError": 2.562999725341797e-06,
+  "originalGeometryMaterialsPreserved": true,
+  "onlyDeclaredTailWeightBytesChanged": true,
+  "tailWeightRepairVertices": 587,
+  "staticGeometrySHA256": "e62db8d715f5f93e13cc63a661fea4205adbcde66d886433c02ecab3e55d0730",
+  "forelimbVerticesWeightedToRearLegs": 0,
+  "fingerVertices": 625,
+  "pureFingerVertices": 428,
+  "footVertices": 315,
+  "checks": {
+    "blend": {
+      "samples": 161,
+      "importedStaticVertexError": 0.0,
+      "rearBoneMatrixError": 0,
+      "rearSurfaceVertexError": 0,
+      "actualRegionMaximumAxisOffset": {
+        "pelvis": 0,
+        "waist": 2.123415470123291e-06,
+        "rib": 2.3618340492248535e-06,
+        "chest": 2.5704503059387207e-06,
+        "skull": 2.4139881134033203e-06,
+        "nose": 2.4512410163879395e-06,
+        "tail1": 6.631016731262207e-07,
+        "tail2": 3.382563591003418e-06,
+        "tail3": 6.0051679611206055e-06,
+        "tail_04": 6.318092346191406e-06,
+        "tail4": 6.251037120819092e-06,
+        "tail_06": 6.042420864105225e-06,
+        "tail_07": 7.160007953643799e-06
+      },
+      "actualHeadForwardErrorDegrees": 8.220044873041843e-05,
+      "actualTailToNoseHeadingErrorDegrees": 0.00029486491101238244,
+      "actualChestToNoseHeadingErrorDegrees": 0.00012878724430720467,
+      "tailEdgeStretchP95": 1.1737725088522828,
+      "tailEdgeStretchP99": 1.4183078421643283,
+      "tailEdgeStretchMaximum": 2.2356319686370516,
+      "fingerLocalBasisError": 0,
+      "fingerRigidToPalmError": 2.8115454709698567e-07,
+      "fingerToFootMinimumVertexDistance": 0.1547694206237793,
+      "fingerFootTriangleOverlaps": 0,
+      "boneLengthError": 2.9487661482030525e-07,
+      "loopVertexError": 1.8477439880371094e-06,
+      "verticalBounds": [
+        -0.7622555494308472,
+        0.7871571779251099
+      ]
+    },
+    "glb": {
+      "samples": 161,
+      "importedStaticVertexError": 7.450580596923828e-09,
+      "rearBoneMatrixError": 0,
+      "rearSurfaceVertexError": 0,
+      "actualRegionMaximumAxisOffset": {
+        "pelvis": 0,
+        "waist": 2.1383166313171387e-06,
+        "rib": 2.391636371612549e-06,
+        "chest": 2.6226043701171875e-06,
+        "skull": 2.4586915969848633e-06,
+        "nose": 2.5033950805664062e-06,
+        "tail1": 6.780028343200684e-07,
+        "tail2": 3.3527612686157227e-06,
+        "tail3": 5.938112735748291e-06,
+        "tail_04": 6.243586540222168e-06,
+        "tail4": 6.16908073425293e-06,
+        "tail_06": 5.938112735748291e-06,
+        "tail_07": 7.145106792449951e-06
+      },
+      "actualHeadForwardErrorDegrees": 7.983072879369502e-05,
+      "actualTailToNoseHeadingErrorDegrees": 0.00029486502498343725,
+      "actualChestToNoseHeadingErrorDegrees": 0.00013128796749128924,
+      "tailEdgeStretchP95": 1.1737721228353073,
+      "tailEdgeStretchP99": 1.4183071845741624,
+      "tailEdgeStretchMaximum": 2.235631699341032,
+      "fingerLocalBasisError": 2.3841853646899835e-07,
+      "fingerRigidToPalmError": 5.031211082975308e-07,
+      "fingerToFootMinimumVertexDistance": 0.15476927161216736,
+      "fingerFootTriangleOverlaps": 0,
+      "boneLengthError": 3.0143700796569917e-07,
+      "loopVertexError": 1.8477439880371094e-06,
+      "verticalBounds": [
+        -0.7622555494308472,
+        0.7871572375297546
+      ]
+    }
+  }
+}

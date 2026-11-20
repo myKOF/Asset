@@ -1,0 +1,120 @@
+{
+  "id": "boss9-lizard-axis-20261120",
+  "status": "Actual skinned centerline correction; GIF review; no game integration",
+  "source": {
+    "path": "source/BOSS9.glb",
+    "sha256": "1f3f5daad3100305fd51c5fd070cf53a2d5a6b3c59394be3db94500ce68ffa0d",
+    "authorization": "User supplied lizard; latest marked image specifies actual body/leg alignment."
+  },
+  "changes": "Correct torso positions and direction, actual head axis and tail lateral bend. Repair only declared tail-root rear-leg weights; keep geometry and placeholder materials.",
+  "files": [
+    {
+      "path": "exports/boss9_lizard.blend",
+      "sha256": "dde951c3c457306802d5c380e4a57bc557f67e63281df96e0f5329674605e7cf"
+    },
+    {
+      "path": "exports/boss9_lizard.glb",
+      "sha256": "072b1128da7ada9f2d89902945bf947a2e13211b52ae1cd79f6caf72ae5cce9b"
+    },
+    {
+      "path": "exports/build.json",
+      "sha256": "4176040a63220c36e445fb86cd89df738eade1e8566553cc27a56f9e80d479ad"
+    },
+    {
+      "path": "exports/validation.json",
+      "sha256": "79b6ff1c33485095a03c51cc1e8e5033df0e19d0c55864509aaaebce9a21ce6d"
+    },
+    {
+      "path": "preview/Front.gif",
+      "sha256": "7a90a8b91867da3849207c1b7d0930a19d043f0925eba9dc975e3e9e14510535"
+    },
+    {
+      "path": "preview/Run.gif",
+      "sha256": "f257d0a37886de8288b890a74c9262fee38d2debdd1a1a5464f733076f80c865"
+    },
+    {
+      "path": "preview/Top.gif",
+      "sha256": "de08f3102a23889686f3f22b4c8da00d4af052e100b190a58051622c0da3881e"
+    },
+    {
+      "path": "qa/build.log",
+      "sha256": "b888d22f931546fa5213b9014f61deec92ff740f0cd4de1c7e174590d7fe3db3"
+    },
+    {
+      "path": "qa/encoding.json",
+      "sha256": "56a502b4386a3396f11611ff34eaeeead7a23276e69281f808440c9a28d8803b"
+    },
+    {
+      "path": "qa/front-capture.json",
+      "sha256": "6f0bc52feae67c04089e39d3f220282e2d034fd802c408d2d70f440d6b7929a9"
+    },
+    {
+      "path": "qa/front-contact.jpg",
+      "sha256": "cd88c98e95584df9942af12995f01c75d4625aa88e80ac4b72a90c4aadf352be"
+    },
+    {
+      "path": "qa/side-capture.json",
+      "sha256": "fb771063cd3256adf1412fb941efa5dfdbe21e597bd6a0c520997606b60c5bbd"
+    },
+    {
+      "path": "qa/side-contact.jpg",
+      "sha256": "34762e3bc2e2d0c01a4a98c5dabc7c529a6fb6c2d400df1aa8645f4930d7aa71"
+    },
+    {
+      "path": "qa/top-capture.json",
+      "sha256": "d10dd9910f32817a020a37da3a27f11c83d74334f24e2ec4d53d986aa97220a8"
+    },
+    {
+      "path": "qa/top-contact.jpg",
+      "sha256": "a91781158e573a7fa0678b5bf48c9543df81ff282ac395c88f45f7a2c7bf1272"
+    },
+    {
+      "path": "qa/verify.log",
+      "sha256": "e0ab276d326f4598280b41667e3d1884c8d40c10d81febeeb44fbb1320dc94c4"
+    },
+    {
+      "path": "source/BOSS9.glb",
+      "sha256": "1f3f5daad3100305fd51c5fd070cf53a2d5a6b3c59394be3db94500ce68ffa0d"
+    },
+    {
+      "path": "source/BOSS9_LIZARD_AXIS.md",
+      "sha256": "59c2a750c02f6231c211433d9b3b0ea924f808cb0e4500b323556776f2b9ee9b",
+      "project": "docs/assets/BOSS9_LIZARD_AXIS.md"
+    },
+    {
+      "path": "source/tools/align.py",
+      "sha256": "3c0a67bc25b6a05fee8fedff347266cb25a2feaf2141e46082199a38d3389b11",
+      "project": "tools/boss9-lizard/align.py"
+    },
+    {
+      "path": "source/tools/axis_capture.cjs",
+      "sha256": "1d549ad2ad3bbb0393d1ef7441d34012c95aae82d02840d276f7eb687f203623",
+      "project": "tools/boss9-lizard/axis_capture.cjs"
+    },
+    {
+      "path": "source/tools/axis_encode.py",
+      "sha256": "c31a956bfc50ba492ae61276f92e1958145afa46038cbbf7a0d87dbccaa5f718",
+      "project": "tools/boss9-lizard/axis_encode.py"
+    },
+    {
+      "path": "source/tools/axis_export.cjs",
+      "sha256": "627ed052c40d0d2415a27047ae4ff7ad13ca745fb4d226780289925b4ab957d0",
+      "project": "tools/boss9-lizard/axis_export.cjs"
+    },
+    {
+      "path": "source/tools/axis_verify.py",
+      "sha256": "d7f0afd0302b6d8d43f42c280211a26b28cf72d6cfcea8f4cfefa3e2986fb64f",
+      "project": "tools/boss9-lizard/axis_verify.py"
+    },
+    {
+      "path": "source/tools/axis_viewer.html",
+      "sha256": "dd85599de234ac8cdba62084b0d98363a0b00fdd30c1a5e4542a4e30fcd16d06",
+      "project": "tools/boss9-lizard/axis_viewer.html"
+    },
+    {
+      "path": "source/tools/axis_viewer.js",
+      "sha256": "8317df0bb06a1ad287726c3bb95d1c630be130f4c898c0eb234f963d3774fa3c",
+      "project": "tools/boss9-lizard/axis_viewer.js"
+    }
+  ]
+}
