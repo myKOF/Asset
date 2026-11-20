@@ -1,0 +1,120 @@
+{
+  "id": "boss9-lizard-legs-20261120",
+  "status": "Straight rear-leg running; GIF review; no game integration",
+  "source": {
+    "path": "source/BOSS9.glb",
+    "sha256": "1f3f5daad3100305fd51c5fd070cf53a2d5a6b3c59394be3db94500ce68ffa0d",
+    "authorization": "User supplied lizard; latest arrows explicitly authorize changing rear-leg direction."
+  },
+  "changes": "Repose rear legs with planar IK and align actual skinned foot paths/heading. Retain body/tail alignment, fingers, geometry, placeholder materials and declared tail-root weight repairs.",
+  "files": [
+    {
+      "path": "exports/boss9_lizard.blend",
+      "sha256": "2cc8a44d3258f1148391a980087b2e43c91c39e5a8557db48a4fd1cbe1b5258a"
+    },
+    {
+      "path": "exports/boss9_lizard.glb",
+      "sha256": "23319786f8663d55bbde4ee7ae48bd2259e7a493114994cb9407dd2d731dbf5d"
+    },
+    {
+      "path": "exports/build.json",
+      "sha256": "c9ff0246e70098a4e5b12cfd609234f5b21c8b00e509c84ac7747ec89b773c64"
+    },
+    {
+      "path": "exports/validation.json",
+      "sha256": "0f163e734dfad0a2f3f3fd3f844d087a6671e006850c63b1e5a6be6de64df627"
+    },
+    {
+      "path": "preview/Front.gif",
+      "sha256": "63f6a027168ac28701693ca073b60a5cd9f54d00d9165ce4f83d169cf8fb48d6"
+    },
+    {
+      "path": "preview/Run.gif",
+      "sha256": "dcca987433e2157e5dd6c7f23a652e186e549aced79068672c82cc4f334f1f00"
+    },
+    {
+      "path": "preview/Top.gif",
+      "sha256": "714dc5b747997f3922af5b57cec5cbc85c8b92f67241b4e1106ab786e09494c0"
+    },
+    {
+      "path": "qa/build.log",
+      "sha256": "838fbfe43cc99cfe0bed4f4d206f1f2c1d802011a1dee4f057ec346292c7c2a1"
+    },
+    {
+      "path": "qa/encoding.json",
+      "sha256": "edf357400ece63227491e20edecb5b2c2f0a7efeefcd84f744716008fab038f1"
+    },
+    {
+      "path": "qa/front-capture.json",
+      "sha256": "f3f23e7cbff676fc857eae33cdb820fc073c6c3b3678c4beb9e512463cfcf1af"
+    },
+    {
+      "path": "qa/front-contact.jpg",
+      "sha256": "6e342213b5c9ecc3906f42109e504ed7656641777917d045c2533027903ad54e"
+    },
+    {
+      "path": "qa/side-capture.json",
+      "sha256": "85e1cae794a5a1b831f1ed9fab5389af9b285b0e92ea052541f2d43df8828ce0"
+    },
+    {
+      "path": "qa/side-contact.jpg",
+      "sha256": "c5a8cb98022e4cf76d84ba626987b939165c9b2d2541c05ef062570cd0010d32"
+    },
+    {
+      "path": "qa/top-capture.json",
+      "sha256": "603882aeb5cc110d2b11ea5ba2bf863729c136b4d3e8f264fe20bc037f82db23"
+    },
+    {
+      "path": "qa/top-contact.jpg",
+      "sha256": "dc22b0caf217f99002651fab8b1fc6ef8e64b3f102c267cf1b1944fffbfb46a5"
+    },
+    {
+      "path": "qa/verify.log",
+      "sha256": "8a893f37e36fa141f0a8080b954dc13b5be318ab3eda22ebc06dc86e3e723c82"
+    },
+    {
+      "path": "source/BOSS9.glb",
+      "sha256": "1f3f5daad3100305fd51c5fd070cf53a2d5a6b3c59394be3db94500ce68ffa0d"
+    },
+    {
+      "path": "source/BOSS9_LIZARD_LEGS.md",
+      "sha256": "d0d5c0790ea1acfbfdfa3efefafdd1780cc0916fb8640bbc0fdd09942d6bb1f8",
+      "project": "docs/assets/BOSS9_LIZARD_LEGS.md"
+    },
+    {
+      "path": "source/tools/legs.py",
+      "sha256": "c6906100c53cccf0cccb5a4397d965e9fdf5f7ffebe27834b02efbd6f2c14866",
+      "project": "tools/boss9-lizard/legs.py"
+    },
+    {
+      "path": "source/tools/legs_capture.cjs",
+      "sha256": "57cd09af428ce2718378cb2b8536921435946a9828cae188d265fcf7b2db24e4",
+      "project": "tools/boss9-lizard/legs_capture.cjs"
+    },
+    {
+      "path": "source/tools/legs_encode.py",
+      "sha256": "c31a956bfc50ba492ae61276f92e1958145afa46038cbbf7a0d87dbccaa5f718",
+      "project": "tools/boss9-lizard/legs_encode.py"
+    },
+    {
+      "path": "source/tools/legs_export.cjs",
+      "sha256": "9119fabb4fc07ea1c5e80b757c2d288ea946497cda0efae55418181cb83cd671",
+      "project": "tools/boss9-lizard/legs_export.cjs"
+    },
+    {
+      "path": "source/tools/legs_verify.py",
+      "sha256": "d9bf2073f4df24093cfcc12e7d6876e4336abbb1de669907875291cc2197c57f",
+      "project": "tools/boss9-lizard/legs_verify.py"
+    },
+    {
+      "path": "source/tools/legs_viewer.html",
+      "sha256": "b186c9e13d0f4b91732c4fbba8c08584a643ca80d567890fd7e63dc3eb868489",
+      "project": "tools/boss9-lizard/legs_viewer.html"
+    },
+    {
+      "path": "source/tools/legs_viewer.js",
+      "sha256": "973a1f485aea5109b395c3ae0b4624d097f2124cfb759786151d4aaab3a9ac82",
+      "project": "tools/boss9-lizard/legs_viewer.js"
+    }
+  ]
+}
