@@ -1,0 +1,121 @@
+{
+  "id": "boss9-lizard-run-20261120",
+  "status": "Movement fix GIF review; no game integration",
+  "source": {
+    "path": "source/BOSS9.glb",
+    "sha256": "1f3f5daad3100305fd51c5fd070cf53a2d5a6b3c59394be3db94500ce68ffa0d",
+    "authorization": "New model supplied by user for these repairs; placeholder materials retained."
+  },
+  "changes": "Align upper-body roll/heading with rear-foot travel and remove misclassified leg animation from hand fingers. Original geometry, weights and textures retained.",
+  "files": [
+    {
+      "path": "exports/boss9_lizard.blend",
+      "sha256": "c6e273e54d461fd90dca2293a9c73ce45d66078523f85e7cfd12cfe44d331f57"
+    },
+    {
+      "path": "exports/boss9_lizard.glb",
+      "sha256": "983f182d178df16df36770fa3013b490ae17d438367c2a6c028c6fe0c293d318"
+    },
+    {
+      "path": "exports/build.json",
+      "sha256": "6d31ea8aaf24a1caf4f8e1c2ccaf033e5ea0273294b70bb99094e5f18bcc2b5a"
+    },
+    {
+      "path": "exports/validation.json",
+      "sha256": "1afe755475a8e4f17b1200798c347e2ef6ff3923654f694f730c8434761a5710"
+    },
+    {
+      "path": "preview/Front.gif",
+      "sha256": "0c062bc7013bea5cfed3df90dd5a92816640d72aecb51ab519acaa05ec60680f"
+    },
+    {
+      "path": "preview/Run.gif",
+      "sha256": "2a248589d9a4dbb91f4f2e9d5c51ab3206e4716db6b432835261bb2f97d3d094"
+    },
+    {
+      "path": "qa/build.log",
+      "sha256": "5e79fce2bbdf7d1e331df0b679cd35120336b6d0b313e1cfc8d84a8def0b061c"
+    },
+    {
+      "path": "qa/encoding.json",
+      "sha256": "f74c18ff4fe0e4f9bd3bbe1da739a780286858af7bb337ac792f6e8901f9c56e"
+    },
+    {
+      "path": "qa/front-capture.json",
+      "sha256": "a987795852e808422ddf9481e3a1a01f5462b13fec3b54b73e68fcc5373ca395"
+    },
+    {
+      "path": "qa/front-contact.jpg",
+      "sha256": "df8302b732d70acf6741c8459178216c10881764e57caab492ddde3123bfd066"
+    },
+    {
+      "path": "qa/side-capture.json",
+      "sha256": "5a337c1e99b532ae0e62735adc71d8338a304cfd4c86b9209442bf95ce7cb2de"
+    },
+    {
+      "path": "qa/side-contact.jpg",
+      "sha256": "cd673cac69a51eee65390321b2d0d4a0ea4b9c07690ac387f63a1c01e0bf639c"
+    },
+    {
+      "path": "qa/verify.log",
+      "sha256": "d3300db0c200941404f293058682bdbc08bf7877f9957b65bf1c07596b57bcbd"
+    },
+    {
+      "path": "source/BOSS9.glb",
+      "sha256": "1f3f5daad3100305fd51c5fd070cf53a2d5a6b3c59394be3db94500ce68ffa0d"
+    },
+    {
+      "path": "source/BOSS9_LIZARD_RUN.md",
+      "sha256": "835df9d9b04fc16fd1c12657cf164d321dfe3539af69e2c01d07dc70d7d9c0b5",
+      "project": "docs/assets/BOSS9_LIZARD_RUN.md"
+    },
+    {
+      "path": "source/inspection.json",
+      "sha256": "6d018e55576ef61929fbc6181ac91fd610227cb6695bd5a1bb6e001cb86cbd86"
+    },
+    {
+      "path": "source/original.blend",
+      "sha256": "e850922b2c409497ee6e68a823ce90b91465f84d641fad0ec1ba5a3b10f75e9b"
+    },
+    {
+      "path": "source/tools/capture.cjs",
+      "sha256": "549347d2014185e2a1c96eb5c1d8c4686832546f0bf5827064f71607d7fc5ca3",
+      "project": "tools/boss9-lizard/capture.cjs"
+    },
+    {
+      "path": "source/tools/encode.py",
+      "sha256": "5ec946e2b84f31f8eded83afb2369f4e59c6d705df3b0c89d58f6876e869d0ce",
+      "project": "tools/boss9-lizard/encode.py"
+    },
+    {
+      "path": "source/tools/export.cjs",
+      "sha256": "ff2af1c3af143c01db1316a9be59e4f036aba007e5a9045ba88149155a150f11",
+      "project": "tools/boss9-lizard/export.cjs"
+    },
+    {
+      "path": "source/tools/inspect.py",
+      "sha256": "290d69ef66558bdd229767a202872303766219a64fc2841b1a176470bb8ea7e5",
+      "project": "tools/boss9-lizard/inspect.py"
+    },
+    {
+      "path": "source/tools/prepare.py",
+      "sha256": "e6389e72f52d32ac8bbd5880c5581b7c52404d1d7cad2b74998fc1da79e0a337",
+      "project": "tools/boss9-lizard/prepare.py"
+    },
+    {
+      "path": "source/tools/verify.py",
+      "sha256": "8473c7c41dfa99ee78d39c593cc811bf8f272632ecd41f40fa6ed9043fe9a1d1",
+      "project": "tools/boss9-lizard/verify.py"
+    },
+    {
+      "path": "source/tools/viewer.html",
+      "sha256": "e0b7281ec0d5b7ccb8141403bea7b3ef0fe10074f35d76abf1a312db9f7e08d9",
+      "project": "tools/boss9-lizard/viewer.html"
+    },
+    {
+      "path": "source/tools/viewer.js",
+      "sha256": "a335d29e91fcf10dd8af8a3601856804a886b38b62883ecce30a49b20c31f8ae",
+      "project": "tools/boss9-lizard/viewer.js"
+    }
+  ]
+}

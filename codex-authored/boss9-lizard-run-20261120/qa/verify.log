@@ -1,0 +1,13 @@
+12:01:34 | INFO: Data are loaded, start creating Blender stuff
+12:01:34 | INFO: Blender create Mesh node output_unwrapped
+12:01:34 | INFO: glTF import finished in 0.14s
+LIZARD_CHECK blend {"samples": 161, "rearBoneMatrixError": 0, "rearSurfaceVertexError": 0, "bodyRollMaximumDegrees": 0.0005324692434319044, "bodyVsFeetHeadingErrorDegrees": 0.02639142970608077, "headVsFeetHeadingErrorDegrees": 14.305588049836416, "headVsForwardHeadingErrorDegrees": 4.66507050873588e-05, "fingerLocalBasisError": 0, "fingerRigidToPalmError": 3.03925246810483e-07, "fingerToFootMinimumVertexDistance": 0.1674319952726364, "fingerFootTriangleOverlaps": 0, "boneLengthError": 9.318684451864456e-08, "loopVertexError": 1.8477439880371094e-06, "verticalBounds": [-0.7622555494308472, 0.7907383441925049]}
+12:01:40 | INFO: Data are loaded, start creating Blender stuff
+12:01:40 | INFO: Blender create Mesh node output_unwrapped
+12:01:40 | INFO: glTF import finished in 0.18s
+LIZARD_CHECK glb {"samples": 161, "rearBoneMatrixError": 0, "rearSurfaceVertexError": 0, "bodyRollMaximumDegrees": 0.0005298496632807163, "bodyVsFeetHeadingErrorDegrees": 0.026395697609643776, "headVsFeetHeadingErrorDegrees": 14.305586747030503, "headVsForwardHeadingErrorDegrees": 4.8231754448124775e-05, "fingerLocalBasisError": 2.980232238769531e-07, "fingerRigidToPalmError": 4.951133646320149e-07, "fingerToFootMinimumVertexDistance": 0.16743214428424835, "fingerFootTriangleOverlaps": 0, "boneLengthError": 9.318684451864456e-08, "loopVertexError": 1.8477439880371094e-06, "verticalBounds": [-0.7622555494308472, 0.7907384634017944]}
+LIZARD_VERIFY_PASS
+Blender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:33:45)
+Read blend: "D:\MyGame\Asset\codex-authored\boss9-lizard-run-20261120\exports\boss9_lizard.blend"
+
+Blender quit

@@ -1,0 +1,8 @@
+12:01:07 | INFO: Data are loaded, start creating Blender stuff
+12:01:07 | INFO: Blender create Mesh node output_unwrapped
+12:01:07 | INFO: glTF import finished in 0.13s
+Info: Saved as "boss9_lizard.blend"
+LIZARD_PREPARED 14 bones; original geometry buffers retained
+Blender 4.5.9 LTS (hash 8bf95cbd38d1 built 2026-04-21 01:33:45)
+
+Blender quit

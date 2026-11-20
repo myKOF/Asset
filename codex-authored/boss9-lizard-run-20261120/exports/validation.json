@@ -1,0 +1,54 @@
+{
+  "sourceSHA256": "1f3f5daad3100305fd51c5fd070cf53a2d5a6b3c59394be3db94500ce68ffa0d",
+  "glbSHA256": "983f182d178df16df36770fa3013b490ae17d438367c2a6c028c6fe0c293d318",
+  "bones": 73,
+  "duration": 0.6666666865348816,
+  "unchangedAnimationChannels": 177,
+  "glbLoopChannelError": 2.562999725341797e-06,
+  "originalGeometryMaterialBinaryPreserved": true,
+  "staticModelSHA256": "7b5a48112bcfbe8fd8c8934f48dcb17940d91b89150a7732b44f57c795ecc473",
+  "forelimbVerticesWeightedToRearLegs": 0,
+  "fingerVertices": 625,
+  "pureFingerVertices": 428,
+  "footVertices": 315,
+  "checks": {
+    "blend": {
+      "samples": 161,
+      "rearBoneMatrixError": 0,
+      "rearSurfaceVertexError": 0,
+      "bodyRollMaximumDegrees": 0.0005324692434319044,
+      "bodyVsFeetHeadingErrorDegrees": 0.02639142970608077,
+      "headVsFeetHeadingErrorDegrees": 14.305588049836416,
+      "headVsForwardHeadingErrorDegrees": 4.66507050873588e-05,
+      "fingerLocalBasisError": 0,
+      "fingerRigidToPalmError": 3.03925246810483e-07,
+      "fingerToFootMinimumVertexDistance": 0.1674319952726364,
+      "fingerFootTriangleOverlaps": 0,
+      "boneLengthError": 9.318684451864456e-08,
+      "loopVertexError": 1.8477439880371094e-06,
+      "verticalBounds": [
+        -0.7622555494308472,
+        0.7907383441925049
+      ]
+    },
+    "glb": {
+      "samples": 161,
+      "rearBoneMatrixError": 0,
+      "rearSurfaceVertexError": 0,
+      "bodyRollMaximumDegrees": 0.0005298496632807163,
+      "bodyVsFeetHeadingErrorDegrees": 0.026395697609643776,
+      "headVsFeetHeadingErrorDegrees": 14.305586747030503,
+      "headVsForwardHeadingErrorDegrees": 4.8231754448124775e-05,
+      "fingerLocalBasisError": 2.980232238769531e-07,
+      "fingerRigidToPalmError": 4.951133646320149e-07,
+      "fingerToFootMinimumVertexDistance": 0.16743214428424835,
+      "fingerFootTriangleOverlaps": 0,
+      "boneLengthError": 9.318684451864456e-08,
+      "loopVertexError": 1.8477439880371094e-06,
+      "verticalBounds": [
+        -0.7622555494308472,
+        0.7907384634017944
+      ]
+    }
+  }
+}
