@@ -1,0 +1,136 @@
+{
+  "id": "boss9-lizard-attack1-r4-20261123",
+  "status": "Attack1 GIF review; no game integration",
+  "base": "User-approved straight running lizard; source binary and Walk retained",
+  "reference": "User BOSS9_Attack1.gif, movement analysis only; no reference pixels, backgrounds or effects copied",
+  "files": [
+    {
+      "path": "exports/boss9_attack1.blend",
+      "sha256": "680607b2ffb107029bb0b64d908895d8cefd6d67e8b51aa9014084011433f9c0"
+    },
+    {
+      "path": "exports/boss9_attack1.glb",
+      "sha256": "1b0437955b7cdf10a83185d3b8a1c9c9a1f28b64a8a52c0c392f720b4ed2cef3"
+    },
+    {
+      "path": "exports/build.json",
+      "sha256": "15e5fc18292b01206ebc853ccb12f7fe6f44193d23deeb3adcece8447b0685fb"
+    },
+    {
+      "path": "exports/validation.json",
+      "sha256": "29ec2267dc092391e1cc201a40325758ee9adfe510a1fa3fff6be19bc454584f"
+    },
+    {
+      "path": "preview/Attack1.gif",
+      "sha256": "dbafdf5a50f0b271bf27dc6629d467ab0f4dd6f73710ebefbb80a9b06764259f"
+    },
+    {
+      "path": "preview/Attack1_Path.gif",
+      "sha256": "a60c804562ceb15ea5c4775ccb04c02dcd30ee0badbd91959731ddab92ad9cf6"
+    },
+    {
+      "path": "preview/Attack1_Side.gif",
+      "sha256": "5fe094989402e49c2502779ac63944481d07199edb48530c8c228eac586c15a3"
+    },
+    {
+      "path": "preview/Attack1_Top.gif",
+      "sha256": "7d824ec9d46b6ca0c5f23e92f07cd260d7da249cb54dc07ce609e5f5963f211a"
+    },
+    {
+      "path": "qa/build.log",
+      "sha256": "09855567c60d5168c918433361254abf9298cc9c592eed35a141f3c2d076180f"
+    },
+    {
+      "path": "qa/encoding.json",
+      "sha256": "24e046722c3de7da257585f4c275f30f4bbcdaf70a8e0e414f6a2d45bfe9c697"
+    },
+    {
+      "path": "qa/front-capture.json",
+      "sha256": "e571484acdce4871812988fe82db7ba80a6a8d7ea280caa39161143345157946"
+    },
+    {
+      "path": "qa/front-contact.jpg",
+      "sha256": "786c0eb717e8d353b069236413558335c72e7fbbaf2af565860fcb7c9af9ef8c"
+    },
+    {
+      "path": "qa/path-capture.json",
+      "sha256": "0d9f82a6eead8517ac5c1f329eb9d23e7f110a1afa63c0d44bd0fe90d4049929"
+    },
+    {
+      "path": "qa/path-contact.jpg",
+      "sha256": "dc0bcfd84fe9ace8534dec3c93dfec00a58d3d9fb6639f7b82ad7c8abb46933b"
+    },
+    {
+      "path": "qa/side-capture.json",
+      "sha256": "cdbe39ca8ec0fd6f6645851cb7dd46490c7f10b3a8cab56ba9a6e7eebaf3f8e6"
+    },
+    {
+      "path": "qa/side-contact.jpg",
+      "sha256": "3745c3341e1430be4027d917a7039952d7e352a64fd23279e3d10e762cfb4ac2"
+    },
+    {
+      "path": "qa/top-capture.json",
+      "sha256": "6381d61f42ae489ed465bf86cdc33cffe22431a8476a732c1799e6b6c8367f25"
+    },
+    {
+      "path": "qa/top-contact.jpg",
+      "sha256": "161798126e490daa2e6a91fb8f61a6e3d7d114266089f67c9f9b4da17f23967b"
+    },
+    {
+      "path": "qa/verify.log",
+      "sha256": "edf9c83af8f644557e7ca2d241e41f14366d4b9b38e2240c6aedbaaddc711d1b"
+    },
+    {
+      "path": "source/boss9_lizard.blend",
+      "sha256": "2cc8a44d3258f1148391a980087b2e43c91c39e5a8557db48a4fd1cbe1b5258a"
+    },
+    {
+      "path": "source/boss9_lizard.glb",
+      "sha256": "23319786f8663d55bbde4ee7ae48bd2259e7a493114994cb9407dd2d731dbf5d"
+    },
+    {
+      "path": "source/BOSS9_LIZARD_ATTACK1.md",
+      "sha256": "6fceeaefc542594aa89724e0f5370457055dd37fc0213733ce10f41677456285",
+      "project": "docs/assets/BOSS9_LIZARD_ATTACK1.md"
+    },
+    {
+      "path": "source/reference.json",
+      "sha256": "c4b1e8655fc93834b675d998582981915b9f724434b4936506a935776a8ab46c"
+    },
+    {
+      "path": "source/tools/attack1.py",
+      "sha256": "d2a400160c38c094216fc36079d7466fb752afc210d1f19120be5b20bd0f5347",
+      "project": "tools/boss9-lizard/attack1.py"
+    },
+    {
+      "path": "source/tools/attack1_capture.cjs",
+      "sha256": "8ba2d41c34724ad306d9d2adec66cf1c6938f2a9578404bbcc41b9774bced3e0",
+      "project": "tools/boss9-lizard/attack1_capture.cjs"
+    },
+    {
+      "path": "source/tools/attack1_encode.py",
+      "sha256": "b9e0595d51a2c012c0f43371d575c3af4872ea9c4e596f2a3fb8d4fc47d5afbd",
+      "project": "tools/boss9-lizard/attack1_encode.py"
+    },
+    {
+      "path": "source/tools/attack1_export.cjs",
+      "sha256": "5cccd06e5f5555d276902c0b191c9a25b0bca566317baf7a1c6f6a9d3542e377",
+      "project": "tools/boss9-lizard/attack1_export.cjs"
+    },
+    {
+      "path": "source/tools/attack1_verify.py",
+      "sha256": "fb6c502b8a66d17cc473394cc6d89d747b9ba0738257e9d7ca7916a534f2060c",
+      "project": "tools/boss9-lizard/attack1_verify.py"
+    },
+    {
+      "path": "source/tools/attack1_viewer.html",
+      "sha256": "18f32d5ed3ffe659328a867070235e80ebbb576b7fc1afcb885911744cc6834d",
+      "project": "tools/boss9-lizard/attack1_viewer.html"
+    },
+    {
+      "path": "source/tools/attack1_viewer.js",
+      "sha256": "55dc41d9307037c02a3732ecd64e4637af4049c8ef6934d771222f1b22d9a9df",
+      "project": "tools/boss9-lizard/attack1_viewer.js"
+    }
+  ]
+}

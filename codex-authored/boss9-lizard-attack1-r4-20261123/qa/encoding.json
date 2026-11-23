@@ -1,0 +1,82 @@
+{
+  "gifs": [
+    {
+      "file": "Attack1.gif",
+      "frames": 90,
+      "durationMs": 1800,
+      "size": [
+        900,
+        600
+      ],
+      "sha256": "dbafdf5a50f0b271bf27dc6629d467ab0f4dd6f73710ebefbb80a9b06764259f"
+    },
+    {
+      "file": "Attack1_Path.gif",
+      "frames": 90,
+      "durationMs": 1800,
+      "size": [
+        900,
+        600
+      ],
+      "sha256": "a60c804562ceb15ea5c4775ccb04c02dcd30ee0badbd91959731ddab92ad9cf6"
+    },
+    {
+      "file": "Attack1_Side.gif",
+      "frames": 90,
+      "durationMs": 1800,
+      "size": [
+        900,
+        600
+      ],
+      "sha256": "5fe094989402e49c2502779ac63944481d07199edb48530c8c228eac586c15a3"
+    },
+    {
+      "file": "Attack1_Top.gif",
+      "frames": 90,
+      "durationMs": 1800,
+      "size": [
+        900,
+        600
+      ],
+      "sha256": "7d824ec9d46b6ca0c5f23e92f07cd260d7da249cb54dc07ce609e5f5963f211a"
+    }
+  ],
+  "captures": {
+    "front": {
+      "glbSHA256": "1b0437955b7cdf10a83185d3b8a1c9c9a1f28b64a8a52c0c392f720b4ed2cef3",
+      "bounds": {
+        "minX": 214.5416624744814,
+        "maxX": 685.4583375255186,
+        "minY": 50.00000000000012,
+        "maxY": 550
+      }
+    },
+    "path": {
+      "glbSHA256": "1b0437955b7cdf10a83185d3b8a1c9c9a1f28b64a8a52c0c392f720b4ed2cef3",
+      "bounds": {
+        "minX": 214.5416624744814,
+        "maxX": 685.4583375255186,
+        "minY": 50.00000000000012,
+        "maxY": 550
+      }
+    },
+    "side": {
+      "glbSHA256": "1b0437955b7cdf10a83185d3b8a1c9c9a1f28b64a8a52c0c392f720b4ed2cef3",
+      "bounds": {
+        "minX": 75.00000000000003,
+        "maxX": 825.0000000000001,
+        "minY": 60.02267897415493,
+        "maxY": 539.9773210258453
+      }
+    },
+    "top": {
+      "glbSHA256": "1b0437955b7cdf10a83185d3b8a1c9c9a1f28b64a8a52c0c392f720b4ed2cef3",
+      "bounds": {
+        "minX": 284.3227795562298,
+        "maxX": 615.6772204437702,
+        "minY": 49.99999999999959,
+        "maxY": 549.9999999999997
+      }
+    }
+  }
+}
