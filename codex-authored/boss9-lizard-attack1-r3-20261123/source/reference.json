@@ -1,0 +1,113 @@
+{
+  "frames": 30,
+  "durationMs": 3000,
+  "durations": [
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100
+  ],
+  "chosen": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "name": "BOSS9_Attack1.gif",
+  "sha256": "7eb2ed9a00e8f55d6392b9a44ff3f86e8c40a323db18f962b273a0b242df95e2",
+  "use": "Motion analysis only. No reference pixels or FX copied.",
+  "phases": {
+    "crouch": [
+      0,
+      0.8
+    ],
+    "right_claw_raise": [
+      0.8,
+      2.2
+    ],
+    "slash": [
+      2.2,
+      2.8
+    ],
+    "follow_through": [
+      2.8,
+      3.0
+    ],
+    "authored_recovery": [
+      3.0,
+      3.6
+    ]
+  },
+  "revision": {
+    "requirements": [
+      "raise and slash in 1 second",
+      "continuous lift without intermediate stops",
+      "frontal upper-left to lower-right slash"
+    ],
+    "timing": {
+      "riseStart": 0.12,
+      "sweepStart": 0.74,
+      "sweepEnd": 1.12,
+      "recoveryEnd": 1.8
+    }
+  },
+  "arcRevision": {
+    "image": "codex-clipboard-d0efcba6-fcf8-41f7-9f70-39e49c3626ee.png",
+    "sha256": "2bb096c7691f8c740cb586bb704ede4a101cb6948ef710d1982767271c8a3995",
+    "instruction": "Use the thin curved arrow: outside descent, curved corner, low rightward sweep; replace former straight diagonal",
+    "riseAndSweepSeconds": 1.0,
+    "clipSeconds": 1.8
+  }
+}

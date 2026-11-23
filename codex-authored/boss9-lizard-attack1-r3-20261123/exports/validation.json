@@ -1,0 +1,153 @@
+{
+  "sourceSHA256": "23319786f8663d55bbde4ee7ae48bd2259e7a493114994cb9407dd2d731dbf5d",
+  "glbSHA256": "45218f4db5f07d4af2c6aaf8f619c2f43f82db915d99514f44f82e548d707ad6",
+  "bones": 73,
+  "clips": [
+    "Walk",
+    "Attack1"
+  ],
+  "duration": 1.8,
+  "sourceBinaryAndWalkPreserved": true,
+  "channelLoopError": 2.8032809495925903e-07,
+  "nativeGLBMaximumVertexDifference": 1.430511474609375e-06,
+  "checks": {
+    "blend": {
+      "samples": 865,
+      "boneLengthError": 4.429091003677055e-07,
+      "limbJointLinkError": 1.6826511054501836e-06,
+      "maximumAdjacentJointStep": 0.02362058885835336,
+      "loopVertexError": 2.384185791015625e-07,
+      "supportFootGroundError": 3.6102771759027874e-05,
+      "supportHandGroundError": 0.00468043708801269,
+      "maximumBelowGround": 0.000547367095947271,
+      "triangleOverlaps": {
+        "handR_footL": 0,
+        "handR_footR": 0,
+        "handL_footL": 0,
+        "handL_footR": 0,
+        "handR_skull": 0,
+        "handL_skull": 0,
+        "handR_handL": 0,
+        "footL_footR": 0
+      },
+      "edgeStretchP95": 1.3381740925613235,
+      "edgeStretchP99": 1.7528257903541382,
+      "edgeStretchMaximum": 5.94506062507156,
+      "jointMotionRanges": {
+        "hips": [
+          0.12499997951090336,
+          0.27499183267354965,
+          0.12499441206455231
+        ],
+        "spine_16": [
+          0.5700298547744751,
+          0.3186970353126526,
+          0.49248630553483963
+        ],
+        "spine_18": [
+          1.1651445031166077,
+          0.9299147725105286,
+          1.0759759843349457
+        ],
+        "chest": [
+          0.05358016490936279,
+          0.2199808955192566,
+          0.282023087143898
+        ],
+        "tail_07": [
+          0.17036698944866657,
+          0.290222704410553,
+          0.1317320168018341
+        ],
+        "rearFoot.R": [
+          3.56137752532959e-06,
+          0.2400026135146618,
+          0.05500352382659912
+        ]
+      },
+      "motion": {
+        "riseAndSweepSeconds": 1.0,
+        "minimumInteriorLiftClawSpeed": 1.3284159630853636,
+        "slashXTravel": 1.1470024936769638,
+        "slashZTravel": -1.302131721761329,
+        "minimumSlashXStep": -0.002040037531062855,
+        "maximumSlashZStep": 1.1543554762294406e-05,
+        "arcMaximumChordDeviation": 0.4941260197944302,
+        "midHorizontalProgress": 0.13614741700483873,
+        "midVerticalProgress": 0.7101122413894788,
+        "lastFifthHorizontalTravel": 0.2501313653460309,
+        "lastFifthVerticalDrop": 0.017930571835465203,
+        "minimumSecondHalfXStep": 0.00020322203636169434
+      }
+    },
+    "glb": {
+      "samples": 865,
+      "boneLengthError": 4.364354033448148e-07,
+      "limbJointLinkError": 1.7504031120663122e-06,
+      "maximumAdjacentJointStep": 0.023621441994435652,
+      "loopVertexError": 2.980232238769531e-07,
+      "supportFootGroundError": 3.669881820678178e-05,
+      "supportHandGroundError": 0.004680794715881342,
+      "maximumBelowGround": 0.0005470094680786186,
+      "triangleOverlaps": {
+        "handR_footL": 0,
+        "handR_footR": 0,
+        "handL_footL": 0,
+        "handL_footR": 0,
+        "handR_skull": 0,
+        "handL_skull": 0,
+        "handR_handL": 0,
+        "footL_footR": 0
+      },
+      "edgeStretchP95": 1.3381732603506789,
+      "edgeStretchP99": 1.7528257201565123,
+      "edgeStretchMaximum": 5.945060899644373,
+      "jointMotionRanges": {
+        "hips": [
+          0.12499996833503246,
+          0.2749917805194855,
+          0.12499438226222992
+        ],
+        "spine_16": [
+          0.5700296312570572,
+          0.31869685649871826,
+          0.4924859143793583
+        ],
+        "spine_18": [
+          1.165144145488739,
+          0.9299144446849823,
+          1.075974941253662
+        ],
+        "chest": [
+          0.05357998609542847,
+          0.2199806272983551,
+          0.28202253580093384
+        ],
+        "tail_07": [
+          0.1703668050467968,
+          0.2902228832244873,
+          0.1317320615053177
+        ],
+        "rearFoot.R": [
+          3.7848949432373047e-06,
+          0.2400027448311448,
+          0.05500370264053345
+        ]
+      },
+      "motion": {
+        "riseAndSweepSeconds": 1.0,
+        "minimumInteriorLiftClawSpeed": 1.3283470188754847,
+        "slashXTravel": 1.147002173256289,
+        "slashZTravel": -1.3021306732863736,
+        "minimumSlashXStep": -0.002040289113858007,
+        "maximumSlashZStep": 1.1289138004078048e-05,
+        "arcMaximumChordDeviation": 0.4941257911658524,
+        "midHorizontalProgress": 0.13614726925333173,
+        "midVerticalProgress": 0.7101121608117705,
+        "lastFifthHorizontalTravel": 0.2501312757562274,
+        "lastFifthVerticalDrop": 0.017930951038021226,
+        "minimumSecondHalfXStep": 0.00020347928708308594
+      }
+    }
+  }
+}
