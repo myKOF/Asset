@@ -1,6 +1,6 @@
 {
   "sourceSHA256": "23319786f8663d55bbde4ee7ae48bd2259e7a493114994cb9407dd2d731dbf5d",
-  "glbSHA256": "ae53640638467e55990265b0eefd6f922b46226542a749af3a9a4e172186b5d7",
+  "glbSHA256": "d669fdc2804202e63bd912c1770278382a62b4fedc103474d0010c11e211ae57",
   "bones": 73,
   "clips": [
     "Walk",
@@ -11,7 +11,7 @@
   "sourceBinaryAndWalkPreserved": true,
   "nativeGLBMaximumVertexDifference": 1.430511474609375e-06,
   "idleAttackPoseDifference": 2.384185791015625e-07,
-  "channelPoseSeamError": 2.5331974029541016e-07,
+  "channelPoseSeamError": 2.086162567138672e-07,
   "notifies": [
     {
       "time": 0,
@@ -50,13 +50,13 @@
       "name": "RecoveryEnd"
     }
   ],
-  "previousRevisionSHA256": "60061ae341708209243d74595df101c760c730042d1172c970df2b169c80f853",
-  "unchangedIdleAndFingerChannelError": 7.189810276031494e-07,
+  "previousRevisionSHA256": "ae53640638467e55990265b0eefd6f922b46226542a749af3a9a4e172186b5d7",
+  "unchangedOtherChannelError": 9.5367431640625e-07,
   "checks": {
     "blend": {
       "samples": 1153,
       "boneLengthError": 5.718851128766467e-07,
-      "limbLinkError": 1.678639474034238e-06,
+      "limbLinkError": 1.5021277524618348e-06,
       "maximumJointStep": 0.020663741098111036,
       "rootMotionError": 1.4901161193847656e-08,
       "windupHipDrop": 0.11999998986721039,
@@ -74,8 +74,8 @@
         "handR_handL": 0,
         "footL_footR": 0
       },
-      "edgeStretchP95": 1.4430945047616923,
-      "edgeStretchP99": 1.9892956386402163,
+      "edgeStretchP95": 1.4573097963859887,
+      "edgeStretchP99": 2.0204393492551227,
       "edgeStretchMaximum": 7.9009245000647885,
       "flow": {
         "minimumTangentAlignment": 0.9554353520408406,
@@ -124,14 +124,14 @@
           0.16895171695159006,
           0.18969531684824972
         ],
-        "referenceClawBow": 0.200143445522412,
-        "arcBowRatio": 1.0007181176460556,
+        "referenceClawBow": 0.20026422433160335,
+        "arcBowRatio": 1.000114587270179,
         "tipArcBowRatios": [
-          1.0013439661112096,
-          1.0006550155189249,
-          1.000569635607386
+          1.0006089740095445,
+          1.00026145364644,
+          1.0001510631241701
         ],
-        "maximumReferenceClawPathDifference": 0.0004619728721481512
+        "maximumReferenceClawPathDifference": 0.0004633462766363483
       },
       "palmTransition": {
         "sampleTimes": [
@@ -164,8 +164,8 @@
         ],
         "totalNormalTurnDegrees": 145.9666888136406,
         "maximumNormalStepDegrees": 2.826555422615237,
-        "peakNormalChangeDegrees": 0.00594026879485562,
-        "endNormalChangeDegrees": 3.499602194453425,
+        "peakNormalChangeDegrees": 0.0026361394716417257,
+        "endNormalChangeDegrees": 6.192655148445526e-05,
         "maximumApprovedPalmRotationErrorDegrees": 0.03956468205889273
       },
       "headTracking": {
@@ -176,27 +176,38 @@
       },
       "standing": {
         "maximumFootDrift": 3.147571471239293e-05,
-        "maximumSupportPalmDrift": 4.426820756130857e-05,
-        "chestLiftInterval": [
-          0.62,
-          0.75
-        ],
-        "minimumChestLift": 0.08509337117797433,
-        "medianSupportBendRatio": 0.5000163220375823,
-        "maximumSupportBendRatio": 0.5001188797287353,
+        "maximumSupportPalmDrift": 9.329317020023173e-05,
         "setupArm": {
-          "minimumUpperArmOutward": 0.25729621946811676,
-          "maximumUpperArmDrop": 0.035497263073921204,
-          "minimumForearmDrop": 0.2634212523698807,
-          "minimumElbowBendDegrees": 56.77448923034319,
-          "maximumElbowBendDegrees": 60.00005631116547
+          "minimumUpperArmOutward": 0.21221986413002014,
+          "maximumUpperArmDrop": 0.15111356228590012,
+          "minimumForearmDrop": 0.27733664214611053,
+          "minimumElbowBendDegrees": 35.553487630085435,
+          "maximumElbowBendDegrees": 39.86694333624525
         }
+      },
+      "shoulderCorrection": {
+        "maximumUnchangedJointPositionChange": 6.033516049307815e-05,
+        "maximumOtherBoneSkinMatrixChange": 5.742162466049194e-05,
+        "maximumUnchangedBakedJointPositionChange": 1.4853400938960447e-06,
+        "maximumOtherBakedSkinMatrixChange": 1.4007091522216797e-06,
+        "raisedShoulderElevationDegrees": [
+          -4.573986303774955,
+          -4.573928777298761
+        ],
+        "minimumRaisedShoulderOutward": 0.1850750744342804,
+        "maximumCorrectiveRotationStepDegrees": 1.0740957835022733,
+        "endpointCorrectionDegrees": [
+          0.0,
+          0.0
+        ],
+        "raisedWeightedVertexDisplacement": 0.1650257357578242,
+        "weightedVertexCount": 244
       }
     },
     "glb": {
       "samples": 1153,
       "boneLengthError": 5.773628606597914e-07,
-      "limbLinkError": 1.8236878946420454e-06,
+      "limbLinkError": 1.650222642424204e-06,
       "maximumJointStep": 0.02066304423546184,
       "rootMotionError": 2.9802322387695312e-08,
       "windupHipDrop": 0.12000000476837158,
@@ -214,8 +225,8 @@
         "handR_handL": 0,
         "footL_footR": 0
       },
-      "edgeStretchP95": 1.4430936681209203,
-      "edgeStretchP99": 1.9892945949063563,
+      "edgeStretchP95": 1.4573094854962756,
+      "edgeStretchP99": 2.0204365184530277,
       "edgeStretchMaximum": 7.900912360847314,
       "flow": {
         "minimumTangentAlignment": 0.955429543854522,
@@ -264,14 +275,14 @@
           0.16895152590117626,
           0.18969566254095768
         ],
-        "referenceClawBow": 0.200143445522412,
-        "arcBowRatio": 1.0007186556310521,
+        "referenceClawBow": 0.20026422433160335,
+        "arcBowRatio": 1.0001151249307183,
         "tipArcBowRatios": [
-          1.0013447880926427,
-          1.000653883979345,
-          1.0005714590030954
+          1.0006097953876387,
+          1.0002603225518998,
+          1.000152885757091
         ],
-        "maximumReferenceClawPathDifference": 0.0004621473231317303
+        "maximumReferenceClawPathDifference": 0.0004635215027530278
       },
       "palmTransition": {
         "sampleTimes": [
@@ -304,9 +315,9 @@
         ],
         "totalNormalTurnDegrees": 145.96666443198728,
         "maximumNormalStepDegrees": 2.826623805194766,
-        "peakNormalChangeDegrees": 0.00597253960088298,
-        "endNormalChangeDegrees": 3.4996640795306724,
-        "maximumApprovedPalmRotationErrorDegrees": 0.03956468205889273
+        "peakNormalChangeDegrees": 0.0026016346276060507,
+        "endNormalChangeDegrees": 0.0,
+        "maximumApprovedPalmRotationErrorDegrees": 0
       },
       "headTracking": {
         "maximumAbsYawDegrees": 1.339838295954993,
@@ -316,21 +327,32 @@
       },
       "standing": {
         "maximumFootDrift": 3.1362340011837135e-05,
-        "maximumSupportPalmDrift": 4.4382572676130146e-05,
-        "chestLiftInterval": [
-          0.62,
-          0.75
-        ],
-        "minimumChestLift": 0.08509299864894448,
-        "medianSupportBendRatio": 0.5000160864106422,
-        "maximumSupportBendRatio": 0.5001190999121484,
+        "maximumSupportPalmDrift": 9.32987156067454e-05,
         "setupArm": {
-          "minimumUpperArmOutward": 0.2572961747646332,
-          "maximumUpperArmDrop": 0.0354972705245018,
-          "minimumForearmDrop": 0.26342103630304337,
-          "minimumElbowBendDegrees": 56.77449264543778,
-          "maximumElbowBendDegrees": 60.00001533003045
+          "minimumUpperArmOutward": 0.21221986413002014,
+          "maximumUpperArmDrop": 0.15111342817544937,
+          "minimumForearmDrop": 0.2773362621665001,
+          "minimumElbowBendDegrees": 35.553497875369196,
+          "maximumElbowBendDegrees": 39.86697065700193
         }
+      },
+      "shoulderCorrection": {
+        "maximumUnchangedJointPositionChange": 5.9781913604242506e-05,
+        "maximumOtherBoneSkinMatrixChange": 5.704164505004883e-05,
+        "maximumUnchangedBakedJointPositionChange": 1.0946016116265629e-06,
+        "maximumOtherBakedSkinMatrixChange": 1.2218952178955078e-06,
+        "raisedShoulderElevationDegrees": [
+          -4.5739774570934655,
+          -4.573909342053489
+        ],
+        "minimumRaisedShoulderOutward": 0.18507491052150726,
+        "maximumCorrectiveRotationStepDegrees": 1.0748242363873342,
+        "endpointCorrectionDegrees": [
+          0.0,
+          0.0
+        ],
+        "raisedWeightedVertexDisplacement": 0.16502562861079406,
+        "weightedVertexCount": 244
       }
     }
   }

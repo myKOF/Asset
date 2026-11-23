@@ -1,60 +1,60 @@
 {
   "id": "boss9-lizard-melee-20261123",
-  "status": "Standing 1.2-second attack with raised body and half support-arm bend; awaiting user review; no game integration",
-  "base": "Approved forward gaze, gradual palm flip, turn and shallower diagonal slash",
-  "specification": "Feet and support palm remain planted; cancel forward pounce; raise chest and halve excessive support bend; synchronize animation notifies with the 1.2-second clip",
+  "status": "Corrected outward opening of the visible support shoulder; awaiting GIF review; no game integration",
+  "base": "Standing 1.2-second attack with forward gaze and approved gradual palm gesture",
+  "specification": "Open the weighted shoulder link outward from the chest and solve elbow/wrist; preserve planted feet and palm, torso, attacking claw and animation notifies",
   "files": [
     {
       "path": "exports/boss9_attack1.blend",
-      "sha256": "19455de82fd2f57ead3f0a82db0e1a646efa1bfc245190a9c5d7759bff9eb6b1"
+      "sha256": "91119d9ccdf6bfe559a7eda016a701a7e16f32e6d004250edceea0a6e1e4042a"
     },
     {
       "path": "exports/boss9_attack1.glb",
-      "sha256": "ae53640638467e55990265b0eefd6f922b46226542a749af3a9a4e172186b5d7"
+      "sha256": "d669fdc2804202e63bd912c1770278382a62b4fedc103474d0010c11e211ae57"
     },
     {
       "path": "exports/build.json",
-      "sha256": "88021bff019fe21800d914bd3aa6acfcc0a25a4ef11c7b5e8a7cf1e34c7af0b8"
+      "sha256": "aba4fc87818e38b01b5f1b9bea3f4c63e89fd537017441f18179545e9ecbc88a"
     },
     {
       "path": "exports/validation.json",
-      "sha256": "5858ce61256ba65d2bc032a31cce279e222b33b456658cac0025f2e9eab69d0e"
+      "sha256": "a54f0c67ab9d428ca266b4afc420d946b0726b6e4952b0c4646214f8065c599f"
     },
     {
       "path": "preview/BOSS9_Attack1.gif",
-      "sha256": "db2d2f6d8a2e61a00f19c77b7912c27f2e24cf872d86e40a02962f20907c43b4"
+      "sha256": "f2caf83042a2d6bb4798507243489eeccc0c1c17254a5dbeb7e69d6e3ff6c16f"
     },
     {
       "path": "preview/BOSS9_Attack1_Arc_Slow.gif",
-      "sha256": "2580601362988e90e321460a87bf9048a3ec9e61cbc331db13fae3c44e594dfe"
+      "sha256": "e0699f172d7790b3e24d27e22f03b6ce215fe4f498c071493bded1b8bdeaf9e7"
     },
     {
       "path": "preview/BOSS9_Attack1_Capsule.gif",
-      "sha256": "1b1051dbc79687931c04d80f821e1fba667f393e631febae61a5515dcbc1a8c3"
+      "sha256": "a351c16dfbf3936b1be9f4b0400c2dece38b1625495e8823b11c6f14f0598a9c"
     },
     {
       "path": "preview/BOSS9_Attack1_Hitbox.gif",
-      "sha256": "b0216dd515f81b4d27fe86a334ddea8ba0e116eeac4d168448067fa046206107"
+      "sha256": "ea68cb8d47655f4517f3c4e0c7e16ede75767096bba2099cd937823b09232013"
     },
     {
       "path": "preview/BOSS9_Attack1_OpenPalm.png",
-      "sha256": "c413d02591284ac9118a09aa078e5fe24aebb71e23306f3868089926f3f1de22"
+      "sha256": "8c273de3fb0c193ce3dc85d3cc3bb02af063c67cc513bbe86479364ca7339493"
     },
     {
       "path": "preview/BOSS9_Attack1_Path.gif",
-      "sha256": "0fd2991e74a296cb2775ceabab6ff1a0075e60cfc3348bb89e2c4a91b5481842"
+      "sha256": "f38a64cd28090907945664276c0e076417a625956fe8eead52fe3ebf90c53fe6"
     },
     {
       "path": "preview/BOSS9_Attack1_Side.gif",
-      "sha256": "9b37a70ae151776b5f16884094dccc7385aaf5f94ccc97e2681b8deb0c04936b"
+      "sha256": "503667bc0d258391eea7c3050d4b7fbc78d5b6b3f8571f13eecca225ad9689f9"
     },
     {
       "path": "qa/blocked-capture.json",
-      "sha256": "49e0895f100a9324af263a751c4c6c91d82bfdfddcb9fcb51cd4358b7becfd23"
+      "sha256": "b60440e807883456e09140d1f33db77af526b0d14b66ecb2bb0debf2cd2780ca"
     },
     {
       "path": "qa/blocked-contact.jpg",
-      "sha256": "00bb4b10d1cd8480412865aff003f83da2c3b0347c71aa1a39424fe3e2bead08"
+      "sha256": "b42e08c554f17da24ffa231c67b21ea8f6998929c1d04cb23ec8c04649c197c8"
     },
     {
       "path": "qa/build.log",
@@ -62,47 +62,47 @@
     },
     {
       "path": "qa/combat-capture.json",
-      "sha256": "8c7135bacb5f6917b9cd847cf1500b67434a183f8b6ca8067d2fca4018724428"
+      "sha256": "3d4331440b153493554bd93b4773ace3d39d1713736816d5aaed1d241f9c65e6"
     },
     {
       "path": "qa/combat-contact.jpg",
-      "sha256": "e470142de79cd38f9ea86fc8dd1bdad971b44e140748b0c4f78f3b10fc1afe21"
+      "sha256": "2a56e968524c3f2ef97efa05c62a3e62e9cba9f5921f2df31da4bf4399a53352"
     },
     {
       "path": "qa/encoding.json",
-      "sha256": "5d5e00038b334dcb4ce9ce93dedb6b41cd800a4ff3707b764f876fc978e53090"
+      "sha256": "22cfaa222b57faf291c1a35ce91e483d7883a5db0f04f2dd04c152772820a712"
     },
     {
       "path": "qa/front-capture.json",
-      "sha256": "79c7528c4568d020a4fefcf94a6cbb09989deedf776e72f6666df733cd6d0821"
+      "sha256": "767bc7e6044b24283f32be53a231cfd95719c2d1285f192cd16fc317b6d57a67"
     },
     {
       "path": "qa/front-contact.jpg",
-      "sha256": "bf794f6784b07703d35906088848a67874f9e9f727a5ffea7d91509aff497a7d"
+      "sha256": "da26459f30785286599941600be6ee405f0477fbd2fcde89a9377a0cd35a8d5a"
     },
     {
       "path": "qa/path-capture.json",
-      "sha256": "fba3a60874f389b3bedc57015564ee237a848073d86c47ba770426076eb1c3b8"
+      "sha256": "a8bf15e882d2aad3c49c35fd01097becc3d10d85a7e9241c820a2921b58bc021"
     },
     {
       "path": "qa/path-contact.jpg",
-      "sha256": "9d98bce4260048e603d1a3964d7947072a55c8b59cc2ae32098dd5723a64c557"
+      "sha256": "8724860e778555aff12d516c0cd8187f0370c35a3f0140a1b689b8472258e5a0"
     },
     {
       "path": "qa/side-capture.json",
-      "sha256": "b814e6b2d4964a5ef800eb8f0fbf77b320e0277239f3df6d8ab53124691e9895"
+      "sha256": "c1303cd4461f526ee17efdef2fe2b32d45df9efe04e3e7f36d992db7fd30b6da"
     },
     {
       "path": "qa/side-contact.jpg",
-      "sha256": "26332014bf6a0e89676b85fd3578e9aac54af9ac93864a9b83c2f4d2c7b5826c"
+      "sha256": "a914c74de91a502807deaf1282fde9857372b3f317f790204eecc89cc7e1a68a"
     },
     {
       "path": "qa/unit.log",
-      "sha256": "2fb3e2a986010d621f2370dd34a38cabd84ac34cd8edf5246bad870e89d61f80"
+      "sha256": "413bf12145ccdbebf6068dae7f1eff67864e58b3e1895d31d7d5bb8640a1716d"
     },
     {
       "path": "qa/verify.log",
-      "sha256": "26fb40f559a1d6446d94cebc2d662af0f15a8c965d6e563dcec20df75dd16c24"
+      "sha256": "f8e358694d1c5f4ba182db9548a458a5f890826748acab3953c2bdeb7dad3ae5"
     },
     {
       "path": "source/boss9-melee-preview.test.cjs",
@@ -119,12 +119,12 @@
     },
     {
       "path": "source/BOSS9_LIZARD_MELEE.md",
-      "sha256": "e71530c29f908300d952c8c6ca50083bb62a2b56d9cada45151cab8daa4f84e6",
+      "sha256": "be0ccd8e6990cae7900078c1c230a91d2788128dfe6db6e0835a7a3804435968",
       "project": "docs/assets/BOSS9_LIZARD_MELEE.md"
     },
     {
       "path": "source/tools/author.py",
-      "sha256": "d5d5c0444d100180246b5149641aec2aade0f3b295d879ae77418b47d1ffac31",
+      "sha256": "8ef0da01b708d107ec50c3f0cdb188fbc24b21484afc92e57fc06587813eda46",
       "project": "tools/boss9-lizard/melee/author.py"
     },
     {
@@ -144,7 +144,7 @@
     },
     {
       "path": "source/tools/export.cjs",
-      "sha256": "87fc2b937276a80718f5c0bd43a22f90ab7b102ca9670221711720e1af154161",
+      "sha256": "6d7d1211060988288e191a0090e66345b522942eb4d4c72f176666b1ded6fb8b",
       "project": "tools/boss9-lizard/melee/export.cjs"
     },
     {
@@ -154,7 +154,7 @@
     },
     {
       "path": "source/tools/verify.py",
-      "sha256": "a6bcb8a42cb3be6672817dc753408832e2ce66d4fe8f01c723e834ce77de27b3",
+      "sha256": "909e9dde76d317b90f1956a4fab90a3c06efb34f17faaa079722c015127d2306",
       "project": "tools/boss9-lizard/melee/verify.py"
     },
     {
