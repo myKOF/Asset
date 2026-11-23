@@ -1,23 +1,24 @@
-✔ shared animation notifies validate and phase boundaries are half-open (1.8704ms)
-✔ the complete attack and notify timeline are retimed to exactly one second (1.505ms)
-✔ no windup movement or damage; early Active still has no hitbox (0.8709ms)
-✔ peak enables one physical hit and the low point disables before landing (0.6965ms)
-✔ a target entering during Recovery is never damaged (0.4308ms)
-✔ skipping the whole clip preserves the exact notify sequence and single hit (0.8447ms)
-✔ 30/60/144 FPS and a single seek agree on movement and hit count (2.4672ms)
-✔ 120 degree sector includes capsule edges and excludes back/range/height (0.2836ms)
-✔ continuous capsule sweep cannot tunnel even with a huge displacement (0.2144ms)
-✔ oblique and cap-to-cap contact block at the expanded capsule boundary (0.1909ms)
-✔ blocked pounce never overlaps and never catches up blocked distance (0.6747ms)
-✔ knockback is outward, smooth, finite and uses physical preview parameters (0.5058ms)
-✔ rotating the actor rotates its reach and root motion (0.2932ms)
-✔ dynamic reach grows with the slash and rejects malformed collision settings (0.386ms)
-✔ fractional substeps report exact phase and notify boundaries consistently (0.2924ms)
-ℹ tests 15
+✔ shared animation notifies validate and phase boundaries are half-open (1.752ms)
+✔ the complete attack and notify timeline last exactly 1.2 seconds (1.7911ms)
+✔ no windup movement or damage; early Active still has no hitbox (0.8879ms)
+✔ peak enables one physical hit and the low point disables before landing (0.7778ms)
+✔ a target entering during Recovery is never damaged (0.4625ms)
+✔ skipping the whole clip preserves the exact notify sequence and single hit (0.8336ms)
+✔ 30/60/144 FPS and a single seek agree on movement and hit count (2.4844ms)
+✔ 120 degree sector includes capsule edges and excludes back/range/height (0.1901ms)
+✔ continuous capsule sweep cannot tunnel even with a huge displacement (0.2828ms)
+✔ oblique and cap-to-cap contact block at the expanded capsule boundary (0.1811ms)
+✔ blocked pounce never overlaps and never catches up blocked distance (1.3988ms)
+✔ standing attack never advances and keeps a touching capsule separated (0.8592ms)
+✔ knockback is outward, smooth, finite and uses physical preview parameters (0.4301ms)
+✔ rotating the actor rotates its reach and root motion (0.4063ms)
+✔ dynamic reach grows with the slash and rejects malformed collision settings (0.3838ms)
+✔ fractional substeps report exact phase and notify boundaries consistently (0.5267ms)
+ℹ tests 16
 ℹ suites 0
-ℹ pass 15
+ℹ pass 16
 ℹ fail 0
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 80.9659
+ℹ duration_ms 86.2075
