@@ -1,0 +1,63 @@
+{
+  "gifs": [
+    {
+      "file": "Attack1.gif",
+      "frames": 90,
+      "durationMs": 3600,
+      "size": [
+        900,
+        600
+      ],
+      "sha256": "c453dd2e2c60df0008f2326ac531aa7dc287d9383ec593ff6fde654259288b9c"
+    },
+    {
+      "file": "Attack1_Side.gif",
+      "frames": 90,
+      "durationMs": 3600,
+      "size": [
+        900,
+        600
+      ],
+      "sha256": "3dde36e5afb357f59529581e4fb9b8542e04a29eb08792a5c54afaa3858a4bcb"
+    },
+    {
+      "file": "Attack1_Top.gif",
+      "frames": 90,
+      "durationMs": 3600,
+      "size": [
+        900,
+        600
+      ],
+      "sha256": "5d1e36886524c9be933844d435699df11e5d493286179b39e1953f5556773b87"
+    }
+  ],
+  "captures": {
+    "front": {
+      "glbSHA256": "9454427e96f51e0ebce1a5bf0f96846c105b0dc2a9fba0a198ced0d96f6fe1ba",
+      "bounds": {
+        "minX": 244.08911522933724,
+        "maxX": 655.9108847706627,
+        "minY": 49.99999999999996,
+        "maxY": 549.9999999999999
+      }
+    },
+    "side": {
+      "glbSHA256": "9454427e96f51e0ebce1a5bf0f96846c105b0dc2a9fba0a198ced0d96f6fe1ba",
+      "bounds": {
+        "minX": 88.37179893333933,
+        "maxX": 811.6282010666603,
+        "minY": 50.000000000000256,
+        "maxY": 550.0000000000002
+      }
+    },
+    "top": {
+      "glbSHA256": "9454427e96f51e0ebce1a5bf0f96846c105b0dc2a9fba0a198ced0d96f6fe1ba",
+      "bounds": {
+        "minX": 298.66002406400236,
+        "maxX": 601.3399759359977,
+        "minY": 49.99999999999966,
+        "maxY": 549.9999999999998
+      }
+    }
+  }
+}
