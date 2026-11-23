@@ -6,83 +6,87 @@
   "files": [
     {
       "path": "exports/boss9_attack1.blend",
-      "sha256": "8143839841ea3bf998e7184f3a83d93c9eaf206004ec95683af2ff731cee6a5f"
+      "sha256": "0171a4a0d17810c988c290c3a135e52b3264b062f12999c7a145c8e3d58e5889"
     },
     {
       "path": "exports/boss9_attack1.glb",
-      "sha256": "743f2f705df8fe7e29485a47cfb5b06ae0349ab36461bc941976415506e755b4"
+      "sha256": "460d6bd04e23edadf2199fb10bb57822db3cd62ed699ceaf3142b9940d787ba0"
     },
     {
       "path": "exports/build.json",
-      "sha256": "97a00437dca9955d5c3878e79bad0f284a4bfd2b6c071ce6e197e904dc2be695"
+      "sha256": "48393c44e1100b34592ff591299ecdfc20907c92724849e574b7256c2ce885ba"
     },
     {
       "path": "exports/validation.json",
-      "sha256": "9995c0710abe663e79dff6a7ab6fc46449eea8c741ee7850e768c63876196090"
+      "sha256": "fcfbf66a2f7c5159cb069bbaa6cffb185def7e5d946be050796d8a336b8fafd5"
     },
     {
       "path": "preview/BOSS9_Attack1.gif",
-      "sha256": "531190490086cd3bba825707af6cd1bd4a1749ba6c17e331e7f863c53aa48acf"
+      "sha256": "4c8ee9c2788ed8b7733dda1f31cdb5399626810eea7d06f052ef1025e6bbea49"
     },
     {
       "path": "preview/BOSS9_Attack1_Capsule.gif",
-      "sha256": "2ef461b143925bcc1666d486e8fc17d92ad8e10d7a75ee773532cdbdc62c875b"
+      "sha256": "507198eb54cca4daa6318000a9be75eed9c7fdd8ffd0439dd6a1abe459fe2638"
     },
     {
       "path": "preview/BOSS9_Attack1_Hitbox.gif",
-      "sha256": "1c1abed746797983dcf7021d17de59b39235340ed4dc56dd9860017a3fcdf084"
+      "sha256": "7616a710fad6aed31c99f4e5ce2e0442ee17b3c06e7b13f8a8929ba4dc780a06"
+    },
+    {
+      "path": "preview/BOSS9_Attack1_Palm.png",
+      "sha256": "643e5f31fdba8c83935f350d2e0472d1f1312543b4018b1bbb65fc3fea0d016c"
     },
     {
       "path": "preview/BOSS9_Attack1_Side.gif",
-      "sha256": "61648cb48618cc285911ff1da3a39695b2bde30b6b73008b064933f566ba210f"
+      "sha256": "96853278ee042a02780c59e6abb1fcf8da255cf4c473defee3007108cdfb90ac"
     },
     {
       "path": "qa/blocked-capture.json",
-      "sha256": "4e24faf16ca3b2b20d96e74ba626ccd314717dc3f66b93e53fd5a976e8871390"
+      "sha256": "873bb69d420cbb22660456f9c1dc07affc82c380d7cb3a813946a07c8f920ede"
     },
     {
       "path": "qa/blocked-contact.jpg",
-      "sha256": "5607edaf090f0fa62dc48ed4923e0d454371d44a11003faec783007134084e34"
+      "sha256": "b85af13e846f41e500d41c5f132122a7eb31c76c190820dbdc924d76cdfffbc4"
     },
     {
       "path": "qa/build.log",
-      "sha256": "9fc5712bbe9e5a99ca55347218925476531b7a47de7b7e2099ade96cafd4d32b"
+      "sha256": "583db08470e812f2c71a4a41c6b25071f1a511221e2bd316b52d9b11f43d4ba4"
     },
     {
       "path": "qa/combat-capture.json",
-      "sha256": "05ccc879fa6f747a90e98ff96eef7e48d2921b29f8526cd1079efa8612253ad1"
+      "sha256": "3940cba1af660945d670486927bcb8581c62e3b9e63c2ae591ae593d18631f78"
     },
     {
       "path": "qa/combat-contact.jpg",
-      "sha256": "eb464c2bbaca2e1bd5d1c50f7ef39b6dda42206ce4f85511508b3dfd518d9e24"
+      "sha256": "4c4e2dad05b874504209325da7d7844460ec17d75445866b04fb54fb214884f8"
     },
     {
       "path": "qa/encoding.json",
-      "sha256": "43cfb843e975e61d937de9590ae2d0bc03c6917e06a8d6abbf72253a15508aea"
+      "sha256": "89de4f2c4c530a0ae46104c007b3ddc1f045abbd881d2632cd75a9c87a862079"
     },
     {
       "path": "qa/front-capture.json",
-      "sha256": "d1138844195936ff0b7c5cd9514a8f60c0fba5d74b5d3debf711c9d7e8acdc6a"
+      "sha256": "eb8a3c81e771c7a23f6152371a727833ff5bc65f34476b3f12ff5729698cc564"
     },
     {
       "path": "qa/front-contact.jpg",
-      "sha256": "c69267119c00ef8f93587c3fc54c216ece5bbfb75e485aa287b0b54877572cbf"
+      "sha256": "39d4fb14c7f2fc126e9823ea3a1ece61db488ae1df038316b77af4e6f5d2a7f2"
     },
     {
       "path": "qa/side-capture.json",
-      "sha256": "a59ed2c7b14e61a8b6c909455fda1f81a90ac58b04059a9d4d36a6a8920e010f"
+      "sha256": "53fb72838b6db42ab28742fc838ab4e4287d8ebaff1497eddeaefdf82587139f"
     },
     {
       "path": "qa/side-contact.jpg",
-      "sha256": "34c7f3f3fa4e84f965a73b72848c273f594145ac7f9a586a8dcc97fcb426ec0a"
+      "sha256": "f64114130cc0988fefac3b821876d2ff3b56f572a9e9a1ca33aa6398a783a5f3"
     },
     {
       "path": "qa/unit.log",
-      "sha256": "7181eb5da9d31b8064386bfa7e3beea051ad7c91af751bb2e7076744dc79d1a2"
+      "sha256": "887bb0b08829561df02e2088a5ce7ce850613fe4f12cf6103d2058a65e198fac"
     },
     {
       "path": "qa/verify.log",
-      "sha256": "08021743e42a257f6806b1c679c34479e72e0efd1d805b458d11d3ea681d6931"
+      "sha256": "5863317a09526a37158109600f69c284a987dff6a4d61a6b8803ff4d1ff588db"
     },
     {
       "path": "source/boss9-melee-preview.test.cjs",
@@ -99,12 +103,12 @@
     },
     {
       "path": "source/BOSS9_LIZARD_MELEE.md",
-      "sha256": "1a0b7b5d19dae84e93ad03c74c6e8932842b3ea05655820acd4dd9d52b24cd81",
+      "sha256": "3fdea5e0ed73798c6ad2b5e29c213b4155b8904ab9db242198218a66237b5bc6",
       "project": "docs/assets/BOSS9_LIZARD_MELEE.md"
     },
     {
       "path": "source/tools/author.py",
-      "sha256": "e2b800e53efa539f9a8eb5f7e8d24ea8ecbd4a8798f8743e6f214f008a5f2ce9",
+      "sha256": "ce6eb7478214fead87d3e05f54f2b5a26548cbd200034816c6d7d3260fb0465b",
       "project": "tools/boss9-lizard/melee/author.py"
     },
     {
@@ -124,7 +128,7 @@
     },
     {
       "path": "source/tools/export.cjs",
-      "sha256": "f22bfbbff9e3d4bbf335d18dce3abd3958b3a2785f0f732f79dd79af073d8c6a",
+      "sha256": "6cd7c0e721f43c0ccbde7a28f8fe0099de2ea63936811de82fc4059e435ba57e",
       "project": "tools/boss9-lizard/melee/export.cjs"
     },
     {
@@ -134,7 +138,7 @@
     },
     {
       "path": "source/tools/verify.py",
-      "sha256": "3445c3cf9d4f248a8e7a7c283c5fcede0fc9ecb367807a55249ae0db2e15c085",
+      "sha256": "dfe2cbf0abd35832dc3331dee4b7b7bb99ff102b550ec16155c17474ffe6e313",
       "project": "tools/boss9-lizard/melee/verify.py"
     },
     {
@@ -144,7 +148,7 @@
     },
     {
       "path": "source/tools/viewer.js",
-      "sha256": "c8769735cd29f34102cedae3827a425be5b6a1dbd199fd1c4b195df06c44f081",
+      "sha256": "9fef9983ba0dfac47faf36d1e36c52fd0f1d23f7ef9d08bea3aecff3446ca302",
       "project": "tools/boss9-lizard/melee/viewer.js"
     }
   ]

@@ -1,17 +1,17 @@
-✔ shared animation notifies validate and phase boundaries are half-open (1.6944ms)
-✔ no windup movement or damage; early Active still has no hitbox (1.7323ms)
-✔ peak enables one physical hit and the low point disables before landing (1.3104ms)
-✔ a target entering during Recovery is never damaged (0.8533ms)
-✔ skipping the whole clip preserves the exact notify sequence and single hit (1.6843ms)
-✔ 30/60/144 FPS and a single seek agree on movement and hit count (2.7424ms)
-✔ 120 degree sector includes capsule edges and excludes back/range/height (0.2099ms)
-✔ continuous capsule sweep cannot tunnel even with a huge displacement (0.1848ms)
-✔ oblique and cap-to-cap contact block at the expanded capsule boundary (0.1432ms)
-✔ blocked pounce never overlaps and never catches up blocked distance (1.303ms)
-✔ knockback is outward, smooth, finite and uses physical preview parameters (0.5801ms)
-✔ rotating the actor rotates its reach and root motion (0.5931ms)
-✔ dynamic reach grows with the slash and rejects malformed collision settings (0.4303ms)
-✔ fractional substeps report exact phase and notify boundaries consistently (0.6707ms)
+✔ shared animation notifies validate and phase boundaries are half-open (3.395ms)
+✔ no windup movement or damage; early Active still has no hitbox (2.4657ms)
+✔ peak enables one physical hit and the low point disables before landing (2.4102ms)
+✔ a target entering during Recovery is never damaged (0.8719ms)
+✔ skipping the whole clip preserves the exact notify sequence and single hit (3.3643ms)
+✔ 30/60/144 FPS and a single seek agree on movement and hit count (3.473ms)
+✔ 120 degree sector includes capsule edges and excludes back/range/height (0.2282ms)
+✔ continuous capsule sweep cannot tunnel even with a huge displacement (0.2352ms)
+✔ oblique and cap-to-cap contact block at the expanded capsule boundary (0.32ms)
+✔ blocked pounce never overlaps and never catches up blocked distance (1.2612ms)
+✔ knockback is outward, smooth, finite and uses physical preview parameters (0.6473ms)
+✔ rotating the actor rotates its reach and root motion (0.4272ms)
+✔ dynamic reach grows with the slash and rejects malformed collision settings (0.7437ms)
+✔ fractional substeps report exact phase and notify boundaries consistently (0.7014ms)
 ℹ tests 14
 ℹ suites 0
 ℹ pass 14
@@ -19,4 +19,4 @@
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 86.3239
+ℹ duration_ms 103.6055

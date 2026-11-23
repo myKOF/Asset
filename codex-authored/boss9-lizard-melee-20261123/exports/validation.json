@@ -1,6 +1,6 @@
 {
   "sourceSHA256": "23319786f8663d55bbde4ee7ae48bd2259e7a493114994cb9407dd2d731dbf5d",
-  "glbSHA256": "743f2f705df8fe7e29485a47cfb5b06ae0349ab36461bc941976415506e755b4",
+  "glbSHA256": "460d6bd04e23edadf2199fb10bb57822db3cd62ed699ceaf3142b9940d787ba0",
   "bones": 73,
   "clips": [
     "Walk",
@@ -9,7 +9,7 @@
   ],
   "duration": 2.4,
   "sourceBinaryAndWalkPreserved": true,
-  "nativeGLBMaximumVertexDifference": 1.1920928955078125e-06,
+  "nativeGLBMaximumVertexDifference": 1.3113021850585938e-06,
   "idleAttackPoseDifference": 3.5762786865234375e-07,
   "channelPoseSeamError": 6.556510925292969e-07,
   "notifies": [
@@ -50,12 +50,14 @@
       "name": "RecoveryEnd"
     }
   ],
+  "previousRevisionSHA256": "743f2f705df8fe7e29485a47cfb5b06ae0349ab36461bc941976415506e755b4",
+  "unchangedIdleAndNonRightArmChannelError": 0,
   "checks": {
     "blend": {
       "samples": 1153,
       "boneLengthError": 4.4645591407155294e-07,
-      "limbLinkError": 4.3592817305926346e-07,
-      "maximumJointStep": 0.02758093597162359,
+      "limbLinkError": 4.4551791383851125e-07,
+      "maximumJointStep": 0.024537146807009382,
       "rootMotionError": 4.2802501807326365e-06,
       "windupHipDrop": 0.11999998986721039,
       "windupHandDrift": 8.223983127520681e-06,
@@ -73,19 +75,23 @@
         "footL_footR": 0
       },
       "edgeStretchP95": 1.368208788299576,
-      "edgeStretchP99": 1.7868135348845318,
+      "edgeStretchP99": 1.8235957454447231,
       "edgeStretchMaximum": 6.398451406052307,
-      "activeTipForwardDot": 0.9658106168224004,
+      "lateTipRightDot": 0.9658892588471936,
+      "lateTipYaw": [
+        89.99573801351045,
+        90.00267419498259
+      ],
       "activeTipInclination": [
-        -15.025476094394477,
-        -14.99833181100616
+        -15.023747329718946,
+        -14.998723384609152
       ]
     },
     "glb": {
       "samples": 1153,
       "boneLengthError": 4.314454737919249e-07,
-      "limbLinkError": 6.633956265433838e-07,
-      "maximumJointStep": 0.02758023335524865,
+      "limbLinkError": 5.874027901309198e-07,
+      "maximumJointStep": 0.024537157430479736,
       "rootMotionError": 4.310052503120332e-06,
       "windupHipDrop": 0.11999998986721039,
       "windupHandDrift": 8.1221034187461e-06,
@@ -103,12 +109,16 @@
         "footL_footR": 0
       },
       "edgeStretchP95": 1.368209153377159,
-      "edgeStretchP99": 1.7868131056474976,
+      "edgeStretchP99": 1.8235845622272735,
       "edgeStretchMaximum": 6.398451406052307,
-      "activeTipForwardDot": 0.9658106776919374,
+      "lateTipRightDot": 0.9658892341465445,
+      "lateTipYaw": [
+        89.99569749169369,
+        90.00265732535891
+      ],
       "activeTipInclination": [
-        -15.025462635762851,
-        -14.99831180300659
+        -15.023757318014267,
+        -14.998727502900316
       ]
     }
   }

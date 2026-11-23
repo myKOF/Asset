@@ -8,7 +8,7 @@
         900,
         600
       ],
-      "sha256": "531190490086cd3bba825707af6cd1bd4a1749ba6c17e331e7f863c53aa48acf"
+      "sha256": "4c8ee9c2788ed8b7733dda1f31cdb5399626810eea7d06f052ef1025e6bbea49"
     },
     {
       "file": "BOSS9_Attack1_Side.gif",
@@ -18,7 +18,7 @@
         900,
         600
       ],
-      "sha256": "61648cb48618cc285911ff1da3a39695b2bde30b6b73008b064933f566ba210f"
+      "sha256": "96853278ee042a02780c59e6abb1fcf8da255cf4c473defee3007108cdfb90ac"
     },
     {
       "file": "BOSS9_Attack1_Hitbox.gif",
@@ -28,7 +28,7 @@
         900,
         600
       ],
-      "sha256": "1c1abed746797983dcf7021d17de59b39235340ed4dc56dd9860017a3fcdf084"
+      "sha256": "7616a710fad6aed31c99f4e5ce2e0442ee17b3c06e7b13f8a8929ba4dc780a06"
     },
     {
       "file": "BOSS9_Attack1_Capsule.gif",
@@ -38,44 +38,44 @@
         900,
         600
       ],
-      "sha256": "2ef461b143925bcc1666d486e8fc17d92ad8e10d7a75ee773532cdbdc62c875b"
+      "sha256": "507198eb54cca4daa6318000a9be75eed9c7fdd8ffd0439dd6a1abe459fe2638"
     }
   ],
   "captures": {
     "front": {
-      "glbSHA256": "743f2f705df8fe7e29485a47cfb5b06ae0349ab36461bc941976415506e755b4",
+      "glbSHA256": "460d6bd04e23edadf2199fb10bb57822db3cd62ed699ceaf3142b9940d787ba0",
       "bounds": {
-        "minX": 223.68249905717948,
-        "maxX": 676.3175009428205,
+        "minX": 216.285573964567,
+        "maxX": 683.7144260354331,
         "minY": 54.098360655737864,
         "maxY": 545.9016393442623
       }
     },
     "side": {
-      "glbSHA256": "743f2f705df8fe7e29485a47cfb5b06ae0349ab36461bc941976415506e755b4",
+      "glbSHA256": "460d6bd04e23edadf2199fb10bb57822db3cd62ed699ceaf3142b9940d787ba0",
       "bounds": {
-        "minX": 81.1475409836066,
-        "maxX": 818.8524590163936,
-        "minY": 91.84686676494447,
-        "maxY": 508.15313323505575
+        "minX": 81.1475409836065,
+        "maxX": 818.8524590163934,
+        "minY": 89.00824205235114,
+        "maxY": 510.991757947649
       }
     },
     "combat": {
-      "glbSHA256": "743f2f705df8fe7e29485a47cfb5b06ae0349ab36461bc941976415506e755b4",
+      "glbSHA256": "460d6bd04e23edadf2199fb10bb57822db3cd62ed699ceaf3142b9940d787ba0",
       "bounds": {
-        "minX": 273.59989805920964,
-        "maxX": 648.3010622010687,
-        "minY": 126.2786369641362,
-        "maxY": 483.5670777107284
+        "minX": 272.0452636078104,
+        "maxX": 650.6156886255702,
+        "minY": 126.2782569832576,
+        "maxY": 483.56711999095216
       }
     },
     "blocked": {
-      "glbSHA256": "743f2f705df8fe7e29485a47cfb5b06ae0349ab36461bc941976415506e755b4",
+      "glbSHA256": "460d6bd04e23edadf2199fb10bb57822db3cd62ed699ceaf3142b9940d787ba0",
       "bounds": {
         "minX": 106.97215389540187,
-        "maxX": 680.7410016224636,
-        "minY": 142.46472080614436,
-        "maxY": 488.67142853931864
+        "maxX": 672.4616605786975,
+        "minY": 142.46457406678513,
+        "maxY": 488.6714281152788
       }
     }
   }
