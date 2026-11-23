@@ -1,6 +1,6 @@
 {
   "sourceSHA256": "23319786f8663d55bbde4ee7ae48bd2259e7a493114994cb9407dd2d731dbf5d",
-  "glbSHA256": "460d6bd04e23edadf2199fb10bb57822db3cd62ed699ceaf3142b9940d787ba0",
+  "glbSHA256": "809d9f036ba34e04eab512ef2adcb1585cae36db4466a66bf6abcc4f06de1d16",
   "bones": 73,
   "clips": [
     "Walk",
@@ -9,7 +9,7 @@
   ],
   "duration": 2.4,
   "sourceBinaryAndWalkPreserved": true,
-  "nativeGLBMaximumVertexDifference": 1.3113021850585938e-06,
+  "nativeGLBMaximumVertexDifference": 1.5497207641601562e-06,
   "idleAttackPoseDifference": 3.5762786865234375e-07,
   "channelPoseSeamError": 6.556510925292969e-07,
   "notifies": [
@@ -50,14 +50,14 @@
       "name": "RecoveryEnd"
     }
   ],
-  "previousRevisionSHA256": "743f2f705df8fe7e29485a47cfb5b06ae0349ab36461bc941976415506e755b4",
+  "previousRevisionSHA256": "460d6bd04e23edadf2199fb10bb57822db3cd62ed699ceaf3142b9940d787ba0",
   "unchangedIdleAndNonRightArmChannelError": 0,
   "checks": {
     "blend": {
       "samples": 1153,
       "boneLengthError": 4.4645591407155294e-07,
-      "limbLinkError": 4.4551791383851125e-07,
-      "maximumJointStep": 0.024537146807009382,
+      "limbLinkError": 4.3592817305926346e-07,
+      "maximumJointStep": 0.027868079722277787,
       "rootMotionError": 4.2802501807326365e-06,
       "windupHipDrop": 0.11999998986721039,
       "windupHandDrift": 8.223983127520681e-06,
@@ -75,23 +75,57 @@
         "footL_footR": 0
       },
       "edgeStretchP95": 1.368208788299576,
-      "edgeStretchP99": 1.8235957454447231,
+      "edgeStretchP99": 1.8271152592614541,
       "edgeStretchMaximum": 6.398451406052307,
-      "lateTipRightDot": 0.9658892588471936,
-      "lateTipYaw": [
-        89.99573801351045,
-        90.00267419498259
+      "secondHalfTipRightDot": 0.9657746194854023,
+      "secondHalfTipYaw": [
+        89.99112141286943,
+        90.00269072920017
+      ],
+      "turnProgressSamples": [
+        {
+          "time": 1.1208333333333333,
+          "yaw": -1.8251697358205672
+        },
+        {
+          "time": 1.1598791666666666,
+          "yaw": 8.441957364920182
+        },
+        {
+          "time": 1.2,
+          "yaw": 32.87455110818814
+        },
+        {
+          "time": 1.2390458333333332,
+          "yaw": 60.73208076427736
+        },
+        {
+          "time": 1.2807125,
+          "yaw": 83.98837720761547
+        },
+        {
+          "time": 1.3098791666666665,
+          "yaw": 89.98355048200708
+        },
+        {
+          "time": 1.4,
+          "yaw": 89.99999947712935
+        },
+        {
+          "time": 1.5,
+          "yaw": 90.00001724124621
+        }
       ],
       "activeTipInclination": [
-        -15.023747329718946,
-        -14.998723384609152
+        -15.033434267224273,
+        -14.997851766597995
       ]
     },
     "glb": {
       "samples": 1153,
       "boneLengthError": 4.314454737919249e-07,
       "limbLinkError": 5.874027901309198e-07,
-      "maximumJointStep": 0.024537157430479736,
+      "maximumJointStep": 0.027868150250661302,
       "rootMotionError": 4.310052503120332e-06,
       "windupHipDrop": 0.11999998986721039,
       "windupHandDrift": 8.1221034187461e-06,
@@ -109,16 +143,50 @@
         "footL_footR": 0
       },
       "edgeStretchP95": 1.368209153377159,
-      "edgeStretchP99": 1.8235845622272735,
+      "edgeStretchP99": 1.8271141694916857,
       "edgeStretchMaximum": 6.398451406052307,
-      "lateTipRightDot": 0.9658892341465445,
-      "lateTipYaw": [
-        89.99569749169369,
-        90.00265732535891
+      "secondHalfTipRightDot": 0.9657745976343199,
+      "secondHalfTipYaw": [
+        89.99112111708142,
+        90.00263237812986
+      ],
+      "turnProgressSamples": [
+        {
+          "time": 1.1208333333333333,
+          "yaw": -1.8252209796083902
+        },
+        {
+          "time": 1.1598791666666666,
+          "yaw": 8.44192194337466
+        },
+        {
+          "time": 1.2,
+          "yaw": 32.87455517018344
+        },
+        {
+          "time": 1.2390458333333332,
+          "yaw": 60.73214066295113
+        },
+        {
+          "time": 1.2807125,
+          "yaw": 83.98837331211291
+        },
+        {
+          "time": 1.3098791666666665,
+          "yaw": 89.98355217438568
+        },
+        {
+          "time": 1.4,
+          "yaw": 90.00001723856955
+        },
+        {
+          "time": 1.5,
+          "yaw": 89.99995535658998
+        }
       ],
       "activeTipInclination": [
-        -15.023757318014267,
-        -14.998727502900316
+        -15.033439093801231,
+        -14.997859536964606
       ]
     }
   }
