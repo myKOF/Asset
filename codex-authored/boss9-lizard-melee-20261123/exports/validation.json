@@ -1,0 +1,115 @@
+{
+  "sourceSHA256": "23319786f8663d55bbde4ee7ae48bd2259e7a493114994cb9407dd2d731dbf5d",
+  "glbSHA256": "743f2f705df8fe7e29485a47cfb5b06ae0349ab36461bc941976415506e755b4",
+  "bones": 73,
+  "clips": [
+    "Walk",
+    "Idle",
+    "BOSS9_Attack1"
+  ],
+  "duration": 2.4,
+  "sourceBinaryAndWalkPreserved": true,
+  "nativeGLBMaximumVertexDifference": 1.1920928955078125e-06,
+  "idleAttackPoseDifference": 3.5762786865234375e-07,
+  "channelPoseSeamError": 6.556510925292969e-07,
+  "notifies": [
+    {
+      "time": 0,
+      "name": "WindupStart"
+    },
+    {
+      "time": 0.5,
+      "name": "ActiveStart"
+    },
+    {
+      "time": 0.5,
+      "name": "RootMotionOn"
+    },
+    {
+      "time": 1.12,
+      "name": "HitboxOn"
+    },
+    {
+      "time": 1.5,
+      "name": "HitboxOff"
+    },
+    {
+      "time": 1.5,
+      "name": "RootMotionOff"
+    },
+    {
+      "time": 1.5,
+      "name": "RecoveryStart"
+    },
+    {
+      "time": 1.62,
+      "name": "RightClawPlant"
+    },
+    {
+      "time": 2.4,
+      "name": "RecoveryEnd"
+    }
+  ],
+  "checks": {
+    "blend": {
+      "samples": 1153,
+      "boneLengthError": 4.4645591407155294e-07,
+      "limbLinkError": 4.3592817305926346e-07,
+      "maximumJointStep": 0.02758093597162359,
+      "rootMotionError": 4.2802501807326365e-06,
+      "windupHipDrop": 0.11999998986721039,
+      "windupHandDrift": 8.223983127520681e-06,
+      "plantedGroundError": 0.002370995521545405,
+      "maximumBelowGround": 0.0019619045257568413,
+      "idlePoseAtAdvancedPositionError": 6.19888305686267e-07,
+      "triangleOverlaps": {
+        "handR_footL": 0,
+        "handR_footR": 0,
+        "handL_footL": 0,
+        "handL_footR": 0,
+        "handR_skull": 0,
+        "handL_skull": 0,
+        "handR_handL": 0,
+        "footL_footR": 0
+      },
+      "edgeStretchP95": 1.368208788299576,
+      "edgeStretchP99": 1.7868135348845318,
+      "edgeStretchMaximum": 6.398451406052307,
+      "activeTipForwardDot": 0.9658106168224004,
+      "activeTipInclination": [
+        -15.025476094394477,
+        -14.99833181100616
+      ]
+    },
+    "glb": {
+      "samples": 1153,
+      "boneLengthError": 4.314454737919249e-07,
+      "limbLinkError": 6.633956265433838e-07,
+      "maximumJointStep": 0.02758023335524865,
+      "rootMotionError": 4.310052503120332e-06,
+      "windupHipDrop": 0.11999998986721039,
+      "windupHandDrift": 8.1221034187461e-06,
+      "plantedGroundError": 0.002371651172637934,
+      "maximumBelowGround": 0.0019613680839538628,
+      "idlePoseAtAdvancedPositionError": 6.19888305686267e-07,
+      "triangleOverlaps": {
+        "handR_footL": 0,
+        "handR_footR": 0,
+        "handL_footL": 0,
+        "handL_footR": 0,
+        "handR_skull": 0,
+        "handL_skull": 0,
+        "handR_handL": 0,
+        "footL_footR": 0
+      },
+      "edgeStretchP95": 1.368209153377159,
+      "edgeStretchP99": 1.7868131056474976,
+      "edgeStretchMaximum": 6.398451406052307,
+      "activeTipForwardDot": 0.9658106776919374,
+      "activeTipInclination": [
+        -15.025462635762851,
+        -14.99831180300659
+      ]
+    }
+  }
+}
