@@ -7,6 +7,6 @@
     "vfx/presets/level-up.json": "eecf4ca443aa37be1ed51b6237145c8ed41d55b4aca688a1daec69aa9d9565f3",
     "vfx/layouts/level-up.json": "911855335c067d2abd2c5452d0c5554e8dc64bd69017830c4c114ae45a243567",
     "js/vfx-celebration.js": "6e61c75a88eab100431cc5376300e4230061346785894e4bd30bb9dca6378d1b",
-    "tests/fixtures/levelup-legacy-samples.json": "28f8acdbe1b1531d0eade0b5ce76376a7be3ff90b8313a5a808d0a43bcc1c346"
+    "tests/fixtures/levelup-legacy-samples.json": "f7156ec256bbebad3027e77cbc354b905a3390bb69e5bc0a490c9013dc5feabd"
   }
 }
