@@ -70,7 +70,7 @@
         116,
         118
       ],
-      "sha256": "f2caf83042a2d6bb4798507243489eeccc0c1c17254a5dbeb7e69d6e3ff6c16f"
+      "sha256": "2d30d5aa77aef8b7e3a9ea28511ee34c68f6b447b2082a33907a2f8fb3f92912"
     },
     {
       "file": "BOSS9_Attack1_Side.gif",
@@ -142,7 +142,7 @@
         116,
         118
       ],
-      "sha256": "503667bc0d258391eea7c3050d4b7fbc78d5b6b3f8571f13eecca225ad9689f9"
+      "sha256": "f3656cc22d89c4fcd892799c12eec3189bbb43f01de0501d7b094687c935adc3"
     },
     {
       "file": "BOSS9_Attack1_Hitbox.gif",
@@ -214,7 +214,7 @@
         116,
         118
       ],
-      "sha256": "ea68cb8d47655f4517f3c4e0c7e16ede75767096bba2099cd937823b09232013"
+      "sha256": "1e49420b5b1dc673930ba6f13cdf6ebb2e81468723837aa941f1c5bea862358f"
     },
     {
       "file": "BOSS9_Attack1_Capsule.gif",
@@ -286,7 +286,7 @@
         116,
         118
       ],
-      "sha256": "a351c16dfbf3936b1be9f4b0400c2dece38b1625495e8823b11c6f14f0598a9c"
+      "sha256": "c77ab345c32f0f070ca9a34382c159914ccfc0987834021ff5ecf970319221f4"
     },
     {
       "file": "BOSS9_Attack1_Path.gif",
@@ -358,7 +358,7 @@
         116,
         118
       ],
-      "sha256": "f38a64cd28090907945664276c0e076417a625956fe8eead52fe3ebf90c53fe6"
+      "sha256": "cc7a4acbca73a24d084acc8b7132514cd6dcbe8742304c5f23a06778c7fc86ff"
     },
     {
       "file": "BOSS9_Attack1_Arc_Slow.gif",
@@ -371,53 +371,53 @@
       "speed": 0.25,
       "sourceStart": 0,
       "sourceEnd": 1.2,
-      "sha256": "e0699f172d7790b3e24d27e22f03b6ce215fe4f498c071493bded1b8bdeaf9e7"
+      "sha256": "8fcd48d2ef8cdf597570a641723e2b85100bcbdfc6a88b65a34393f3f5a33495"
     }
   ],
   "captures": {
     "front": {
-      "glbSHA256": "d669fdc2804202e63bd912c1770278382a62b4fedc103474d0010c11e211ae57",
+      "glbSHA256": "7cc2450cdf682f287c35c291e843a8bff7315faeeaab4fa8d33e873abfe0f190",
       "bounds": {
-        "minX": 238.63946015728175,
-        "maxX": 661.3605398427183,
-        "minY": 54.0983606557377,
-        "maxY": 545.9016393442622
+        "minX": 200.2912115350081,
+        "maxX": 699.7087884649919,
+        "minY": 54.098360655737935,
+        "maxY": 545.9016393442623
       }
     },
     "side": {
-      "glbSHA256": "d669fdc2804202e63bd912c1770278382a62b4fedc103474d0010c11e211ae57",
+      "glbSHA256": "7cc2450cdf682f287c35c291e843a8bff7315faeeaab4fa8d33e873abfe0f190",
       "bounds": {
-        "minX": 106.74565114951183,
-        "maxX": 793.2543587209395,
-        "minY": 54.098360655737864,
+        "minX": 109.77130660742095,
+        "maxX": 790.2287032630253,
+        "minY": 54.09836065573796,
         "maxY": 545.9016393442624
       }
     },
     "combat": {
-      "glbSHA256": "d669fdc2804202e63bd912c1770278382a62b4fedc103474d0010c11e211ae57",
+      "glbSHA256": "7cc2450cdf682f287c35c291e843a8bff7315faeeaab4fa8d33e873abfe0f190",
       "bounds": {
-        "minX": 258.70026750064716,
-        "maxX": 626.4679812870816,
-        "minY": 86.2328045385331,
-        "maxY": 468.4044407892816
+        "minX": 258.7006725853302,
+        "maxX": 666.2289221233831,
+        "minY": 86.232682308895,
+        "maxY": 467.31252349412506
       }
     },
     "blocked": {
-      "glbSHA256": "d669fdc2804202e63bd912c1770278382a62b4fedc103474d0010c11e211ae57",
+      "glbSHA256": "7cc2450cdf682f287c35c291e843a8bff7315faeeaab4fa8d33e873abfe0f190",
       "bounds": {
         "minX": 106.97214615767646,
-        "maxX": 626.2637690646029,
-        "minY": 114.74178092722511,
-        "maxY": 486.753555758995
+        "maxX": 621.6866303922927,
+        "minY": 114.7416183521694,
+        "maxY": 486.75355058953227
       }
     },
     "path": {
-      "glbSHA256": "d669fdc2804202e63bd912c1770278382a62b4fedc103474d0010c11e211ae57",
+      "glbSHA256": "7cc2450cdf682f287c35c291e843a8bff7315faeeaab4fa8d33e873abfe0f190",
       "bounds": {
-        "minX": 238.63946015728175,
-        "maxX": 661.3605398427183,
-        "minY": 54.0983606557377,
-        "maxY": 545.9016393442622
+        "minX": 200.2912115350081,
+        "maxX": 699.7087884649919,
+        "minY": 54.098360655737935,
+        "maxY": 545.9016393442623
       }
     }
   }

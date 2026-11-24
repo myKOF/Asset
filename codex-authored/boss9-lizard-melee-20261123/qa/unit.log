@@ -1,19 +1,19 @@
-✔ shared animation notifies validate and phase boundaries are half-open (3.5895ms)
-✔ the complete attack and notify timeline last exactly 1.2 seconds (3.1295ms)
-✔ no windup movement or damage; early Active still has no hitbox (1.8508ms)
-✔ peak enables one physical hit and the low point disables before landing (1.5106ms)
-✔ a target entering during Recovery is never damaged (1.0296ms)
-✔ skipping the whole clip preserves the exact notify sequence and single hit (0.9706ms)
-✔ 30/60/144 FPS and a single seek agree on movement and hit count (3.3513ms)
-✔ 120 degree sector includes capsule edges and excludes back/range/height (0.3015ms)
-✔ continuous capsule sweep cannot tunnel even with a huge displacement (0.3193ms)
-✔ oblique and cap-to-cap contact block at the expanded capsule boundary (0.2255ms)
-✔ blocked pounce never overlaps and never catches up blocked distance (2.1987ms)
-✔ standing attack never advances and keeps a touching capsule separated (1.3175ms)
-✔ knockback is outward, smooth, finite and uses physical preview parameters (0.9407ms)
-✔ rotating the actor rotates its reach and root motion (0.9899ms)
-✔ dynamic reach grows with the slash and rejects malformed collision settings (0.8173ms)
-✔ fractional substeps report exact phase and notify boundaries consistently (1.2344ms)
+✔ shared animation notifies validate and phase boundaries are half-open (3.5329ms)
+✔ the complete attack and notify timeline last exactly 1.2 seconds (1.766ms)
+✔ no windup movement or damage; early Active still has no hitbox (1.4422ms)
+✔ peak enables one physical hit and the low point disables before landing (1.0529ms)
+✔ a target entering during Recovery is never damaged (0.7531ms)
+✔ skipping the whole clip preserves the exact notify sequence and single hit (0.5552ms)
+✔ 30/60/144 FPS and a single seek agree on movement and hit count (3.8553ms)
+✔ 120 degree sector includes capsule edges and excludes back/range/height (0.2401ms)
+✔ continuous capsule sweep cannot tunnel even with a huge displacement (0.2621ms)
+✔ oblique and cap-to-cap contact block at the expanded capsule boundary (0.3861ms)
+✔ blocked pounce never overlaps and never catches up blocked distance (2.0354ms)
+✔ standing attack never advances and keeps a touching capsule separated (0.9848ms)
+✔ knockback is outward, smooth, finite and uses physical preview parameters (0.4986ms)
+✔ rotating the actor rotates its reach and root motion (0.5071ms)
+✔ dynamic reach grows with the slash and rejects malformed collision settings (0.5932ms)
+✔ fractional substeps report exact phase and notify boundaries consistently (0.665ms)
 ℹ tests 16
 ℹ suites 0
 ℹ pass 16
@@ -21,4 +21,4 @@
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 158.3237
+ℹ duration_ms 319.9435
