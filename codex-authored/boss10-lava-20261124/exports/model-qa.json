@@ -1,0 +1,47 @@
+{
+  "blender": "4.5.10 LTS",
+  "clips": {
+    "Walk": {
+      "source": "BOSS10_Walk.glb",
+      "sha256": "34bb5b2fdf2493c0f1ec705ee7373a6b24d9ef9a1fd9d0cefc3899420546e33d",
+      "originalClip": "Monster_Walk",
+      "channels": 144,
+      "seconds": 4.099999904632568
+    },
+    "Attack1": {
+      "source": "BOSS10_Attack1.glb",
+      "sha256": "5423b52371fb900a49089b04a47d133a74c5ce065a9fcc238ba49b63c0e9ed98",
+      "originalClip": "Heavy_Hammer_Swing",
+      "channels": 144,
+      "seconds": 1.8333332538604736
+    },
+    "Attack2": {
+      "source": "BOSS10_Attack2.glb",
+      "sha256": "33e4f5b6a0afa83743705ccde6615c52a977cc68e3f2e6cb8bc7a267d62a6eb3",
+      "originalClip": "Attack",
+      "channels": 144,
+      "seconds": 2.799999952316284
+    },
+    "Attack3": {
+      "source": "BOSS10_Attack3.glb",
+      "sha256": "9b05a9fa7afa9093969a85aeb741485bb7e29c1c885f5a17290cc939537d7f5c",
+      "originalClip": "Left_Slash",
+      "channels": 144,
+      "seconds": 3.1666667461395264
+    },
+    "Die": {
+      "source": "BOSS10_Die.glb",
+      "sha256": "b73775666cfb89c9ff19afb04bdbbdd21ac62ca64fc5998217195cc7032fc53a",
+      "originalClip": "Dead",
+      "channels": 144,
+      "seconds": 2.9666666984558105
+    }
+  },
+  "bones": 52,
+  "bindRigMeshAndTexturesIdentical": true,
+  "originalMotionSamplesIdentical": true,
+  "portrait": [
+    1080,
+    1080
+  ]
+}

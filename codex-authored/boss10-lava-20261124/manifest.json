@@ -1,0 +1,61 @@
+{
+  "asset": "boss10-lava-material-1",
+  "files": [
+    {
+      "source": "SOURCE.md",
+      "sha256": "3bcd57f653707422563ec81fa7d7e2cd4d31ad5c78da8b1d30ab5a8259eeb71e"
+    },
+    {
+      "source": "exports/boss10.blend",
+      "sha256": "cc0d5779616a690aa6e8a8d1888edb41f2eb54c70305b4b720d250548c5f8cd2"
+    },
+    {
+      "source": "exports/boss10.glb",
+      "sha256": "706c07f659e6869c557592e502e5ce171627c60e4068b9a3dbea0d4d72d75d60"
+    },
+    {
+      "source": "exports/boss10_lava.png",
+      "sha256": "809af5d1fc5fddd5682b19e2f5a05b1cd5033be133689d4e4299118de526ffc7"
+    },
+    {
+      "source": "exports/excel-format-qa.json",
+      "sha256": "7f72de2553c0f389160486054b161647bdf5b7279c00d2f7ee5ff9d7f1c020c7"
+    },
+    {
+      "source": "exports/game-qa.json",
+      "sha256": "f76808f1adad14a49f38c218d700c2ab9e66a343a1d9ced44dc6685f42f4dfe5"
+    },
+    {
+      "source": "exports/model-qa.json",
+      "sha256": "fae314c554d4007f7dc857da22b15326d96396db92b816984e35213d77e64281"
+    },
+    {
+      "source": "sources/BOSS10_Attack1.glb",
+      "sha256": "5423b52371fb900a49089b04a47d133a74c5ce065a9fcc238ba49b63c0e9ed98"
+    },
+    {
+      "source": "sources/BOSS10_Attack2.glb",
+      "sha256": "33e4f5b6a0afa83743705ccde6615c52a977cc68e3f2e6cb8bc7a267d62a6eb3"
+    },
+    {
+      "source": "sources/BOSS10_Attack3.glb",
+      "sha256": "9b05a9fa7afa9093969a85aeb741485bb7e29c1c885f5a17290cc939537d7f5c"
+    },
+    {
+      "source": "sources/BOSS10_Die.glb",
+      "sha256": "b73775666cfb89c9ff19afb04bdbbdd21ac62ca64fc5998217195cc7032fc53a"
+    },
+    {
+      "source": "sources/BOSS10_Walk.glb",
+      "sha256": "34bb5b2fdf2493c0f1ec705ee7373a6b24d9ef9a1fd9d0cefc3899420546e33d"
+    },
+    {
+      "source": "tools/export.cjs",
+      "sha256": "c82f21480a0a7e29c08d25ee2bcbc74499e8790d280e5766a97f94b15b36ec55"
+    },
+    {
+      "source": "tools/prepare.py",
+      "sha256": "6a07ba2e62433fe96245ba76f48472352f2c5316a2ddc3054770641b39acad65"
+    }
+  ]
+}
