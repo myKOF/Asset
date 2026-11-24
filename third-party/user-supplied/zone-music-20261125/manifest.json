@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-25",
+  "provenance": "User-provided audio already added to the working tree. Preserved byte-for-byte at the user's explicit request to commit their current edits. Also preserves the existing two lava-map tracks from project commit b3c84c35; the second filename had an accidental space, removed to match the existing table. No audio generated, downloaded, transcoded or newly selected by Codex; no third-party license inferred.",
+  "files": [
+    {
+      "source": "swamp-pressure.mp3",
+      "project": "audio/zones/swamp-pressure.mp3",
+      "originalProject": "audio/zones/swamp-pressure.mp3",
+      "origin": "user working-tree edits",
+      "sha256": "fa3b46a8b5699686938137ba62832feed58dd3d86803c8bb5c024a0f369b862a",
+      "bytes": 4170590
+    },
+    {
+      "source": "swamp-pressure_2.mp3",
+      "project": "audio/zones/swamp-pressure_2.mp3",
+      "originalProject": "audio/zones/swamp-pressure_2.mp3",
+      "origin": "user working-tree edits",
+      "sha256": "db33fa504ef9dc2b581839cfcb27c41e3bcc4e209a0671aa097ce97545d906df",
+      "bytes": 4268393
+    },
+    {
+      "source": "undead-mountain-ascent.mp3",
+      "project": "audio/zones/undead-mountain-ascent.mp3",
+      "originalProject": "audio/zones/undead-mountain-ascent.mp3",
+      "origin": "user working-tree edits",
+      "sha256": "d427314b6538e3aa0d16e0d155fb46fe19c1152f1d384be6c5bd6fee83cec59c",
+      "bytes": 4264004
+    },
+    {
+      "source": "undead-mountain-ascent_2.mp3",
+      "project": "audio/zones/undead-mountain-ascent_2.mp3",
+      "originalProject": "audio/zones/undead-mountain-ascent_2.mp3",
+      "origin": "user working-tree edits",
+      "sha256": "eee07e20929c3ba9e456e904ba4c8595a648066b92fc88bc042353aaf2149755",
+      "bytes": 4309144
+    },
+    {
+      "source": "black-crust-breaks.mp3",
+      "project": "audio/zones/black-crust-breaks.mp3",
+      "originalProject": "audio/zones/black-crust-breaks.mp3",
+      "origin": "b3c84c35",
+      "sha256": "951b69b893199d218df83f35eff9f31b720f2ab6558702ab79aa03037b538176",
+      "bytes": 4328243
+    },
+    {
+      "source": "black-crust-breaks_2.mp3",
+      "project": "audio/zones/black-crust-breaks_2.mp3",
+      "originalProject": "audio/zones/black-crust-breaks _2.mp3",
+      "origin": "b3c84c35",
+      "sha256": "ef2de681d957ca6d30e865618f41f6f5316365c32605f4218389c5c4a2bd965f",
+      "bytes": 4206616
+    }
+  ]
+}
