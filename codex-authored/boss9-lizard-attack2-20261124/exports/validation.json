@@ -1,6 +1,6 @@
 {
   "sourceSHA256": "7cc2450cdf682f287c35c291e843a8bff7315faeeaab4fa8d33e873abfe0f190",
-  "glbSHA256": "c128c7017715b3391d5bfd8f43acfa866984c39f2de79d9347f1e6611e2fa576",
+  "glbSHA256": "b00d2fd34dcd205368a449208dbb5de573a9a4d266a2060d426177a9baea5da8",
   "duration": 1.5,
   "bones": 73,
   "clips": [
@@ -16,18 +16,18 @@
     "Walk": "46066184ec012c13385438252069a484c9c1277309180b40b8de4263bd1ef8fe"
   },
   "channelSeamError": 5.364418029785156e-07,
-  "nativeGLBMaximumVertexDifference": 1.7285346984863281e-06,
+  "nativeGLBMaximumVertexDifference": 1.6689300537109375e-06,
   "checks": {
     "blend": {
       "samples": 1441,
-      "maximumJointStep": 0.01427671808164165,
-      "maximumJointSpeed": 10.924060660815233,
-      "maximumScaleError": 2.0265579223632812e-06,
-      "maximumLinkError": 9.770404247738673e-07,
-      "maximumFootDrift": 1.4857137737665812e-06,
+      "maximumJointStep": 0.02160718595582484,
+      "maximumJointSpeed": 16.522889420102047,
+      "maximumScaleError": 2.2649765014648438e-06,
+      "maximumLinkError": 8.090936073484878e-07,
+      "maximumFootDrift": 1.9556887072930763e-06,
       "rootHorizontalDrift": 7.450580596923828e-09,
-      "groundError": 0.004758018016815191,
-      "maximumBelowGround": 0.004758018016815191,
+      "groundError": 0.004757839202880865,
+      "maximumBelowGround": 0.004757839202880865,
       "poseSeamError": 3.5762786865234375e-07,
       "sourceIdleError": 7.748603820800781e-07,
       "triangleOverlaps": {
@@ -41,59 +41,101 @@
         "footL_footR": 0
       },
       "raised": {
-        "chestLift": 0.40541765093803406,
-        "chestRetraction": 0.4371098279953003,
-        "torsoGain": 63.358825833959074,
-        "torsoInclination": 72.19696070408322,
-        "tipAboveHead": 0.1720365285873413,
-        "minimumPadUp": 0.3639151371551758,
-        "minimumPalmForward": 0.9258345295871889,
-        "minimumElbowAngle": 84.62151540103827,
-        "maximumElbowAngle": 84.62154955198412,
-        "minimumForearmUp": 0.985903799533844,
-        "minimumUpperLateral": 0.9701424241065979,
-        "headPitch": 74.99999092260349
+        "chestLift": 0.40537676215171814,
+        "chestRetraction": 0.4368768185377121,
+        "torsoGain": 63.32815841752624,
+        "torsoInclination": 72.16629328765039,
+        "tipAboveHead": 0.17762625217437744,
+        "minimumPadUp": 0.3618320961039855,
+        "minimumPalmForward": 0.9257202684480063,
+        "minimumElbowAngle": 106.22842951959092,
+        "maximumElbowAngle": 106.28522254253957,
+        "minimumForearmUp": 0.9158339500427246,
+        "minimumUpperLateral": 0.9901045560836792,
+        "headPitch": 74.99998114483454,
+        "minimumForearmOut": 0.38488370180130005,
+        "wristSpan": 1.2387583255767822
       },
       "flow": {
         "R": {
-          "horizontalTravel": 0.02914786411940684,
-          "verticalTravel": -1.7366955821499501,
-          "chordDeviation": 0.0250311878776983,
-          "minimumSideClearance": 0.3599999212172865
+          "horizontalTravel": 0.4129867147814277,
+          "verticalTravel": -1.8420040004092493,
+          "chordDeviation": 0.024394064875493827,
+          "minimumSideClearance": 0.15000003848119747
         },
         "L": {
-          "horizontalTravel": -0.14367457696921138,
-          "verticalTravel": -1.5947849021169795,
-          "chordDeviation": 0.02494407585390349,
-          "minimumSideClearance": 0.3599999766301319
+          "horizontalTravel": -0.5042126200734133,
+          "verticalTravel": -1.6905270839581288,
+          "chordDeviation": 0.02396679879088936,
+          "minimumSideClearance": 0.14999999613539283
         }
       },
-      "maximumSynchronizationError": 5.082114095544821e-05,
-      "minimumLateDorsalForward": 0.8312755155556404,
-      "fingerExtensionMinimum": 0.9702942260668969,
+      "maximumSynchronizationError": 4.292646337400452e-05,
+      "minimumLateDorsalForward": 0.5606600899060792,
+      "fingerExtensionMinimum": 0.9702307261746105,
       "headLeadsDownstroke": [
         {
-          "time": 1.1,
-          "headPitch": 31.609355405644497,
-          "clawDropProgress": 0.03206073567646271
+          "time": 0.9291666666666667,
+          "headPitch": 17.28372228905143,
+          "clawDropProgress": 0.23869863608355008
         },
         {
-          "time": 1.1007729166666667,
-          "headPitch": 31.16365508993337,
-          "clawDropProgress": 0.03367653345735516
+          "time": 0.9299395833333333,
+          "headPitch": 16.8570277523129,
+          "clawDropProgress": 0.24113412934336742
         }
-      ]
+      ],
+      "rhythm": {
+        "R": {
+          "highBandDuration": 0.06535625,
+          "maximumHighPause": 0.0,
+          "raiseMeanSpeed": 2.310947296809565,
+          "dropMeanSpeed": 6.140013334697498,
+          "earlyDropSpeed": 2.434369037813025,
+          "lateDropSpeed": 9.434919449787657
+        },
+        "L": {
+          "highBandDuration": 0.06874999999999998,
+          "maximumHighPause": 0.0,
+          "raiseMeanSpeed": 2.1280152992491264,
+          "dropMeanSpeed": 5.63509027986043,
+          "earlyDropSpeed": 2.2342175273345837,
+          "lateDropSpeed": 8.658861869458823
+        }
+      },
+      "landing": {
+        "floorError": 0.0001001777648925728,
+        "claws": {
+          "R": [
+            -0.07700003848119748,
+            -0.850000064431524,
+            -0.5886927367719405
+          ],
+          "L": [
+            0.22299999613539281,
+            -0.8499997968235647,
+            -0.5580563108515308
+          ]
+        },
+        "betweenFeet": true,
+        "targetError": 2.495592134517587e-07
+      },
+      "maximumSpeedLocation": {
+        "from": 1.0604166666666666,
+        "to": 1.0611895833333334,
+        "bone": "spine_20"
+      }
     },
     "glb": {
       "samples": 1441,
-      "maximumJointStep": 0.014276820648682999,
-      "maximumJointSpeed": 10.923551941645474,
-      "maximumScaleError": 2.0265579223632812e-06,
-      "maximumLinkError": 9.990747359411856e-07,
-      "maximumFootDrift": 1.544697810098916e-06,
+      "maximumJointStep": 0.021607171478201157,
+      "maximumJointSpeed": 16.522855551555754,
+      "maximumScaleError": 2.2649765014648438e-06,
+      "maximumLinkError": 9.027392346566687e-07,
+      "maximumFootDrift": 2.0827538024969277e-06,
       "rootHorizontalDrift": 2.2351741790771484e-08,
-      "groundError": 0.004757481575012212,
-      "maximumBelowGround": 0.004757481575012212,
+      "groundError": 0.004757600784301763,
+      "maximumBelowGround": 0.004757600784301763,
       "poseSeamError": 4.76837158203125e-07,
       "sourceIdleError": 8.344650268554688e-07,
       "triangleOverlaps": {
@@ -107,48 +149,90 @@
         "footL_footR": 0
       },
       "raised": {
-        "chestLift": 0.40541738271713257,
-        "chestRetraction": 0.43710945546627045,
-        "torsoGain": 63.35882917002915,
-        "torsoInclination": 72.19694384569392,
-        "tipAboveHead": 0.1720370054244995,
-        "minimumPadUp": 0.3639164178340957,
-        "minimumPalmForward": 0.9258348993782438,
-        "minimumElbowAngle": 84.62150174065992,
-        "maximumElbowAngle": 84.62151540103827,
-        "minimumForearmUp": 0.9859039187431335,
-        "minimumUpperLateral": 0.9701424241065979,
-        "headPitch": 75.00001513444371
+        "chestLift": 0.4053764343261719,
+        "chestRetraction": 0.4368762820959091,
+        "torsoGain": 63.32813429387676,
+        "torsoInclination": 72.16624896954153,
+        "tipAboveHead": 0.1776266098022461,
+        "minimumPadUp": 0.36183293673250905,
+        "minimumPalmForward": 0.9257207405879705,
+        "minimumElbowAngle": 106.22835438751004,
+        "maximumElbowAngle": 106.28520205197206,
+        "minimumForearmUp": 0.9158340096473694,
+        "minimumUpperLateral": 0.9901044964790344,
+        "headPitch": 74.99997378190443,
+        "minimumForearmOut": 0.3848831057548523,
+        "wristSpan": 1.238757610321045
       },
       "flow": {
         "R": {
-          "horizontalTravel": 0.029147525917898653,
-          "verticalTravel": -1.7366944502102086,
-          "chordDeviation": 0.025030843334766004,
-          "minimumSideClearance": 0.360000009161563
+          "horizontalTravel": 0.4129865651755976,
+          "verticalTravel": -1.8420027440493825,
+          "chordDeviation": 0.02439385434331261,
+          "minimumSideClearance": 0.14999994400052205
         },
         "L": {
-          "horizontalTravel": -0.14367442955094645,
-          "verticalTravel": -1.5947839729039064,
-          "chordDeviation": 0.024944102367590537,
-          "minimumSideClearance": 0.3599997339701078
+          "horizontalTravel": -0.5042124334947172,
+          "verticalTravel": -1.6905257906989162,
+          "chordDeviation": 0.023966817102669926,
+          "minimumSideClearance": 0.1499995524667832
         }
       },
-      "maximumSynchronizationError": 5.10548656322829e-05,
-      "minimumLateDorsalForward": 0.8312748687433652,
-      "fingerExtensionMinimum": 0.9702942548735954,
+      "maximumSynchronizationError": 4.2950841578237586e-05,
+      "minimumLateDorsalForward": 0.5606612610539525,
+      "fingerExtensionMinimum": 0.9702301318386285,
       "headLeadsDownstroke": [
         {
-          "time": 1.1,
-          "headPitch": 31.60937061927195,
-          "clawDropProgress": 0.03206066227092658
+          "time": 0.9291666666666667,
+          "headPitch": 17.283705585773916,
+          "clawDropProgress": 0.23869859071890082
         },
         {
-          "time": 1.1007729166666667,
-          "headPitch": 31.163689071678498,
-          "clawDropProgress": 0.03367650737398391
+          "time": 0.9299395833333333,
+          "headPitch": 16.85700388350178,
+          "clawDropProgress": 0.24113427207578533
         }
-      ]
+      ],
+      "rhythm": {
+        "R": {
+          "highBandDuration": 0.06535625,
+          "maximumHighPause": 0.0,
+          "raiseMeanSpeed": 2.3109458962832488,
+          "dropMeanSpeed": 6.140009146831275,
+          "earlyDropSpeed": 2.4343642039866165,
+          "lateDropSpeed": 9.434911226322052
+        },
+        "L": {
+          "highBandDuration": 0.06874999999999998,
+          "maximumHighPause": 0.0,
+          "raiseMeanSpeed": 2.1280138702861153,
+          "dropMeanSpeed": 5.635085968996387,
+          "earlyDropSpeed": 2.2342152315433585,
+          "lateDropSpeed": 8.658854032963676
+        }
+      },
+      "landing": {
+        "floorError": 0.00010089302062987748,
+        "claws": {
+          "R": [
+            -0.07699994400052206,
+            -0.8499993884855984,
+            -0.5886920837719748
+          ],
+          "L": [
+            0.22299955246678319,
+            -0.84999943300184,
+            -0.5580556400299791
+          ]
+        },
+        "betweenFeet": true,
+        "targetError": 1.0737798863644252e-06
+      },
+      "maximumSpeedLocation": {
+        "from": 1.0604166666666666,
+        "to": 1.0611895833333334,
+        "bone": "spine_20"
+      }
     }
   }
 }
