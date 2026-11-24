@@ -1,0 +1,26 @@
+{
+  "view": "path",
+  "gifs": [
+    {
+      "file": "BOSS9_Attack3_Path.gif",
+      "frames": 75,
+      "durationMs": 1500,
+      "size": [
+        900,
+        600
+      ],
+      "sha256": "fea14eabfcde791367ccf12c6fdfd68fc82dade10d16cd273fddd88b73f24d31"
+    },
+    {
+      "file": "BOSS9_Attack3_Slow.gif",
+      "frames": 150,
+      "durationMs": 6000,
+      "size": [
+        900,
+        600
+      ],
+      "sha256": "c8bd8df8f752333ec3519f1ec99d293cae8d744ba819b295a46febc9c5d5c4f4"
+    }
+  ],
+  "streamedFrames": 150
+}
