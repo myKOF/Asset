@@ -1,0 +1,76 @@
+{
+  "blender": "4.5.10 LTS",
+  "clips": {
+    "Walk": {
+      "seconds": 4.099999904632568,
+      "channels": 144
+    },
+    "Attack1": {
+      "seconds": 1.8333332538604736,
+      "channels": 144
+    },
+    "Attack2": {
+      "seconds": 2.799999952316284,
+      "channels": 144
+    },
+    "Attack3": {
+      "seconds": 3.1666667461395264,
+      "channels": 144
+    },
+    "Die": {
+      "seconds": 2.9666666984558105,
+      "channels": 144
+    }
+  },
+  "bones": 54,
+  "sourceSha256": "fd3c5a688244929b7b5560b6d867ca82afa952409318487c32c8a7313cb460d7",
+  "motionSha256": "706c07f659e6869c557592e502e5ce171627c60e4068b9a3dbea0d4d72d75d60",
+  "fingerMapping": {
+    "aliasesByNode": {
+      "31": [
+        "mixamorig:RightHandThumb1",
+        "mixamorig:RightHandMiddle1"
+      ],
+      "23": [
+        "mixamorig:RightHandMiddle1",
+        "mixamorig:RightHandThumb1"
+      ],
+      "30": [
+        "mixamorig:RightHandThumb2",
+        "mixamorig:RightHandMiddle2"
+      ],
+      "22": [
+        "mixamorig:RightHandMiddle2",
+        "mixamorig:RightHandThumb2"
+      ],
+      "29": [
+        "mixamorig:RightHandThumb3",
+        "mixamorig:RightHandMiddle3"
+      ],
+      "21": [
+        "mixamorig:RightHandMiddle3",
+        "mixamorig:RightHandThumb3"
+      ],
+      "28": [
+        "mixamorig:RightHandThumb4",
+        "mixamorig:RightHandMiddle4"
+      ],
+      "20": [
+        "mixamorig:RightHandMiddle4",
+        "mixamorig:RightHandThumb4"
+      ]
+    },
+    "maxSamePositionError": 0.0792577435718545,
+    "minSwappedPositionError": 0.08674454297387772
+  },
+  "additionalBonesFollowingParent": [
+    "Bone_003",
+    "Bone_004"
+  ],
+  "bindRigMeshAndTexturesIdenticalToVariant": true,
+  "sourceAnimationTimesIdentical": true,
+  "portrait": [
+    1080,
+    1080
+  ]
+}

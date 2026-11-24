@@ -1,0 +1,50 @@
+{
+  "asset": "boss10-lava-material-3",
+  "motionSource": "../boss10-lava-20261124/exports/boss10.glb",
+  "files": [
+    {
+      "source": "SOURCE.md",
+      "sha256": "c6119336bcbf11f5a53259f9a2339474786d79b9aad7b94bb21ea4d90da99a14"
+    },
+    {
+      "source": "exports/boss10_lava_lv3.png",
+      "sha256": "48e18efb16488bf12da33b4891aa5c31d6d35bdd74d8d9771b18fd1abe8a3f60"
+    },
+    {
+      "source": "exports/boss10_lv3.blend",
+      "sha256": "b8f7406822453846f85386e220dde95d2b550a9b14c363fd47fec0f652998e25"
+    },
+    {
+      "source": "exports/boss10_lv3.glb",
+      "sha256": "230caa0eac7125abe5b2c5d5b1ff28bbc795a55a4a1785d84226b8f377bb141e"
+    },
+    {
+      "source": "exports/excel-format-qa.json",
+      "sha256": "54abf9434e325c512a68758052714ff65592a5ec4bd3ef4719f6135282d5a7e7"
+    },
+    {
+      "source": "exports/game-qa.json",
+      "sha256": "05e7dd65310e0255f1d82951f0b5c4d042224e91fd187887b6730de7805945f7"
+    },
+    {
+      "source": "exports/model-qa.json",
+      "sha256": "09d38f43a9350a1c6b7eb5cad180c7bca028ed612763f25314432a7f8ae10ce9"
+    },
+    {
+      "source": "sources/BOSS10_3.glb",
+      "sha256": "fd3c5a688244929b7b5560b6d867ca82afa952409318487c32c8a7313cb460d7"
+    },
+    {
+      "source": "tools/export.cjs",
+      "sha256": "751e026cbe99185367eacdf52350b8bf06c009e2716dbbd22c5e3a646509fc01"
+    },
+    {
+      "source": "tools/prepare.py",
+      "sha256": "ec3abda4311faf28844f56a5bebfda87605284df6697e9b9179a623ec24c5790"
+    },
+    {
+      "source": "tools/prepare_variant.py",
+      "sha256": "857e13b5447c636ebcf010c4014b71764bbf63f6fcd38339583a36856bd2c0d1"
+    }
+  ]
+}
