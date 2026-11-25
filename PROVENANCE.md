@@ -19,6 +19,12 @@ preset 實際引用到的素材。所以
 
 ## 各 package
 
+### codex-authored/boss9-lizard-death-20261126
+
+- 使用者2026-11-26授權自行設計四足野獸死亡，沒有提供死亡GIF；動作編排、姿勢、尾部餘勢與落地控制由Codex自行製作，沒有匯入外部圖片像素、音效或VFX。
+- 來源為使用者模型與已核准第三招包內GLB／Blend，沿用73骨、原材質蒙皮與Walk／Idle／Attack1／Attack2／Attack3，僅附加4秒不循環的BOSS9_Death。核准來源GLB SHA256為c485d8e0a54221d11483cff639739bcb4552656bc9b26a56bd9ce95311e8498e；來源相對路徑與原生檔SHA見source/inputs.json。
+- v2依使用者追加要求，胸頸及頭部明顯仰天張口約1秒後才接撐地失力、跪倒側翻，落地餘勢沉落後保持側躺；保存可編輯Blend／GLB、姿勢規格、製作與驗證工具、正常／慢放／側面GIF與必要QA。使用者後續要求完成並驗證後直接commit，保留GIF供檢查；尚未導入實戰，已核准第三招包保持。
+
 ### codex-authored/boss9-lizard-attack3-ref-20261125
 
 - 2026-11-26定稿：使用者核准v6作為第三招並授權commit，GLB SHA256為c485d8e0a54221d11483cff639739bcb4552656bc9b26a56bd9ce95311e8498e；approval.json及manifest保存核准紀錄。提交前移除v3／v4／v5共18個候選預覽與本機比較暫存，只保留v6核准GIF／PNG、可編輯來源與必要驗證資料。核准範圍為動作資產，尚未接入實戰。

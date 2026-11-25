@@ -1,0 +1,101 @@
+{
+  "sourceSHA256": "c485d8e0a54221d11483cff639739bcb4552656bc9b26a56bd9ce95311e8498e",
+  "glbSHA256": "3df3a9e486bb5e513eea3236212b2e61c316cd8a8cf52f1fab2bb5bf3a25cca0",
+  "duration": 4.0,
+  "bones": 73,
+  "sourceMeshAndFiveClipsPreserved": true,
+  "preservedNativeActions": {
+    "BOSS9_Attack1": "6e87a5968228825d8a16c6b730606b2e14b13887690fc6f9d632dffb60f6e13b",
+    "BOSS9_Attack2": "9887b61955a46e6709002138be7540ac19ed86a579c6dc1536be95f4f317852a",
+    "BOSS9_Attack3": "6579d5b44ffd27c403002e2d54ec625433b6520544e3b33612f1a117709dbf74",
+    "Idle": "1ae7c2b98dae768fa5b1098dd00728c07c90b491e0bf5eea478da76124188b66",
+    "Walk": "46066184ec012c13385438252069a484c9c1277309180b40b8de4263bd1ef8fe"
+  },
+  "clips": [
+    "Walk",
+    "Idle",
+    "BOSS9_Attack1",
+    "BOSS9_Attack2",
+    "BOSS9_Attack3",
+    "BOSS9_Death"
+  ],
+  "nativeGLBMaximumVertexDifference": 1.430511474609375e-06,
+  "checks": {
+    "blend": {
+      "samples": 1921,
+      "startIdleError": 7.748603820800781e-07,
+      "maximumScaleError": 1.1920928955078125e-06,
+      "maximumLinkError": 6.882039933209239e-07,
+      "maximumJointSpeed": 5.487244009128466,
+      "maximumSpeedLocation": {
+        "from": 0.1182125,
+        "to": 0.12083333333333333
+      },
+      "maximumFootRigidError": 2.314088873391926e-07,
+      "footShapeVertices": {
+        "R": 646,
+        "L": 655
+      },
+      "maximumBelowGround": 3.584003448486861e-05,
+      "maximumGroundLift": 0.01161853694915771,
+      "endHoldError": 2.384185791015625e-07,
+      "endCoreClearance": 0.04569028043746948,
+      "endHeadClearance": 0.09104804420471191,
+      "finalRollDegrees": 88.00000017209338,
+      "minimumHowlSkyDegrees": 71.85847102261151,
+      "minimumHowlJawDegrees": 28.500009330821214,
+      "howlHoldSeconds": 1.0,
+      "triangleOverlaps": {
+        "handR_handL": 0,
+        "handR_skull": 0,
+        "handL_skull": 0,
+        "handR_footR": 0,
+        "handR_footL": 0,
+        "handL_footR": 0,
+        "handL_footL": 0,
+        "footR_footL": 0,
+        "handR_torso": 0,
+        "handL_torso": 0
+      },
+      "collisionTimes": {}
+    },
+    "glb": {
+      "samples": 1921,
+      "startIdleError": 4.76837158203125e-07,
+      "maximumScaleError": 1.1920928955078125e-06,
+      "maximumLinkError": 5.1200858097733e-07,
+      "maximumJointSpeed": 5.487230488879379,
+      "maximumSpeedLocation": {
+        "from": 0.1182125,
+        "to": 0.12083333333333333
+      },
+      "maximumFootRigidError": 2.3487110270113153e-07,
+      "footShapeVertices": {
+        "R": 646,
+        "L": 655
+      },
+      "maximumBelowGround": 3.488636016846236e-05,
+      "maximumGroundLift": 0.01161853694915771,
+      "endHoldError": 0,
+      "endCoreClearance": 0.04569051885604858,
+      "endHeadClearance": 0.09104846143722534,
+      "finalRollDegrees": 88.00000017209338,
+      "minimumHowlSkyDegrees": 71.85848814966273,
+      "minimumHowlJawDegrees": 28.500009330821214,
+      "howlHoldSeconds": 1.0,
+      "triangleOverlaps": {
+        "handR_handL": 0,
+        "handR_skull": 0,
+        "handL_skull": 0,
+        "handR_footR": 0,
+        "handR_footL": 0,
+        "handL_footR": 0,
+        "handL_footL": 0,
+        "footR_footL": 0,
+        "handR_torso": 0,
+        "handL_torso": 0
+      },
+      "collisionTimes": {}
+    }
+  }
+}

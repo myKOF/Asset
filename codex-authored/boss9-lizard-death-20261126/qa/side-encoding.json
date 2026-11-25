@@ -1,0 +1,16 @@
+{
+  "view": "side",
+  "gifs": [
+    {
+      "file": "BOSS9_Death_v2_Side.gif",
+      "frames": 200,
+      "durationMs": 4000,
+      "size": [
+        900,
+        600
+      ],
+      "sha256": "20e299bb27554f6eb35df7b68caca711e06608e73e1fbb4384bd386190720b31"
+    }
+  ],
+  "streamedFrames": 400
+}

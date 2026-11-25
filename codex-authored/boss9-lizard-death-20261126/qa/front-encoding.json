@@ -1,0 +1,26 @@
+{
+  "view": "front",
+  "gifs": [
+    {
+      "file": "BOSS9_Death_v2.gif",
+      "frames": 200,
+      "durationMs": 4000,
+      "size": [
+        900,
+        600
+      ],
+      "sha256": "30544429699f932f7bc22eb0aa34cb415de746b260c55ca6e51e0fa1ca6c2f03"
+    },
+    {
+      "file": "BOSS9_Death_v2_Slow.gif",
+      "frames": 400,
+      "durationMs": 16000,
+      "size": [
+        900,
+        600
+      ],
+      "sha256": "037001bead24b99b621650c8baf81a2d8cf93452620ee7fe2182db051632fa21"
+    }
+  ],
+  "streamedFrames": 400
+}
