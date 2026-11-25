@@ -2,14 +2,14 @@
   "view": "path",
   "gifs": [
     {
-      "file": "BOSS9_Attack3_Path.gif",
+      "file": "BOSS9_Attack3_v6_Path.gif",
       "frames": 75,
       "durationMs": 1500,
       "size": [
         900,
         600
       ],
-      "sha256": "2d9ee511ec868eb0312ff21b3b0a677fe4fc9b27eb4b8fc771db297591396509"
+      "sha256": "f968bab6807f176bb244c35a2de5d2b28efa92442697686eeb6109fa4979cfc2"
     }
   ],
   "streamedFrames": 150

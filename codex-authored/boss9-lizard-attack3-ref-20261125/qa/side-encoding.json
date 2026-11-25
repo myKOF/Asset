@@ -2,14 +2,14 @@
   "view": "side",
   "gifs": [
     {
-      "file": "BOSS9_Attack3_Side.gif",
+      "file": "BOSS9_Attack3_v6_Side.gif",
       "frames": 75,
       "durationMs": 1500,
       "size": [
         900,
         600
       ],
-      "sha256": "a34390ddc83fe892609be2a7460dcc6578b7b18fc341a012ac1e8bb51dd973af"
+      "sha256": "a3fc3a9095b3c9f2a25d478ba5a07f70d6d1fa5568f999c59d463e8a7b4beb1d"
     }
   ],
   "streamedFrames": 150

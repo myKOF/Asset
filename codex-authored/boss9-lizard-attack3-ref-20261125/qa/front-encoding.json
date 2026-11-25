@@ -2,24 +2,24 @@
   "view": "front",
   "gifs": [
     {
-      "file": "BOSS9_Attack3.gif",
+      "file": "BOSS9_Attack3_v6.gif",
       "frames": 75,
       "durationMs": 1500,
       "size": [
         900,
         600
       ],
-      "sha256": "d60b177db1a08cdb46b6c065087807e356e5b49721ab587d26f030654637f75e"
+      "sha256": "7828bc80eccb417fee5295a2e54a6b93a8270e74f4f97339d0dd05b7f5728619"
     },
     {
-      "file": "BOSS9_Attack3_Slow.gif",
+      "file": "BOSS9_Attack3_v6_Slow.gif",
       "frames": 150,
       "durationMs": 6000,
       "size": [
         900,
         600
       ],
-      "sha256": "9a0bb9daeeed6e2705cdc0c7c4cafbe012a9a46010a0b22f83cbe52a9b42182d"
+      "sha256": "f2e6165ea8e9ee1f43a8e7e81cd22a4e20603ce96ee43ff1df103dfce6b372ed"
     }
   ],
   "streamedFrames": 150

@@ -1,0 +1,22 @@
+{
+  "sourceSHA256": "b00d2fd34dcd205368a449208dbb5de573a9a4d266a2060d426177a9baea5da8",
+  "glbSHA256": "c485d8e0a54221d11483cff639739bcb4552656bc9b26a56bd9ce95311e8498e",
+  "referenceClip": "BOSS9_Attack1",
+  "samples": {
+    "R": 265,
+    "L": 83
+  },
+  "R": {
+    "maximumClawDifference": 0.0004289275772530067,
+    "maximumPalmAngle": 0.06549600893772449,
+    "maximumActivePalmAngle": 0.06549600893772449,
+    "maximumFingerDirectionAngle": 0.03482291363676661,
+    "maximumHandSurfaceDifference": 0.0010164403299514173
+  },
+  "L": {
+    "maximumClawDifference": 0.0007709192514173875,
+    "maximumPalmAngle": 0.05485527472885451,
+    "maximumActivePalmAngle": 0.05485527472885451,
+    "maximumFingerDirectionAngle": 0.06257066531196308
+  }
+}
