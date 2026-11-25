@@ -1,0 +1,10 @@
+{
+  "glb": {
+    "libraryPath": "codex-authored/boss9-lizard-attack2-20261124/exports/boss9_attack2.glb",
+    "sha256": "b00d2fd34dcd205368a449208dbb5de573a9a4d266a2060d426177a9baea5da8"
+  },
+  "blend": {
+    "libraryPath": "codex-authored/boss9-lizard-attack2-20261124/exports/boss9_attack2.blend",
+    "sha256": "33c3b1e5e5ae6a3b362fe451e132e9557f4a63597f4f836e86de4bc8bcbd97a9"
+  }
+}

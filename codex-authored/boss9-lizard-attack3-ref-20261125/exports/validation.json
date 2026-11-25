@@ -1,0 +1,152 @@
+{
+  "sourceSHA256": "b00d2fd34dcd205368a449208dbb5de573a9a4d266a2060d426177a9baea5da8",
+  "glbSHA256": "0f30738d43999b320c528a6f886e7644c673a1065cb9540aecec03b7accb1eea",
+  "duration": 1.5,
+  "bones": 73,
+  "clips": [
+    "Walk",
+    "Idle",
+    "BOSS9_Attack1",
+    "BOSS9_Attack2",
+    "BOSS9_Attack3"
+  ],
+  "sourceMeshAndFourClipsPreserved": true,
+  "preservedNativeActions": {
+    "BOSS9_Attack1": "6e87a5968228825d8a16c6b730606b2e14b13887690fc6f9d632dffb60f6e13b",
+    "BOSS9_Attack2": "9887b61955a46e6709002138be7540ac19ed86a579c6dc1536be95f4f317852a",
+    "Idle": "1ae7c2b98dae768fa5b1098dd00728c07c90b491e0bf5eea478da76124188b66",
+    "Walk": "46066184ec012c13385438252069a484c9c1277309180b40b8de4263bd1ef8fe"
+  },
+  "channelSeamError": 0,
+  "nativeGLBMaximumVertexDifference": 1.0728836059570312e-06,
+  "checks": {
+    "blend": {
+      "samples": 721,
+      "maximumJointStep": 0.0563200137481773,
+      "maximumJointSpeed": 21.60578920587289,
+      "maximumSpeedLocation": {
+        "from": 0.9375,
+        "to": 0.9390458333333334,
+        "bone": "spine_27"
+      },
+      "maximumScaleError": 0,
+      "maximumLinkError": 3.9526019707247784e-07,
+      "maximumFootDrift": 2.811308532996968e-06,
+      "rootHorizontalDrift": 7.450580596923828e-09,
+      "groundError": 0.0028929533958435005,
+      "maximumBelowGround": 0.0005496916770935112,
+      "poseSeamError": 2.086162567138672e-07,
+      "sourceIdleError": 1.6689300537109375e-06,
+      "triangleOverlaps": {
+        "handR_footL": 0,
+        "handR_footR": 0,
+        "handL_footL": 0,
+        "handL_footR": 0,
+        "handR_skull": 0,
+        "handL_skull": 0,
+        "handR_handL": 0,
+        "footL_footR": 0
+      },
+      "flow": {
+        "R": {
+          "horizontalTravel": 1.0400000175266908,
+          "verticalTravel": -1.0599998144284348,
+          "maximumHeightTime": 0.35,
+          "minimumRaisedLift": 1.3525628586488267,
+          "minimumRaisedPalmUp": 0.623751803048909,
+          "minimumFingerExtension": 0.9952411643365497
+        },
+        "L": {
+          "horizontalTravel": -1.0799999997603247,
+          "verticalTravel": -1.0600004017532592,
+          "maximumHeightTime": 0.9,
+          "minimumRaisedLift": 1.3386441961110356,
+          "minimumRaisedPalmUp": 0.6285926576925335,
+          "minimumFingerExtension": 0.9947754145691914
+        }
+      },
+      "maximumHeadGazeAngle": 4.0216563644385275,
+      "maximumLinkLocation": {
+        "time": 1.1916666666666667,
+        "parent": "frontUpr.R",
+        "bone": "frontLwr.R"
+      },
+      "maximumFootShapeError": 3.2395549396756155e-06,
+      "maximumHeadRoll": 0.440545025330962,
+      "footShapeVertices": {
+        "R": 646,
+        "L": 655
+      },
+      "peakHeadShapeDifference": 0.012943046649067827,
+      "maximumAuthoredTargetError": {
+        "R": 0.00792696215473264,
+        "L": 0.006182826799113991
+      },
+      "collisionTimes": {}
+    },
+    "glb": {
+      "samples": 721,
+      "maximumJointStep": 0.056320101136510106,
+      "maximumJointSpeed": 21.60562875223442,
+      "maximumSpeedLocation": {
+        "from": 0.9375,
+        "to": 0.9390458333333334,
+        "bone": "spine_27"
+      },
+      "maximumScaleError": 0,
+      "maximumLinkError": 5.941636676692896e-07,
+      "maximumFootDrift": 2.870669159374289e-06,
+      "rootHorizontalDrift": 2.2351741790771484e-08,
+      "groundError": 0.0028932514190673775,
+      "maximumBelowGround": 0.0005493936538696342,
+      "poseSeamError": 0.0,
+      "sourceIdleError": 1.6689300537109375e-06,
+      "triangleOverlaps": {
+        "handR_footL": 0,
+        "handR_footR": 0,
+        "handL_footL": 0,
+        "handL_footR": 0,
+        "handR_skull": 0,
+        "handL_skull": 0,
+        "handR_handL": 0,
+        "footL_footR": 0
+      },
+      "flow": {
+        "R": {
+          "horizontalTravel": 1.040000048791704,
+          "verticalTravel": -1.0599992332831483,
+          "maximumHeightTime": 0.35,
+          "minimumRaisedLift": 1.352562743096264,
+          "minimumRaisedPalmUp": 0.6237526562503959,
+          "minimumFingerExtension": 0.995241700145407
+        },
+        "L": {
+          "horizontalTravel": -1.0799998208566244,
+          "verticalTravel": -1.0600004311067512,
+          "maximumHeightTime": 0.9,
+          "minimumRaisedLift": 1.3386439402778465,
+          "minimumRaisedPalmUp": 0.6285922965013601,
+          "minimumFingerExtension": 0.9947746995152453
+        }
+      },
+      "maximumHeadGazeAngle": 4.0216563644385275,
+      "maximumLinkLocation": {
+        "time": 1.0416666666666667,
+        "parent": "chest",
+        "bone": "neck1"
+      },
+      "maximumFootShapeError": 2.960647365699018e-06,
+      "maximumHeadRoll": 0.4405478068191655,
+      "footShapeVertices": {
+        "R": 646,
+        "L": 655
+      },
+      "peakHeadShapeDifference": 0.012942847198012702,
+      "maximumAuthoredTargetError": {
+        "R": 0.007926986718702499,
+        "L": 0.006182993044719662
+      },
+      "collisionTimes": {}
+    }
+  }
+}
