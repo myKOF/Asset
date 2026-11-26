@@ -14,8 +14,10 @@ if (mode === '--prepare') {
   const result = cp.spawnSync('python', [path.join(__dirname, 'pack.py'), library], { stdio: 'inherit', windowsHide: true });
   if (result.status !== 0) throw Error('Atlas packing failed');
   fs.mkdirSync(path.join(library, 'tools'), { recursive: true });
-  for (const file of ['build.py', 'pack.py', 'export.cjs']) fs.copyFileSync(path.join(__dirname, file), path.join(library, 'tools', file));
-  fs.copyFileSync(path.join(game, 'SOURCE.md'), path.join(library, 'README.md'));
+  for (const file of ['build.py', 'pack.py', 'export.cjs']) {
+    fs.writeFileSync(path.join(library, 'tools', file), fs.readFileSync(path.join(__dirname, file), 'utf8').replace(/\r\n/g, '\n'));
+  }
+  fs.writeFileSync(path.join(library, 'README.md'), fs.readFileSync(path.join(game, 'SOURCE.md'), 'utf8').replace(/\r\n/g, '\n'));
   const files = [];
   function walk(dir) {
     for (const entry of fs.readdirSync(path.join(library, dir), { withFileTypes: true })) {
