@@ -1,0 +1,177 @@
+[
+  {
+    "name": "bronze",
+    "frames": 25,
+    "axis": [
+      0.9973625540733337,
+      -0.02695574425160885,
+      0.0673893615603447
+    ],
+    "hingeA": [
+      -0.8999999761581421,
+      1.4700000286102295,
+      0.0
+    ],
+    "hingeB": [
+      1.3200000524520874,
+      1.4100000858306885,
+      0.15000000596046448
+    ],
+    "endDegrees": 60,
+    "maxHingeError": 1.7943374184954607e-07,
+    "fixedBodySamples": 25,
+    "minShellThickness": 0.06257023749475087,
+    "maxShellThickness": 0.4697884583877295,
+    "liningRecessDepth": 0.6650656562342192,
+    "edgeWalls": 4,
+    "innerSurfaceVertices": 475,
+    "opaqueTexturedEndCaps": 2,
+    "slopedCavityWalls": 4,
+    "mouthWidth": 1.9810248565033393,
+    "recessedCenterWidth": 1.3577810814236368,
+    "mouthRimFaces": 4,
+    "cornerHighlights": 4,
+    "exposedRoofPixels": 19.601974487304688,
+    "capSourceAlphaMin": 0.988235354423523
+  },
+  {
+    "name": "fine",
+    "frames": 25,
+    "axis": [
+      0.9973625540733337,
+      -0.02695574425160885,
+      0.0673893615603447
+    ],
+    "hingeA": [
+      -0.8999999761581421,
+      1.4700000286102295,
+      0.0
+    ],
+    "hingeB": [
+      1.3200000524520874,
+      1.4100000858306885,
+      0.15000000596046448
+    ],
+    "endDegrees": 60,
+    "maxHingeError": 1.7943374184954607e-07,
+    "fixedBodySamples": 25,
+    "minShellThickness": 0.06257023749475087,
+    "maxShellThickness": 0.4697884583877295,
+    "liningRecessDepth": 0.6650656562342192,
+    "edgeWalls": 4,
+    "innerSurfaceVertices": 475,
+    "opaqueTexturedEndCaps": 2,
+    "slopedCavityWalls": 4,
+    "mouthWidth": 1.9810248565033393,
+    "recessedCenterWidth": 1.3577810814236368,
+    "mouthRimFaces": 4,
+    "cornerHighlights": 4,
+    "exposedRoofPixels": 19.601974487304688,
+    "capSourceAlphaMin": 0.9843137860298157
+  },
+  {
+    "name": "epic",
+    "frames": 25,
+    "axis": [
+      0.9973625540733337,
+      -0.02695574425160885,
+      0.0673893615603447
+    ],
+    "hingeA": [
+      -0.8999999761581421,
+      1.4700000286102295,
+      0.0
+    ],
+    "hingeB": [
+      1.3200000524520874,
+      1.4100000858306885,
+      0.15000000596046448
+    ],
+    "endDegrees": 60,
+    "maxHingeError": 1.7943374184954607e-07,
+    "fixedBodySamples": 25,
+    "minShellThickness": 0.06257023749475087,
+    "maxShellThickness": 0.4697884583877295,
+    "liningRecessDepth": 0.6650656562342192,
+    "edgeWalls": 4,
+    "innerSurfaceVertices": 475,
+    "opaqueTexturedEndCaps": 2,
+    "slopedCavityWalls": 4,
+    "mouthWidth": 1.9810248565033393,
+    "recessedCenterWidth": 1.3577810814236368,
+    "mouthRimFaces": 4,
+    "cornerHighlights": 4,
+    "exposedRoofPixels": 19.601974487304688,
+    "capSourceAlphaMin": 0.988235354423523
+  },
+  {
+    "name": "legendary",
+    "frames": 25,
+    "axis": [
+      0.9973625540733337,
+      -0.02695574425160885,
+      0.0673893615603447
+    ],
+    "hingeA": [
+      -0.8999999761581421,
+      1.4700000286102295,
+      0.0
+    ],
+    "hingeB": [
+      1.3200000524520874,
+      1.4100000858306885,
+      0.15000000596046448
+    ],
+    "endDegrees": 60,
+    "maxHingeError": 1.7943374184954607e-07,
+    "fixedBodySamples": 25,
+    "minShellThickness": 0.06257023749475087,
+    "maxShellThickness": 0.4697884583877295,
+    "liningRecessDepth": 0.6650656562342192,
+    "edgeWalls": 4,
+    "innerSurfaceVertices": 475,
+    "opaqueTexturedEndCaps": 2,
+    "slopedCavityWalls": 4,
+    "mouthWidth": 1.9810248565033393,
+    "recessedCenterWidth": 1.3577810814236368,
+    "mouthRimFaces": 4,
+    "cornerHighlights": 4,
+    "exposedRoofPixels": 19.601974487304688,
+    "capSourceAlphaMin": 0.9843137860298157
+  },
+  {
+    "name": "mythic",
+    "frames": 25,
+    "axis": [
+      0.9973625540733337,
+      -0.02695574425160885,
+      0.0673893615603447
+    ],
+    "hingeA": [
+      -0.8999999761581421,
+      1.4700000286102295,
+      0.0
+    ],
+    "hingeB": [
+      1.3200000524520874,
+      1.4100000858306885,
+      0.15000000596046448
+    ],
+    "endDegrees": 60,
+    "maxHingeError": 1.7943374184954607e-07,
+    "fixedBodySamples": 25,
+    "minShellThickness": 0.06257023749475087,
+    "maxShellThickness": 0.4697884583877295,
+    "liningRecessDepth": 0.6650656562342192,
+    "edgeWalls": 4,
+    "innerSurfaceVertices": 475,
+    "opaqueTexturedEndCaps": 2,
+    "slopedCavityWalls": 4,
+    "mouthWidth": 1.9810248565033393,
+    "recessedCenterWidth": 1.3577810814236368,
+    "mouthRimFaces": 4,
+    "cornerHighlights": 4,
+    "exposedRoofPixels": 19.601974487304688,
+    "capSourceAlphaMin": 0.9843137860298157
+  }
+]
